@@ -1,9 +1,9 @@
-repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs/blob/master
-repository: dynamsoft-docs/camera-enhancer-docs
-docFullPath: https://www.dynamsoft.com/camera-enhancer/docs
-firstLevelUrl: /camera-enhancer/docs
+repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
+repository: dynamsoft-docs/camera-enhancer-docs-js
+docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
+firstLevelUrl: /camera-enhancer/docs/web
 docHomePage: /camera-enhancer/docs/introduction/
-frontPageFolder: /camera-enhancer/docs/
+frontPageFolder: /camera-enhancer/docs/core/
 
 productUrl: https://www.dynamsoft.com/camera-enhancer/overview/
 productName: Dynamsoft Camera Enhancer
@@ -16,24 +16,24 @@ release_notes: /camera-enhancer/docs/release-notes/
 parameter-reference: /camera-enhancer/docs/parameters/reference/
 faq: /camera-enhancer/docs/faq/
 
-ios: /camera-enhancer/docs/programming/ios/
-ios-guide: /camera-enhancer/docs/programming/ios/guide/
-ios-api: /camera-enhancer/docs/programming/ios/primary-api/
-ios-api-auxiliary: /camera-enhancer/docs/programming/ios/auxiliary-api/
-ios-release-note: /camera-enhancer/docs/programming/ios/release-note/
-ios-cameraenhancer: /camera-enhancer/docs/programming/ios/api/cameraenhancer/
+ios: /camera-enhancer/docs/mobile/ios/
+ios-guide: /camera-enhancer/docs/mobile/ios/guide/
+ios-api: /camera-enhancer/docs/mobile/ios/primary-api/
+ios-api-auxiliary: /camera-enhancer/docs/mobile/ios/auxiliary-api/
+ios-release-note: /camera-enhancer/docs/mobile/ios/release-note/
+ios-cameraenhancer: /camera-enhancer/docs/mobile/ios/api/cameraenhancer/
 
-android: /camera-enhancer/docs/programming/android/
-android-guide: /camera-enhancer/docs/programming/android/guide/
-android-api: /camera-enhancer/docs/programming/android/primary-api/
-android-api-auxiliary: /camera-enhancer/docs/programming/android/auxiliary-api/
-android-release-note: /camera-enhancer/docs/programming/android/release-note/
-android-cameraenhancer: /camera-enhancer/docs/programming/android/primary-api/cameraenhancer/
+android: /camera-enhancer/docs/mobile/android/
+android-guide: /camera-enhancer/docs/mobile/android/guide/
+android-api: /camera-enhancer/docs/mobile/android/primary-api/
+android-api-auxiliary: /camera-enhancer/docs/mobile/android/auxiliary-api/
+android-release-note: /camera-enhancer/docs/mobile/android/release-note/
+android-cameraenhancer: /camera-enhancer/docs/mobile/android/primary-api/cameraenhancer/
 
-js: /camera-enhancer/docs/programming/javascript/
-js-guide: /camera-enhancer/docs/programming/javascript/user-guide/
-js-api: /camera-enhancer/docs/programming/javascript/api-reference/
-js-rn: /camera-enhancer/docs/programming/javascript/release-note/
+js: /camera-enhancer/docs/web/javascript/
+js-guide: /camera-enhancer/docs/web/javascript/user-guide/
+js-api: /camera-enhancer/docs/web/javascript/api-reference/
+js-rn: /camera-enhancer/docs/web/javascript/release-note/
 
 reference: /camera-enhancer/docs/parameters/reference/
 enumerations: /camera-enhancer/docs/parameters/enumerations/
