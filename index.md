@@ -6,4 +6,4 @@ keywords:  Camera Enhancer
 breadcrumbText: HomePage
 ---
 
-# Dynamsoft Camera Enhancer JavaScript
+# Dynamsoft Camera Enhancer JS
