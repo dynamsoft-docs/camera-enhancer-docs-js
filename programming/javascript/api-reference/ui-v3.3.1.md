@@ -7,6 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: UI
+permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 ---
 
 # UI Manipulation

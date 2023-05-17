@@ -7,6 +7,7 @@ breadcrumbText: User Guide
 noTitleIndex: true
 needGenerateH3Content: true
 needAutoGenerateSidebar: true
+permalink: /programming/javascript/user-guide/index-v2.1.0.html
 ---
 
 # Dynamsoft Camera Enhancer for Your Website

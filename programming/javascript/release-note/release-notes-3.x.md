@@ -6,6 +6,7 @@ keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true
 breadcrumbText: v3.x Release Notes
+permalink: /programming/javascript/release-note/release-notes-3.x.html
 ---
 
 # Release Notes - JavaScript 3.x

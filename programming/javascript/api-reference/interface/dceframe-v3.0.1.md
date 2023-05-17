@@ -6,6 +6,7 @@ keywords: DCEFrame, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DCEFrame
+permalink: /programming/javascript/api-reference/interface/dceframe-v3.0.1.html
 ---
 
 # DCEFrame

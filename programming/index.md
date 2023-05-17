@@ -5,6 +5,7 @@ description: This is the documentation - Get start on programming page of Dynams
 keywords:  Camera Enhancer, Get start on programming
 needAutoGenerateSidebar: true
 breadcrumbText: Start Programming
+permalink: /programming/index.html
 ---
 # Get Started on Programming
 
