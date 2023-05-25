@@ -14,10 +14,10 @@ release_notes: /camera-enhancer/docs/core/release-notes/
 parameter-reference: /camera-enhancer/docs/core/parameters/reference/
 faq: /camera-enhancer/docs/core/faq/
 
-js: /camera-enhancer/docs/web/javascript/
-js-guide: /camera-enhancer/docs/web/javascript/user-guide/
-js-api: /camera-enhancer/docs/web/javascript/api-reference/
-js-rn: /camera-enhancer/docs/web/javascript/release-note/
+js: /camera-enhancer/docs/web/javascript/programming/
+js-guide: /camera-enhancer/docs/web/javascript/programming/user-guide/
+js-api: /camera-enhancer/docs/web/javascript/programming/api-reference/
+js-rn: /camera-enhancer/docs/web/javascript/programming/release-note/
 
 reference: /camera-enhancer/docs/parameters/reference/
 enumerations: /camera-enhancer/docs/parameters/enumerations/
