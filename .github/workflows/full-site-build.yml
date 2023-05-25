@@ -59,10 +59,11 @@ jobs:
         run: |
           cd /home/ubuntu
           mkdir -p DCEDocJS-preview
-          git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/camera-enhancer-docs-js.git camera-enhancer-docs-js-preview
-          git clone --depth 1 --branch jenny-preview-branch https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview-DCV2
-          cp -rfp ./camera-enhancer-docs-js-preview/* ./DCEDocJS-preview/
-          cp -rfp ./Docs-Template-Repo-Preview-DCV2/* ./DCEDocJS-preview/
+          [ ! -d camera-enhancer-docs-js-preview ] && git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/camera-enhancer-docs-js.git camera-enhancer-docs-js-preview
+          [ ! -d Docs-Template-Repo-Preview-DCV2 ] && git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview-DCV2
+          cd camera-enhancer-docs-js-preview && git pull && cd .. && cp -rfp ./camera-enhancer-docs-js-preview/* ./DCEDocJS-preview/
+          cd Docs-Template-Repo-Preview-DCV2 && git pull && cd .. && cp -rfp ./Docs-Template-Repo-Preview-DCV2/* ./DCEDocJS-preview/
+
           sed -i -e "1,3s/blob\/master$/blob\/preview/" \
           -e "1,3s/blob\/main$/blob\/preview/" /home/ubuntu/DCEDocJS-preview/_config.yml
           cd DCEDocJS-preview && bundle exec jekyll build
@@ -74,7 +75,7 @@ jobs:
           username: ${{ secrets.FTP_TEST_SITE_USER }}
           password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
           port: 7500 
-          local-dir: /home/ubuntu/DCEDocPreview/_site/
+          local-dir: /home/ubuntu/DCEDocJS-preview/_site/
           server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
 
           
