@@ -15,20 +15,6 @@ release_notes: /camera-enhancer/docs/release-notes/
 parameter-reference: /camera-enhancer/docs/parameters/reference/
 faq: /camera-enhancer/docs/faq/
 
-ios: /camera-enhancer/docs/mobile/ios/
-ios-guide: /camera-enhancer/docs/mobile/ios/guide/
-ios-api: /camera-enhancer/docs/mobile/ios/primary-api/
-ios-api-auxiliary: /camera-enhancer/docs/mobile/ios/auxiliary-api/
-ios-release-note: /camera-enhancer/docs/mobile/ios/release-note/
-ios-cameraenhancer: /camera-enhancer/docs/mobile/ios/api/cameraenhancer/
-
-android: /camera-enhancer/docs/mobile/android/
-android-guide: /camera-enhancer/docs/mobile/android/guide/
-android-api: /camera-enhancer/docs/mobile/android/primary-api/
-android-api-auxiliary: /camera-enhancer/docs/mobile/android/auxiliary-api/
-android-release-note: /camera-enhancer/docs/mobile/android/release-note/
-android-cameraenhancer: /camera-enhancer/docs/mobile/android/primary-api/cameraenhancer/
-
 js: /camera-enhancer/docs/web/javascript/
 js-guide: /camera-enhancer/docs/web/javascript/user-guide/
 js-api: /camera-enhancer/docs/web/javascript/api-reference/

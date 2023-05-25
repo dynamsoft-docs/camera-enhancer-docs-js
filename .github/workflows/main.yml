@@ -33,7 +33,7 @@ jobs:
           cd camera-enhancer-docs-js && git pull && cd .. && cp -rfp ./camera-enhancer-docs-js/* ./DCEDocJS/
           cd Docs-Template-Repo-Preview-DCV2 && git pull && cd .. && cp -rfp ./Docs-Template-Repo-Preview-DCV2/* ./DCEDocJS/
           cd DCEDocJS && bundle exec jekyll build --incremental
-          python3 /home/ubuntu/ftp.py /home/ubuntu/DCEDocJS/_site/ ./www.dynamsoft.com/camera-enhancer/docs/js/ prod
+          python3 /home/ubuntu/ftp.py /home/ubuntu/DCEDocJS/_site/ ./www.dynamsoft.com/camera-enhancer/docs/web/ prod
 
   Build-Preview:
     if: ${{ github.ref == 'refs/heads/preview' }}
@@ -61,6 +61,6 @@ jobs:
           password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
           port: 7500 
           local-dir: /home/ubuntu/DCEDocJS-preview/_site/
-          server-dir: /www.dynamsoft.com/camera-enhancer/docs/js/
+          server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
 
           
