@@ -3,7 +3,6 @@ repository: dynamsoft-docs/camera-enhancer-docs-js
 docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
 firstLevelUrl: /camera-enhancer/docs/web
 docHomePage: /camera-enhancer/docs/introduction/
-frontPageFolder: /camera-enhancer/docs/core/
 
 productUrl: https://www.dynamsoft.com/camera-enhancer/overview/
 productName: Dynamsoft Camera Enhancer
@@ -62,7 +61,7 @@ download: /camera-enhancer/downloads/1000021-confirmation/
 
 useVersionTree: true
 
-baseurl: "/camera-enhancer/docs/"
+baseurl: "/camera-enhancer/docs/web/"
 plugins:
   - jemoji
   - jekyll-sitemap
@@ -72,5 +71,10 @@ defaults:
       path: "Hide_Tree_Page.html"
     values:
       sitemap: false
+  - scope:
+      path: "programming/javascript"
+    values:
+      category: "js-repo"
+      edition: "js"
 
 url: "https://www.dynamsoft.com" # sitemap root
