@@ -6,6 +6,7 @@ keywords: PlayCallbackInfo, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: PlayCallbackInfo
+permalink: /programming/javascript/api-reference/interface/playcallbackinfo.html
 ---
 
 # PlayCallbackInfo

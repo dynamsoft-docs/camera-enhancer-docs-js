@@ -7,6 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Camera Control
+permalink: /programming/javascript/api-reference/camera-control.html
 ---
 
 # Camera Control
@@ -309,7 +310,10 @@ console.log(resolution[0] + " x " + resolution[1]);
 
 Returns the resolutions supported by the current video input.
 
-> The returned resolutions are limited to these values "160 by 120", "320 by 240", "480 by 360", "640 by 480", "800 by 600", "960 by 720", "1280 by 720", "1920 by 1080", "2560 by 1440", "3840 by 2160".
+> NOTE
+> 
+> 1. The returned resolutions are limited to these values "160 by 120", "320 by 240", "480 by 360", "640 by 480", "800 by 600", "960 by 720", "1280 by 720", "1920 by 1080", "2560 by 1440", "3840 by 2160".
+> 2. The SDK tests all these resolutions to find out which ones are supported. As a result, the method may be time-consuming.
 
 ```typescript
 getResolutions(): Promise<Array<[number, number]>>;

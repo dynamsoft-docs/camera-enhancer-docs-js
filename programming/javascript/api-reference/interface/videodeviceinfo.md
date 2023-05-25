@@ -6,6 +6,7 @@ keywords: VideoDeviceInfo, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: VideoDeviceInfo
+permalink: /programming/javascript/api-reference/interface/videodeviceinfo.html
 ---
 
 # VideoDeviceInfo

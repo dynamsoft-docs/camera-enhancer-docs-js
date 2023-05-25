@@ -6,6 +6,7 @@ keywords: Point, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Point
+permalink: /programming/javascript/api-reference/interface/point.html
 ---
 
 # Point

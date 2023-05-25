@@ -6,6 +6,7 @@ keywords: DrawingItemEvent, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingItemEvent
+permalink: /programming/javascript/api-reference/interface/drawingitemevent.html
 ---
 
 # DrawingItemEvent

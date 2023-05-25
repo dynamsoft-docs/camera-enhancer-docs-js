@@ -6,6 +6,7 @@ keywords: Warning, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Warning
+permalink: /programming/javascript/api-reference/interface/warning.html
 ---
 
 # Warning

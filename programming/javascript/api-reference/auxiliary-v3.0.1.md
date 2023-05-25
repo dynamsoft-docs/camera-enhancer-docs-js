@@ -7,6 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Auxiliary
+permalink: /programming/javascript/api-reference/auxiliary-v3.0.1.html
 ---
 
 # Auxiliary

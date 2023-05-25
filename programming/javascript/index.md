@@ -6,6 +6,7 @@ keywords: javascript
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/javascript/index.html
 ---
 
 # JavaScript Documentation

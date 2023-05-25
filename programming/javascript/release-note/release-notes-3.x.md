@@ -6,9 +6,35 @@ keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true
 breadcrumbText: v3.x Release Notes
+permalink: /programming/javascript/release-note/release-notes-3.x.html
 ---
 
 # Release Notes - JavaScript 3.x
+
+## 3.3.4 (04/17/2023)
+
+### Fixed
+
+* Fixed a bug that the `ScanRegionMask` and `ScanRegionLaser` might disappear when the camera is re-opened.
+* Fixed a bug that the `Resolution` might be changed when the method `getResolutions()` is triggered.
+
+## 3.3.3 (04/11/2023)
+
+### Fixed
+
+* Fixed a bug that led to a wrong camera being selected as the default camera when used on a device running iOS 16.4.
+* Fixed a bug that caused the scan region mask or the decorator to randomly appear and disappear when swiping the screen in Safari on iOS.
+
+## 3.3.2 (04/04/2023)
+
+### New
+
+* Added method `convertToPageCoordinates()` to convert the coordinates on image frames to coordinates on the HTML page.
+* Added method `convertToClientCoordinates()` to convert the coordinates on image frames to coordinates within the application's viewport (usually it means the browser window).
+
+### Improved
+
+* When `open()` is called, if there is no camera or the access is denied, an error is thrown right away (previously the error is thrown after a while).
 
 ## 3.3.1 (02/20/2023)
 
