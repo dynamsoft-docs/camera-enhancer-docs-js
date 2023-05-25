@@ -34,13 +34,13 @@ barcode-deploy-ios: /barcode-reader/programming/ios/api-reference/camera-enhance
 barcode-deploy-android: /barcode-reader/programming/android/api-reference/camera-enhancer/
 barcode-enum: /barcode-reader/parameters/enum/
 
-assets: /camera-enhancer/docs/assets/
-edit_icon: /camera-enhancer/docs/assets/img-icon/edit-icon.png
-smile_icon: /camera-enhancer/docs/assets/img-icon/icon-smile.png
-sad_icon: /camera-enhancer/docs/assets/img-icon/icon-sad.png
-dbr_icon: /camera-enhancer/docs/assets/img-icon/icon-dbr.svg
-dwt_icon: /camera-enhancer/docs/assets/img-icon/icon-dwt.svg
-dnt_icon: /camera-enhancer/docs/assets/img-icon/icon-dnt.svg
+assets: /camera-enhancer/docs/web/assets/
+edit_icon: /camera-enhancer/docs/web/assets/img-icon/edit-icon.png
+smile_icon: /camera-enhancer/docs/web/assets/img-icon/icon-smile.png
+sad_icon: /camera-enhancer/docs/web/assets/img-icon/icon-sad.png
+dbr_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dbr.svg
+dwt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dwt.svg
+dnt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dnt.svg
 
 overview: /camera-enhancer/overview/
 download: /camera-enhancer/downloads/1000021-confirmation/
