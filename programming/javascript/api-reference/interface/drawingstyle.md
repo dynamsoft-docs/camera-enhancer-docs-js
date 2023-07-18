@@ -43,7 +43,7 @@ permalink: /programming/javascript/api-reference/interface/drawingstyle.html
 
 ## Built-in DrawingStyles
 
-  The SDK comes with 8 default Drawing styles. Their style definition are listed below
+  The SDK comes with 8 default Drawing styles. Their style definitions are listed below
 
   ```javascript
   // DrawingStyle 1

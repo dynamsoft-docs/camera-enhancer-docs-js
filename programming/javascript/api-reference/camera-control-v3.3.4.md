@@ -7,56 +7,72 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Camera Control
-permalink: /programming/javascript/api-reference/camera-control.html
+permalink: /programming/javascript/api-reference/camera-control-v3.3.4.html
 ---
 
-# Class CameraEnhancer
+# Camera Control
 
-## Basic Camera Control
+**Basic Control**
 
-| API Name                                                               | Description                                                                           |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [getAllCameras()](camera-control.md#getallcameras)                     | Returns infomation of all available cameras on the device.                            |
-| [selectCamera()](camera-control.md#selectcamera)                       | Chooses a camera as the video source.                                                 |
-| [getSelectedCamera()](camera-control.md#getselectedcamera)             | Returns information about the selected / current camera.                              |
-| [getCameraState()](camera-control.md#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
-| [open()](camera-control.md#open)                                       | Turns on the camera to start streaming live video.                                    |
-| [close()](camera-control.md#close)                                     | Stops video streaming and releases the camera.                                        |
-| [isOpen()](camera-control.md#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
-| [pause()](camera-control.md#pause)                                     | Pauses video streaming without releasing the camera.                                  |
-| [isPaused()](camera-control.md#ispaused)                               | Returns whether the video streaming is paused.                                        |
-| [resume()](camera-control.md#resume)                                   | Resumes video streaming.                                                              |
-| [setResolution()](camera-control.md#setresolution)                     | Sets the resolution of the selected camera.                                           |
-| [getResolution()](camera-control.md#getresolution)                     | Returns the resolution of the selected camera.                                        |
-| [getAvailableResolutions()](camera-control.md#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
-| [testCameraAccess()](camera-control.md#testcameraaccess)               | Tests whether there is an available camera.                                           |
-| [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera)         | Returns or sets whether to save the last used camera and resolution.                  |
-| [videoSrc](camera-control.md#videosrc)                                 | Sets or returns the source of the video.                                              |
+| API Name | Description |
+|---|---|
+| [ifSkipCameraInspection](#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
+| [ifSaveLastUsedCamera](#ifsavelastusedcamera) | Returns or sets whether to save the last used camera and resolution. |
+| [getAllCameras()](#getallcameras) | Returns infomation of all available cameras on the device. |
+| [selectCamera()](#selectcamera) | Chooses a camera as the video source. |
+| [getSelectedCamera()](#getselectedcamera) | Returns information about the selected / current camera. |
+| [open()](#open) | Turns on the camera to start streaming live video. |
+| [close()](#close) | Stops video streaming and releases the camera. |
+| [isOpen()](#isopen) | Returns whether the selected camera is turned on / occupied. |
+| [pause()](#pause) | Pauses video streaming without releasing the camera. |
+| [resume()](#resume) | Resumes video streaming. |
+| [setResolution()](#setresolution) | Sets the resolution of the current video input. |
+| [getResolution()](#getresolution) | Returns the resolution of the current video input. |
+| [getResolutions()](#getresolutions) | Returns the resolutions supported by the current video input. |
+| [videoSrc](#videosrc) | Sets or returns the source of the video. |
 
-## Advanced Camera Control
+**Advanced Control**
 
-| API Name                                                               | Description                                                                        |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [setFrameRate()](camera-control.md#setframerate)                       | Adjusts the frame rate.                                                            |
-| [getFrameRate()](camera-control.md#getframerate)                       | Returns the real-time frame rate.                                                  |
-| [turnOnTorch()](camera-control.md#turnontorch)                         | Turns on the torch/flashlight if the current camera supports it.                   |
-| [turnOffTorch()](camera-control.md#turnofftorch)                       | Turns off the torch/flashlight.                                                    |
-| [getZoomSettings()](camera-control.md#getzoomsettings)                 | Returns the zoom settings.                                                         |
-| [setZoom()](camera-control.md#setzoom)                                 | Zooms the video stream.                                                            |
-| [resetZoom()](camera-control.md#resetzoom)                             | Resets the zoom level of the video.                                                |
-| [getFocusSettings()](camera-control.md#getfocussettings)               | Returns the focus settings.                                                        |
-| [setFocus()](camera-control.md#setfocus)                               | Sets how the camera focuses.                                                       |
-| [getCapabilities()](camera-control.md#getcapabilities)                 | Inspects and returns the capabilities of the selected camera.                      |
-| [getCameraSettings()](camera-control.md#getcamerasettings)             | Returns the current values for each constrainable property of the selected camera. |
-| [getColorTemperature()](camera-control.md#getcolortemperature)         | Returns the color temperature of the selected camera.                              |
-| [setColorTemperature()](camera-control.md#setcolortemperature)         | Adjusts the color temperature of the selected camera.                              |
-| [getExposureCompensation()](camera-control.md#getexposurecompensation) | Returns the exposure compensation index of the selected camera.                    |
-| [setExposureCompensation()](camera-control.md#setexposurecompensation) | Sets the exposure compensation index of the selected camera.                       |
-| [setAutoZoomRange()](camera-control.md#setautozoomrange)               | Sets the range (minimum to maximum) for zoom when it is done automatically.        |
-| [getAutoZoomRange()](camera-control.md#getautozoomrange)               | Returns the auto zoom range.                                                       |
-| [enableEnhancedFeatures()](camera-control.md#enableenhancedfeatures)   | Enables the specified enhanced features.                                           |
-| [disableEnhancedFeatures()](camera-control.md#disableenhancedfeatures) | Disables the specified enhanced features.                                          |
+| API Name | Description |
+|---|---|
+| [setFrameRate()](#setframerate) | Adjusts the frame rate. |
+| [getFrameRate()](#getframerate) | Returns the real-time frame rate. |
+| [turnOnTorch()](#turnontorch) | Turns on the torch/flashlight if the current camera supports it. |
+| [turnOffTorch()](#turnofftorch) | Turns off the torch/flashlight. |
+| [getZoomSettings()](#getzoomsettings) | Returns the zoom settings. |
+| [setZoom()](#setzoom) | Zooms the video stream. |
+| [resetZoom()](#resetzoom) | Resets the zoom level of the video. |
+| [getFocusSettings()](#getfocussettings) | Returns the focus settings. |
+| [setFocus()](#setfocus) | Sets how the camera focuses. |
+| [enableTapToFocus()](#enabletaptofocus) | Enables manual camera focus when clicking/tapping on the video. |
+| [disableTapToFocus()](#disabletaptofocus) | Disables manual camera focus when clicking/tapping on the video. |
+| [isTapToFocusEnabled()](#istaptofocusenabled) | Returns whether clicking/tapping on the video invokes the camera to focus. |
+| [getCapabilities()](#getcapabilities) | Inspects and returns the capabilities of the selected camera. |
+| [getCameraSettings()](#getcamerasettings) | Returns the current values for each constrainable property of the selected camera. |
+| [getColorTemperature()](#getcolortemperature) | Returns the color temperature of the selected camera. |
+| [setColorTemperature()](#setcolortemperature) | Adjusts the color temperature of the selected camera. |
+| [getExposureCompensation()](#getexposurecompensation) | Returns the exposure compensation index of the selected camera. |
+| [setExposureCompensation()](#setexposurecompensation) | Sets the exposure compensation index of the selected camera. |
 
+## ifSkipCameraInspection
+
+Returns or sets whether to skip camera inspection at initialization to save time. Note that if a previously used camera is already available in the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), the inspection is skipped automatically. Read more on [ifSaveLastUsedCamera](#ifsavelastusedcamera).
+
+```typescript
+ifSkipCameraInspection: boolean;
+```
+
+## ifSaveLastUsedCamera
+
+Returns or sets whether to save the last used camera and resolution. This feature makes use of the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of the browser.
+
+> NOTE
+>
+> This feature only works on mainstream browsers like Chrome, Firefox and Safari. Other browsers may change the device IDs dynamically thus making it impossible to track the camera.
+
+```typescript
+ifSaveLastUsedCamera: boolean;
+```
 
 ## getAllCameras
 
@@ -145,40 +161,26 @@ console.log(camera.label);
 
 * [VideoDeviceInfo](interface/videodeviceinfo.md)
 
-## getCameraState
-
-Returns the state of the selected camera which could be "opening", "open" or "closed".
-
-```typescript
-getCameraState(): string;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A string indicating the camera state, it is either "opening", "open" or "closed".
-
-**Code Snippet**
-
-```javascript
-let state = enhancer.getCameraState();
-console.log("The camera is " + state);
-```
-
 ## open
 
 Turns on the camera to start streaming live video.
 
 ```typescript
-open(): Promise<PlayCallbackInfo>;
+open(appendOrShowUI?: boolean): Promise<PlayCallbackInfo>;
 ```
 
 **Parameters**
 
-None.
+`appendOrShowUI` : this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree, the CameraEnhancer instance will append it in the DOM and show it; if the UI already exists in the DOM tree but is hidden, it'll be displayed. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing shows up on the page; if it exists in the DOM tree, it may or may not show up depending on its original state.
+
+> NOTE: if `setUIElement()` is not called before `open()` , the default UI Element will be used, which is equivalent to the following code:
+>
+> ```javascript
+> await cameraEnhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL); 
+> await cameraEnhancer.open(appendOrShowUI); 
+> ```
+>
+> If you want to use a different UI element, call API [ `setUIElement()` ](initialization.md#setuielement) beforehand.
 
 **Return value**
 
@@ -193,12 +195,12 @@ A promise resolving to a `PlayCallbackInfo` object.
 Stops video streaming and releases the camera.
 
 ```typescript
-close(): void;
+close(hideUI?: boolean): void;
 ```
 
 **Parameters**
 
-None.
+`hideUI` : this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree or it exists but is hidden, nothing is done; if the UI already exists in the DOM tree and is shown, it'll be hidden. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing happens; if it exists in the DOM tree, it may or may not be hidden depending on its original state.
 
 **Return value**
 
@@ -236,22 +238,6 @@ None.
 
 None.
 
-## isPaused
-
-Returns whether the video streaming is paused.
-
-```typescript
-isPaused(): boolean;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A boolean value indicating whether the video streaming is paused.
-
 ## resume
 
 Resumes video streaming.
@@ -270,17 +256,18 @@ None.
 
 ## setResolution
 
-Sets the resolution of the selected camera. If the specified resolution is not exactly supported, the closest resolution will be applied.
+Sets the resolution of the current video input. If the specified resolution is not exactly supported, the closest resolution will be applied.
 
 > If called before `open()` or `show()` , the camera will use the set resolution when it opens. Otherwise, the default resolution is used, which is 1280 x 720.
 
 ```typescript
-setResolution(resolution: Resolution): Promise<PlayCallbackInfo>;
+setResolution(widthOrResolution: number | number[], height: number): Promise<PlayCallbackInfo>;
 ```
 
 **Parameters**
 
-`resolution` : specifies the resolution. 
+`width` : specifies the horizontal resolution.  
+`height` : specifies the vertical resolution.
 
 **Return value**
 
@@ -289,19 +276,19 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-await enhancer.setResolution({width:1280, height:720});
+await enhancer.setResolution(width, height);
 ```
 
 **See also**
 
-* [Resolution](interface/resolution.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.md)
 
 ## getResolution
 
-Returns the resolution of the selected camera.
+Returns the resolution of the current video input.
 
 ```typescript
-getResolution(): Resolution;
+getResolution(): [number, number];
 ```
 
 **Parameters**
@@ -310,22 +297,18 @@ None.
 
 **Return value**
 
-The resolutoin.
+An array of two numbers representing the resolution in the sequence of [width, height].
 
 **Code Snippet**
 
 ```javascript
 let resolution = enhancer.getResolution();
-console.log(resolution.width + " x " + resolution.height);
+console.log(resolution[0] + " x " + resolution[1]);
 ```
 
-**See also**
+## getResolutions
 
-* [Resolution](interface/resolution.md)
-
-## getAvailableResolutions
-
-Returns the resolutions supported by the selected camera.
+Returns the resolutions supported by the current video input.
 
 > NOTE
 > 
@@ -333,7 +316,7 @@ Returns the resolutions supported by the selected camera.
 > 2. The SDK tests all these resolutions to find out which ones are supported. As a result, the method may be time-consuming.
 
 ```typescript
-getAvailableResolutions(): Promise<Array<Resolution>>;
+getResolutions(): Promise<Array<[number, number]>>;
 ```
 
 **Parameters**
@@ -347,57 +330,8 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-const resolutions = await enhancer.getAvailableResolutions();
+const resolutions = await enhancer.getResolutions();
 console.log(resolutions);
-```
-
-## testCameraAccess
-
-Tests whether there is an available camera.
-
-```typescript
-static testCameraAccess(): Promise<CameraTestResponse>;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A promise resolving to a `CameraTestResponse` object.
-
-**Code Snippet**
-
-```javascript
-const testResponse = await Dynamsoft.DCE.CameraEnhancer.testCameraAccess();
-if (testResponse.ok) {
-    console.log(testResponse.message);
-}
-```
-
-## ifSaveLastUsedCamera
-
-Returns or sets whether to save the last used camera and resolution. This feature makes use of the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of the browser.
-
-> NOTE
->
-> This feature only works on mainstream browsers like Chrome, Firefox and Safari. Other browsers may change the device IDs dynamically thus making it impossible to track the camera.
-
-```typescript
-ifSaveLastUsedCamera: boolean;
-```
-
-## videoSrc
-
-Sets or returns the source of the video.
-
-> 1. You can use this property to specify an existing video as the source to play which will be processed the same way as the video feed from a live camera.
->
-> 2. When playing an existing video, the camera selection and video selection boxes will be hidden.
-
-```typescript
-videoSrc: string | MediaStream | MediaSource | Blob;
 ```
 
 ## setFrameRate
@@ -701,6 +635,74 @@ await enhancer.setFocus({
 
 * [getCapabilities](#getcapabilities)
 
+## enableTapToFocus
+
+Enables manual camera focus when clicking/tapping on the video.
+
+```typescript
+enableTapToFocus() : void;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+enhancer.enableTapToFocus();
+```
+
+## disableTapToFocus
+
+Disables manual camera focus when clicking/tapping on the video.
+
+```typescript
+disableTapToFocus() : void;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+enhancer.disableTapToFocus();
+```
+
+## isTapToFocusEnabled
+
+Returns whether clicking/tapping on the video invokes the camera to focus.
+
+```typescript
+isTapToFocusEnabled() : boolean;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+`true` means clicking/tapping on the video will invoke the camera to focus. `false` means clicking/tapping on the video does nothing.
+
+**Code Snippet**
+
+```javascript
+if (enhancer.isTapToFocusEnabled()) {
+    console.log("You can tap or click on the video to focus!");
+}
+```
+
 ## getCapabilities
 
 Inspects and returns the capabilities of the selected camera.
@@ -874,98 +876,14 @@ await enhancer.setExposureCompensation(-0.7);
 
 * [getCapabilities](#getcapabilities)
 
-## setAutoZoomRange
+## videoSrc
 
-Sets the range (minimum to maximum) for zoom when it is done automatically.
+Sets or returns the source of the video.
 
-```typescript
-setAutoZoomRange(range: { min: number, max: number }) : void;
-```
-
-**Parameters**
-
-* `range`: specifies the zoom range (from minimum value to maximum value).
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setAutoZoomRange({min: 1, max: 5});
-```
-
-## getAutoZoomRange
-
-Returns the auto zoom range.
+> You can use this property to specify an existing video as the source to play which will be processed the same way as the video feed from a live camera.
+>
+> When playing an existing video, the camera selection and video selection boxes will be hidden.
 
 ```typescript
-getAutoZoomRange() : { min: number, max: number };
+videoSrc: string | MediaStream | MediaSource | Blob;
 ```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-The zoom range.
-
-**Code Snippet**
-
-```javascript
-let zoomRange = enhancer.getAutoZoomRange();
-```
-
-## enableEnhancedFeatures
-
-Enables the specified enhanced features.
-
-```typescript
-enableEnhancedFeatures(features: EnumEnhancedFeatures) => Promise<void>;
-```
-
-**Parameters**
-
-* `features`: specifies the features to enable.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
-```
-
-**See also**
-
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
-
-## disableEnhancedFeatures
-
-Disables the specified enhanced features.
-
-```typescript
-disableEnhancedFeatures(features: EnumEnhancedFeatures) => Promise<void>;
-```
-
-**Parameters**
-
-* `features`: specifies the features to disable.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
-```
-
-**See also**
-
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
