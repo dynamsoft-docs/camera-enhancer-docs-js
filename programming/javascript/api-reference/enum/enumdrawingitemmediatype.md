@@ -6,7 +6,7 @@ keywords: EnumDrawingItemMediaType, CameraEnhancer, api reference, javascript, j
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: EnumDrawingItemMediaType
-permalink: /programming/javascript/api-reference/enum/enumdrawingitemmediatype.html
+permalink: /programming/javascript/api-reference/enumerations/enumdrawingitemmediatype.html
 ---
 
 

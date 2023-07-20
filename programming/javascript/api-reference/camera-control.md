@@ -941,7 +941,7 @@ await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
 
 ## disableEnhancedFeatures
 
@@ -967,4 +967,4 @@ await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)

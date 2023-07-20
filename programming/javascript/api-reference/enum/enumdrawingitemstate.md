@@ -6,7 +6,7 @@ keywords: EnumDrawingItemState, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: EnumDrawingItemState
-permalink: /programming/javascript/api-reference/enum/enumdrawingitemstate.html
+permalink: /programming/javascript/api-reference/enumerations/enumdrawingitemstate.html
 ---
 
 # EnumDrawingItemState

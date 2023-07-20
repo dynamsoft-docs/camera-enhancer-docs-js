@@ -6,7 +6,7 @@ keywords: EnumEnhancedFeatures, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: EnumEnhancedFeatures
-permalink: /programming/javascript/api-reference/enum/enumenhancedfeatures.html
+permalink: /programming/javascript/api-reference/enumerations/enumenhancedfeatures.html
 ---
 
 
