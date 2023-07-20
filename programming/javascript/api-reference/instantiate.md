@@ -27,7 +27,7 @@ permalink: /programming/javascript/api-reference/instantiate.html
 Creates a `CameraEnhancer` instance.
 
 ```typescript
-static createInstance(cameraView?: CameraView): Promise<CameraEnhancer>;
+static createInstance: (cameraView?: CameraView) => Promise<CameraEnhancer>;
 ```
 
 **Parameters**
@@ -52,7 +52,7 @@ A promise resolving to the created `CameraEnhancer` object.
 Releases all resources used by the `CameraEnhancer` instance. After that, the instance will be left with only the property `disposed` (the value is `true`).
 
 ```typescript
-dispose(): void;
+dispose: () => void;
 ```
 
 **Parameters**

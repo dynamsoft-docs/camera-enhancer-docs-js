@@ -1,16 +1,16 @@
 ---
 layout: default-layout
-title: View APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page for Dynamsoft Camera Enhancer JavaScript SDK View APIs.
-keywords: cameraView, imageEditorView, view javascript, js
+title: UI APIs - Dynamsoft Camera Enhancer JavaScript API
+description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK UI.
+keywords: camera enhancer, UI, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
-breadcrumbText: View
-permalink: /programming/javascript/api-reference/view.html
+breadcrumbText: UI
+permalink: /programming/javascript/api-reference/ui.html
 ---
 
-# View Manipulation
+# UI Manipulation
 
 **Region and Video**
 
@@ -711,7 +711,7 @@ enhancer.updateDrawingStyle(3, {
 
 ## setOriginalImage
 
-Sets an image to be drawn on a canvas built into the View. Call showOriginalImage() to show it.
+Sets an image to be drawn on a canvas built into the UI. Call showOriginalImage() to show it.
 
 ```typescript
 setOriginalImage(imageData: Uint8Array | Uint8ClampedArray | HTMLCanvasElement, width: number, height: number): void; 

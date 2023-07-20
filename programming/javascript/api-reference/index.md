@@ -115,59 +115,73 @@ permalink: /programming/javascript/api-reference/index.html
 | [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
 | [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
 
-## Classes CameraView and ImageEditorView
+## Class CameraView
 
 ### Create and Destroy Instances
 
-The following APIs are shared by `CameraView` and `ImageEditorView`
+| API Name                                            | Description                                                                              |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `static` [createInstance()](cameraview.md#createinstance) | Creates a `CameraView` instance.                                                         |
+| [dispose()](cameraview.md#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
+| [disposed](cameraview.md#disposed)                        | A readonly boolean value indicating whether the `CameraView` instance has been disposed. |
+| [getUIElement()](cameraview.md#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                  |
+| [setUIElement()](cameraview.md#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.    |
+
+### Drawing and UI
+
+| API Name                                                                 | Description                                                                                               |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| [createDrawingLayer()](cameraview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
+| [getDrawingLayer()](cameraview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
+| [getAllDrawingLayers()](cameraview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
+| [deleteUserDefinedDrawingLayer()](cameraview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                                                        |
+| [clearUserDefinedDrawingLayers()](cameraview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                                                   |
+| [setTipConfig()](cameraview.md#settipconfig)                                   | Configures the tip feature.                                                                               |
+| [getTipConfig()](cameraview.md#gettipconig)                                    | Returns the configuration of the tip.                                                                     |
+| [setTipVisible()](cameraview.md#settipvisible)                                 | Sets whether to show the tip.                                                                             |
+| [isTipVisible()](cameraview.md#istipvisible)                                   | Returns whether the tip is visible.                                                                       |
+| [updateTipMessage()](cameraview.md#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
+| [getVisibleRegionOfVideo()](cameraview.md#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
+| [getVideoElement](cameraview.md#getvideoelement)                               | Returns the video element used by the `CameraView` instance.                                              |
+| [setScanRegionMaskStyle()](cameraview.md#setscanregionmaskstyle]               | Sets the drawing style for the scan-region mask.                                                          |
+| [getScanRegionMaskStyle()](cameraview.md#getscanregionmaskstyle]               | Returns the drawing style for the scan-region mask.                                                       |
+| [setScanRegionMaskVisible()](cameraview.md#setscanregionmaskvisible]           | Sets whether to show the scan-region mask.                                                                |
+| [isScanRegionMaskVisible()](cameraview.md#isscanregionmaskvisible]             | Returns whether the scan-region mask is visible.                                                          |
+| [setScanLaserVisible()](cameraview.md#setscanlaservisible]                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
+| [isScanLaserVisible()](cameraview.md#isscanlaservisible)]                      | Returns whether the laser is visible.                                                                     |
+                  
+## Class ImageEditorView
+
+### Create and Destroy Instances
 
 | API Name                                            | Description                                                                              |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `static` [createInstance()](view.md#createinstance) | Creates a `CameraView` instance.                                                         |
-| [dispose()](view.md#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
-| [disposed](view.md#disposed)                        | A readonly boolean value indicating whether the `CameraView` instance has been disposed. |
-| [getUIElement()](view.md#getuielement)              | Returns the HTML element that is used by the `CameraEnhancer` instance.                  |
-| [setUIElement()](view.md#setuielement)              | Specifies an HTML element for the `CameraEnhancer` instance to use as its UI element.    |
+| `static` [createInstance()](imageeditorview.md#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
+| [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
+| [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                  |
+| [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.    |
 
 ### DrawingLayer and DrawingItem
 
-The following APIs are shared by `CameraView` and `ImageEditorView`
+| API Name                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.   |
+| [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                               |
+| [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                            |
+| [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                       |
+| [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                  |
+| [setTipConfig()](imageeditorview.md#settipconfig)                                   | Configures the tip feature.                                              |
+| [getTipConfig()](imageeditorview.md#gettipconig)                                    | Returns the configuration of the tip.                                    |
+| [setTipVisible()](imageeditorview.md#settipvisible)                                 | Sets whether to show the tip.                                            |
+| [isTipVisible()](imageeditorview.md#istipvisible)                                   | Returns whether the tip is visible.                                      |
+| [updateTipMessage()](imageeditorview.md#updatetipmessage)                           | Updates the message shown in the tip.                                    |
+| [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                              |
+| [setVideoFit()](imageeditorview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                 |
+| [getVideoFit()](imageeditorview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element. |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.                     |
+| [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
-| API Name                                                                 | Description                                                            |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| [createDrawingLayer()](view.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers. |
-| [getDrawingLayer()](view.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                             |
-| [getAllDrawingLayers()](view.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                          |
-| [deleteUserDefinedDrawingLayer()](view.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                     |
-| [clearUserDefinedDrawingLayers()](view.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                |
-| [setTipConfig()](view.md#settipconfig)                                   | Configures the tip feature.                                            |
-| [getTipConfig()](view.md#gettipconig)                                    | Returns the configuration of the tip.                                  |
-| [setTipVisible()](view.md#settipvisible)                                 | Sets whether to show the tip.                                          |
-| [isTipVisible()](view.md#istipvisible)                                   | Returns whether the tip is visible.                                    |
-| [updateTipMessage()](view.md#updatetipmessage)                           | Updates the message shown in the tip.                                  |
-
-The following APIs are only for `CameraView`:
-
-| API Name                                                       | Description                                                                                               |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [getVisibleRegionOfVideo()](view.md#getvisibleregionofvideo)   | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
-| [getVideoElement](view.md#getvideoelement)                     | Returns the video element used by the `CameraView` instance.                                              |
-| [setScanRegionMaskStyle()](view.md#setscanregionmaskstyle]     | Sets the drawing style for the scan-region mask.                                                          |
-| [getScanRegionMaskStyle()](view.md#getscanregionmaskstyle]     | Returns the drawing style for the scan-region mask.                                                       |
-| [setScanRegionMaskVisible()](view.md#setscanregionmaskvisible] | Sets whether to show the scan-region mask.                                                                |
-| [isScanRegionMaskVisible()](view.md#isscanregionmaskvisible]   | Returns whether the scan-region mask is visible.                                                          |
-| [setScanLaserVisible()](view.md#setscanlaservisible]           | Sets whether to show the laser that indicates the scanning is going on.                                   |
-| [isScanLaserVisible()](view.md#isscanlaservisible)]            | Returns whether the laser is visible.                                                                     |
-
-The following APIs are only for the `ImageEditorView`
-
-| API Name                                                     | Description                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| [getSelectedDrawingItems()](view.md#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](view.md#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](view.md#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](view.md#setoriginalimage)               | Sets the image to be drawn on the image editor view.                     |
-| [getOriginalImage()](view.md#setoriginalimage)               | Returns the image drawn on the image editor.                             |
 
 ### Sub-class DrawingLayer
 
@@ -188,12 +202,12 @@ The following APIs are only for the `ImageEditorView`
 
 ### Sub-class DrawingStyleManager
 
-| API Name                                                    | Description                                             |
-| ----------------------------------------------------------- | ------------------------------------------------------- |
-| `static` [createDrawingStyle()](ui.md#createdrawingstyle)   | Creates a new `DrawingStyle` object and returns its ID. |
-| `static` [getDrawingStyle()](ui.md#getdrawingstyle)         | Returns the `DrawingStyle` object specified by its Id.  |
-| `static` [getAllDrawingStyles()](ui.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
-| `static` [updateDrawingStyle()](ui.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
+| API Name                                                                     | Description                                             |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle)   | Creates a new `DrawingStyle` object and returns its ID. |
+| `static` [getDrawingStyle()](drawingstylemanager.md#getdrawingstyle)         | Returns the `DrawingStyle` object specified by its Id.  |
+| `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
+| `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
 ### Sub-class DrawingItem
 

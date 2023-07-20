@@ -10,369 +10,261 @@ breadcrumbText: DrawingItem
 permalink: /programming/javascript/api-reference/drawingitem.html
 ---
 
-# DrawingItem
+# Class DrawingItem
 
-A DrawingItem can be one of seven types.
+| API Name                                        | Description                                                                                                |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [drawingLayerId](drawingitem.md#drawinglayerid) | Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.                                       |
+| [mediaType](drawingitem.md#mediatype)           | Returns the `mediaType` of the `DrawingItem`.                                                              |
+| [coordinateBase](drawingitem.md#coordinatebase) | Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`. |
+| [drawingStyleId](drawingitem.md#drawingstyleid) | Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.                            |
+| [setState()](drawingitem.md#setstate)           | Sets whether the `DrawingItem` is selected or not.                                                         |
+| [getState()](drawingitem.md#getstate)           | Returns the state of the `DrawingItem`.                                                                    |
+| [on](drawingitem.md#on)                         | Adds an event listener to the `DrawingItem` for the event specified by `eventName`.                        |
+| [off](drawingitem.md#off)                       | Removes an event listener to the `DrawingItem` for the event specified by `eventName`.                     |
+| [addNote()](drawingitem.md#addnote)             | Adds a `Note` to this `DrawingItem`.                                                                       |
+| [getNote()](drawingitem.md#getnote)             | Returns a `Note` specified by its name.                                                                    |
+| [hasNote()](drawingitem.md#hasnote)             | Returns whether a `Note` with the specified name exists on this `DrawingItem`.                             |
+| [updateNote()](drawingitem.md#updatenote)       | Updates the content of a `Note` specified by its name.                                                     |
+| [deleteNote()](drawingitem.md#deletenote)       | Deletes a `Note` specified by its name.                                                                    |
+| [getAllNotes()](drawingitem.md#getallnotes)     | Returns all `Notes` on the `DrawingItem`.                                                                  |
+| [clearNotes()](drawingitem.md#clearnotes)       | Deletes all `Notes` on the `DrawingItem`.                                                                  |
 
-```typescript
-type DrawingItem = DT_Rect | DT_Arc | DT_Line | DT_Polygon | DT_Text | DT_Image | DT_Group;
-```
+Child classes based on `DrawingItem`
 
-| Type Name | Description |
-|---|---|
-| [DT_Rect](#dt_rect) | Defines a DrawingItem the shape of a rectangle. |
-| [DT_Arc](#dt_arc)   | Defines a DrawingItem the shape of a arc. |
-| [DT_Line](#dt_line) | Defines a DrawingItem the shape of a line. |
-| [DT_Polygon](#dt_polygon) | Defines a DrawingItem the shape of a polygon. |
-| [DT_Text](#dt_text) | Defines a DrawingItem that draws text. |
-| [DT_Image](#dt_image) | Defines a DrawingItem that draws an image. |
-| [DT_Group](#dt_group) | Defines a DrawingItem which is a combination of more than one DrawingItem of the other six types.  |
+## LineDrawingItem
 
-## DT_Rect
 
-Defines a DrawingItem the shape of a rectangle.
+| API Name                                            | Description                                                       |
+| --------------------------------------------------- | ----------------------------------------------------------------- |
+| [LineDrawingItem()](drawingitem.md#linedrawingitem) | Constructor of a `LineDrawingItem`.                               |
+| [getLine](drawingitem.md#getline)                   | Returns the `LineSegment` object the item is based on.            |
+| [setLine](drawingitem.md#setline)                   | Specifies a `LineSegment` object to be used for drawing the line. |
 
-```typescript
-class DT_Rect { 
-  public constructor(x: number, y: number, width: number, height: number, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the following properties of the DrawingItem:
-  // 1. The coordinates of the upper-left corner of the rectangle, in pixels.
-  //    x: number; y: number;
-  // 2. The dimensions of the rectangle, in pixels.
-  //    width: number; height: number;
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties x, y, width & height.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
+## RectDrawingItem
 
-**See also**
+| API Name                                            | Description                                                |
+| --------------------------------------------------- | ---------------------------------------------------------- |
+| [RectDrawingItem()](drawingitem.md#rectdrawingitem) | Constructor of a `RectDrawingItem`.                        |
+| [getRect](drawingitem.md#getrect)                   | Returns the `Rect` object the item is based on.            |
+| [setRect](drawingitem.md#setrect)                   | Specifies a `Rect` object to be used for drawing the item. |
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+## QuadDrawingItem
 
-## DT_Arc
 
-Defines a DrawingItem the shape of a arc.
+| API Name                                            | Description                                                         |
+| --------------------------------------------------- | ------------------------------------------------------------------- |
+| [QuadDrawingItem()](drawingitem.md#quaddrawingitem) | Constructor of a `QuadDrawingItem`.                                 |
+| [getQuad](drawingitem.md#getquad)                   | Returns the `Quadrilateral` object the item is based on.            |
+| [setQuad](drawingitem.md#setquad)                   | Specifies a `Quadrilateral` object to be used for drawing the item. |
 
-```typescript
-class DT_Arc { 
-  constructor(x: number, y: number, radius: number, startAngle: number, endAngle: number, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the following properties of the DrawingItem:
-  // 1. The coordinates of the the center of the circle, in pixels.
-  //    x: number; y: number;
-  // 2. The radius of the circle, in pixels.
-  //    radius: number; 
-  // 3. The starting and ending angles (in degrees, not radians).
-  //    startAngle: number, endAngle: number; 
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties x, y, radius, startAngle & endAngle.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
+## TextDrawingItem
 
-**See also**
+| API Name                                            | Description                                                         |
+| --------------------------------------------------- | ------------------------------------------------------------------- |
+| [TextDrawingItem()](drawingitem.md#textdrawingitem) | Constructor of a `TextDrawingItem`.                                 |
+| [getText](drawingitem.md#gettext)                   | Returns the text drawn.                                             |
+| [setText](drawingitem.md#settext)                   | Specifies the text to draw.                                         |
+| [getTextRect](drawingitem.md#gettextrect)           | Returns the `Rect` object which determines where the text is drawn. |
+| [setTextRect](drawingitem.md#settextrect)           | Specifies a `Rect` object in which the text is drawn.               |
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+## ImageDrawingItem
 
-## DT_Line
+| API Name                                                  | Description                                                                       |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of a `ImageDrawingItem`.                                              |
+| [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
+| [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
+| [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
+| [getImageRect](drawingitem.md#gettextrect)                | Returns the `Rect` object which determines where the image is drawn.              |
+| [setImageRect](drawingitem.md#settextrect)                | Specifies a `Rect` object in which the image is drawn.                            |
 
-Defines a DrawingItem the shape of a line.
 
-```typescript
-class DT_Line {
-  public constructor(startPoint: Point, endPoint: Point, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the following properties of the DrawingItem:
-  // 1. The coordinates of the staring point, in pixels.
-  //    startPoint: Point; 
-  // 2. The coordinates of the end point, in pixels.
-  //    endPoint: Point; 
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties startPoint and endPoint.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
+## drawingLayerId
 
-**See also**
+Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn
 
-* [Point](interface/point.md)
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
 
-## DT_Polygon
+## mediaType
 
-Defines a DrawingItem the shape of a polygon.
+Returns the `mediaType` of the `DrawingItem`
 
-```typescript
-class DT_Polygon { 
-  public constructor(vertices: Array<Point>, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the property vertices: Array<Point>; 
-  setAttribute: (property:string, value:any) => void;
-  // Returns the value for the property vertices: Array<Point>; 
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
 
-**See also**
+## coordinateBase
 
-* [Point](interface/point.md)
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`
 
-## DT_Text
 
-Defines a DrawingItem that draws text within a text box with a fixed width. The text is wrapped to fit the width of the text box.
+## drawingStyleId
 
-> Note
->
-> The content of the text can include line breaks (`\n`) and tabs (`\t`).
->
-> For example: "FistName:\tJohn\nLastName:\tDoe".
+Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`
 
-```typescript
-class DT_Text { 
-  public constructor(text: string, x: number, y: number, width: number, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the following properties of the DrawingItem:
-  // 1. The coordinates of the upper-left corner of the text box, in pixels.
-  //    x: number; y: number;
-  // 2. The width of the text box, in pixels.
-  //    width: number,
-  // 3. The text to be drawn.
-  //    text: string; 
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties x, y, width or text.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
 
-**See also**
+## setState()
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+Sets whether the `DrawingItem` is selected or not
 
-## DT_Image
 
-Defines a DrawingItem that draws an image.
+## getState()
 
-```typescript
-class DT_Image { 
-  //NOTE: If an DT_Image instance has been constructed with an image, it can be replaced later with either an HTMLImageElement or an HTMLCanvasElement. However, an HTMLVideoElement can only be used during the constructing. 
-  public constructor(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement, x: number, y: number, styleId?: number) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the following properties of the DrawingItem:
-  // 1. The coordinates of the upper-left corner of the image, in pixels.
-  //    x: number; y: number;
-  // 2. The image itself
-  //    image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties x, y or image.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
+Returns the state of the `DrawingItem`
 
-**See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+## on
 
-## DT_Group
+Adds an event listener to the `DrawingItem` for the event specified by `eventName`
 
-Defines a DrawingItem which is a combination of more than one DrawingItem of the other six types.
 
-```typescript
-class DT_Group { 
-  public constructor(childItems: Array<DrawingItem>) { };
-  // The ID of a drawingLayer where the DrawingItem is drawn. Only assigned after it's added to the drawingLayer.
-  readonly drawingLayerId: number;
-  // The media type.
-  readonly mediaType: "rect"; 
-  // The style selector. If left blank, the drawingLayer will assume it's "default". Available values are "default" and "selected".
-  styleSelector: string; 
-  // The style ID expected to be used to paint this item. If left blank, the drawingLayer will decide which style to use.
-  styleId?: number;
-  // Sets the coordinates of the upper-left corner of the DrawingItem:
-  //    x: number; y: number;
-  setAttribute: (property:string, value:any) => void;
-  // Returns the values for the properties x or y.
-  getAttribute: (property:string) => any;
-  // Adds an event listener to the DrawingItem for the event specified by eventName. Allowed events are: mousedown, mouseup, dblclick, mouseover, mouseout (the last three don't work on mobile devices).
-  on: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Removes an event listener to the DrawingItem for the event specified by eventName.
-  off: (eventName: string, listener: (event: DrawingItemEvent) => void) => void;
-  // Adds a Note to this DrawingItem
-  addNote: (note: Note, replace?: boolean) => void;
-  // Returns a Note specified by its name.
-  getNote: (name: string) => Note;
-  // Returns whether a Note with the specified name exists on this DrawingItem.
-  hasNote: (name: string) => boolean;
-  // Updates the content of a Note specified by its name. If `mergeContent` is set to true, then the new content is added to the Note alongside the original content.
-  updateNote: (name: string, content: any, mergeContent?: boolean) => void;
-  // Deletes a Note specified by its name.
-  deleteNote: (name: string) => void;
-  // Returns all Notes on the DrawingItem.
-  getNotes: () => Array<Note>;
-  // Deletes all Notes on the DrawingItem.
-  clearNotes: () => void;
-} 
-```
+## off
 
-**See also**
+Removes an event listener to the `DrawingItem` for the event specified by `eventName`
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+
+## addNote()
+
+Adds a `Note` to this `DrawingItem`
+
+
+## getNote()
+
+Returns a `Note` specified by its name
+
+
+## hasNote()
+
+Returns whether a `Note` with the specified name exists on this `DrawingItem`
+
+
+## updateNote()
+
+Updates the content of a `Note` specified by its name
+
+
+## deleteNote()
+
+Deletes a `Note` specified by its name
+
+
+## getAllNotes()
+
+Returns all `Notes` on the `DrawingItem`
+
+
+## clearNotes()
+
+Deletes all `Notes` on the `DrawingItem`
+
+
+
+Child classes based on `DrawingItem`
+
+---
+
+## LineDrawingItem()
+
+Constructor of a `LineDrawingItem`
+
+
+## getLine
+
+Returns the `LineSegment` object the item is based on
+
+
+## setLine
+
+Specifies a `LineSegment` object to be used for drawing the line
+
+
+---
+
+## RectDrawingItem()
+
+Constructor of a `RectDrawingItem`
+
+
+## getRect
+
+Returns the `Rect` object the item is based on
+
+
+## setRect
+
+Specifies a `Rect` object to be used for drawing the item
+
+
+---
+
+## QuadDrawingItem()
+
+Constructor of a `QuadDrawingItem`
+
+
+## getQuad
+
+Returns the `Quadrilateral` object the item is based on
+
+
+## setQuad
+
+Specifies a `Quadrilateral` object to be used for drawing the item
+
+
+---
+
+## TextDrawingItem()
+
+Constructor of a `TextDrawingItem`
+
+
+## getText
+
+Returns the text drawn
+
+
+## setText
+
+Specifies the text to draw
+
+
+## getTextRect
+
+Returns the `Rect` object which determines where the text is drawn
+
+
+## setTextRect
+
+Specifies a `Rect` object in which the text is drawn
+
+
+---
+
+## ImageDrawingItem()
+
+Constructor of a `ImageDrawingItem`
+
+
+## maintainAspectRatio
+
+Sets or returns whether aspect ratio of the image is maintained when it is drawn
+
+
+## getImage
+
+Returns the image drawn
+
+
+## setImage
+
+Specifies the image to draw
+
+
+## getImageRect
+
+Returns the `Rect` object which determines where the image is drawn
+
+
+## setImageRect
+
+Specifies a `Rect` object in which the image is drawn
+
+

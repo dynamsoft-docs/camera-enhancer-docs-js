@@ -10,17 +10,15 @@ breadcrumbText: Auxiliary
 permalink: /programming/javascript/api-reference/auxiliary.html
 ---
 
-# Auxiliary APIs
+# Class CameraEnhancer
 
-## Class CameraEnhancer
+## Auxiliary
 
 | API Name                                              | Description                                                                                               |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
 | [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
 | [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
-| [dispose()](auxiliary.md#dispose)                     | Releases all resources used by the CameraEnhancer instance.                                               |
-| [disposed](auxiliary.md#disposed)                     | A readonly boolean value indicating whether the CameraEnhancer instance has been disposed.                |
 | [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
 
 **Type definition used on this page**:
@@ -41,7 +39,7 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
 | frameAddedToBuffer  | Triggered each time a new frame is added to the buffer.          |
 
-### on
+## on
 
 Attaches an event handler function for a built-in event.
 
@@ -87,7 +85,7 @@ enhancer.on("frameAddedToBuffer", () => {
 });
 ```
 
-### off
+## off
 
 Removes an event handler.
 
@@ -115,7 +113,7 @@ let cameraChanged = playCallBackInfo => {
 enhancer.on("cameraChange", cameraChanged);
 ```
 
-### offAll
+## offAll
 
 Removes all event handlers from the specified event. If no event is specified, remove all event handlers.
 
@@ -137,7 +135,7 @@ None.
 enhancer.offAll("cameraChange");
 ```
 
-### detectEnvironment
+## detectEnvironment
 
 Returns a report (in JSON) on the current running environments.
 
@@ -169,32 +167,4 @@ A JSON object about the running environment. For example
 
 ```javascript
 await Dynamsoft.DCE.CameraEnhancer.detectEnvironment();
-```
-
-## Class CameraEnhancerModule
-
-| API Name                    | Description                                         |
-| --------------------------- | --------------------------------------------------- |
-| [getVersion()](#getversion) | Returns the version of the `CameraEnhancer` Module. |
-
-### getVersion
-
-Returns the version of the library.
-
-```typescript
-static getVersion(): string;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-The version string of the library.
-
-**Code Snippet**
-
-```javascript
-Dynamsoft.DCE.CameraEnhancer.getVersion();
 ```

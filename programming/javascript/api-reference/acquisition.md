@@ -542,13 +542,6 @@ takePhoto: () => Promise<DCEFrame>;
 **Code Snippet**
 
 ```javascript
-(async () => {
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    enhancer.on('singleFrameAcquired', frameData => {
-        document.body.appendChild(frameData.toCanvas());
-    });
-    enhancer.singleFrameMode = true;
-    await enhancer.open(true);
-})();
+let image = await enhancer.takePhoto();
 ```
 
