@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/enum/enumenhancedfeatures.html
 
 # EnumEnhancedFeatures
 
-```ts
+```typescript
 enum EnumEnhancedFeatures{
     EF_ENHANCED_FOCUS = 0x04,
     EF_AUTO_ZOOM = 0x10,
