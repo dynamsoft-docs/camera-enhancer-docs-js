@@ -6,8 +6,8 @@ keywords: camera enhancer, camera-enhancer module, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
-breadcrumbText: Auxiliary
-permalink: /programming/javascript/api-reference/auxiliary.html
+breadcrumbText: CameraEnhancerModule
+permalink: /programming/javascript/api-reference/cameraenhancermodule.html
 ---
 
 # Class CameraEnhancerModule
