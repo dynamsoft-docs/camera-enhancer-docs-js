@@ -34,9 +34,9 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getBufferOverflowProtectionMode()](#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
 | [isBufferEmpty()](#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
-| [setPixelFormat](#setpixelformat)                                     | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode](#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto](#takephoto)                                               | Invokes the systme camera to take a frame with better image quality.                                |
+| [setPixelFormat()](#setpixelformat)                                     | Sets the pixel format of the images returned by `getImage()`.                                       |
+| [singleFrameMode()](#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
+| [takePhoto()](#takephoto)                                               | Invokes the systme camera to take a frame with better image quality.                                |
 
 ## setScanRegion
 

@@ -14,18 +14,18 @@ permalink: /programming/javascript/api-reference/cameraview.html
 
 ### Create and Destroy Instances
 
-| API Name                                                  | Description                                                                              |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| API Name                                     | Description                                                                              |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `static` [createInstance()](#createinstance) | Creates a `CameraView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
 | [disposed](#disposed)                        | A readonly boolean value indicating whether the `CameraView` instance has been disposed. |
-| [getUIElement()](#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                  |
-| [setUIElement()](#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.    |
+| [getUIElement()](#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                      |
+| [setUIElement()](#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.        |
 
 ### Drawing and UI
 
-| API Name                                                                       | Description                                                                                               |
-| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| API Name                                                          | Description                                                                                               |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [createDrawingLayer()](#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
 | [getDrawingLayer()](#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
 | [getAllDrawingLayers()](#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
@@ -38,12 +38,12 @@ permalink: /programming/javascript/api-reference/cameraview.html
 | [updateTipMessage()](#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
 | [getVisibleRegionOfVideo()](#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [getVideoElement](#getvideoelement)                               | Returns the video element used by the `CameraView` instance.                                              |
-| [setScanRegionMaskStyle()](#setscanregionmaskstyle]               | Sets the drawing style for the scan-region mask.                                                          |
-| [getScanRegionMaskStyle()](#getscanregionmaskstyle]               | Returns the drawing style for the scan-region mask.                                                       |
-| [setScanRegionMaskVisible()](#setscanregionmaskvisible]           | Sets whether to show the scan-region mask.                                                                |
-| [isScanRegionMaskVisible()](#isscanregionmaskvisible]             | Returns whether the scan-region mask is visible.                                                          |
-| [setScanLaserVisible()](#setscanlaservisible]                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
-| [isScanLaserVisible()](#isscanlaservisible)]                      | Returns whether the laser is visible.                                                                     |
+| [setScanRegionMaskStyle()](#setscanregionmaskstyle)               | Sets the drawing style for the scan-region mask.                                                          |
+| [getScanRegionMaskStyle()](#getscanregionmaskstyle)               | Returns the drawing style for the scan-region mask.                                                       |
+| [setScanRegionMaskVisible()](#setscanregionmaskvisible)           | Sets whether to show the scan-region mask.                                                                |
+| [isScanRegionMaskVisible()](#isscanregionmaskvisible)             | Returns whether the scan-region mask is visible.                                                          |
+| [setScanLaserVisible()](#setscanlaservisible)                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
+| [isScanLaserVisible()](#isscanlaservisible)                       | Returns whether the laser is visible.                                                                     |
 
 ## createInstance
 
