@@ -28,7 +28,7 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getMaxImageCount()](#getmaximagecount)                               | Returns the size of the buffer.                                                                     |
 | [getImageCount()](#getimagecount)                                     | Returns how many images are in buffer.                                                              |
 | [hasImage()](#hasimage)                                               | Checks whether an image exists. The image is specified by its id.                                   |
-| [getImage()](#getimgae)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
+| [getImage()](#getimage)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
 | [setNextImageToReturn()](#setnextimagetoreturn)                       | Specifies an image by its id to be returned when `getImage()` is called the next time.              |
 | [setBufferOverflowProtectionMode()](#setbufferoverflowprotectionmode) | Sets a protection mode that determines what happens when the buffer overflows.                      |
 | [getBufferOverflowProtectionMode()](#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
