@@ -10,7 +10,7 @@ breadcrumbText: API Reference
 permalink: /programming/javascript/api-reference/index.html
 ---
 
-# JavaScript API Reference
+# Dynamsoft Camera Enhancer JavaScript API Reference
 
 ## Class CameraEnhancer
 
@@ -181,7 +181,6 @@ permalink: /programming/javascript/api-reference/index.html
 | [getVideoFit()](imageeditorview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element. |
 | [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
-
 
 ### Sub-class DrawingLayer
 

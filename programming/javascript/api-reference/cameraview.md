@@ -2,7 +2,7 @@
 layout: default-layout
 title: CameraView APIs - Dynamsoft Camera Enhancer JavaScript API
 description: This is the page for Dynamsoft Camera Enhancer JavaScript SDK CameraView APIs.
-keywords: cameraView, javascript, js
+keywords: CameraView, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
@@ -47,10 +47,10 @@ permalink: /programming/javascript/api-reference/cameraview.html
 
 ## createInstance
 
-Creates a `cameraView` instance.
+Creates a `CameraView` instance.
 
 ```typescript
-static createInstance: () => Promise<cameraView>;
+static createInstance(): Promise<CameraView>;
 ```
 
 **Parameters**
@@ -59,22 +59,22 @@ None.
 
 **Return value**
 
-A promise resolving to the created `cameraView` object.
+A promise resolving to the created `CameraView` object.
 
 **Code Snippet**
 
 ```javascript
 (async () => {
-    let editorView = await Dynamsoft.DCE.cameraView.createInstance();
+    let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
 })();
 ```
 
 ## dispose
 
-Releases all resources used by the `cameraView` instance.
+Releases all resources used by the `CameraView` instance.
 
 ```typescript
-dispose: () => void;
+dispose(): void;
 ```
 
 **Parameters**
@@ -88,14 +88,14 @@ None.
 **Code Snippet**
 
 ```javascript
-let editorView = await Dynamsoft.DCE.cameraView.createInstance();
+let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
 //...
-editorView.dispose();
+cameraView.dispose();
 ```
 
 ## disposed
 
-A readonly boolean value indicating whether the `cameraView` instance has been disposed.
+A readonly boolean value indicating whether the `CameraView` instance has been disposed.
 
 ```typescript
 readonly disposed: boolean; 
@@ -104,14 +104,14 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let editorView = await Dynamsoft.DCE.cameraView.createInstance();
+let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
 //...
-let flag = editorView.disposed;
+let flag = cameraView.disposed;
 ```
 
 ## getUIElement
 
-Returns the HTML element that is used by the `cameraView` instance.
+Returns the HTML element that is used by the `CameraView` instance.
 
 ```typescript
 getUIElement: () => HTMLElement; 
@@ -133,7 +133,7 @@ const uiElement = cameraView.getUIElement();
 
 ## setUIElement
 
-Specifies an HTML element for the `cameraView` instance to use as its UI element.
+Specifies an HTML element for the `CameraView` instance to use as its UI element.
 
 ```typescript
 setUIElement: (element: HTMLDivElement) => Promise<void>;
@@ -173,9 +173,6 @@ Returns a DrawingLayer object.
 **Code Snippet**
 
 ```javascript
-const containerElement = document.getElementById('imageEditorContainer');
-const cameraView = new cameraView(containerElement);
-// Create a new drawing layer and get a reference to it.
 const newDrawingLayer = cameraView.createDrawingLayer();
 ```
 
@@ -198,8 +195,6 @@ Returns the object of the targeting layer.
 **Code Snippet**
 
 ```javascript
-const containerElement = document.getElementById('imageEditorContainer');
-const cameraView = new cameraView(containerElement);
 retrievedDrawingLayer = cameraView.getDrawingLayer(layerId);
 ```
 
@@ -222,8 +217,6 @@ Returns an array of all DrawingLayer objects.
 **Code Snippet**
 
 ```javascript
-const containerElement = document.getElementById('imageEditorContainer');
-const cameraView = new cameraView(containerElement);
 DrawingLayers = cameraView.getAllDrawingLayers();
 ```
 

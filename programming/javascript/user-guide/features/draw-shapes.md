@@ -11,9 +11,9 @@ permalink: /programming/javascript/user-guide/features/draw-shapes.html
 
 # Draw Shapes with DCE JS
 
-In version 3.0.0 of DCE-JS, we introduced multiple APIs for drawing shapes on the built-in UI. This article will dive into how it works.
+In version 3.0.0 of DCE-JS, we introduced multiple APIs for drawing basic shapes on the built-in UI. This article will dive into how it works.
 
-The following content is based on this code that defines a page:
+We will start with the following code which defines a page that has a CameraEnhancer instance embeded:
 
 ```html
 <!DOCTYPE html>
