@@ -91,9 +91,9 @@ permalink: /programming/javascript/api-reference/index.html
 | [getBufferOverflowProtectionMode()](acquisition.md#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
 | [isBufferEmpty()](acquisition.md#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
-| [setPixelFormat()](acquisition.md#setpixelformat)                                     | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode()](acquisition.md#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](acquisition.md#takephoto)                                               | Invokes the systme camera to take a frame with better image quality.                                |
+| [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
+| [singleFrameMode()](acquisition.md#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
+| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
 
 ### UI
 
@@ -119,18 +119,18 @@ permalink: /programming/javascript/api-reference/index.html
 
 ### Create and Destroy Instances
 
-| API Name                                            | Description                                                                              |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| API Name                                                  | Description                                                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `static` [createInstance()](cameraview.md#createinstance) | Creates a `CameraView` instance.                                                         |
 | [dispose()](cameraview.md#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
 | [disposed](cameraview.md#disposed)                        | A readonly boolean value indicating whether the `CameraView` instance has been disposed. |
-| [getUIElement()](cameraview.md#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                  |
-| [setUIElement()](cameraview.md#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.    |
+| [getUIElement()](cameraview.md#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                      |
+| [setUIElement()](cameraview.md#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.        |
 
 ### Drawing and UI
 
-| API Name                                                                 | Description                                                                                               |
-| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| API Name                                                                       | Description                                                                                               |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | [createDrawingLayer()](cameraview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
 | [getDrawingLayer()](cameraview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
 | [getAllDrawingLayers()](cameraview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
@@ -142,30 +142,30 @@ permalink: /programming/javascript/api-reference/index.html
 | [isTipVisible()](cameraview.md#istipvisible)                                   | Returns whether the tip is visible.                                                                       |
 | [updateTipMessage()](cameraview.md#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
 | [getVisibleRegionOfVideo()](cameraview.md#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
-| [getVideoElement](cameraview.md#getvideoelement)                               | Returns the video element used by the `CameraView` instance.                                              |
-| [setScanRegionMaskStyle()](cameraview.md#setscanregionmaskstyle]               | Sets the drawing style for the scan-region mask.                                                          |
-| [getScanRegionMaskStyle()](cameraview.md#getscanregionmaskstyle]               | Returns the drawing style for the scan-region mask.                                                       |
-| [setScanRegionMaskVisible()](cameraview.md#setscanregionmaskvisible]           | Sets whether to show the scan-region mask.                                                                |
-| [isScanRegionMaskVisible()](cameraview.md#isscanregionmaskvisible]             | Returns whether the scan-region mask is visible.                                                          |
-| [setScanLaserVisible()](cameraview.md#setscanlaservisible]                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
-| [isScanLaserVisible()](cameraview.md#isscanlaservisible)]                      | Returns whether the laser is visible.                                                                     |
+| [getVideoElement()](cameraview.md#getvideoelement)                             | Returns the video element used by the `CameraView` instance.                                              |
+| [setScanRegionMaskStyle()](cameraview.md#setscanregionmaskstyle)               | Sets the drawing style for the scan-region mask.                                                          |
+| [getScanRegionMaskStyle()](cameraview.md#getscanregionmaskstyle)               | Returns the drawing style for the scan-region mask.                                                       |
+| [setScanRegionMaskVisible()](cameraview.md#setscanregionmaskvisible)           | Sets whether to show the scan-region mask.                                                                |
+| [isScanRegionMaskVisible()](cameraview.md#isscanregionmaskvisible)             | Returns whether the scan-region mask is visible.                                                          |
+| [setScanLaserVisible()](cameraview.md#setscanlaservisible)                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
+| [isScanLaserVisible()](cameraview.md#isscanlaservisible)                       | Returns whether the laser is visible.                                                                     |
                   
 ## Class ImageEditorView
 
 ### Create and Destroy Instances
 
-| API Name                                            | Description                                                                              |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| API Name                                                       | Description                                                                                   |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `static` [createInstance()](imageeditorview.md#createinstance) | Creates a `ImageEditorView` instance.                                                         |
 | [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
-| [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                  |
-| [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.    |
+| [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
+| [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.        |
 
 ### DrawingLayer and DrawingItem
 
-| API Name                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| API Name                                                                            | Description                                                              |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.   |
 | [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                               |
 | [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                            |
@@ -179,7 +179,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                              |
 | [setVideoFit()](imageeditorview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                 |
 | [getVideoFit()](imageeditorview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.                     |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
 
