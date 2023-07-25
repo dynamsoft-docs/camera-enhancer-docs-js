@@ -390,35 +390,152 @@ Returns a `Region` object which specifies which part of the original video is sh
 
 ## getVideoElement
 
-Returns the video element used by the `CameraView` instance
+Returns the video element used by the `CameraView` instance.
 
 
 ## setScanRegionMaskStyle
 
-Sets the drawing style for the scan-region mask
+Sets the drawing style for the scan-region mask.
 
+```typescript
+setScanRegionMaskStyle: (newStyle: {
+                lineWidth: number,
+                strokeStyle: string,
+                fillStyle: string
+            }) => void;
+```
+
+**Parameters**
+
+`lineWidth`: The width of the lines used to draw the mask border.
+`strokeStyle`: The color or style of the mask border lines.
+`fillStyle`: The color of the mask's interior fill.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.setScanRegionMaskStyle({
+  lineWidth: 3,
+  strokeStyle: 'red',
+  fillStyle: 'rgba(50, 50, 50, 0.3)'
+});
+```
 
 ## getScanRegionMaskStyle
 
-Returns the drawing style for the scan-region mask
+Returns the drawing style for the scan-region mask.
 
+```typescript
+getScanRegionMaskStyle: () => DrawingStyle;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Returns the current style settings of the scan region mask, which include properties such as lineWidth, strokeStyle, and fillStyle.
+
+**Code Snippet**
+
+```javascript
+const currentStyle = imageEditorView.getScanRegionMaskStyle();
+console.log(currentStyle);
+```
 
 ## setScanRegionMaskVisible
 
-Sets whether to show the scan-region mask
+Sets whether to show the scan-region mask.
 
+```typescript
+setScanRegionMaskVisible: (visible: boolean) => void;
+```
+
+**Parameters**
+
+`visible`: Sets whether to show the scan region mask.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.setScanRegionMaskVisible(False);
+//Set false to hide the region mask.
+```
 
 ## isScanRegionMaskVisible
 
-Returns whether the scan-region mask is visible
+Returns whether the scan-region mask is visible.
 
+```typescript
+isScanRegionMaskVisible: () => boolean;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Returns whether the ScanRegionMask is visible.
+
+**Code Snippet**
+
+```javascript
+const maskIsVisible = imageEditorView.isScanRegionMaskVisible();
+console.log(maskIsVisible); 
+```
 
 ## setScanLaserVisible
 
-Sets whether to show the laser that indicates the scanning is going on
+Sets whether to show the laser that indicates the scanning is going on.
 
+```typescript
+setScanLaserVisible: (visible: boolean) => void;
+```
+
+**Parameters**
+
+`visible`: Sets whether to show the laser.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.setScanLaserVisible(False);
+//Set false to hide the laser.
+```
 
 ## isScanLaserVisible
 
-Returns whether the laser is visible
+Returns whether the laser is visible.
 
+```typescript
+isScanLaserVisible: () => boolean;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Returns whether the laser is visible.
+
+**Code Snippet**
+
+```javascript
+const laserIsVisible = imageEditorView.isScanLaserVisible();
+console.log(laserIsVisible); 
+```
