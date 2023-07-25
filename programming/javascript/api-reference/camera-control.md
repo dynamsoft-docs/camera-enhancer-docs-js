@@ -922,7 +922,7 @@ let zoomRange = enhancer.getAutoZoomRange();
 Enables the specified enhanced features.
 
 ```typescript
-enableEnhancedFeatures: (features: EnumEnhancedFeatures) => Promise<void>;
+enableEnhancedFeatures: (features: EnumEnhancedFeatures) => void;
 ```
 
 **Parameters**
@@ -948,7 +948,7 @@ await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 Disables the specified enhanced features.
 
 ```typescript
-disableEnhancedFeatures: (features: EnumEnhancedFeatures) => Promise<void>;
+disableEnhancedFeatures: (features: EnumEnhancedFeatures) => void;
 ```
 
 **Parameters**
