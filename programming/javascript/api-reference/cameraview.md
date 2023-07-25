@@ -47,10 +47,10 @@ permalink: /programming/javascript/api-reference/cameraview.html
 
 ## createInstance
 
-Creates a `ImageEditorView` instance.
+Creates a `cameraView` instance.
 
 ```typescript
-static createInstance: () => Promise<ImageEditorView>;
+static createInstance: () => Promise<cameraView>;
 ```
 
 **Parameters**
@@ -59,19 +59,19 @@ None.
 
 **Return value**
 
-A promise resolving to the created `ImageEditorView` object.
+A promise resolving to the created `cameraView` object.
 
 **Code Snippet**
 
 ```javascript
 (async () => {
-    let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+    let editorView = await Dynamsoft.DCE.cameraView.createInstance();
 })();
 ```
 
 ## dispose
 
-Releases all resources used by the `ImageEditorView` instance.
+Releases all resources used by the `cameraView` instance.
 
 ```typescript
 dispose: () => void;
@@ -88,14 +88,14 @@ None.
 **Code Snippet**
 
 ```javascript
-let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+let editorView = await Dynamsoft.DCE.cameraView.createInstance();
 //...
 editorView.dispose();
 ```
 
 ## disposed
 
-A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed.
+A readonly boolean value indicating whether the `cameraView` instance has been disposed.
 
 ```typescript
 readonly disposed: boolean; 
@@ -104,14 +104,14 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+let editorView = await Dynamsoft.DCE.cameraView.createInstance();
 //...
 let flag = editorView.disposed;
 ```
 
 ## getUIElement
 
-Returns the HTML element that is used by the `ImageEditorView` instance.
+Returns the HTML element that is used by the `cameraView` instance.
 
 ```typescript
 getUIElement: () => HTMLElement; 
@@ -128,12 +128,12 @@ Returns an HTMLElement.
 **Code Snippet**
 
 ```javascript
-const uiElement = imageEditorView.getUIElement();
+const uiElement = cameraView.getUIElement();
 ```
 
 ## setUIElement
 
-Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.
+Specifies an HTML element for the `cameraView` instance to use as its UI element.
 
 ```typescript
 setUIElement: (element: HTMLDivElement) => Promise<void>;
@@ -151,7 +151,7 @@ None.
 
 ```javascript
 const containerElement1 = document.getElementById('imageEditorContainer1');
-await imageEditorView.setUIElement(containerElement1);
+await cameraView.setUIElement(containerElement1);
 ```
 
 ## createDrawingLayer
@@ -174,9 +174,9 @@ Returns a DrawingLayer object.
 
 ```javascript
 const containerElement = document.getElementById('imageEditorContainer');
-const imageEditorView = new ImageEditorView(containerElement);
+const cameraView = new cameraView(containerElement);
 // Create a new drawing layer and get a reference to it.
-const newDrawingLayer = imageEditorView.createDrawingLayer();
+const newDrawingLayer = cameraView.createDrawingLayer();
 ```
 
 ## getDrawingLayer
@@ -199,8 +199,8 @@ Returns the object of the targeting layer.
 
 ```javascript
 const containerElement = document.getElementById('imageEditorContainer');
-const imageEditorView = new ImageEditorView(containerElement);
-retrievedDrawingLayer = imageEditorView.getDrawingLayer(layerId);
+const cameraView = new cameraView(containerElement);
+retrievedDrawingLayer = cameraView.getDrawingLayer(layerId);
 ```
 
 ## getAllDrawingLayers
@@ -223,8 +223,8 @@ Returns an array of all DrawingLayer objects.
 
 ```javascript
 const containerElement = document.getElementById('imageEditorContainer');
-const imageEditorView = new ImageEditorView(containerElement);
-DrawingLayers = imageEditorView.getAllDrawingLayers();
+const cameraView = new cameraView(containerElement);
+DrawingLayers = cameraView.getAllDrawingLayers();
 ```
 
 ## deleteUserDefinedDrawingLayer
@@ -246,7 +246,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.deleteUserDefinedDrawingLayer(DrawingLayerId);
+cameraView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 ```
 
 ## clearUserDefinedDrawingLayers
@@ -268,7 +268,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.clearUserDefinedDrawingLayers();
+cameraView.clearUserDefinedDrawingLayers();
 ```
 
 ## setTipConfig
@@ -290,7 +290,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.setTipConfig(TipConfig);
+cameraView.setTipConfig(TipConfig);
 ```
 
 ## getTipConfig
@@ -312,7 +312,7 @@ Returns the configuration of the tip.
 **Code Snippet**
 
 ```javascript
-const tipConfig = imageEditorView.getTipConfig();
+const tipConfig = cameraView.getTipConfig();
 ```
 
 ## setTipVisible
@@ -334,7 +334,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.setTipVisible(False);
+cameraView.setTipVisible(False);
 //Set false to hide the tip.
 ```
 
@@ -357,7 +357,7 @@ Returns whether the tip is visible.
 **Code Snippet**
 
 ```javascript
-const tipIsVisible = imageEditorView.isTipVisible();
+const tipIsVisible = cameraView.isTipVisible();
 console.log(tipIsVisible); 
 ```
 
@@ -371,7 +371,7 @@ updateTipMessage: (message: string) => void;
 
 **Parameters**
 
-`message`: A string used to update or change the content of the tip message displayed in the imageEditorView.
+`message`: A string used to update or change the content of the tip message displayed in the cameraView.
 
 **Return value**
 
@@ -380,7 +380,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.updateTipMessage('Hold the phone closer.');
+cameraView.updateTipMessage('Hold the phone closer.');
 ```
 
 ## getVisibleRegionOfVideo
@@ -411,6 +411,16 @@ setScanRegionMaskStyle: (newStyle: {
 `strokeStyle`: The color or style of the mask border lines.
 `fillStyle`: The color of the mask's interior fill.
 
+> The default value is
+>
+> ```javascript
+> lineWidth = 2; 
+> strokeStyle = "rgb(254,142,20)"; 
+> fillStyle = "rgba(0,0,0,0.5)"; 
+> ```
+>
+> Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) and [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+
 **Return value**
 
 None.
@@ -418,7 +428,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.setScanRegionMaskStyle({
+cameraView.setScanRegionMaskStyle({
   lineWidth: 3,
   strokeStyle: 'red',
   fillStyle: 'rgba(50, 50, 50, 0.3)'
@@ -444,7 +454,7 @@ Returns the current style settings of the scan region mask, which include proper
 **Code Snippet**
 
 ```javascript
-const currentStyle = imageEditorView.getScanRegionMaskStyle();
+const currentStyle = cameraView.getScanRegionMaskStyle();
 console.log(currentStyle);
 ```
 
@@ -467,7 +477,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.setScanRegionMaskVisible(False);
+cameraView.setScanRegionMaskVisible(False);
 //Set false to hide the region mask.
 ```
 
@@ -490,7 +500,7 @@ Returns whether the ScanRegionMask is visible.
 **Code Snippet**
 
 ```javascript
-const maskIsVisible = imageEditorView.isScanRegionMaskVisible();
+const maskIsVisible = cameraView.isScanRegionMaskVisible();
 console.log(maskIsVisible); 
 ```
 
@@ -513,7 +523,7 @@ None.
 **Code Snippet**
 
 ```javascript
-imageEditorView.setScanLaserVisible(False);
+cameraView.setScanLaserVisible(False);
 //Set false to hide the laser.
 ```
 
@@ -536,6 +546,6 @@ Returns whether the laser is visible.
 **Code Snippet**
 
 ```javascript
-const laserIsVisible = imageEditorView.isScanLaserVisible();
+const laserIsVisible = cameraView.isScanLaserVisible();
 console.log(laserIsVisible); 
 ```

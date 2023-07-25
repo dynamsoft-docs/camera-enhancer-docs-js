@@ -382,21 +382,112 @@ imageEditorView.updateTipMessage('Hold the phone closer.');
 
 ## getSelectedDrawingItems
 
-Returns the selected DrawingItem object(s).
+Returns all selected DrawingItem object(s) from different drawing layers.
+
+```typescript
+getSelectedDrawingItems: () => Promise<Array<DrawingItem>>;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Returns a Promise that resolves to an array of DrawingItem objects representing the currently selected drawing items in the image editor view.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.updateTipMessage('Hold the phone closer.');
+```
 
 ## setVideoFit
 
 Sets the `object-fit` CSS property of the video element.
 
+```typescript
+setVideoFit: (objectFit: string) => void;
+```
+
+**Parameters**
+
+`objectFit`: Specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.setVideoFit("cover");
+```
 
 ## getVideoFit
 
 Returns the value of the `object-fit` CSS property of the video element.
 
+```typescript
+getVideoFit: () => string;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+The value of the `object-fit` CSS property.
+
+**Code Snippet**
+
+```javascript
+imageEditorView.getVideoFit();
+```
+
 ## setOriginalImage
 
-Sets the image to be drawn on the image editor imageeditorview.
+Sets the image to be drawn on the image editor image editor view.
+
+```typescript
+setOriginalImage: (img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement) => Promise<void>;
+```
+
+**Parameters**
+
+`img` : Specifies the image data in format of `DSImageData` , `HTMLImageElement` or `HTMLCanvasElement`.  
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+let currentFrame = enhancer.getFrame();
+let cvs = currentFrame.toCanvas();
+imageEditorView.setOriginalImage(cvs);
+```
 
 ## getOriginalImage
 
 Returns the image drawn on the image editor.
+
+```typescript
+getOriginalImage: () => Promise<Core.BasicStructures.DSImageData>;
+```
+
+**Parameters**
+
+None.  
+
+**Return value**
+
+Returns a Promise that resolves to a Core.BasicStructures.DSImageData object representing the original image displayed in the image editor view.
+
+**Code Snippet**
+
+```javascript
+let image = imageEditorView.getOriginalImage();
+```
