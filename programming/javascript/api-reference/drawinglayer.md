@@ -57,10 +57,10 @@ dlrDrawingLayer.setDefaultStyle(newStyleId)
 
 ## getId
 
-Returns the Id of the `DrawingLayer` .
+Returns the Id of the `DrawingLayer`.
 
 ```typescript
-getId: () => number;
+getId(): number;
 ```
 
 **Code Snippet**
@@ -73,10 +73,10 @@ let drawingLayerId = drawingLayer.getId();
 
 ## addDrawingItems
 
-Adds `DrawingItems` to the `DrawingLayer`
+Adds `DrawingItems` to the `DrawingLayer`.
 
 ```typescript
-addDrawingItems: (drawingItems: Array<DrawingItem>) => void;
+addDrawingItems(drawingItems: Array<DrawingItem>): void;
 ```
 
 **Code Snippet**
@@ -121,7 +121,7 @@ drawingLayer.addDrawingItems(drawingItems);
 Returns all `DrawingItems` or just some of them based on a filter function.
 
 ```typescript
-getDrawingItems: (filter?: (item: DrawingItem) => boolean) => Array<DrawingItem>);
+getDrawingItems(filter?: (item: DrawingItem) => boolean): Array<DrawingItem>;
 ```
 
 **Parameters**
@@ -146,7 +146,7 @@ let drawingItems = drawingLayer.getDrawingItems(item => item.mediaType === EnumD
 Replaces all `DrawingItems` of the DrawingLayer with new ones.
 
 ```typescript
-setDrawingItems: (drawingItems: Array<DrawingItem>) => void;
+setDrawingItems(drawingItems: Array<DrawingItem>): void;
 ```
 
 **Code Snippet**
@@ -191,7 +191,7 @@ drawingLayer.setDrawingItems(newDrawingItems);
 Checks out if a `DrawingItem` belongs to the layer.
 
 ```typescript
-hasDrawingItem: (drawingItem: DrawingItem) => Boolean;
+hasDrawingItem(drawingItem: DrawingItem): Boolean;
 ```
 
 **Code Snippet**
@@ -218,7 +218,7 @@ let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 Removes `DrawingItems` from the DrawingLayer.   
 
 ```typescript
-removeDrawingItems: (drawingItems: Array<DrawingItem>) => void;
+removeDrawingItems(drawingItems: Array<DrawingItem>): void;
 ```
 
 **Code Snippet**
@@ -254,7 +254,7 @@ drawingLayer.removeDrawingItems(drawingItems);
 Removes all `DrawingItems` from the DrawingLayer.
 
 ```typescript
-clearDrawingItems: () => void;
+clearDrawingItems(): void;
 ```
 
 **Code Snippet**
@@ -273,7 +273,7 @@ Renders all `DrawingItems` , usually required when
 * One or multiple `DrawingItems` have changed their properties such as the coordinates for the top-left corner of a `RectDrawingItem` item.
 
 ```typescript
-renderAll: () => boolean;
+renderAll(): boolean;
 ```
 
 **Code Snippet**
@@ -294,7 +294,7 @@ Sets the style for `DrawingItems` on the `DrawingLayer`
 * If "state" and "mediaType" are both specified, the style will only apply to `DrawingItems` of that "mediaType" in that "state".
 
 ```typescript
-setDefaultStyle: (drawingStyleId: number, state?: EnumDrawingItemState, mediaType?: EnumDrawingItemMediaType) => void;
+setDefaultStyle(drawingStyleId: number, state?: EnumDrawingItemState, mediaType?: EnumDrawingItemMediaType): void;
 ```
 
 **Parameters**
@@ -325,7 +325,7 @@ drawingLayer.setDefaultStyle(1, EnumDrawingItemState.DIS_SELECTED, EnumDrawingIt
 Shows or hides the `DrawingLayer` .
 
 ```typescript
-setVisible: (visibility: boolean) => void;
+setVisible(visibility: boolean): void;
 ```
 
 **Parameters**
@@ -345,7 +345,7 @@ drawingLayer.setVisible(false);
 Returns whether the `DrawingLayer` is visible.
 
 ```typescript
-isVisible: () => boolean;
+isVisible(): boolean;
 ```
 
 **Code Snippet**
@@ -361,7 +361,7 @@ let isVisible = drawingLayer.isVisible();
 An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`.
 
 ```typescript
-onSelectionChange: (selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>) => void;
+onSelectionChange(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>): void;
 ```
 
 **Parameters**

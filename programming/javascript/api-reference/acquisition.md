@@ -34,16 +34,16 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getBufferOverflowProtectionMode()](#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
 | [isBufferEmpty()](#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
-| [setPixelFormat()](#setpixelformat)                                     | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode()](#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](#takephoto)                                               | Invokes the systme camera to take a frame with better image quality.                                |
+| [setPixelFormat()](#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
+| [singleFrameMode()](#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
+| [takePhoto()](#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
 
 ## setScanRegion
 
 Specifies which part of the original video is considered when processing frames.
 
 ```typescript
-setScanRegion: (region: Rect | DSRect) => void;
+setScanRegion(region: Rect | DSRect): void;
 ```
 
 **Parameters**
@@ -77,7 +77,7 @@ enhancer.setScanRegion(scanRegion);
 Returns the scan region.
 
 ```typescript
-getScanRegion: () => DSRect;
+getScanRegion(): DSRect;
 ```
 
 **Parameters**
@@ -103,7 +103,7 @@ let region = enhancer.getScanRegion();
 Returns a `DCEFrame` object which contains the image data of the latest frame from the video input.
 
 ```typescript
-fetchImage: () => DCEFrame;
+fetchImage(): DCEFrame;
 ```
 
 **Parameters**
@@ -130,7 +130,7 @@ document.body.appendChild(image.toCanvas());
 Adds an `DSImageData` object to the buffer.
 
 ```typescript
-addImageToBuffer: (image: DSImageData) => void;
+addImageToBuffer(image: DSImageData): void;
 ```
 
 **Parameters**
@@ -153,7 +153,7 @@ enhancer.addImageToBuffer(image);
 Sets the interval at which `fetchImage()` is called when continuoued fetching has started.
 
 ```typescript
-setImageFetchInterval: (interval: number) => void;
+setImageFetchInterval(interval: number): void;
 ```
 
 **Parameters**
@@ -175,7 +175,7 @@ enhancer.setImageFetchInterval(200);
 Returns the fetch interval.
 
 ```typescript
-getImageFetchInterval: () => number;
+getImageFetchInterval(): number;
 ```
 
 **Parameters**
@@ -197,7 +197,7 @@ let fetchInterval = enhancer.getImageFetchInterval();
 Starts to continuously fetch images and put them into the buffer.
 
 ```typescript
-startFetching: () => void;
+startFetching(): void;
 ```
 
 **Parameters**
@@ -219,7 +219,7 @@ enhancer.startFetching();
 Stops fetching any more images.
 
 ```typescript
-stopFetching: () => void;
+stopFetching(): void;
 ```
 
 **Parameters**
@@ -241,7 +241,7 @@ enhancer.stopFetching();
 Sets the size of the buffer as in how many images can be buffered.
 
 ```typescript
-setMaxImageCount: (count: number) => void;
+setMaxImageCount: (count: number) void;
 ```
 
 **Parameters**
@@ -263,7 +263,7 @@ enhancer.setMaxImageCount(10);
 Returns the size of the buffer.
 
 ```typescript
-getMaxImageCount: () => number;
+getMaxImageCount(): number;
 ```
 
 **Parameters**
@@ -285,7 +285,7 @@ let bufferSize = enhancer.getMaxImageCount();
 Returns how many images are in buffer.
 
 ```typescript
-getImageCount: () => number;
+getImageCount(): number;
 ```
 
 **Parameters**
@@ -307,7 +307,7 @@ let imageCount = enhancer.getImageCount();
 Checks whether an image exists. The image is specified by its id.
 
 ```typescript
-hasImage: (imageId: number) => boolean;
+hasImage(imageId: number): boolean;
 ```
 
 **Parameters**
@@ -329,7 +329,7 @@ let imageCount = enhancer.hasImage(10);
 Returns a `DCEFrame` object from the buffer.
 
 ```typescript
-getImage: () => DCEFrame;
+getImage(): DCEFrame;
 ```
 
 **Parameters**
@@ -356,7 +356,7 @@ document.body.appendChild(image.toCanvas());
 Specifies an image by its id to be returned when `getImage()` is called the next time.
 
 ```typescript
-setNextImageToReturn: (imageId: number, keepInBuffer?: boolean) => void;
+setNextImageToReturn(imageId: number, keepInBuffer?: boolean): void;
 ```
 
 **Parameters**
@@ -381,7 +381,7 @@ document.body.appendChild(image.toCanvas());
 Sets a protection mode that determines what happens when the buffer overflows.
 
 ```typescript
-setBufferOverflowProtectionMode: (mode:EnumBufferOverflowProtectionMode) => void;
+setBufferOverflowProtectionMode(mode:EnumBufferOverflowProtectionMode): void;
 ```
 
 **Parameters**
@@ -407,7 +407,7 @@ enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_A
 Returns the buffer protection mode.
 
 ```typescript
-getBufferOverflowProtectionMode: () => EnumBufferOverflowProtectionMode;
+getBufferOverflowProtectionMode(): EnumBufferOverflowProtectionMode;
 ```
 
 **Parameters**
@@ -433,7 +433,7 @@ enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_A
 Returns whether the buffer is empty.
 
 ```typescript
-isBufferEmpty: () => boolean;
+isBufferEmpty(): boolean;
 ```
 
 **Parameters**
@@ -457,7 +457,7 @@ if(enhancer.isBufferEmpty()) {
 Checks whether another image can be fetched.
 
 ```typescript
-hasNextImageToFetch: () => boolean;
+hasNextImageToFetch(): boolean;
 ```
 
 **Parameters**
@@ -481,9 +481,9 @@ if(!enhancer.hasNextImageToFetch()) {
 Sets the pixel format of the images returned by `getImage()`.
 
 ```typescript
-setPixelFormat: (pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
+setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
                 | EnumImagePixelFormat.IPF_ABGR_8888
-                | EnumImagePixelFormat.IPF_ARGB_8888)=> void;
+                | EnumImagePixelFormat.IPF_ARGB_8888): void;
 ```
 
 **Parameters**
@@ -533,15 +533,28 @@ singleFrameMode: boolean;
 
 ## takePhoto
 
-Invokes the systme camera to take a frame with better image quality.
+Invokes the system camera to take a frame with better image quality.
 
 ```typescript
-takePhoto: () => Promise<DCEFrame>;
+takePhoto(listener(dceFrame:DCEFrame): void);
 ```
+
+**Parameter**
+
+`listener`: The listener callback function expects a single argument of type DCEFrame, representing the data related to the captured photo.
+
+**Return Value**
+
+None.
 
 **Code Snippet**
 
 ```javascript
-let image = await enhancer.takePhoto();
-```
+function handleCapturedPhoto(dceFrame) {
+  console.log('Captured Photo Data:', dceFrame);
+  // Process the captured photo data as needed.
+}
 
+// Capture a photo and invoke the listener with the captured data.
+enhancer.takePhoto(handleCapturedPhoto);
+```

@@ -16,10 +16,10 @@ permalink: /programming/javascript/api-reference/ui.html
 
 | API Name                                                         | Description                                                                                                                                                      |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
-| [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
-| [getVideoEl](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [setVideoEl](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
+| [getCameraView()](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
+| [setCameraView()](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
+| [getVideoEl()](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
+| [setVideoEl()](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
 | [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
 
@@ -28,7 +28,7 @@ permalink: /programming/javascript/api-reference/ui.html
 Returns the `CameraView` instance used by the `CameraEnhancer` instance.
 
 ```typescript
-getCameraView: () => CameraView;
+getCameraView(): CameraView;
 ```
 
 **Parameters**
@@ -51,7 +51,7 @@ cameraView.getVisibleRegionOfVideo();
 Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.
 
 ```typescript
-setCameraView: (cameraView: CameraView) => void;
+setCameraView(cameraView: CameraView): void;
 ```
 
 **Parameters**
@@ -74,7 +74,7 @@ enhancer.setCameraView(cameraView);
 Returns the video element used by the `CameraView` instance.
 
 ```typescript
-getVideoEl: () => HTMLVideoElement;
+getVideoEl(): HTMLVideoElement;
 ```
 
 **Parameters**
@@ -96,7 +96,7 @@ let videoElement = enhancer.getVideoEl();
 Sets a video element to be used by the `CameraView` instance.
 
 ```typescript
-setVideoEl: (videoElement: HTMLVideoElement) => Promise<void>;
+setVideoEl(videoElement: HTMLVideoElement): Promise<void>;
 ```
 
 **Parameters**
@@ -119,7 +119,7 @@ enhancer.setVideoEl(el);
 Converts coordinates of a point to the coordinates relative to the top left point of the entire document.
 
 ```typescript
-convertToPageCoordinates: (point: Point) => Point;
+convertToPageCoordinates(point: Point): Point;
 ```
 
 **Parameters**
@@ -145,7 +145,7 @@ enhancer.convertToPageCoordinates({x: 0, y: 0});
 Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
 
 ```typescript
-convertToClientCoordinates: (point: Point) => Point;
+convertToClientCoordinates(point: Point): Point;
 ```
 
 **Parameters**

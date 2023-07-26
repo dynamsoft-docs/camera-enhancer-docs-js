@@ -24,7 +24,7 @@ permalink: /programming/javascript/api-reference/drawingstylemanager.html
 Creates a new `DrawingStyle` object and returns its ID.
 
 ```typescript
-static createDrawingStyle: (styleDefinition: DrawingStyle) => number; 
+static createDrawingStyle(styleDefinition: DrawingStyle): number; 
 ```
 
 **Parameters**
@@ -68,7 +68,7 @@ Returns the `DrawingStyle` object specified by its Id.
 > The SDK comes with 8 default styles with the IDs 1 ~ 8, check [DrawingStyle](interface/drawingstyle.md) for more information.
 
 ```typescript
-static getDrawingStyle: (styleId: number) => DrawingStyle; 
+static getDrawingStyle(styleId: number): DrawingStyle; 
 ```
 
 **Parameters**
@@ -95,7 +95,7 @@ let drawingStyle = Dynamsoft.DCE.DrawingStyleManager.getDrawingStyle(100);
 Returns all `DrawingStyle` objects.
 
 ```typescript
-static getAllDrawingStyles: () => Array<DrawingStyle>; 
+static getAllDrawingStyles(): Array<DrawingStyle>; 
 ```
 
 **Return value**
@@ -119,7 +119,7 @@ Updates an existing `DrawingStyle` specified by its ID. You can update all prope
 > The update takes effect immediately.
 
 ```typescript
-static updateDrawingStyle: (styleId: number, styleDefinition: DrawingStyle) => void; 
+static updateDrawingStyle(styleId: number, styleDefinition: DrawingStyle): void; 
 ```
 
 **Parameters**

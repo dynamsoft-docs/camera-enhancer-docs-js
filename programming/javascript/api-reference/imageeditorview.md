@@ -47,7 +47,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 Creates a `ImageEditorView` instance.
 
 ```typescript
-static createInstance: () => Promise<ImageEditorView>;
+static createInstance(): Promise<ImageEditorView>;
 ```
 
 **Parameters**
@@ -71,7 +71,7 @@ A promise resolving to the created `ImageEditorView` object.
 Releases all resources used by the `ImageEditorView` instance.
 
 ```typescript
-dispose: () => void;
+dispose(): void;
 ```
 
 **Parameters**
@@ -92,7 +92,7 @@ editorView.dispose();
 
 ## disposed
 
-A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed.
+A read-only Boolean value indicating whether the `ImageEditorView` instance has been disposed.
 
 ```typescript
 readonly disposed: boolean; 
@@ -111,7 +111,7 @@ let flag = editorView.disposed;
 Returns the HTML element that is used by the `ImageEditorView` instance.
 
 ```typescript
-getUIElement: () => HTMLElement; 
+getUIElement(): HTMLElement; 
 ```
 
 **Parameters**
@@ -133,7 +133,7 @@ const uiElement = imageEditorView.getUIElement();
 Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.
 
 ```typescript
-setUIElement: (element: HTMLDivElement) => Promise<void>;
+setUIElement(element: HTMLDivElement): Promise<void>;
 ```
 
 **Parameters**
@@ -156,7 +156,7 @@ await imageEditorView.setUIElement(containerElement1);
 Creates a DrawingLayer object and put it in an array of DrawingLayers.
 
 ```typescript
-createDrawingLayer: () => DrawingLayer;
+createDrawingLayer(): DrawingLayer;
 ```
 
 **Parameters**
@@ -181,7 +181,7 @@ const newDrawingLayer = imageEditorView.createDrawingLayer();
 Gets the DrawingLayer specified by its ID.
 
 ```typescript
-getDrawingLayer: (id: number) => DrawingLayer;
+getDrawingLayer(id: number): DrawingLayer;
 ```
 
 **Parameters**
@@ -205,7 +205,7 @@ retrievedDrawingLayer = imageEditorView.getDrawingLayer(layerId);
 Returns an array of all DrawingLayer objects.
 
 ```typescript
-getAllDrawingLayers: () => Array<DrawingLayer>;
+getAllDrawingLayers(): Array<DrawingLayer>;
 ```
 
 **Parameters**
@@ -229,7 +229,7 @@ DrawingLayers = imageEditorView.getAllDrawingLayers();
 Deletes a DrawingLayer object specified by its ID.
 
 ```typescript
-deleteUserDefinedDrawingLayer: (id: number) => void;
+deleteUserDefinedDrawingLayer(id: number): void;
 ```
 
 **Parameters**
@@ -251,7 +251,7 @@ imageEditorView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 Removes all user-defined DrawingLayers.
 
 ```typescript
-clearUserDefinedDrawingLayers: () => void;
+clearUserDefinedDrawingLayers(): void;
 ```
 
 **Parameters**
@@ -273,7 +273,7 @@ imageEditorView.clearUserDefinedDrawingLayers();
 Configures the tip feature.
 
 ```typescript
-setTipConfig: (tipConfig: TipConfig) => void;
+setTipConfig(tipConfig: TipConfig): void;
 ```
 
 **Parameters**
@@ -295,7 +295,7 @@ imageEditorView.setTipConfig(TipConfig);
 Returns the configuration of the tip.
 
 ```typescript
-getTipConfig: () => TipConfig;
+getTipConfig(): TipConfig;
 ```
 
 **Parameters**
@@ -317,7 +317,7 @@ const tipConfig = imageEditorView.getTipConfig();
 Sets whether to show the tip.
 
 ```typescript
-setTipVisible: (visible: boolean) => void;
+setTipVisible(visible: boolean): void;
 ```
 
 **Parameters**
@@ -340,7 +340,7 @@ imageEditorView.setTipVisible(False);
 Returns whether the tip is visible.
 
 ```typescript
-isTipVisible: () => boolean;
+isTipVisible(): boolean;
 ```
 
 **Parameters**
@@ -363,7 +363,7 @@ console.log(tipIsVisible);
 Updates the message shown in the tip.
 
 ```typescript
-updateTipMessage: (message: string) => void;
+updateTipMessage(message: string): void;
 ```
 
 **Parameters**
@@ -385,7 +385,7 @@ imageEditorView.updateTipMessage('Hold the phone closer.');
 Returns all selected DrawingItem object(s) from different drawing layers.
 
 ```typescript
-getSelectedDrawingItems: () => Promise<Array<DrawingItem>>;
+getSelectedDrawingItems(): Promise<Array<DrawingItem>>;
 ```
 
 **Parameters**
@@ -399,7 +399,7 @@ Returns a Promise that resolves to an array of DrawingItem objects representing 
 **Code Snippet**
 
 ```javascript
-imageEditorView.updateTipMessage('Hold the phone closer.');
+let drawingItems = imageEditorView.getSelectedDrawingItems();
 ```
 
 ## setVideoFit
@@ -407,7 +407,7 @@ imageEditorView.updateTipMessage('Hold the phone closer.');
 Sets the `object-fit` CSS property of the video element.
 
 ```typescript
-setVideoFit: (objectFit: string) => void;
+setVideoFit(objectFit: string): void;
 ```
 
 **Parameters**
@@ -429,7 +429,7 @@ imageEditorView.setVideoFit("cover");
 Returns the value of the `object-fit` CSS property of the video element.
 
 ```typescript
-getVideoFit: () => string;
+getVideoFit(): string;
 ```
 
 **Parameters**
@@ -443,7 +443,7 @@ The value of the `object-fit` CSS property.
 **Code Snippet**
 
 ```javascript
-imageEditorView.getVideoFit();
+let videofitType = imageEditorView.getVideoFit();
 ```
 
 ## setOriginalImage
@@ -451,7 +451,7 @@ imageEditorView.getVideoFit();
 Sets the image to be drawn on the image editor image editor view.
 
 ```typescript
-setOriginalImage: (img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement) => Promise<void>;
+setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): Promise<void>;
 ```
 
 **Parameters**
@@ -475,7 +475,7 @@ imageEditorView.setOriginalImage(cvs);
 Returns the image drawn on the image editor.
 
 ```typescript
-getOriginalImage: () => Promise<Core.BasicStructures.DSImageData>;
+getOriginalImage(): Promise<Core.BasicStructures.DSImageData>;
 ```
 
 **Parameters**

@@ -95,7 +95,7 @@ cameraView.dispose();
 
 ## disposed
 
-A readonly boolean value indicating whether the `CameraView` instance has been disposed.
+A read-only Boolean value indicating whether the `CameraView` instance has been disposed.
 
 ```typescript
 readonly disposed: boolean; 
@@ -114,7 +114,7 @@ let flag = cameraView.disposed;
 Returns the HTML element that is used by the `CameraView` instance.
 
 ```typescript
-getUIElement: () => HTMLElement; 
+getUIElement(): HTMLElement; 
 ```
 
 **Parameters**
@@ -136,7 +136,7 @@ const uiElement = cameraView.getUIElement();
 Specifies an HTML element for the `CameraView` instance to use as its UI element.
 
 ```typescript
-setUIElement: (element: HTMLDivElement) => Promise<void>;
+setUIElement(element: HTMLDivElement): Promise<void>;
 ```
 
 **Parameters**
@@ -159,7 +159,7 @@ await cameraView.setUIElement(containerElement1);
 Creates a DrawingLayer object and put it in an array of DrawingLayers.
 
 ```typescript
-createDrawingLayer: () => DrawingLayer;
+createDrawingLayer(): DrawingLayer;
 ```
 
 **Parameters**
@@ -181,7 +181,7 @@ const newDrawingLayer = cameraView.createDrawingLayer();
 Gets the DrawingLayer specified by its ID.
 
 ```typescript
-getDrawingLayer: (id: number) => DrawingLayer;
+getDrawingLayer(id: number): DrawingLayer;
 ```
 
 **Parameters**
@@ -203,7 +203,7 @@ retrievedDrawingLayer = cameraView.getDrawingLayer(layerId);
 Returns an array of all DrawingLayer objects.
 
 ```typescript
-getAllDrawingLayers: () => Array<DrawingLayer>;
+getAllDrawingLayers(): Array<DrawingLayer>;
 ```
 
 **Parameters**
@@ -225,7 +225,7 @@ DrawingLayers = cameraView.getAllDrawingLayers();
 Deletes a DrawingLayer object specified by its ID.
 
 ```typescript
-deleteUserDefinedDrawingLayer: (id: number) => void;
+deleteUserDefinedDrawingLayer(id: number): void;
 ```
 
 **Parameters**
@@ -247,7 +247,7 @@ cameraView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 Removes all user-defined DrawingLayers.
 
 ```typescript
-clearUserDefinedDrawingLayers: () => void;
+clearUserDefinedDrawingLayers(): void;
 ```
 
 **Parameters**
@@ -269,7 +269,7 @@ cameraView.clearUserDefinedDrawingLayers();
 Configures the tip feature.
 
 ```typescript
-setTipConfig: (tipConfig: TipConfig) => void;
+setTipConfig(tipConfig: TipConfig): void;
 ```
 
 **Parameters**
@@ -291,7 +291,7 @@ cameraView.setTipConfig(TipConfig);
 Returns the configuration of the tip.
 
 ```typescript
-getTipConfig: () => TipConfig;
+getTipConfig(): TipConfig;
 ```
 
 **Parameters**
@@ -313,7 +313,7 @@ const tipConfig = cameraView.getTipConfig();
 Sets whether to show the tip.
 
 ```typescript
-setTipVisible: (visible: boolean) => void;
+setTipVisible(visible: boolean): void;
 ```
 
 **Parameters**
@@ -336,7 +336,7 @@ cameraView.setTipVisible(False);
 Returns whether the tip is visible.
 
 ```typescript
-isTipVisible: () => boolean;
+isTipVisible(): boolean;
 ```
 
 **Parameters**
@@ -359,7 +359,7 @@ console.log(tipIsVisible);
 Updates the message shown in the tip.
 
 ```typescript
-updateTipMessage: (message: string) => void;
+updateTipMessage(message: string): void;
 ```
 
 **Parameters**
@@ -378,24 +378,58 @@ cameraView.updateTipMessage('Hold the phone closer.');
 
 ## getVisibleRegionOfVideo
 
-Returns a `Region` object which specifies which part of the original video is shown in the video element
+Returns a `Region` object which specifies which part of the original video is shown in the video element.
 
+```typescript
+getVisibleRegionOfVideo(options: { inPixels?: boolean }): Core.BasicStructures.Rect;
+```
+
+**Parameters**
+
+`options`: Have an inPixels property to specify whether the returned Rect should be in pixel or percentage.
+
+**Return value**
+
+Returns a Rect object that defines the visible region of the video.
+
+**Code Snippet**
+
+```javascript
+let visibleRegion = cameraView.getVisibleRegionOfVideo();
+```
 
 ## getVideoElement
 
 Returns the video element used by the `CameraView` instance.
 
+```typescript
+getVideoElement(): HTMLVideoElement;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Returns a HTMLVideoElement.
+
+**Code Snippet**
+
+```javascript
+let videoElement = cameraView.getVideoElement();
+```
 
 ## setScanRegionMaskStyle
 
 Sets the drawing style for the scan-region mask.
 
 ```typescript
-setScanRegionMaskStyle: (newStyle: {
+setScanRegionMaskStyle(newStyle: {
                 lineWidth: number,
                 strokeStyle: string,
                 fillStyle: string
-            }) => void;
+            }): void;
 ```
 
 **Parameters**
@@ -433,7 +467,7 @@ cameraView.setScanRegionMaskStyle({
 Returns the drawing style for the scan-region mask.
 
 ```typescript
-getScanRegionMaskStyle: () => DrawingStyle;
+getScanRegionMaskStyle(): DrawingStyle;
 ```
 
 **Parameters**
@@ -456,7 +490,7 @@ console.log(currentStyle);
 Sets whether to show the scan-region mask.
 
 ```typescript
-setScanRegionMaskVisible: (visible: boolean) => void;
+setScanRegionMaskVisible(visible: boolean): void;
 ```
 
 **Parameters**
@@ -479,7 +513,7 @@ cameraView.setScanRegionMaskVisible(False);
 Returns whether the scan-region mask is visible.
 
 ```typescript
-isScanRegionMaskVisible: () => boolean;
+isScanRegionMaskVisible(): boolean;
 ```
 
 **Parameters**
@@ -502,7 +536,7 @@ console.log(maskIsVisible);
 Sets whether to show the laser that indicates the scanning is going on.
 
 ```typescript
-setScanLaserVisible: (visible: boolean) => void;
+setScanLaserVisible(visible: boolean): void;
 ```
 
 **Parameters**
@@ -525,7 +559,7 @@ cameraView.setScanLaserVisible(False);
 Returns whether the laser is visible.
 
 ```typescript
-isScanLaserVisible: () => boolean;
+isScanLaserVisible(): boolean;
 ```
 
 **Parameters**
