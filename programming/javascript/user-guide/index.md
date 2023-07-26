@@ -59,7 +59,7 @@ The simplest way to include the SDK is to use either the [jsDelivr](https://jsde
   <script src="https://unpkg.com/dynamsoft-camera-enhancer/dist/dce.js"></script>
   ```
 
-> In some rare cases, you might not be able to access the CDN. If this happens, you can use [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-3.3.4/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-3.3.4/dist/dce.js)
+> In some rare cases, you might not be able to access the CDN. If this happens, you can use [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js)
 
 #### Host the SDK yourself
 
@@ -86,7 +86,7 @@ The following shows a few ways to download the SDK.
 Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
 
 ```html
-<script src="/dynamsoft-camera-enhancer-js-3.3.4/dist/dce.js"></script>
+<script src="/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js"></script>
 ```
 
 or
@@ -107,7 +107,7 @@ Read more on [how to host the SDK](#hosting-the-sdk).
 
 #### Create a `CameraEnhancer` object
 
-To use the SDK, we need to create a `CameraEnhancer` object first.
+To use the SDK, we need to create a `CameraEnhancer` object.
 
 ```javascript
 let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
@@ -122,9 +122,10 @@ As shown in the code snippet below, before opening the video stream, we need to 
 <div id="enhancerUIContainer" style="width:100%;height:500px;"></div>
 <script>
   (async () => {
-      let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-      await enhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
-      document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
+      let view = await Dynamsoft.DCE.CameraView.createInstance();
+      let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+      // use the default UI element
+      enhancerUIContainer.append(view.getUIElement());
       await enhancer.open();
   })();
 </script>
