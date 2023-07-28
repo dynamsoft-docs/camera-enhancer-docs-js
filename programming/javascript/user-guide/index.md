@@ -133,36 +133,18 @@ As shown in the code snippet below, before opening the video stream, we need to 
 
 #### Customize the UI
 
-The built-in UI of the `CameraEnhancer` object is defined in the file `dist/dce.ui.html` . There are a few ways to customize it:
+The built-in UI of the `CameraView` object is defined in the file `dist/dce.ui.html` . There are a few ways to customize it:
 
 - Modify the file `dist/dce.ui.html` directly.
 
   This option is only possible when you host this file on your own web server instead of using a CDN.
 
-- Copy the file `dist/dce.ui.html` to your project, modify it and use the the API `defaultUIElementURL` to set it as the default UI.
+- Copy the file `dist/dce.ui.html` to your project, modify it and use the the API `createInstance` to set it as the default UI.
 
 ```javascript
 // To make sure the following line takes effect, put it before the API `open()` is called.
-Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "THE-URL-TO-THE-FILE";
-```
-
-- Append the default UI element to your page as shown in [Configure the CameraEnhancer object](#configure-the-cameraenhancer-object), customize it if necessary.
-
-```html
-<!-- Define an element to hold the UI element -->
-<div id="enhancerUIContainer" style="width:100%;height:500px;"></div>
-<script>
-  (async () => {
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    //  Sets the internally built UI element
-    await enhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
-    // Gets the internally built UI element and add it to the page.
-    document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
-    await enhancer.open();
-    // The following line hides the close button
-    document.getElementsByClassName("dce-btn-close")[0].style.display = "none";
-  })();
-</script>
+// The incoming parameter can be a div or a url string. If passed a DIV, build our default element in that DIV; If passed a URL, use the element in that URL as the UI definition.
+Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 ```
 
 - Build the UI element into your own web page and specify it with the API `setUIElement(HTMLElement)`.
@@ -175,9 +157,10 @@ Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "THE-URL-TO-THE-FILE";
   </div>
   <script>
       (async () => {
-          let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-          await enhancer.setUIElement(document.getElementById("enhancerUIContainer"));
-          await enhancer.open();
+        let view = await Dynamsoft.DCE.CameraView.createInstance();
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+        await view.setUIElement(document.getElementById("enhancerUIContainer"));
+        await enhancer.open();
       })();
   </script>
   ```
@@ -199,8 +182,9 @@ Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "THE-URL-TO-THE-FILE";
   ```html
   <select class="dce-sel-resolution">
       <option class="dce-opt-gotResolution" value="got"></option>
-      <option data-width="1280" data-height="720">1280x720</option>
       <option data-width="1920" data-height="1080">1920x1080</option>
+      <option data-width="1280" data-height="720">1280x720</option>
+      <option data-width="640" data-height="480">640x480</option>
   </select>
   ```
 
