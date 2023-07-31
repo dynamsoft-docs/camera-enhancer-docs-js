@@ -25,19 +25,25 @@ Once integrated, your users can open your website in a browser, access their cam
 
 In this guide, you will learn step by step on how to integrate the Dynamsoft Camera Enhancer SDK into your website.
 
-- [Getting Started](#getting-started)
-  - [Include the SDK](#include-the-sdk)
-  - [Interact with the SDK](#interact-with-the-sdk)
-- [Hosting the SDK](#hosting-the-sdk)
-  - [Step One: Deploy the dist folder](#step-one-deploy-the-dist-folder)
-  - [Step Two: Configure the Server](#step-two-configure-the-server)
-  - [Step Three: Include the SDK from the server](#step-three-include-the-sdk-from-the-server)
-- [FAQ](#faq)
-  - [Can I open the web page directly from the hard drive?](#can-i-open-the-web-page-directly-from-the-hard-drive)
-  - [Why can't I use my camera?](#why-cant-i-use-my-camera)
-- [API Documentation](#api-documentation)
-- [Release Notes](#release-notes)
-- [Next Steps](#next-steps)
+- [Dynamsoft Camera Enhancer for Your Website](#dynamsoft-camera-enhancer-for-your-website)
+  - [Getting Started](#getting-started)
+    - [Include the SDK](#include-the-sdk)
+      - [Use a CDN](#use-a-cdn)
+      - [Host the SDK yourself](#host-the-sdk-yourself)
+    - [Interact with the SDK](#interact-with-the-sdk)
+      - [Create a `CameraEnhancer` object](#create-a-cameraenhancer-object)
+      - [Configure the `CameraEnhancer` object](#configure-the-cameraenhancer-object)
+      - [Customize the UI](#customize-the-ui)
+  - [Hosting the SDK](#hosting-the-sdk)
+    - [Step One: Deploy the dist folder](#step-one-deploy-the-dist-folder)
+    - [Step Two: Configure the Server](#step-two-configure-the-server)
+    - [Step Three: Include the SDK from the server](#step-three-include-the-sdk-from-the-server)
+  - [FAQ](#faq)
+    - [Can I open the web page directly from the hard drive?](#can-i-open-the-web-page-directly-from-the-hard-drive)
+    - [Why can't I use my camera?](#why-cant-i-use-my-camera)
+  - [API Documentation](#api-documentation)
+  - [Release Notes](#release-notes)
+  - [Next Steps](#next-steps)
 
 ## Getting Started
 
@@ -50,13 +56,13 @@ The simplest way to include the SDK is to use either the [jsDelivr](https://jsde
 - jsDelivr
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer/dist/dce.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.3.4/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
-  <script src="https://unpkg.com/dynamsoft-camera-enhancer/dist/dce.js"></script>
+  <script src="https://unpkg.com/dynamsoft-camera-enhancer@3.3.4/dist/dce.js"></script>
   ```
 
 > In some rare cases, you might not be able to access the CDN. If this happens, you can use [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-3.3.4/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-3.3.4/dist/dce.js)
