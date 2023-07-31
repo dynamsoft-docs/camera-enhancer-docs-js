@@ -20,7 +20,7 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getScanRegion()](#getscanregion)                                     | Returns the scan region.                                                                            |
 | [fetchImage()](#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [addImageToBuffer()](#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continuoued fetching has started.          |
+| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
 | [getImageFetchInterval()](#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
 | [startFetching()](#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
 | [stopFetching()](#stopfetching)                                       | Stops fetching any more images.                                                                     |

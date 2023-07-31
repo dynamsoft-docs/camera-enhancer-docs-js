@@ -31,7 +31,7 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 
 | Event Name          | Description                                                      |
 | ------------------- | ---------------------------------------------------------------- |
-| cameraChange        | Triggered when a differnt camera is used.                        |
+| cameraChange        | Triggered when a different camera is used.                        |
 | cameraOpen          | Triggered when the camera opens.                                 |
 | cameraClose         | Triggered when the camera closes.                                |
 | resolutionChange    | Triggered when the resolution changes.                           |

@@ -39,7 +39,7 @@ permalink: /programming/javascript/api-reference/interface/videoframetag.html
 
 * timeSpent: `number`
 
-  The time in miniseconds spent in acquiring the frame.
+  The time in milliseconds spent in acquiring the frame.
 
 * timeStamp: `number`
 

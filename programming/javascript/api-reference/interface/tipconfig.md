@@ -23,7 +23,7 @@ permalink: /programming/javascript/api-reference/interface/tipconfig.html
 
 * duration: `number`
   
-  Specifies in miniseconds how long the tip is shown before it disappears.
+  Specifies in milliseconds how long the tip is shown before it disappears.
 
 * coordinateBase: `"view" | "image"`
   
