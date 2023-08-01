@@ -172,16 +172,29 @@ console.log("The camera is " + state);
 Turns on the camera to start streaming live video.
 
 ```typescript
-open(appendOrShowUI?: boolean): Promise<PlayCallbackInfo>;
+open(): Promise<PlayCallbackInfo>;
 ```
 
 **Parameters**
 
-`appendOrShowUI`: Optional parameter, determine whether to append the player to the UI or show the player's UI.
+None.
 
 **Return value**
 
 A promise resolving to a `PlayCallbackInfo` object.
+
+**Code Snippet**
+
+```html
+<div id="enhancerUIContainer" style="width:1280px;height:720px;">
+```
+
+```javascript
+let view = await Dynamsoft.DCE.CameraView.createInstance();
+document.getElementById("enhancerUIContainer").append(view.getUIElement());
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+await enhancer.open();
+```
 
 **See also**
 
