@@ -7,6 +7,7 @@ needAutoGenerateSidebar: true
 breadcrumbText: Start Programming
 permalink: /programming/index.html
 ---
+
 # Get Started on Programming
 
 Dynamsoft Camera Enhancer is now available for the following programming languages:

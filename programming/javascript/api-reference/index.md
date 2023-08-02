@@ -162,7 +162,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
 | [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.        |
 
-### DrawingLayer and DrawingItem
+### Drawing and UI
 
 | API Name                                                                            | Description                                                              |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -182,7 +182,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
-### Sub-class DrawingLayer
+## Sub-class DrawingLayer
 
 | API Name                                                   | Description                                                                                                      |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -199,7 +199,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [isVisible()](drawinglayer.md#isvisible)                   | Returns whether the `DrawingLayer` is visible.                                                                   |
 | [onSelectionChanged()](drawinglayer.md#onselectionchanged) | An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`. |
 
-### Sub-class DrawingStyleManager
+## Sub-class DrawingStyleManager
 
 | API Name                                                                     | Description                                             |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -208,7 +208,7 @@ permalink: /programming/javascript/api-reference/index.html
 | `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
 | `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
-### Sub-class DrawingItem
+## Sub-class DrawingItem
 
 | API Name                                        | Description                                                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -230,7 +230,7 @@ permalink: /programming/javascript/api-reference/index.html
 
 Child classes based on `DrawingItem`
 
-#### LineDrawingItem
+### LineDrawingItem
 
 
 | API Name                                            | Description                                                       |
@@ -239,7 +239,7 @@ Child classes based on `DrawingItem`
 | [getLine](drawingitem.md#getline)                   | Returns the `LineSegment` object the item is based on.            |
 | [setLine](drawingitem.md#setline)                   | Specifies a `LineSegment` object to be used for drawing the line. |
 
-#### RectDrawingItem
+### RectDrawingItem
 
 | API Name                                            | Description                                                |
 | --------------------------------------------------- | ---------------------------------------------------------- |
@@ -247,7 +247,7 @@ Child classes based on `DrawingItem`
 | [getRect](drawingitem.md#getrect)                   | Returns the `Rect` object the item is based on.            |
 | [setRect](drawingitem.md#setrect)                   | Specifies a `Rect` object to be used for drawing the item. |
 
-#### QuadDrawingItem
+### QuadDrawingItem
 
 
 | API Name                                            | Description                                                         |
@@ -256,7 +256,7 @@ Child classes based on `DrawingItem`
 | [getQuad](drawingitem.md#getquad)                   | Returns the `Quadrilateral` object the item is based on.            |
 | [setQuad](drawingitem.md#setquad)                   | Specifies a `Quadrilateral` object to be used for drawing the item. |
 
-#### TextDrawingItem
+### TextDrawingItem
 
 | API Name                                            | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
@@ -266,7 +266,7 @@ Child classes based on `DrawingItem`
 | [getTextRect](drawingitem.md#gettextrect)           | Returns the `Rect` object which determines where the text is drawn. |
 | [setTextRect](drawingitem.md#settextrect)           | Specifies a `Rect` object in which the text is drawn.               |
 
-#### ImageDrawingItem
+### ImageDrawingItem
 
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |

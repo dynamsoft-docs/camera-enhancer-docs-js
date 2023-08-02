@@ -14,7 +14,7 @@ permalink: /programming/javascript/user-guide/index.html
 
 Dynamsoft Camera Enhancer allows your website to easily control the camera in the browser on desktop or mobile devices.
 
-With the SDK integrated, your users can open your website in a browser, access their cameras to stream live video and acquire real-time frames for further processing. The SDK also supports simple shape drawing, allowing information to be presented directly in the video stream or over a static image for a better user experience.
+With the SDK integrated, your users can open your website in a browser, access their cameras to stream live video and acquire real-time frames for further processing. The SDK also supports simple shape drawing, allowing information to be presented directly on the video stream or over a static image for integrated user interaction.
 
 In this guide, you will learn step by step on how to integrate the Dynamsoft Camera Enhancer SDK into your website.
 

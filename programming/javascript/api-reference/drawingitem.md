@@ -129,6 +129,10 @@ Adds an event listener to the `DrawingItem` for the event specified by `eventNam
 on(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
 
+**See Also**
+
+* [DrawingItemEvent](interface/drawingitemevent.md)
+
 ## off
 
 Removes an event listener to the `DrawingItem` for the event specified by `eventName`.
@@ -136,6 +140,10 @@ Removes an event listener to the `DrawingItem` for the event specified by `event
 ```typescript
 off(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
+
+**See Also**
+
+* [DrawingItemEvent](interface/drawingitemevent.md)
 
 ## addNote
 
@@ -396,10 +404,10 @@ Constructor of a `ImageDrawingItem`.
 
 ```typescript
 constructor(
-                image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
-                rect: Core.BasicStructures.Rect,
-                maintainAspectRatio: boolean,
-                drawingStyleId?: number) { super(Object) };
+    image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
+    rect: Core.BasicStructures.Rect,
+    maintainAspectRatio: boolean,
+    drawingStyleId?: number) { super(Object) };
 ```
 
 ## maintainAspectRatio
