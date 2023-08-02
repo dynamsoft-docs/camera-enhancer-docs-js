@@ -184,11 +184,18 @@ permalink: /programming/javascript/api-reference/index.html
 
 ## Class CameraEnhancerModule
 
-| API Name                                | Description                                         |
-| --------------------------------------- | --------------------------------------------------- |
-| [getVersion()](auxiliary.md#getversion) | Returns the version of the `CameraEnhancer` Module. |
+| API Name     | Description                                         |
+| ------------ | --------------------------------------------------- |
+| getVersion() | Returns the version of the `CameraEnhancer` Module. |
 
 ## Subordinate Classes
+
+### Feedback
+
+| API Name                         | Description                                  |
+| -------------------------------- | -------------------------------------------- |
+| [beep()](feedback.md#beep)       | Trigger a beep when the method is called.    |
+| [vibrate()](feedback.md#vibrate) | Trigger a vibrate when the method is called. |
 
 ### DrawingLayer
 

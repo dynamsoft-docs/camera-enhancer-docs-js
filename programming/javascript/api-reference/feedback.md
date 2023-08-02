@@ -10,28 +10,12 @@ breadcrumbText: Feedback
 permalink: /programming/javascript/api-reference/feedback.html
 ---
 
-# Class CameraEnhancer
+# Class Feedback
 
-## Feedback
-
-| API Name                                              | Description                                                                                               |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [vibrate()](feedback.md#vibrate)                      | Trigger a vibrate when the method is called.                                                              |
-| [beep()](feedback.md#beep)                            | Trigger a beep when the method is called.                                                                 |
-
-## vibrate
-
-Trigger a vibrate when the method is called.
-
-```typescript
-vibrate(): void;
-```
-
-**Code Snippet**
-
-```javascript
-enhancerFeedback.vibrate();
-```
+| API Name              | Description                                  |
+| --------------------- | -------------------------------------------- |
+| [beep()](#beep)       | Trigger a beep when the method is called.    |
+| [vibrate()](#vibrate) | Trigger a vibrate when the method is called. |
 
 ## beep
 
@@ -45,4 +29,18 @@ beep(): void;
 
 ```javascript
 enhancerFeedback.beep();
+```
+
+## vibrate
+
+Trigger a vibrate when the method is called.
+
+```typescript
+vibrate(): void;
+```
+
+**Code Snippet**
+
+```javascript
+enhancerFeedback.vibrate();
 ```
