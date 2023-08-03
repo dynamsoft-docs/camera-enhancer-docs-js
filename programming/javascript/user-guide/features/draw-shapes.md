@@ -118,8 +118,7 @@ All new **DrawingLayer** objects come with the same predefined style definition
 If the default style doesn't look good, you can create your own style to use:
 
 ```javascript
-let newDrawingStyleID = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
-  id: 1;
+let StyleID = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
   lineWidth: 5,
   paintMode: "strokeAndFill",
   fontSize: 100,
@@ -128,7 +127,7 @@ let newDrawingStyleID = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
   fontFamily: "Consolas"
 });
 // take new drawing style ID as input parameter
-drawingLayer.setDefaultStyle(1);
+drawingLayer.setDefaultStyle(StyleID);
 ```
 
 ### Set multiple DrawingStyles
