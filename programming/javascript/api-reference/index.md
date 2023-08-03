@@ -162,7 +162,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
 | [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.        |
 
-### DrawingLayer and DrawingItem
+### Drawing and UI
 
 | API Name                                                                            | Description                                                              |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -182,7 +182,22 @@ permalink: /programming/javascript/api-reference/index.html
 | [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
-### Sub-class DrawingLayer
+## Class CameraEnhancerModule
+
+| API Name     | Description                                         |
+| ------------ | --------------------------------------------------- |
+| getVersion() | Returns the version of the `CameraEnhancer` Module. |
+
+## Subordinate Classes
+
+### Feedback
+
+| API Name                         | Description                                  |
+| -------------------------------- | -------------------------------------------- |
+| [beep()](feedback.md#beep)       | Trigger a beep when the method is called.    |
+| [vibrate()](feedback.md#vibrate) | Trigger a vibrate when the method is called. |
+
+### DrawingLayer
 
 | API Name                                                   | Description                                                                                                      |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -199,7 +214,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [isVisible()](drawinglayer.md#isvisible)                   | Returns whether the `DrawingLayer` is visible.                                                                   |
 | [onSelectionChanged()](drawinglayer.md#onselectionchanged) | An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`. |
 
-### Sub-class DrawingStyleManager
+### DrawingStyleManager
 
 | API Name                                                                     | Description                                             |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -208,7 +223,7 @@ permalink: /programming/javascript/api-reference/index.html
 | `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
 | `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
-### Sub-class DrawingItem
+### DrawingItem
 
 | API Name                                        | Description                                                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -276,12 +291,6 @@ Child classes based on `DrawingItem`
 | [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
 | [getImageRect](drawingitem.md#gettextrect)                | Returns the `Rect` object which determines where the image is drawn.              |
 | [setImageRect](drawingitem.md#settextrect)                | Specifies a `Rect` object in which the image is drawn.                            |
-
-## Class CameraEnhancerModule
-
-| API Name                                | Description                                         |
-| --------------------------------------- | --------------------------------------------------- |
-| [getVersion()](auxiliary.md#getversion) | Returns the version of the `CameraEnhancer` Module. |
 
 ## Interfaces
 
