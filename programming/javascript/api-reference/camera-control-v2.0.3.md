@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/camera-control-v2.0.3.html
 
 | API Name | Description |
 |---|---|
-| [getAllCameras()](#getallcameras) | Returns infomation of all available cameras on the device. |
+| [getAllCameras()](#getallcameras) | Returns information of all available cameras on the device. |
 | [selectCamera()](#selectcamera) | Chooses a camera as the video source. |
 | [getSelectedCamera()](#getselectedcamera) | Returns information about the selected / current camera. |
 | [open()](#open) | Turns on the camera to start streaming live video. |
@@ -45,7 +45,7 @@ permalink: /programming/javascript/api-reference/camera-control-v2.0.3.html
 
 ## getAllCameras
 
-Returns infomation of all available cameras on the device.
+Returns information of all available cameras on the device.
 
 ```typescript
 getAllCameras(): Promise<VideoDeviceInfo[]>

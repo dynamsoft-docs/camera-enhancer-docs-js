@@ -18,7 +18,7 @@ permalink: /programming/javascript/api-reference/camera-control-v3.3.4.html
 |---|---|
 | [ifSkipCameraInspection](#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
 | [ifSaveLastUsedCamera](#ifsavelastusedcamera) | Returns or sets whether to save the last used camera and resolution. |
-| [getAllCameras()](#getallcameras) | Returns infomation of all available cameras on the device. |
+| [getAllCameras()](#getallcameras) | Returns information of all available cameras on the device. |
 | [selectCamera()](#selectcamera) | Chooses a camera as the video source. |
 | [getSelectedCamera()](#getselectedcamera) | Returns information about the selected / current camera. |
 | [open()](#open) | Turns on the camera to start streaming live video. |
@@ -76,7 +76,7 @@ ifSaveLastUsedCamera: boolean;
 
 ## getAllCameras
 
-Returns infomation of all available cameras on the device.
+Returns information of all available cameras on the device.
 
 ```typescript
 getAllCameras(): Promise<VideoDeviceInfo[]>;

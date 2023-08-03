@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/camera-control.html
 
 | API Name                                              | Description                                                                           |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [getAllCameras()](#getallcameras)                     | Returns infomation of all available cameras on the device.                            |
+| [getAllCameras()](#getallcameras)                     | Returns information of all available cameras on the device.                            |
 | [selectCamera()](#selectcamera)                       | Chooses a camera as the video source.                                                 |
 | [getSelectedCamera()](#getselectedcamera)             | Returns information about the selected / current camera.                              |
 | [getCameraState()](#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
@@ -269,7 +269,7 @@ A Boolean value indicating whether the video streaming is paused.
 Resumes video streaming.
 
 ```typescript
-resume(): void;
+resume(): Promise<void>;
 ```
 
 **Parameters**
@@ -278,7 +278,7 @@ None.
 
 **Return value**
 
-None.
+A promise that resolves when the operation succeeds.
 
 ## setResolution
 
