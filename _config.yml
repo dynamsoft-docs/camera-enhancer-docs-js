@@ -50,7 +50,10 @@ baseurl: "/camera-enhancer/docs/web/"
 plugins:
   - jemoji
   - jekyll-sitemap
-  
+
+
+edition: js
+
 defaults:
   - scope:
       path: "Hide_Tree_Page.html"
