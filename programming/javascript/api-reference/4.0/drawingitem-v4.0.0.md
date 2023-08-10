@@ -77,6 +77,7 @@ Child classes based on `DrawingItem`
 | [getImageRect()](drawingitem.md#gettextrect)              | Returns the `Rect` object which determines where the image is drawn.              |
 | [setImageRect()](drawingitem.md#settextrect)              | Specifies a `Rect` object in which the image is drawn.                            |
 
+<!--
 ## Class GroupDrawingItem
 
 | API Name                                                      | Description                                                                       |
@@ -84,6 +85,7 @@ Child classes based on `DrawingItem`
 | [GroupDrawingItem()](drawingitem.md#groupdrawingitem)         | Constructor of a `GroupDrawingItem`.                                              |
 | [getChildDrawingItems](drawingitem.md#getchilddrawingitems)   | Returns the child drawing items in the group.                                     |
 | [setChildDrawingItems()](drawingitem.md#setchilddrawingitems) | Sets the child drawing items in the group.                                        |
+-->
 
 ## drawingLayerId
 
@@ -466,6 +468,7 @@ setImageRect(rect: Core.BasicStructures.Rect): void;
 
 `rect`: A rectangle of type `Core.BasicStructures.Rect`.
 
+<!--
 ## GroupDrawingItem()
 
 Constructor of a `GroupDrawingItem`.
@@ -497,3 +500,4 @@ setChildDrawingItems(childDrawingItems: Array<DrawingItem>): void;
 **Parameters**
 
 `childDrawingItems`: An array of DrawingItem objects.
+-->
