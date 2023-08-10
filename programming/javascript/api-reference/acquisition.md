@@ -7,48 +7,45 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition.html
+permalink: /programming/javascript/api-reference/acquisition-v3.3.4.html
 ---
 
-# Class CameraEnhancer
+# Frame Acquisition
 
-## Frame Acquisition
+<!--
 
-| API Name                                                              | Description                                                                                         |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [setScanRegion()](#setscanregion)                                     | Specifies which part of the original video is considered when processing frames.                    |
-| [getScanRegion()](#getscanregion)                                     | Returns the scan region.                                                                            |
-| [fetchImage()](#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
-| [addImageToBuffer()](#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
-| [getImageFetchInterval()](#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
-| [startFetching()](#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
-| [stopFetching()](#stopfetching)                                       | Stops fetching any more images.                                                                     |
-| [setMaxImageCount()](#setmaximagecount)                               | Sets the size of the buffer as in how many images can be buffered.                                  |
-| [getMaxImageCount()](#getmaximagecount)                               | Returns the size of the buffer.                                                                     |
-| [getImageCount()](#getimagecount)                                     | Returns how many images are in buffer.                                                              |
-| [hasImage()](#hasimage)                                               | Checks whether an image exists. The image is specified by its id.                                   |
-| [getImage()](#getimage)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
-| [setNextImageToReturn()](#setnextimagetoreturn)                       | Specifies an image by its id to be returned when `getImage()` is called the next time.              |
-| [setBufferOverflowProtectionMode()](#setbufferoverflowprotectionmode) | Sets a protection mode that determines what happens when the buffer overflows.                      |
-| [getBufferOverflowProtectionMode()](#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
-| [isBufferEmpty()](#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
-| [hasNextImageToFetch()](#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
-| [setPixelFormat()](#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode()](#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
+| [refreshInterval](#singleframemode) | Returns or sets how often the buffer is refreshed when the buffer is full. |
+| [croppingRegions](#singleframemode) | Returns or sets a few regions that the DCE instance will enumerate when cropping consecutive frames. |
+| [croppingRegionIndex](#singleframemode) | Returns or sets which of the cropping regions is to be used in cropping the next frame. |
+-->
+
+| API Name | Description |
+|---|---|
+| [setScanRegion()](#setscanregion) | Specifies which part of the original video is considered when processing frames. |
+| [getScanRegion()](#getscanregion) | Returns the scan region. |
+| [getFrame()](#getframe) | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
+| [getFrameFromBuffer()](#getframefrombuffer) | Returns a `DCEFrame` object which contains the image data of the specified buffered frame. |
+| [clearFrameBuffer()](#clearframebuffer) | Removes all buffered frames. |
+| [startFetchingLoop()](#startfetchingloop) | Starts a fetching loop that continuously put frames in a buffer. |
+| [stopFetchingLoop()](#stopfetchingloop) | Stops the fetching loop. |
+| [isFetchingLoopStarted()](#isfetchingloopstarted) | Returns the state of the fetching loop. |
+| [framePixelFormat](#framepixelformat) | Sets or returns the pixel format of the images generated by getFrame(). |
+| [maxNumberOfFramesInBuffer](#maxnumberofframesinbuffer) | Sets or returns how many frames can be buffered. |
+| [numberOfFramesInBuffer](#numberofframesinbuffer) | Returns how many frames there are in the buffer. |
+| [loopInterval](#loopinterval) | Returns or sets the start time of the next fetch operation. |
+| [singleFrameMode](#singleframemode) | Returns or sets whether to enable the singe-frame mode. |
 
 ## setScanRegion
 
 Specifies which part of the original video is considered when processing frames.
 
 ```typescript
-setScanRegion(region: Rect | DSRect): void;
+setScanRegion(region: Region): void;
 ```
 
 **Parameters**
 
-`region`: a `Rect` or `DSRect` object that specifies a part of the video.
+`region`: a `Region` object that specifies a part of the video.
 
 **Return value**
 
@@ -57,27 +54,26 @@ None.
 **Code Snippet**
 
 ```javascript
-let scanRegion = {
-    left: 25,
-    right: 75,
-    top: 25,
-    bottom: 75
-    isMeasuredInPercentage: true
+let region = {
+    regionLeft: 25,
+    regionTop: 25, 
+    regionRight: 75, 
+    regionBottom: 75, 
+    regionMeasuredByPercentage: true
 };
-enhancer.setScanRegion(scanRegion); 
+enhancer.setScanRegion(region); 
 ```
 
 **See also**
 
-* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/dsrect.html)
+* [Region](interface/region.md)
 
 ## getScanRegion
 
 Returns the scan region.
 
 ```typescript
-getScanRegion(): DSRect;
+getScanRegion(): Region;
 ```
 
 **Parameters**
@@ -86,7 +82,7 @@ None.
 
 **Return value**
 
-A `DSRect` object which specifies the scan region.
+A `Region` object which specifies the scan region.
 
 **Code Snippet**
 
@@ -96,14 +92,14 @@ let region = enhancer.getScanRegion();
 
 **See also**
 
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/dsrect.html)
+* [Region](interface/region.md)
 
-## fetchImage
+## getFrame
 
 Returns a `DCEFrame` object which contains the image data of the latest frame from the video input.
 
 ```typescript
-fetchImage(): DCEFrame;
+getFrame(): DCEFrame;
 ```
 
 **Parameters**
@@ -117,224 +113,25 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let image = enhancer.fetchImage();
-document.body.appendChild(image.toCanvas());
+let frameData = enhancer.getFrame();
+document.body.appendChild(frameData.toCanvas());
 ```
 
 **See also**
 
 * [DCEFrame](interface/dceframe.md)
 
-## addImageToBuffer
+## getFrameFromBuffer
 
-Adds an `DSImageData` object to the buffer.
+Returns a `DCEFrame` object which contains the image data of the specified buffered frame.
 
 ```typescript
-addImageToBuffer(image: DSImageData): void;
+getFrameFromBuffer(index?: number): DCEFrame;
 ```
 
 **Parameters**
 
-* `image`: the image to be added to buffer.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-let image = enhancer.fetchImage();
-enhancer.addImageToBuffer(image);
-```
-
-## setImageFetchInterval
-
-Sets the interval at which `fetchImage()` is called when continuoued fetching has started.
-
-```typescript
-setImageFetchInterval(interval: number): void;
-```
-
-**Parameters**
-
-* `interval`: specifies the interval in milliseconds.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setImageFetchInterval(200);
-```
-
-## getImageFetchInterval
-
-Returns the fetch interval.
-
-```typescript
-getImageFetchInterval(): number;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-The fetch interval.
-
-**Code Snippet**
-
-```javascript
-let fetchInterval = enhancer.getImageFetchInterval();
-```
-
-## startFetching
-
-Starts to continuously fetch images and put them into the buffer.
-
-```typescript
-startFetching(): void;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.startFetching();
-```
-
-## stopFetching
-
-Stops fetching any more images.
-
-```typescript
-stopFetching(): void;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.stopFetching();
-```
-
-## setMaxImageCount
-
-Sets the size of the buffer as in how many images can be buffered.
-
-```typescript
-setMaxImageCount: (count: number) void;
-```
-
-**Parameters**
-
-* `count`: specifies how many images can be held in buffer.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setMaxImageCount(10);
-```
-
-## getMaxImageCount
-
-Returns the size of the buffer.
-
-```typescript
-getMaxImageCount(): number;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A number indicating how many images can be held in buffer.
-
-**Code Snippet**
-
-```javascript
-let bufferSize = enhancer.getMaxImageCount();
-```
-
-## getImageCount
-
-Returns how many images are in buffer.
-
-```typescript
-getImageCount(): number;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A number indicating how many images are held in buffer.
-
-**Code Snippet**
-
-```javascript
-let imageCount = enhancer.getImageCount();
-```
-
-## hasImage
-
-Checks whether an image exists. The image is specified by its id.
-
-```typescript
-hasImage(imageId: number): boolean;
-```
-
-**Parameters**
-
-* `imageId`: specifies an image by its id.
-
-**Return value**
-
-True means the image exists in the buffer, false the opposite.
-
-**Code Snippet**
-
-```javascript
-let imageCount = enhancer.hasImage(10);
-```
-
-## getImage
-
-Returns a `DCEFrame` object from the buffer.
-
-```typescript
-getImage(): DCEFrame;
-```
-
-**Parameters**
-
-None.
+`index`: specifies which buffered frame to return when `maxNumberOfFramesInBuffer` is bigger than 1. If not specified, the latest buffered frame is returned.
 
 **Return value**
 
@@ -343,97 +140,21 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let image = enhancer.getImage();
-document.body.appendChild(image.toCanvas());
+let frameData = enhancer.getFrameFromBuffer();
+document.body.appendChild(frameData.toCanvas());
 ```
 
 **See also**
 
 * [DCEFrame](interface/dceframe.md)
+* [startFetchingLoop](#startfetchingloop)
 
-## setNextImageToReturn
+## clearFrameBuffer
 
-Specifies an image by its id to be returned when `getImage()` is called the next time.
-
-```typescript
-setNextImageToReturn(imageId: number, keepInBuffer?: boolean): void;
-```
-
-**Parameters**
-
-* `imageId`: specifies the image by its id.
-* `keepInBuffer`: specifies whether to keep the image in buffer after it is returned.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setNextImageToReturn(10);
-let image = enhancer.getImage();
-document.body.appendChild(image.toCanvas());
-```
-
-## setBufferOverflowProtectionMode
-
-Sets a protection mode that determines what happens when the buffer overflows.
+Removes all buffered frames.
 
 ```typescript
-setBufferOverflowProtectionMode(mode:EnumBufferOverflowProtectionMode): void;
-```
-
-**Parameters**
-
-* `mode`: specifies the protection mode.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
-```
-
-**See Also**
-
-* [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
-
-## getBufferOverflowProtectionMode
-
-Returns the buffer protection mode.
-
-```typescript
-getBufferOverflowProtectionMode(): EnumBufferOverflowProtectionMode;
-```
-
-**Parameters**
-
-* `mode`: specifies the protection mode.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
-```
-
-**See Also**
-
-* [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
-
-## isBufferEmpty
-
-Returns whether the buffer is empty.
-
-```typescript
-isBufferEmpty(): boolean;
+clearFrameBuffer(): void;
 ```
 
 **Parameters**
@@ -442,22 +163,22 @@ None.
 
 **Return value**
 
-True means the buffer is empty, false the opposite.
+None.
 
 **Code Snippet**
 
 ```javascript
-if(enhancer.isBufferEmpty()) {
-    console.log("There is no image in buffer!");
-}
+enhancer.clearFrameBuffer();
 ```
 
-## hasNextImageToFetch
+## startFetchingLoop
 
-Checks whether another image can be fetched.
+Starts a fetching loop that continuously put frames in a buffer.
+
+> When the API is called, the SDK immediately fetches a frame and puts it into the buffer, then waits for the time set by "loopInterval" before fetching the next frame, and so on.
 
 ```typescript
-hasNextImageToFetch(): boolean;
+startFetchingLoop(): void;
 ```
 
 **Parameters**
@@ -466,51 +187,119 @@ None.
 
 **Return value**
 
-True means the image source can supply more images, false means the image source is closed or exhausted.
+None.
 
-**Code Snippet**
+**See also**
 
-```javascript
-if(!enhancer.hasNextImageToFetch()) {
-    console.log("The image source is exhausted!");
-}
-```
+* [DCEFrame](interface/dceframe.md)
+* [loopInterval](#loopinterval)
 
-## setPixelFormat
+## stopFetchingLoop
 
-Sets the pixel format of the images returned by `getImage()`.
+Stops the fetching loop and clears the frames buffer.
 
 ```typescript
-setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
-                | EnumImagePixelFormat.IPF_ABGR_8888
-                | EnumImagePixelFormat.IPF_ARGB_8888): void;
+stopFetchingLoop(): void;
 ```
 
 **Parameters**
 
-* `pixelFormat`: specifies the format of the image to return.
+None.
 
 **Return value**
 
-A `DCEFrame` object which contains the image data of the frame and related information.
+None.
 
-**Code Snippet**
+## isFetchingLoopStarted
 
-```javascript
-enhancer.setPixelFormat(EnumImagePixelFormat.IPF_ARGB_8888);
-let image = enhancer.getImage();
-document.body.appendChild(image.toCanvas());
+Returns the state of the fetching loop.
+
+```typescript
+isFetchingLoopStarted(): Boolean;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+None.
+
+## framePixelFormat
+
+Sets or returns the color mode of the images generated by getFrame(). The value is limited to "rgba" (default), "rbga", "grba", "gbra", "brga", "bgra", "grey" and "grey32".
+
+```typescript
+framePixelFormat: string;
+```
+
+## maxNumberOfFramesInBuffer
+
+Sets or returns how many frames can be buffered.
+
+```typescript
+maxNumberOfFramesInBuffer: number;
+```
+
+## numberOfFramesInBuffer
+
+Returns how many frames there are in the buffer.
+
+```typescript
+readonly numberOfFramesInBuffer: number;
+```
+
+## loopInterval
+
+Returns or sets the start time of the next fetch operation.
+
+```typescript
+loopInterval: number;
 ```
 
 **See also**
 
-* [EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js))
+* [startFetchingLoop](#startfetchingloop)
+
+<!--
+## refreshInterval
+
+Returns or sets how often the buffer is refreshed when the buffer is full. Allowed values are 
+* -1: when the buffer is full, do nothing at the next loop; 
+* 0: when the buffer is full, refresh it (fetch a new image and append it) at the next loop;
+* a natural number: sets a timer that starts as soon as the buffer is full, when the timer expires, a new frame is fetched and appended to the image buffer
+
+```typescript
+refreshInterval: number;
+```
+
+
+## croppingRegions
+
+Returns or sets a few regions that the DCE instance will enumerate when cropping consecutive frames.  These regions are based on the original video size.
+
+```typescript
+croppingRegions: Array<Region>;
+```
+
+**See also**
+
+* [Region](interface/region.md)
+
+## croppingRegionIndex
+
+Returns or sets which of the cropping regions is to be used in cropping the next frame. If not specified, the next region in line will be applied.
+
+```typescript
+croppingRegionIndex: number;
+```
+
+-->
 
 ## singleFrameMode
 
-Returns or sets whether to enable the singe-frame mode.
-
-When the single-frame mode is enabled, the video will not stream in the built-in UI of the library. Instead, the user can click the UI to invoke the system camera interface to catch a frame or select an existing image from the device storage.
+Returns or sets whether to enable the singe-frame mode. When the single-frame mode is enabled, the video will not stream in the built-in UI of the library. Instead, the user can click the UI to invoke the system camera interface to catch a frame or select an existing image from the device storage.
 
 To get the actual data, add a event handler to the event 'singleFrameAcquired'.
 
@@ -529,32 +318,4 @@ singleFrameMode: boolean;
     enhancer.singleFrameMode = true;
     await enhancer.open(true);
 })();
-```
-
-## takePhoto
-
-Invokes the system camera to take a frame with better image quality.
-
-```typescript
-takePhoto(listener(dceFrame:DCEFrame): void);
-```
-
-**Parameter**
-
-`listener`: The listener callback function expects a single argument of type DCEFrame, representing the data related to the captured photo.
-
-**Return Value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-function handleCapturedPhoto(dceFrame) {
-  console.log('Captured Photo Data:', dceFrame);
-  // Process the captured photo data as needed.
-}
-
-// Capture a photo and invoke the listener with the captured data.
-enhancer.takePhoto(handleCapturedPhoto);
 ```
