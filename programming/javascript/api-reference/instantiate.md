@@ -47,7 +47,7 @@ A promise resolving to the created `CameraEnhancer` object.
 })();
 ```
 
-### dispose
+## dispose
 
 Releases all resources used by the `CameraEnhancer` instance. After that, the instance will be left with only the property `disposed` (the value is `true`).
 
@@ -72,7 +72,7 @@ let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 enhancer.dispose();
 ```
 
-### disposed
+## disposed
 
 A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed.
 
