@@ -45,6 +45,7 @@ jobs:
           port: 21 
           local-dir: /home/ubuntu/DCEDocJS/_site/
           server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
+          
   Build-Preview:
     if: ${{ github.ref == 'refs/heads/preview' }}
     # The type of runner that the job will run on
