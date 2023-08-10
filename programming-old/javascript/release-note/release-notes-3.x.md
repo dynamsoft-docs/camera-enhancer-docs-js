@@ -11,6 +11,21 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
+## 3.3.5 (08/02/2023)
+
+### Fixed
+
+* Fixed an issue where TypeScript 5 cannot locate the declaration file when importing package.
+
+### New
+
+* Added API `isPaused()` to check if the video stream is paused.
+
+### Improved
+
+* Optimized the logic of default camera selection on iOS.
+* Modified `convertToPageCoordinates()` and `convertToClientCoordinates()` to return decimal results directly instead of rounded results.
+
 ## 3.3.4 (04/17/2023)
 
 ### Fixed
