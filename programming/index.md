@@ -1,17 +1,24 @@
 ---
 layout: default-layout
-title: Get start on programming - Dynamsoft Camera Enhancer
-description: This is the documentation - Get start on programming page of Dynamsoft Camera Enhancer.
+title: Get start on programming - Dynamsoft Camera Enhancer JavaScript Edition
+description: This is the documentation - Get start on programming page of Dynamsoft Camera Enhancer JavaScript Edition.
 keywords:  Camera Enhancer, Get start on programming
 needAutoGenerateSidebar: true
 breadcrumbText: Start Programming
 permalink: /programming/index.html
 ---
 
-# Get Started on Programming
+# JavaScript Documentation
 
-Dynamsoft Camera Enhancer is now available for the following programming languages:
+## Getting Started
 
-- [JavaScript]({{site.js}}) for Browsers (only limited features at present)
-- [Java]({{site.android}}) for Android
-- [Objective-C & Swift]({{site.ios}}) for iOS
+* [User Guide](javascript/user-guide/index.md)
+
+## API Reference
+
+* [API Reference](javascript/api-reference/index.md)
+
+## Release Notes
+
+* [Version 3.x](javascript/release-note/release-notes-3.x.md)
+* [Version 2.x](javascript/release-note/release-notes-2.x.md)
