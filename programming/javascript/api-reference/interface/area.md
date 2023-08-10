@@ -6,6 +6,7 @@ keywords: Area, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Area
+permalink: /programming/javascript/api-reference/interface/area.html
 ---
 
 # Area

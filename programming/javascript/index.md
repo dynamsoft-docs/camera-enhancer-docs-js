@@ -6,6 +6,7 @@ keywords: javascript
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/javascript/index.html
 ---
 
 # JavaScript Documentation
@@ -20,5 +21,6 @@ noTitleIndex: true
 
 ## Release Notes
 
-* [Version 3.x](release-note/index.md)
-* [Version 2.x](release-note/index.md)
+* [Version 4.x](release-note/release-notes-4.x.md)
+* [Version 3.x](release-note/release-notes-3.x.md)
+* [Version 2.x](release-note/release-notes-2.x.md)

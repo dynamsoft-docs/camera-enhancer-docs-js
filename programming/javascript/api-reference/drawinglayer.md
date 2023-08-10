@@ -6,36 +6,35 @@ keywords: DrawingLayer, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingLayer
+permalink: /programming/javascript/api-reference/drawinglayer.html
 ---
 
-# DrawingLayer
+# Class DrawingLayer
 
-| API Name | Description |
-|---|---|
-| [getId()](#getid) | Returns the ID of the DrawingLayer. |
-| [addDrawingItems()](#adddrawingitems) | Adds DrawingItem(s) to the DrawingLayer. |
-| [getDrawingItems()](#getdrawingitems) | Returns all DrawingItem(s) or just some of them based on a filter function. |
-| [setDrawingItems()](#setdrawingitems) | Replaces all DrawingItem(s) of the DrawingLayer with new ones. |
-| [hasDrawingItem()](#hasdrawingitem) | Checks out if a DrawingItem belongs to the layer. |
-| [removeDrawingItems()](#removedrawingitems) | Removes DrawingItem(s) from the DrawingLayer. |
-| [clearDrawingItems()](#cleardrawingitems) | Removes all DrawingItem(s) from the DrawingLayer. |
-| [setDrawingStyle()](#setdrawingstyle) | Sets the style for the DrawingLayer or for a particular mediaType or for a particular mediaType in a particular state. |
-| [setVisible()](#setvisible) | Shows or hides the DrawingLayer. |
-| [isVisible()](#isvisible) | Returns whether the DrawingLayer is visible. |
-| [renderAll()](#renderall) | Renders all DrawingItems, usually required when the style for one or more items is changed. |
-| [onSelectionChange()](#onselectionchange) | An event handler that is triggered when different DrawingItem(s) gets selected/deselected on the DrawingLayer. |
-| [setMode()](#setmode) | Changes the mode of the layer. |
-| [getMode()](#getmode) | Returns the current mode. |
+| API Name                                                   | Description                                                                                                      |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [getId()](drawinglayer.md#getid)                           | Returns the ID of the `DrawingLayer`.                                                                            |
+| [addDrawingItems()](drawinglayer.md#adddrawingitems)       | Adds `DrawingItems` to the `DrawingLayer`.                                                                       |
+| [getDrawingItems()](drawinglayer.md#getdrawingitems)       | Returns all `DrawingItems` or just some of them based on a filter function.                                      |
+| [setDrawingItems()](drawinglayer.md#setdrawingitems)       | Replaces all `DrawingItems` of the DrawingLayer with new ones.                                                   |
+| [hasDrawingItem()](drawinglayer.md#hasDrawingItem)         | Checks out if a `DrawingItem` belongs to the layer.                                                              |
+| [removeDrawingItems()](drawinglayer.md#removedrawingitems) | Removes `DrawingItems` from the DrawingLayer.                                                                    |
+| [clearDrawingItems()](drawinglayer.md#cleardrawingitems)   | Removes all `DrawingItems` from the DrawingLayer.                                                                |
+| [renderAll()](drawinglayer.md#renderall)                   | Renders all `DrawingItems`, usually required when the style for one or more items is changed.                    |
+| [setDefaultStyle()](drawinglayer.md#setdefaultstyle)       | Sets the style for `DrawingItems` on the layer.                                                                  |
+| [setVisible()](drawinglayer.md#setvisible)                 | Shows or hides the `DrawingLayer`.                                                                               |
+| [isVisible()](drawinglayer.md#isvisible)                   | Returns whether the `DrawingLayer` is visible.                                                                   |
+| [onSelectionChanged()](drawinglayer.md#onselectionchanged) | An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`. |
 
 **Special Notice**
 
 If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**, **Dynamsoft Label Recognizer** or **Dynamsoft Document Normalizer**, note that there are dedicated DrawingLayers for them as shown below:
 
-| SDK Name | DrawingLayer ID |
-|--|--|
-|Dynamsoft Document Normalizer | 1 |
-|Dynamsoft Label Recognizer | 2 |
-|Dynamsoft Barcode Reader| 3 |
+| SDK Name                      | DrawingLayer ID |
+| ----------------------------- | --------------- |
+| Dynamsoft Document Normalizer | 1               |
+| Dynamsoft Label Recognizer    | 2               |
+| Dynamsoft Barcode Reader      | 3               |
 
 You can manipulate these DrawingLayers directly, for example, the following code applies a different DrawingStyle to the DrawingLayer used by **Dynamsoft Label Recognizer**:
 
@@ -43,21 +42,22 @@ You can manipulate these DrawingLayers directly, for example, the following code
 
 ```javascript
 // Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
-let dlrDrawingLayer = enhancer.getDrawingLayer(2);
+let cameraView = enhancer.getCameraView();
+let dlrDrawingLayer = cameraView.getDrawingLayer(2);
 // Creates a new style to be used.
-let newStyleId = enhancer.createDrawingStyle({
+let newStyleId = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
     fillStyle: "rgba(100, 75, 245, 0.3)",
     lineWidth: 5,
     paintMode: "strokeAndFill",
     strokeStyle: "rgba(73, 173, 245, 1)"
 });
 // Replaces the old style with the new one.
-dlrDrawingLayer.setDrawingStyle(newStyleId)
+dlrDrawingLayer.setDefaultStyle(newStyleId)
 ```
 
 ## getId
 
-Returns the Id of the `DrawingLayer` .
+Returns the Id of the `DrawingLayer`.
 
 ```typescript
 getId(): number;
@@ -73,7 +73,7 @@ let drawingLayerId = drawingLayer.getId();
 
 ## addDrawingItems
 
-Adds `DrawingItem` (s) to the `DrawingLayer` .
+Adds `DrawingItems` to the `DrawingLayer`.
 
 ```typescript
 addDrawingItems(drawingItems: Array<DrawingItem>): void;
@@ -83,17 +83,32 @@ addDrawingItems(drawingItems: Array<DrawingItem>): void;
 
 ```javascript
 let drawingItems = new Array(
-    new DT_Rect(10, 10, 100, 100, 1),
-    new DT_Text("label 1", 40, 40, 2),
-    new DT_Line({
+    new RectDrawingItem({
         x: 10,
-        y: 50
-    }, {
-        x: 90,
-        y: 50
-    }, 3)
-)
-let drawingLayer = enhancer.getDrawingLayer(100);
+        y: 10,
+        width: 100,
+        height: 100,
+        isMeasuredInPercentage: true
+    }),
+    new TextDrawingItem("label 1", {
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 20,
+        isMeasuredInPercentage: true
+    }),
+    new LineDrawingItem({
+        startPoint:{
+            x: 10,
+            y: 50
+        },
+        endPoint: {
+            x: 90,
+            y: 50
+        }
+    }));
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.addDrawingItems(drawingItems);
 ```
 
@@ -103,10 +118,10 @@ drawingLayer.addDrawingItems(drawingItems);
 
 ## getDrawingItems
 
-Returns all DrawingItem(s) or just some of them based on a filter function.
+Returns all `DrawingItems` or just some of them based on a filter function.
 
 ```typescript
-getDrawingItems(filter?: (item: DrawingItem) => boolean) :Array<DrawingItem>);
+getDrawingItems(filter?: (item: DrawingItem) => boolean): Array<DrawingItem>;
 ```
 
 **Parameters**
@@ -116,9 +131,10 @@ getDrawingItems(filter?: (item: DrawingItem) => boolean) :Array<DrawingItem>);
 **Code Snippet**
 
 ```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 // Return only DrawingItems belong to the type DT_Rect.
-let drawingItems = drawingLayer.getDrawingItems(item => item.getAttribute("type") === "rect");
+let drawingItems = drawingLayer.getDrawingItems(item => item.mediaType === EnumDrawingItemMediaType.DIMT_RECTANGLE);
 ```
 
 **See also**
@@ -127,7 +143,7 @@ let drawingItems = drawingLayer.getDrawingItems(item => item.getAttribute("type"
 
 ## setDrawingItems
 
-Replaces all `DrawingItem` (s) of the `DrawingLayer` with new ones.
+Replaces all `DrawingItems` of the DrawingLayer with new ones.
 
 ```typescript
 setDrawingItems(drawingItems: Array<DrawingItem>): void;
@@ -136,18 +152,33 @@ setDrawingItems(drawingItems: Array<DrawingItem>): void;
 **Code Snippet**
 
 ```javascript
-let newDrawingItems = new Array(
-    new DT_Rect(10, 10, 100, 100, 1),
-    new DT_Text("label 1", 40, 40, 2),
-    new DT_Line({
+let drawingItems = new Array(
+    new RectDrawingItem({
         x: 10,
-        y: 50
-    }, {
-        x: 90,
-        y: 50
-    }, 3)
-)
-let drawingLayer = enhancer.getDrawingLayer(100);
+        y: 10,
+        width: 100,
+        height: 100,
+        isMeasuredInPercentage: true
+    }),
+    new TextDrawingItem("label 1", {
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 20,
+        isMeasuredInPercentage: true
+    }),
+    new LineDrawingItem({
+        startPoint:{
+            x: 10,
+            y: 50
+        },
+        endPoint: {
+            x: 90,
+            y: 50
+        }
+    }));
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.setDrawingItems(newDrawingItems);
 ```
 
@@ -166,8 +197,15 @@ hasDrawingItem(drawingItem: DrawingItem): Boolean;
 **Code Snippet**
 
 ```javascript
-let drawingItem = new DT_Rect(10, 10, 100, 100, 1);
-let drawingLayer = enhancer.getDrawingLayer(100);
+let drawingItem = new RectDrawingItem({
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 100,
+        isMeasuredInPercentage: true
+    });
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 ```
 
@@ -177,7 +215,7 @@ let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 
 ## removeDrawingItems
 
-Removes specific `DrawingItem` (s) from the `DrawingLayer` .
+Removes `DrawingItems` from the DrawingLayer.   
 
 ```typescript
 removeDrawingItems(drawingItems: Array<DrawingItem>): void;
@@ -187,10 +225,23 @@ removeDrawingItems(drawingItems: Array<DrawingItem>): void;
 
 ```javascript
 let drawingItems = new Array(
-    new DT_Rect(10, 10, 100, 100, 1),
-    new DT_Text("label 1", 40, 40, 2)
-)
-let drawingLayer = enhancer.getDrawingLayer(100);
+    new RectDrawingItem({
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 100,
+        isMeasuredInPercentage: true
+    }),
+    new TextDrawingItem("label 1", {
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 20,
+        isMeasuredInPercentage: true
+    })
+);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.removeDrawingItems(drawingItems);
 ```
 
@@ -200,7 +251,7 @@ drawingLayer.removeDrawingItems(drawingItems);
 
 ## clearDrawingItems
 
-Removes all `DrawingItem` (s) from the `DrawingLayer` .
+Removes all `DrawingItems` from the DrawingLayer.
 
 ```typescript
 clearDrawingItems(): void;
@@ -209,45 +260,65 @@ clearDrawingItems(): void;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.clearDrawingItems();
 ```
 
-## setDrawingStyle
+## renderAll
+
+Renders all `DrawingItems` , usually required when
+
+* One or multiple `DrawingItems` have altered their `DrawingStyle` IDs; 
+* One or multiple `DrawingItems` have changed their properties such as the coordinates for the top-left corner of a `RectDrawingItem` item.
+
+```typescript
+renderAll(): boolean;
+```
+
+**Code Snippet**
+
+```javascript
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
+drawingLayer.getDrawingItems()[0].styleId = customId;
+let isRenderedAll = drawingLayer.renderAll();
+```
+
+## setDefaultStyle
 
 Sets the style for `DrawingItems` on the `DrawingLayer`
 
-* If both "mediaType" and "styleSelector" are ignored, the style will apply to all `DrawingItems`; 
-* If "mediaType" is specified, the style will only apply to `DrawingItems` of that "mediaType"; 
-* If "mediaType" is "all" and "styleSelector" is specified, the style will apply to all types of `DrawingItems` which  have the specified "styleSelector"; 
-* If both "mediaType" and "styleSelector" are specified, the style only applies to `DrawingItems` of the specified "mediaType" which have the specified "styleSelector".
+* If both "state" and "mediaType" are ignored, the style will apply to all `DrawingItems`;
+* If "state" is specified, the style will only apply to `DrawingItems` in that state;
+* If "state" and "mediaType" are both specified, the style will only apply to `DrawingItems` of that "mediaType" in that "state".
 
 ```typescript
-setDrawingStyle(styleId: number, mediaType?: string, styleSelector?: string): void;
+setDefaultStyle(drawingStyleId: number, state?: EnumDrawingItemState, mediaType?: EnumDrawingItemMediaType): void;
 ```
 
 **Parameters**
 
-`styleId` : specifies a style by its ID.  
-`mediaType` : specifies a mediaType, allowed values are "rect", "arc", "line", "polygon", "text", "image" and "all".  
-`styleSelector` : specifies a selector, allowed values are "default", "selected" and "all".
+`drawingStyleId` : specifies a style by its ID.  
+`state` : specifies a state.
+`mediaType` : specifies a mediaType.
 
 **Code Snippet**
 
 ```javascript
 //set style 1 for all the DrawingItems on the `DrawingLayer`
-drawingLayer.setDrawingStyle(1);
-//set style 1 for all Rect-shape DrawingItems on the `DrawingLayer`
-drawingLayer.setDrawingStyle(1, "rect");
+drawingLayer.setDefaultStyle(1);
 //set style 1 for all selected DrawingItems on the `DrawingLayer`
-drawingLayer.setDrawingStyle(1, "all", "selected");
-//set style 1 for all Rect-shape and selected DrawingItems on the `DrawingLayer`
-drawingLayer.setDrawingStyle(1, "rect", "selected");
+drawingLayer.setDefaultStyle(1, EnumDrawingItemState.DIS_SELECTED);
+//set style 1 for all selected RectDrawingItems on the `DrawingLayer`
+drawingLayer.setDefaultStyle(1, EnumDrawingItemState.DIS_SELECTED, EnumDrawingItemMediaType.DIMT_RECTANGLE);
 ```
 
 **See also**
 
 * [DrawingStyle](interface/drawingstyle.md)
+* [EnumDrawingItemState](enumerations/enumdrawingitemstate.md)
+* [EnumDrawingItemMediaType](enumerations/enumdrawingitemmediatype.md)
 
 ## setVisible
 
@@ -259,12 +330,13 @@ setVisible(visibility: boolean): void;
 
 **Parameters**
 
-`visibility` : Specifies true to show and false to hide the `DrawingLayer` .
+`visibility` : set true to show and false to hide the `DrawingLayer` .
 
 **Code Snippet**
 
 ```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.setVisible(false);
 ```
 
@@ -279,36 +351,17 @@ isVisible(): boolean;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 let isVisible = drawingLayer.isVisible();
-```
-
-## renderAll
-
-Renders all `DrawingItems` , usually required when
-
-* One or multiple `DrawingItems` have altered their `DrawingStyle` IDs; 
-* One or multiple `DrawingItems` have changed their properties such as the coordinates for the top-left corner of a `DT_Rect` item.
-
-```typescript
-renderAll(): boolean;
-```
-
-**Code Snippet**
-
-```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
-drawingLayer.getDrawingItems()[0].styleId = customId;
-drawingLayer.getDrawingItems()[0].set("x", 100);
-let isRenderedAll = drawingLayer.renderAll();
 ```
 
 ## onSelectionChange
 
-An event handler that is triggered when different `DrawingItem` (s) gets selected/deselected on the `DrawingLayer` .
+An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`.
 
 ```typescript
-onSelectionChange: (selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>) => void;
+onSelectionChange(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>): void;
 ```
 
 **Parameters**
@@ -319,48 +372,9 @@ onSelectionChange: (selectedDrawingItems: Array<DrawingItem>, deselectedDrawingI
 **Code Snippet**
 
 ```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
+let cameraView = enhancer.getCameraView();
+let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.onSelectionChange = (selected, deselected) => {
     //do ...
 }
-```
-
-## setMode
-
-Changes the mode of the layer.
-
-```typescript
-setMode(newMode: string): void;
-```
-
-**Parameters**
-
-`newMode` : specifies the new mode. At present, the allowed values are "editor" and "viewer" and the default is "viewer".
-
-> Compared with the "viewer" mode, the "editor" mode shows the "corners" and a "rotate control point" for a selected DrawingItem, which, when dragged, modify the original shape in different ways.
-
-**Code Snippet**
-
-```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
-drawingLayer.setMode("editor");
-```
-
-## getMode
-
-Returns the current mode.  
-
-```typescript
-getMode(): "editor" | "viewer"; 
-```
-
-**Return value**
-
-The mode of current `DrawingLayer` .
-
-**Code Snippet**
-
-```javascript
-let drawingLayer = enhancer.getDrawingLayer(100);
-let mode = drawingLayer.getMode();
 ```

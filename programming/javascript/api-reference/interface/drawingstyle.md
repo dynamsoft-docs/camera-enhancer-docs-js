@@ -6,6 +6,7 @@ keywords: DrawingStyle, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingStyle
+permalink: /programming/javascript/api-reference/interface/drawingstyle.html
 ---
 
 # DrawingStyle
@@ -28,7 +29,7 @@ breadcrumbText: DrawingStyle
 
   The stroke color of the current `DrawingStyle` . Default: `rgba(245, 236, 73, 1)`.
 
-* paintMode: "fill" \| "stroke" \| "strokeAndFill"
+* paintMode: "fill" | "stroke" | "strokeAndFill"
 
   Three paint modes provided. Default: `stroke`.
 
@@ -49,10 +50,10 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Document Normalizer for DrawingItems in "default" state.
   {
       fillStyle: "rgba(73, 173, 245, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 1,
-      lineWidth: 4,
+      lineWidth: 2,
       paintMode: "stroke",
       strokeStyle: "rgba(73, 173, 245, 1)"
   }
@@ -60,8 +61,8 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Label Recognizer for DrawingItems in "default" state.
   {
       fillStyle: "rgba(73, 245, 73, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 2,
       lineWidth: 2,
       paintMode: "strokeAndFill",
@@ -71,8 +72,8 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Barcode Reader for DrawingItems in "default" state.
   {
       fillStyle: "rgba(254, 180, 32, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 3,
       lineWidth: 2,
       paintMode: "strokeAndFill",
@@ -82,8 +83,8 @@ breadcrumbText: DrawingStyle
   // Used by all custom DrawingLayers for DrawingItems in "default" state.
   {
       fillStyle: "rgba(245, 236, 73, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 4,
       lineWidth: 2,
       paintMode: "stroke",
@@ -93,10 +94,10 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Document Normalizer for DrawingItems in "selected" state.
   {
       fillStyle: "rgba(73, 173, 245, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 5,
-      lineWidth: 4,
+      lineWidth: 1
       paintMode: "strokeAndFill",
       strokeStyle: "rgba(73, 173, 245, 1)"
   }
@@ -104,8 +105,8 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Label Recognizer for DrawingItems in "selected" state.
   {
       fillStyle: "rgba(73, 245, 73, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 6,
       lineWidth: 2,
       paintMode: "strokeAndFill",
@@ -115,8 +116,8 @@ breadcrumbText: DrawingStyle
   // Used by Dynamsoft Barcode Reader for DrawingItems in "selected" state.
   {
       fillStyle: "rgba(254, 180, 32, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 7,
       lineWidth: 2,
       paintMode: "strokeAndFill",
@@ -126,8 +127,8 @@ breadcrumbText: DrawingStyle
   // Used by custom DrawingLayers for DrawingItems in "selected" state.
   {
       fillStyle: "rgba(245, 236, 73, 0.3)",
-      fontFamily: "consolas",
-      fontSize: 40,
+      fontFamily: "sans-serif",
+      fontSize: 10,
       id: 8,
       lineWidth: 2,
       paintMode: "strokeAndFill",

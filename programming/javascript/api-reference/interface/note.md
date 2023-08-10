@@ -6,6 +6,7 @@ keywords: Note, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Note
+permalink: /programming/javascript/api-reference/interface/note.html
 ---
 
 # Note
