@@ -7,20 +7,19 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Auxiliary
-permalink: /programming/javascript/api-reference/auxiliary.html
+permalink: /programming/javascript/api-reference/auxiliary-v4.0.0.html
 ---
 
-# Auxiliary
+# Class CameraEnhancer
 
-| API Name | Description |
-|---|---|
-| [on()](#on) | Attaches an event handler function for a built-in event. |
-| [off()](#off) | Removes an event handler. |
-| [offAll()](#offall) | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
-| [dispose()](#dispose) | Releases all resources used by the CameraEnhancer instance. |
-| [disposed](#disposed) | A readonly boolean value indicating whether the CameraEnhancer instance has been disposed. |
-| [getVersion()](#getversion) | Returns the version of the library. |
-| [detectEnvironment()](#detectenvironment) | Returns a report on the current running environments. |
+## Auxiliary
+
+| API Name                                              | Description                                                                                               |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
+| [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
+| [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
+| [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
 
 **Type definition used on this page**:
 
@@ -30,15 +29,15 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 
 **Built-in Event Reference Table**
 
-| Event Name | Description |
-| --| --|
-| cameraChange | Triggered when a differnt camera is used. |
-| cameraOpen | Triggered when the camera opens. |
-| cameraClose | Triggered when the camera closes. |
-| resolutionChange | Triggered when the resolution changes. |
-| played | Triggered when the video starts playing/streaming. |
+| Event Name          | Description                                                      |
+| ------------------- | ---------------------------------------------------------------- |
+| cameraChange        | Triggered when a different camera is used.                        |
+| cameraOpen          | Triggered when the camera opens.                                 |
+| cameraClose         | Triggered when the camera closes.                                |
+| resolutionChange    | Triggered when the resolution changes.                           |
+| played              | Triggered when the video starts playing/streaming.               |
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
-| frameAddedToBuffer | Triggered each time a new frame is added to the buffer. |
+| frameAddedToBuffer  | Triggered each time a new frame is added to the buffer.          |
 
 ## on
 
@@ -134,72 +133,6 @@ None.
 
 ```javascript
 enhancer.offAll("cameraChange");
-```
-
-## dispose
-
-Releases all resources used by the CameraEnhancer instance. After that, the instance will be left with only the property `disposed` (the value is `true`).
-
-> The HTML elements used by the instance's UI element are only removed when `removeUIElement` is set to `true`. Otherwise, they are only hidden.
-
-```typescript
-dispose(removeUIElement?: boolean): void;
-```
-
-**Parameters**
-
-`removeUIElement`: whether to hide or remove the HTML elements in the instance's UI element.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-// Use the object to perform some tasks
-enhancer.dispose();
-```
-
-## disposed
-
-A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed.
-
-> This property replaces the deprecated old property `isDisposed`.
-
-```typescript
-readonly disposed: boolean; 
-```
-
-**Code Snippet**
-
-```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-//...
-let flag = enhancer.disposed;
-```
-
-## getVersion
-
-Returns the version of the library.
-
-```typescript
-static getVersion(): string;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-The version string of the library.
-
-**Code Snippet**
-
-```javascript
-Dynamsoft.DCE.CameraEnhancer.getVersion();
 ```
 
 ## detectEnvironment

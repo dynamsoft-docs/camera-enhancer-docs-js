@@ -6,20 +6,21 @@ keywords: interfaces, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Interface Index
-permalink: /programming/javascript/api-reference/interface/index.html
+permalink: /programming/javascript/api-reference/interface/index-v4.0.0.html
 ---
 
 # Interfaces
 
 Dynamsoft Camera Enhancer JavaScript SDK has the following interfaces.
 
-* [Area](area.md)
-* [DCEFrame](dceframe.md)
-* [DrawingItemEvent](drawingitemevent.md)
-* [DrawingStyle](drawingstyle.md)
-* [Note](note.md)
-* [PlayCallbackInfo](playcallbackinfo.md)
-* [Point](point.md)
-* [Region](region.md)
-* [VideoDeviceInfo](videodeviceinfo.md)
-* [Warning](warning.md)
+* [CameraTestResponse](interface/cameratestresponse.md)
+* [DCEFrame](interface/dceframe.md)
+* [DrawingItemEvent](interface/drawingitemevent.md)
+* [DrawingStyle](interface/drawingstyle.md) 
+* [Note](interface/note.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [Resolution](interface/resolution.md)
+* [Point](interface/point.md)
+* [Region](interface/region.md)
+* [VideoDevice](interface/videodevice.md)
+* [Warning](interface/warning.md)
