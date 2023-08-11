@@ -6,7 +6,7 @@ keywords: user guide, javascript, js, draw shapes.
 noTitleIndex: true
 needGenerateH3Content: true
 needAutoGenerateSidebar: true
-permalink: /programming/javascript/user-guide/features/draw-shapes-v4.0.0.html
+permalink: /programming/javascript/user-guide/features/draw-shapes.html
 ---
 
 # Draw Shapes with DCE JS
