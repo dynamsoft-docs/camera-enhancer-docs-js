@@ -64,7 +64,7 @@ let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({x: 100,y: 100,width: 3
 let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
 let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
 let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-//let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
 ```
 
 Alternatively, the code might be like this
@@ -76,7 +76,7 @@ let rect = new DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300
 let line = new DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
 let text = new DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
 let quad = new DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-//let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
 ```
 
 > NOTE:
@@ -94,8 +94,8 @@ function drawShapes(){
   let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
   let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
   let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-  //let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
-  drawingLayer.addDrawingItems([rect,line,text,quad]);
+  let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+  drawingLayer.addDrawingItems([rect,line,text,quad,img]);
 }
 ```
 
@@ -146,10 +146,10 @@ The following shows how to do the different settings with the method [`setDefaul
 // The following code assumes we have defined 3 different DrawingStyles with IDs 100, 101 and 102.
 // Use DrawingLayer 100 for everything
 drawingLayer.setDefaultStyle(100);
-// Use DrawingLayer 101 for all "rect"s
-drawingLayer.setDefaultStyle(101, "rect");
+// Use DrawingLayer 101 for all selected drawingStyles.
+drawingLayer.setDefaultStyle(101, "selected");
 // Use DrawingLayer 102 for selected "rect"s
-drawingLayer.setDefaultStyle(102, "rect", "selected");
+drawingLayer.setDefaultStyle(102, "selected", "rect");
 ```
 
 ## Try it out

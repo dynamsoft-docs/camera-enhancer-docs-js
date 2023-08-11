@@ -9,7 +9,6 @@ needGenerateH3Content: true
 needAutoGenerateSidebar: true
 permalink: /programming/javascript/user-guide/index.html
 ---
-
 # Dynamsoft Camera Enhancer for Your Website
 
 Dynamsoft Camera Enhancer allows your website to easily control the camera in the browser on desktop or mobile devices.
@@ -43,6 +42,11 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
 
 ### Include the SDK
 
+#### Dependency packages
+
+- **core.js**: In version 4.0.0 we integrated DCE as one of the important components of Dynamsoft Capture Vision(DCV), DCE inherits ImageSourceAdapter class from core module and has the ability to manage the input image, so core.js is mandatory;
+- **cvr.js**(optional): DCE has many advanced features like auto-zoom,enhanced-focus and tap-to-focus. If you want to use them, you need to include cvr.js.
+
 #### Use a CDN
 
 The simplest way to include the SDK is to use either the [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/) CDN.
@@ -50,16 +54,20 @@ The simplest way to include the SDK is to use either the [jsDelivr](https://jsde
 - jsDelivr
 
   ```html
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.10/dist/core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
+  <script src="https://unpkg.com/dynamsoft-core@3.0.10/dist/core.js"></script>
   <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
   ```
 
-> In some rare cases, you might not be able to access the CDN. If this happens, you can use [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js)
+> In some rare cases, you might not be able to access the CDN. If this happens, you can use
+>- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js)
+>- [https://download2.dynamsoft.com/core/dynamsoft-core-js/dynamsoft-core-js-3.0.10/dist/core.js](https://download2.dynamsoft.com/core/dynamsoft-core-js/dynamsoft-core-js-3.0.10/dist/core.js)
 
 #### Host the SDK yourself
 
@@ -86,18 +94,21 @@ The following shows a few ways to download the SDK.
 Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
 
 ```html
+<script src="/dynamsoft-core-js-3.0.10/dist/core.js"></script>
 <script src="/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js"></script>
 ```
 
 or
 
 ```html
+<script src="/node_modules/dynamsoft-core/dist/core.js"></script>
 <script src="/node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
 ```
 
 or
 
 ```typescript
+import { Core } from 'dynamsoft-core';
 import { CameraEnhancer } from 'dynamsoft-camera-enhancer';
 ```
 
@@ -148,15 +159,15 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer
   The following code snippet shows how it works
 
   ```javascript
+  // Check the buffer every 2 seconds and check the latest buffered image.
+  enhancer.setImageFetchInterval(2000);
+  // Add images to buffer.
+  enhancer.on("frameAddedToBuffer", () => {
+          let img = enhancer.getImage();
+          console.log(img.toCanvas());
+        });
   // Start the built-in fetching loop.
   let img = enhancer.startFetching();
-  setInterval(function(){
-    // Check the buffer every 2 seconds and check the latest buffered image.
-    if(!enhancer.isBufferEmpty()){
-        let img = enhancer.getImage();
-        console.log(img.toCanvas());
-    }
-  }, 2000);
   ```
   
 #### Use ImageEditorView and the Drawing Logic
@@ -171,7 +182,7 @@ The other view class ImageEditorView is designed to show a single image. The fol
 let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance(document.getElementById('imageEditorContainer'));
 // When the video is already playing, capture an image and draw it on the ImageEditorView
 let img = enhancer.fetchImage();
-editorView.setOriginalImage(img.toCanvas());
+editorView.setOriginalImage(img);
 // Draw a rectangle on the image
 let drawingLayer = editorView.createDrawingLayer();
 let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem(
@@ -249,7 +260,7 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
   </select>
   ```
 
-  > Generally, you need to provide a resolution that the camera supports. However, in case a camera does not support the specified resolution, it usually uses the cloest supported resolution. As a result, the selected resolution may not be the actual resolution. In this case, add an option with the class name `dce-opt-gotResolution` (as shown above) and the SDK will then use it to show the **actual resolution**.
+  > Generally, you need to provide a resolution that the camera supports. However, in case a camera does not support the specified resolution, it usually uses the closest supported resolution. As a result, the selected resolution may not be the actual resolution. In this case, add an option with the class name `dce-opt-gotResolution` (as shown above) and the SDK will then use it to show the **actual resolution**.
 
 ## Hosting the SDK
 
