@@ -66,7 +66,9 @@ The simplest way to include the SDK is to use either the [jsDelivr](https://jsde
   <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
   ```
 
-> In some rare cases, you might not be able to access the CDN. If this happens, you can use [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js)
+> In some rare cases, you might not be able to access the CDN. If this happens, you can use
+>- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js)
+>- [https://download2.dynamsoft.com/core/dynamsoft-core-js/dynamsoft-core-js-3.0.10/dist/core.js](https://download2.dynamsoft.com/core/dynamsoft-core-js/dynamsoft-core-js-3.0.10/dist/core.js)
 
 #### Host the SDK yourself
 
