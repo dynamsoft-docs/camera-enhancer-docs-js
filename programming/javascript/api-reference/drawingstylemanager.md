@@ -21,7 +21,7 @@ permalink: /programming/javascript/api-reference/drawingstylemanager.html
 
 ## createDrawingStyle
 
-Creates a new `DrawingStyle` object and returns its ID.
+Creates a new `DrawingStyle` object and returns its ID. The newly generated ID begins at 1024 and increments sequentially.
 
 ```typescript
 static createDrawingStyle(styleDefinition: DrawingStyle): number; 

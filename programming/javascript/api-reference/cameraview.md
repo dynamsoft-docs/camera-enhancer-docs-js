@@ -286,6 +286,10 @@ None.
 cameraView.setTipConfig(TipConfig);
 ```
 
+**See also**
+
+* [TipConfig](interface/tipconfig.md)
+
 ## getTipConfig
 
 Returns the configuration of the tip.
