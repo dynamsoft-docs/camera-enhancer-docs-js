@@ -7,7 +7,6 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: API Reference
-permalink: /programming/javascript/api-reference/index-v4.0.0.html
 ---
 
 # Dynamsoft Camera Enhancer JavaScript API Reference

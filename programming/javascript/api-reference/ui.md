@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: UI
-permalink: /programming/javascript/api-reference/ui-v4.0.0.html
+permalink: /programming/javascript/api-reference/ui.html
 ---
 
 # Class CameraEnhancer

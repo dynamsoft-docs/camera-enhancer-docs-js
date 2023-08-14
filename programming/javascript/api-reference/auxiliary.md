@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Auxiliary
-permalink: /programming/javascript/api-reference/auxiliary-v4.0.0.html
+permalink: /programming/javascript/api-reference/auxiliary.html
 ---
 
 # Class CameraEnhancer

@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Initialization
-permalink: /programming/javascript/api-reference/initialization-v4.0.0.html
+permalink: /programming/javascript/api-reference/initialization.html
 ---
 
 # Initialization APIs
