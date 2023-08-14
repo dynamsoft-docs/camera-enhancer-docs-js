@@ -31,15 +31,8 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 | [getAllDrawingLayers()](#getalldrawinglayers)                           | Returns an array of all DrawingLayer objects.                            |
 | [deleteUserDefinedDrawingLayer()](#deleteuserdefineddrawinglayer)       | Deletes a DrawingLayer object specified by its ID.                       |
 | [clearUserDefinedDrawingLayers()](#clearuserdefineddrawinglayers)       | Removes all user-defined DrawingLayers.                                  |
-| [setTipConfig()](#settipconfig)                                         | Configures the tip feature.                                              |
-| [getTipConfig()](#gettipconfig)                                         | Returns the configuration of the tip.                                    |
-| [setTipVisible()](#settipvisible)                                       | Sets whether to show the tip.                                            |
-| [isTipVisible()](#istipvisible)                                         | Returns whether the tip is visible.                                      |
-| [updateTipMessage()](#updatetipmessage)                                 | Updates the message shown in the tip.                                    |
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](imageeditorview.md#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](imageeditorview.md#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor imageeditorview.          |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor view.                     |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)               | Returns the image drawn on the image editor.                             |
 
 ## createInstance
@@ -268,6 +261,7 @@ None.
 imageEditorView.clearUserDefinedDrawingLayers();
 ```
 
+<!--
 ## setTipConfig
 
 Configures the tip feature.
@@ -379,7 +373,7 @@ None.
 ```javascript
 imageEditorView.updateTipMessage('Hold the phone closer.');
 ```
-
+-->
 ## getSelectedDrawingItems
 
 Returns all selected DrawingItem object(s) from different drawing layers.
@@ -402,6 +396,7 @@ Returns a Promise that resolves to an array of DrawingItem objects representing 
 let drawingItems = imageEditorView.getSelectedDrawingItems();
 ```
 
+<!--
 ## setVideoFit
 
 Sets the `object-fit` CSS property of the video element.
@@ -445,7 +440,7 @@ The value of the `object-fit` CSS property.
 ```javascript
 let videofitType = imageEditorView.getVideoFit();
 ```
-
+-->
 ## setOriginalImage
 
 Sets the image to be drawn on the image editor image editor view.

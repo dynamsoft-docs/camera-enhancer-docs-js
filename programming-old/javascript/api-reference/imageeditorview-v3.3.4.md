@@ -39,7 +39,7 @@ permalink: /programming/javascript/api-reference/imageeditorview-v3.3.4.html
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
 | [setVideoFit()](imageeditorview.md#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
 | [getVideoFit()](imageeditorview.md#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor imageeditorview.          |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor view.          |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)               | Returns the image drawn on the image editor.                             |
 
 ## createInstance
@@ -127,7 +127,7 @@ Returns the value of the `object-fit` CSS property of the video element.
 
 ## setOriginalImage
 
-Sets the image to be drawn on the image editor imageeditorview.
+Sets the image to be drawn on the image editor view.
 
 ## getOriginalImage
 

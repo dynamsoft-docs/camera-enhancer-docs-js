@@ -368,7 +368,7 @@ console.log(resolutions);
 Tests whether there is an available camera.
 
 ```typescript
-static testCameraAccess(): Promise<CameraTestResponse>;
+static testCameraAccess(): Promise<{ ok: boolean, message: string }>;
 ```
 
 **Parameters**
@@ -377,7 +377,7 @@ None.
 
 **Return value**
 
-A promise resolving to a `CameraTestResponse` object.
+A promise resolving to a object containing two `properties` ok and `message`.
 
 **Code Snippet**
 

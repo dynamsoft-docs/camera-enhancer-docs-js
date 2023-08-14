@@ -77,6 +77,7 @@ Child classes based on `DrawingItem`
 | [getImageRect()](drawingitem.md#gettextrect)              | Returns the `Rect` object which determines where the image is drawn.              |
 | [setImageRect()](drawingitem.md#settextrect)              | Specifies a `Rect` object in which the image is drawn.                            |
 
+<!--
 ## Class GroupDrawingItem
 
 | API Name                                                      | Description                                                                       |
@@ -84,7 +85,7 @@ Child classes based on `DrawingItem`
 | [GroupDrawingItem()](drawingitem.md#groupdrawingitem)         | Constructor of a `GroupDrawingItem`.                                              |
 | [getChildDrawingItems](drawingitem.md#getchilddrawingitems)   | Returns the child drawing items in the group.                                     |
 | [setChildDrawingItems()](drawingitem.md#setchilddrawingitems) | Sets the child drawing items in the group.                                        |
-
+-->
 ## drawingLayerId
 
 Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.
@@ -103,10 +104,10 @@ readonly mediaType: EnumDrawingItemMediaType;
 
 ## coordinateBase
 
-Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`.
+Returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`.
 
 ```typescript
-readonly coordinateBase: string;
+coordinateBase: string;
 ```
 
 ## drawingStyleId
@@ -136,6 +137,24 @@ Adds an event listener to the `DrawingItem` for the event specified by `eventNam
 ```typescript
 on(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
+
+**Type definition used on this page**:
+
+```typescript
+type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
+```
+
+**Built-in Event Reference Table**
+
+| Event Name | Description |
+| --| --|
+| cameraChange | Triggered when a different camera is used. |
+| cameraOpen | Triggered when the camera opens. |
+| cameraClose | Triggered when the camera closes. |
+| resolutionChange | Triggered when the resolution changes. |
+| played | Triggered when the video starts playing/streaming. |
+| singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
+| frameAddedToBuffer | Triggered each time a new frame is added to the buffer. |
 
 **See Also**
 
@@ -466,6 +485,7 @@ setImageRect(rect: Core.BasicStructures.Rect): void;
 
 `rect`: A rectangle of type `Core.BasicStructures.Rect`.
 
+<!--
 ## GroupDrawingItem()
 
 Constructor of a `GroupDrawingItem`.
@@ -497,3 +517,4 @@ setChildDrawingItems(childDrawingItems: Array<DrawingItem>): void;
 **Parameters**
 
 `childDrawingItems`: An array of DrawingItem objects.
+-->

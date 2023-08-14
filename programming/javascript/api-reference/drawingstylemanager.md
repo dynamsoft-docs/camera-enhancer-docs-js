@@ -12,12 +12,12 @@ permalink: /programming/javascript/api-reference/drawingstylemanager.html
 
 # class DrawingStyleManager
 
-| API Name                                                                   | Description                                             |
-| -------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle) | Creates a new `DrawingStyle` object and returns its ID. |
-| `static` [getDrawingStyle()](ui.md#getdrawingstyle)                        | Returns the `DrawingStyle` object specified by its Id.  |
-| `static` [getAllDrawingStyles()](ui.md#getalldrawingstyles)                | Returns all `DrawingStyle` objects.                     |
-| `static` [updateDrawingStyle()](ui.md#updatedrawingstyle)                  | Updates an existing `DrawingStyle` specified by its ID. |
+| API Name                                                                     | Description                                             |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle)   | Creates a new `DrawingStyle` object and returns its ID. |
+| `static` [getDrawingStyle()](drawingstylemanager.md#getdrawingstyle)         | Returns the `DrawingStyle` object specified by its Id.  |
+| `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
+| `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
 ## createDrawingStyle
 

@@ -170,15 +170,8 @@ breadcrumbText: API Reference
 | [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                            |
 | [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                       |
 | [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                  |
-| [setTipConfig()](imageeditorview.md#settipconfig)                                   | Configures the tip feature.                                              |
-| [getTipConfig()](imageeditorview.md#gettipconig)                                    | Returns the configuration of the tip.                                    |
-| [setTipVisible()](imageeditorview.md#settipvisible)                                 | Sets whether to show the tip.                                            |
-| [isTipVisible()](imageeditorview.md#istipvisible)                                   | Returns whether the tip is visible.                                      |
-| [updateTipMessage()](imageeditorview.md#updatetipmessage)                           | Updates the message shown in the tip.                                    |
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](imageeditorview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](imageeditorview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor view.                     |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
 ## Class CameraEnhancerModule

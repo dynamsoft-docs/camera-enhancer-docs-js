@@ -18,8 +18,6 @@ permalink: /programming/javascript/api-reference/auxiliary.html
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
 | [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
-| [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
-| [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
 
 **Type definition used on this page**:
 
@@ -112,7 +110,7 @@ let cameraChanged = playCallBackInfo => {
 }
 enhancer.on("cameraChange", cameraChanged);
 ```
-
+<!--
 ## offAll
 
 Removes all event handlers from the specified event. If no event is specified, remove all event handlers.
@@ -168,3 +166,4 @@ A JSON object about the running environment. For example
 ```javascript
 await Dynamsoft.DCE.CameraEnhancer.detectEnvironment();
 ```
+-->

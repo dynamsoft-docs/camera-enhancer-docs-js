@@ -6,7 +6,7 @@ keywords: DrawingStyle, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingStyle
-permalink: /programming/javascript/api-reference/interface/drawingstyle-v4.0.0.html
+permalink: /programming/javascript/api-reference/interface/drawingstyle.html
 ---
 
 # DrawingStyle
