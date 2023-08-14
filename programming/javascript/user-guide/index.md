@@ -143,9 +143,9 @@ Step 3 can be done anywhere after step 1.
 
 #### Capture image frames from the video stream
 
-There are two ways to capture image frames with Dynamsoft Camera Enhancer
+There are two ways to capture image frames with Dynamsoft Camera Enhancer.
 
-1. Capture a single latest frame
+- Capture a single latest frame
 
   This is done with the method [fetchImage()](../api-reference/acquisition.md#fetchimage). The following is a code snippet that shows this
 
@@ -154,14 +154,14 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer
   document.body.appendChild(img.toCanvas());
   ```
 
-2. Start a capture loop that captures multiple frames at a steady interval into a buffer and then read frames from the buffer
+- Start a capture loop that captures multiple frames at a steady interval into a buffer and then read frames from the buffer
 
   The following code snippet shows how it works
 
   ```javascript
   // Check the buffer every 2 seconds and check the latest buffered image.
   enhancer.setImageFetchInterval(2000);
-  // Add images to buffer.
+  // When detecting the addition of a frame to the buffer, take the one from the buffer.
   enhancer.on("frameAddedToBuffer", () => {
           let img = enhancer.getImage();
           console.log(img.toCanvas());
