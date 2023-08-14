@@ -35,6 +35,7 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
     - [Can I open the web page directly from the hard drive?](#can-i-open-the-web-page-directly-from-the-hard-drive)
     - [Why can't I use my camera?](#why-cant-i-use-my-camera)
   - [API Documentation](#api-documentation)
+  - [System Requirements](#system-requirements)
   - [Release Notes](#release-notes)
   - [Next Steps](#next-steps)
 
@@ -319,6 +320,38 @@ To make sure your web application can access the camera, please configure your w
 
 You can check out the detailed documentation about the APIs of the SDK at
 [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html](https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html).
+
+## System Requirements
+
+DCE requires the following features to work:
+
+* Secure context (HTTPS deployment)
+
+  When deploying your application / website for production, make sure to serve it via a secure HTTPS connection. This is required for two reasons
+  
+  * Access to the camera video stream is only granted in a security context. Most browsers impose this restriction.
+  > Some browsers like Chrome may grant the access for `http://127.0.0.1` and `http://localhost` or even for pages opened directly from the local disk (`file:///...`). This can be helpful for temporary development and test.
+  
+  * Dynamsoft License requires a secure context to work.
+
+* `MediaDevices`/`getUserMedia`
+
+  This API is only required for in-browser video streaming.
+
+* `getSettings`
+
+  This API inspects the video input which is a `MediaStreamTrack` object about its constrainable properties.
+
+The following table is a list of supported browsers based on the above requirements:
+
+  Browser Name | Version
+  :-: | :-:
+  Chrome | v59+ （v115+ on Android）
+  Firefox | v63+ (v115+ on Android/iOS)
+  Edge | v79+
+  Safari | v11+
+
+Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDK. Browser compatibility ultimately depends on whether the browser on that particular operating system supports the features listed above.
 
 ## Release Notes
 

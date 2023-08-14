@@ -549,8 +549,8 @@ Zooms the video.
 > How it works:
 >
 > 1. If the camera supports zooming and the zoom factor is within its supported range, zooming is done directly by the camera.
-> 2. If the camera does not support zooming, WebGL is used instead.
-> 3. If the camera supports zooming but the zoom factor is beyond what it supports, the camera's maximum zoom is used, and WebGL is used to do the rest. (In this case, you may see a brief video flicker between the two zooming processes).
+> 2. If the camera does not support zooming, software-based magnification is used instead.
+> 3. If the camera supports zooming but the zoom factor is beyond what it supports, the camera's maximum zoom is used, and software-based magnification is used to do the rest. (In this case, you may see a brief video flicker between the two zooming processes).
 
 ```typescript
 setZoom(settings:{factor: number}): Promise<void>;
