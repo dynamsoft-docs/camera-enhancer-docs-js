@@ -47,7 +47,7 @@ permalink: /programming/javascript/api-reference/cameraview.html
 
 ## createInstance
 
-Creates a `CameraView` instance.
+Creates a `CameraView` instance. The `CameraView` is responsible for streaming video with real-time interaction such as highlighting certain objects found in the video.
 
 ```typescript
 static createInstance(): Promise<CameraView>;
@@ -133,7 +133,7 @@ const uiElement = cameraView.getUIElement();
 
 ## setUIElement
 
-Specifies an HTML element for the `CameraView` instance to use as its UI element.
+Specifies an HTML element for the `CameraView` instance to use as its UI element. The structure inside the element determines the appearance of the UI.
 
 ```typescript
 setUIElement(element: HTMLDivElement): Promise<void>;

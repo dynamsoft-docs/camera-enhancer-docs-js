@@ -37,7 +37,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 
 ## createInstance
 
-Creates a `ImageEditorView` instance.
+Creates a `ImageEditorView` instance. The `ImageEditorView` is responsible for displaying a single image with real-time interaction such as editing the boundaries of an object found in the image.
 
 ```typescript
 static createInstance(): Promise<ImageEditorView>;
@@ -123,7 +123,7 @@ const uiElement = imageEditorView.getUIElement();
 
 ## setUIElement
 
-Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.
+Specifies an HTML element for the `ImageEditorView` instance to use as its UI element. The structure inside the element determines the appearance of the UI.
 
 ```typescript
 setUIElement(element: HTMLDivElement): Promise<void>;
