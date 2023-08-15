@@ -346,8 +346,8 @@ The following table is a list of supported browsers based on the above requireme
 
   Browser Name | Version
   :-: | :-:
-  Chrome | v59+ （v115+ on Android）
-  Firefox | v63+ (v115+ on Android/iOS)
+  Chrome | v59+
+  Firefox | v63+
   Edge | v79+
   Safari | v11+
 
