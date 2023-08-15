@@ -40,12 +40,12 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 Creates a `ImageEditorView` instance. The `ImageEditorView` is responsible for displaying a single image with real-time interaction such as editing the boundaries of an object found in the image.
 
 ```typescript
-static createInstance(): Promise<ImageEditorView>;
+static createInstance(defaultUIElement?: HTMLDivElement | string): Promise<ImageEditorView>;
 ```
 
 **Parameters**
 
-None.
+`defaultUIElement`(optional): Either a DIV element in which to build the default UI, a URL to use an external UI definition, or omitted for no initial DOM element.
 
 **Return value**
 
@@ -61,7 +61,7 @@ A promise resolving to the created `ImageEditorView` object.
 
 ## dispose
 
-Releases all resources used by the `ImageEditorView` instance.
+Releases all resources used by the `ImageEditorView` instance, so that the instance is left with only one property "disposed" as true.
 
 ```typescript
 dispose(): void;
@@ -140,9 +140,18 @@ None.
 **Code Snippet**
 
 ```javascript
-const containerElement1 = document.getElementById('imageEditorContainer1');
-await imageEditorView.setUIElement(containerElement1);
+<div id="enhancerUIContainer" style="width:100%;height:100%;">
+    <div class="dce-image-container" style="position:relative;width:100%;height:500px;"></div>
+</div>
+<script>
+    (async () => {
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        await enhancer.setUIElement(document.getElementById("enhancerUIContainer"));
+        await enhancer.open();
+    })();
+</script>
 ```
+> The video element will be created and appended to the DIV element with the class "dce-image-container", make sure the class name is the same.
 
 ## createDrawingLayer
 
