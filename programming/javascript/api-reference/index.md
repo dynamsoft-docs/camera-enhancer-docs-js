@@ -155,7 +155,7 @@ breadcrumbText: API Reference
 
 | API Name                                                       | Description                                                                                   |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](imageeditorview.md#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                         |
 | [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -277,7 +277,7 @@ Child classes based on `DrawingItem`
 
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of a `ImageDrawingItem`.                                              |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
 | [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
 | [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
 | [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |

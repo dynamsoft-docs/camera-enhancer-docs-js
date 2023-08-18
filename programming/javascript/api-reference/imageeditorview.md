@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 
 | API Name                                     | Description                                                                                   |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](#createinstance) | Creates an `ImageEditorView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -37,7 +37,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 
 ## createInstance
 
-Creates a `ImageEditorView` instance. The `ImageEditorView` is responsible for displaying a single image with real-time interaction such as editing the boundaries of an object found in the image.
+Creates an `ImageEditorView` instance. The `ImageEditorView` is responsible for displaying a single image with real-time interaction such as editing the boundaries of an object found in the image.
 
 ```typescript
 static createInstance(defaultUIElement?: HTMLDivElement | string): Promise<ImageEditorView>;
@@ -141,7 +141,7 @@ None.
 
 ```javascript
 <div id="enhancerUIContainer" style="width:100%;height:100%;">
-    <div class="dce-image-container" style="position:relative;width:100%;height:500px;"></div>
+    <div class="dce-image-container" style="display:none; width: 100vw; height: 70vh"></div>
 </div>
 <script>
     (async () => {
@@ -151,7 +151,8 @@ None.
     })();
 </script>
 ```
-> The video element will be created and appended to the DIV element with the class "dce-image-container", make sure the class name is the same.
+
+> If the input HTMLDivElement is not complete ，the default image element will be created and appended to the DIV element with the class "dce-image-container". For further customizing the UI please make sure the class name is the same.
 
 ## createDrawingLayer
 
@@ -452,7 +453,7 @@ let videofitType = imageEditorView.getVideoFit();
 -->
 ## setOriginalImage
 
-Sets the image to be drawn on the image editor image editor view.
+Sets the image to be drawn on the image editor view.
 
 ```typescript
 setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): Promise<void>;

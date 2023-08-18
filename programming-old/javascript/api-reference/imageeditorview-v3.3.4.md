@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/imageeditorview-v3.3.4.html
 
 | API Name                                     | Description                                                                                   |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](#createinstance) | Creates an `ImageEditorView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -44,7 +44,7 @@ permalink: /programming/javascript/api-reference/imageeditorview-v3.3.4.html
 
 ## createInstance
 
-Creates a `ImageEditorView` instance.
+Creates an `ImageEditorView` instance.
 
 ## dispose
 

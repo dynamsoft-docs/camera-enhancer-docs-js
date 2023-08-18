@@ -31,7 +31,7 @@ permalink: /programming/javascript/api-reference/index-v3.3.4.html
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
 | [ifSkipCameraInspection](camera-control.md#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
 | [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera)     | Returns or sets whether to save the last used camera and resolution.              |
-| [getAllCameras()](camera-control.md#getallcameras)                 | Returns infomation of all available cameras on the device.                        |
+| [getAllCameras()](camera-control.md#getallcameras)                 | Returns information of all available cameras on the device.                        |
 | [selectCamera()](camera-control.md#selectcamera)                   | Chooses a camera as the video source.                                             |
 | [getSelectedCamera()](camera-control.md#getselectedcamera)         | Returns information about the selected / current camera.                          |
 | [open()](camera-control.md#open)                                   | Turn on the camera to start streaming live video.                                 |

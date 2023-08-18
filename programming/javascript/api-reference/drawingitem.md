@@ -70,7 +70,7 @@ Child classes based on `DrawingItem`
 
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of a `ImageDrawingItem`.                                              |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
 | [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
 | [getImage()](drawingitem.md#getimage)                     | Returns the image drawn.                                                          |
 | [setImage()](drawingitem.md#setimage)                     | Specifies the image to draw.                                                      |
@@ -137,24 +137,6 @@ Adds an event listener to the `DrawingItem` for the event specified by `eventNam
 ```typescript
 on(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
-
-**Type definition used on this page**:
-
-```typescript
-type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
-```
-
-**Built-in Event Reference Table**
-
-| Event Name | Description |
-| --| --|
-| cameraChange | Triggered when a different camera is used. |
-| cameraOpen | Triggered when the camera opens. |
-| cameraClose | Triggered when the camera closes. |
-| resolutionChange | Triggered when the resolution changes. |
-| played | Triggered when the video starts playing/streaming. |
-| singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
-| frameAddedToBuffer | Triggered each time a new frame is added to the buffer. |
 
 **See Also**
 
@@ -385,7 +367,7 @@ getText(): string;
 
 **Return Value**
 
-Returns the rectangle of type `string`.
+Returns the text of type `string`.
 
 ## setText
 
@@ -427,7 +409,7 @@ setTextRect(rect: Core.BasicStructures.Rect): void;
 
 ## ImageDrawingItem()
 
-Constructor of a `ImageDrawingItem`.
+Constructor of an `ImageDrawingItem`.
 
 ```typescript
 constructor(
