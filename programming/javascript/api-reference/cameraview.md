@@ -162,7 +162,7 @@ None.
 </script>
 ```
 
-> > If the input HTMLDivElement is not complete ，the default video element will be created and appended to the DIV element with the class "dce-video-container". For further customizing the UI please make sure the class name is the same.
+> If the input HTMLDivElement is not complete, the default video element will be created and appended to the DIV element with the class "dce-video-container". For further customizing the UI please make sure the class name is the same.
 
 ## createDrawingLayer
 
