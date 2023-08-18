@@ -138,6 +138,13 @@ Adds an event listener to the `DrawingItem` for the event specified by `eventNam
 on(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
 
+**Parameters**
+
+`eventName`: The name of the event you want to listen to.
+`listener()`: A function that will be called when the specified event occurs.
+
+> Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
+
 **See Also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
