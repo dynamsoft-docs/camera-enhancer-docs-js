@@ -284,7 +284,7 @@ A promise that resolves when the operation succeeds.
 
 Sets the resolution of the selected camera. If the specified resolution is not exactly supported, the closest resolution will be applied.
 
-> If called before `open()` or `show()` , the camera will use the set resolution when it opens. Otherwise, the default resolution is used, which is 1280 x 720.
+> If called before `open()` or `show()` , the camera will use the set resolution when it opens. Otherwise, the default resolution of 1920x1080 is used (1280x720 on mobile phones and pad devices).
 
 ```typescript
 setResolution(resolution: Resolution): Promise<PlayCallbackInfo>;
