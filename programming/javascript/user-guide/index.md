@@ -109,8 +109,7 @@ or
 or
 
 ```typescript
-import { Core } from 'dynamsoft-core';
-import { CameraEnhancer } from 'dynamsoft-camera-enhancer';
+import { CameraEnhancer, CameraView } from 'dynamsoft-camera-enhancer';
 ```
 
 Read more on [how to host the SDK](#hosting-the-sdk).
@@ -164,9 +163,9 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer.
   enhancer.setImageFetchInterval(2000);
   // When detecting the addition of a frame to the buffer, take the one from the buffer.
   enhancer.on("frameAddedToBuffer", () => {
-          let img = enhancer.getImage();
-          console.log(img.toCanvas());
-        });
+    let img = enhancer.getImage();
+    console.log(img.toCanvas());
+  });
   // Start the built-in fetching loop.
   let img = enhancer.startFetching();
   ```
@@ -233,7 +232,7 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
   </script>
   ```
 
-  > The video element will be created and appended to the DIV element with the class `dce-video-container`, make sure the class name is the same. Besides, the CSS property `position` of the DIV element must be either `relative`, `absolute`, `fixed`, or `sticky`.
+  > The video element will be created and appended to the DIV element with the class `dce-video-container`, make sure the class name is the same.
 
   - Add the camera list and resolution list. If the class names for these lists match the default ones,  `dce-sel-camera` and `dce-sel-resolution` , the SDK will automatically populate the lists and handle the camera/resolution switching.
 
