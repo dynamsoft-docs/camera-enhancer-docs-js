@@ -164,10 +164,10 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer.
   // When detecting the addition of a frame to the buffer, take the one from the buffer.
   enhancer.on("frameAddedToBuffer", () => {
     let img = enhancer.getImage();
-    console.log(img.toCanvas());
+    console.log(img);
   });
   // Start the built-in fetching loop.
-  let img = enhancer.startFetching();
+  enhancer.startFetching();
   ```
   
 #### Use ImageEditorView and the Drawing Logic
