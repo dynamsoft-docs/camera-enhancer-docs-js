@@ -162,9 +162,9 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer.
   The following code snippet shows how it works
 
   ```javascript
-  // Capture image frame every 2 seconds and add it to buffer.
+  // Capture an image frame every 2 seconds and subsequently append it to the buffer.
   enhancer.setImageFetchInterval(2000);
-  // "frameAddedToBuffer" fires when a new frame is added to buffer.
+  // The event "frameAddedToBuffer" is triggered whenever a new frame is added to the buffer.
   enhancer.on("frameAddedToBuffer", () => {
     let img = enhancer.getImage();
     console.log(img);
@@ -182,14 +182,14 @@ The other view class ImageEditorView is designed to show a single image. The fol
 ```
 
 ```javascript
-// Default UI will be used if no parameters are provided to 'ImageEditorView.createInstance()'.
+// The default UI will be used if no parameters are provided to 'ImageEditorView.createInstance()'.
 let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
-// Get 'editorView' instance's UI and append it to DOM.
+// Retrieve the UI of the 'editorView' instance and append it to the DOM.
 document.querySelector("#imageEditorContainer").append(editorView.getUIElement());
-// When the video is already playing, capture an image and draw it on the ImageEditorView
+// When the video is already playing, capture an image and draw it on the ImageEditorView.
 let img = enhancer.fetchImage();
 editorView.setOriginalImage(img);
-// Draw a rectangle on the image
+// Draw a rectangle on the image.
 let drawingLayer = editorView.createDrawingLayer();
 let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem(
   {
