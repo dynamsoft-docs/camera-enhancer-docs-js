@@ -132,10 +132,13 @@ Step 3 can be done anywhere after step 1.
 <div id="enhancerUIContainer" style="width:1280px;height:720px;"></div>
 <script>
   (async () => {
+      // Default UI will be used if no parameters are provided to 'CameraView.createInstance()'.
       let view = await Dynamsoft.DCE.CameraView.createInstance();
+       // Create 'CameraEnhancer' instance and pass 'cameraView' to it for UI control.
       let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
-      // use the default UI element
-      enhancerUIContainer.append(view.getUIElement());
+      // Get 'CameraView' instance's UI and append it to DOM.
+      document.querySelector("#enhancerUIContainer").append(view.getUIElement());
+      
       await enhancer.open();
   })();
 </script>
@@ -159,9 +162,9 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer.
   The following code snippet shows how it works
 
   ```javascript
-  // Check the buffer every 2 seconds and check the latest buffered image.
+  // Capture image frame every 2 seconds and add it to buffer.
   enhancer.setImageFetchInterval(2000);
-  // When detecting the addition of a frame to the buffer, take the one from the buffer.
+  // "frameAddedToBuffer" fires when a new frame is added to buffer.
   enhancer.on("frameAddedToBuffer", () => {
     let img = enhancer.getImage();
     console.log(img);
@@ -179,7 +182,10 @@ The other view class ImageEditorView is designed to show a single image. The fol
 ```
 
 ```javascript
-let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance(document.getElementById('imageEditorContainer'));
+// Default UI will be used if no parameters are provided to 'ImageEditorView.createInstance()'.
+let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+// Get 'editorView' instance's UI and append it to DOM.
+document.querySelector("#imageEditorContainer").append(editorView.getUIElement());
 // When the video is already playing, capture an image and draw it on the ImageEditorView
 let img = enhancer.fetchImage();
 editorView.setOriginalImage(img);
@@ -212,21 +218,19 @@ The built-in UI of the `CameraView` instance is defined in the file `dist/dce.ui
 Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 ```
 
-- Build the UI element into your own web page and specify it with the API `setUIElement(HTMLElement)`.
+- Build the UI element into your own web page and specify it when create instance.
 
   - Embed only the video
 
   ```html
-  <div id="enhancerUIContainer" style="width:1280px;height:720px" >
-    <div style="position:relative;width:100%;height:100%;min-width:100px;min-height:100px;background:#ddd;">
-      <div class="dce-video-container" style="position:absolute;left:0;top:0;width:100%;height:100%;"></div>
-    </div>
+  <div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
+    <div class="dce-video-container" style="width:100%;height:100%;"></div>
   </div>
   <script>
       (async () => {
-        let view = await Dynamsoft.DCE.CameraView.createInstance();
+        // Create 'CameraView' instance and pass an element as its UI.
+        let view = await Dynamsoft.DCE.CameraView.createInstance(document.getElementById("enhancerUIContainer"));
         let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
-        await view.setUIElement(document.getElementById("enhancerUIContainer"));
         await enhancer.open();
       })();
   </script>
