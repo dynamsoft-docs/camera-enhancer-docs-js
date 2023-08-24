@@ -99,7 +99,7 @@ Depending on how you downloaded the SDK and where you put it. You can typically 
 ```html
 <!-- Upon extracting the zip package into your project, you can generally include it in the following manner -->
 <script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js"></script>
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.10/dist/cvr.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.11/dist/cvr.js"></script>
 <script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
 ```
 
