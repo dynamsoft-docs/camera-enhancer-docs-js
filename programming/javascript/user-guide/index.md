@@ -43,10 +43,11 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
 
 ### Include the SDK
 
-#### Dependency packages
+To build the web solution, we may need to include three packages
 
-- **core.js**: In version 4.0.0 we integrated DCE as one of the important components of Dynamsoft Capture Vision(DCV), DCE inherits ImageSourceAdapter class from core module and has the ability to manage the input image, so core.js is mandatory;
-- **cvr.js**(optional): DCE has many advanced features like auto-zoom,enhanced-focus and tap-to-focus. If you want to use them, you need to include cvr.js.
+1. `dynamsoft-camera-enhancer`: Required, it provides the camera related functionalities used in this guide.
+2. `dynamsoft-core`: Required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
+3. `dynamsoft-capture-vision-router`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
 
 #### Use a CDN
 
