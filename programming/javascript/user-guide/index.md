@@ -213,13 +213,7 @@ Once the rectangle appears on the image, you can click to select it and adjust i
 
 #### Customize the UI
 
-The built-in UI of the `CameraView` instance is defined in the file `dist/dce.ui.html` . There are a few ways to customize it:
-
-- Modify the file `dist/dce.ui.html` directly.
-
-  This option is only possible when you host this file on your own web server instead of using a CDN.
-
-- Copy the file `dist/dce.ui.html` to your project, modify it and pass its path in the API `createInstance` to set it as the default UI.
+The built-in UI of the `CameraView` instance is defined in the file `dist/dce.ui.html`. You can copy the file `dist/dce.ui.html` to your project, modify it and pass its path in the API `createInstance` to set it as the default UI.
 
 ```javascript
 // To make sure the following line takes effect, put it before the API `open()` is called.
@@ -249,15 +243,21 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
   - Add the camera list and resolution list. If the class names for these lists match the default ones,  `dce-sel-camera` and `dce-sel-resolution` , the SDK will automatically populate the lists and handle the camera/resolution switching.
 
   ```html
-  <div style="position: absolute;left: 0;top: 0;">
-    <select class="dce-sel-camera" style="display: block;"></select>
+  <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+    <div style="position:absolute;left:0;top:0;">
+      <select class="dce-sel-camera" style="display:block;"></select>
+    </div>
+    <div class="dce-video-container" style="width:100%;height:100%;"></div>
   </div>
   ```
 
   ```html
-  <div style="position: absolute;left: 0;top: 0;">
-    <select class="dce-sel-resolution" style="display: block;margin-top: 5px;">
-    </select>
+  <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+    <div style="position:absolute;left:0;top:0;">
+      <select class="dce-sel-camera" style="display:block;"></select>
+      <select class="dce-sel-resolution" style="display:block;margin-top:5px;"></select>
+    </div>
+    <div class="dce-video-container" style="width:100%;height:100%;"></div>
   </div>
   ```
 
