@@ -78,7 +78,7 @@ The following shows a few ways to download the SDK.
 
 - From the website
 
-  [Download the JavaScript Package](https://www.dynamsoft.com/camera-enhancer/downloads/1000021-confirmation/?utm_source=guide)
+  [Download the JavaScript ZIP Package](https://www.dynamsoft.com/camera-enhancer/downloads/1000021-confirmation/?utm_source=guide)
 
 - yarn
 
@@ -92,18 +92,23 @@ The following shows a few ways to download the SDK.
   npm install dynamsoft-camera-enhancer --save
   ```
 
+> Note: Upon installation of `dynamsoft-camera-enhancer`, the compatible versions of `dynamsoft-capture-vision-router` and `dynamsoft-core` will be automatically downloaded.
+
 Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
 
 ```html
-<script src="/dynamsoft-core-js-3.0.10/dist/core.js"></script>
-<script src="/dynamsoft-camera-enhancer-js-4.0.0/dist/dce.js"></script>
+<!-- Upon extracting the zip package into your project, you can generally include it in the following manner -->
+<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.10/dist/cvr.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
 ```
 
 or
 
 ```html
-<script src="/node_modules/dynamsoft-core/dist/core.js"></script>
-<script src="/node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
+<script src="./node_modules/dynamsoft-core/dist/core.js"></script>
+<script src="./node_modules/dynamsoft-capture-vision-router/dist/cvr.js"></script>
+<script src="./node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
 ```
 
 or
@@ -322,7 +327,7 @@ To make sure your web application can access the camera, please configure your w
 ## API Documentation
 
 You can check out the detailed documentation about the APIs of the SDK at
-[https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html](https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html).
+[https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/api-reference/index.html).
 
 ## System Requirements
 
@@ -358,12 +363,12 @@ Apart from the browsers, the operating systems may impose some limitations of th
 
 ## Release Notes
 
-Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html).
+Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/release-note/index.html).
 
 ## Next Steps
 
 Now that you have got the SDK integrated, you can choose to move forward in the following directions
 
-1. Learn more about the [Shape Drawing Feature](https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/user-guide/features/draw-shapes.html).
+1. Learn more about the [Shape Drawing Feature](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/user-guide/features/draw-shapes.html).
 2. Check out the [official samples on Github](https://github.com/Dynamsoft/camera-enhancer-javascript-samples).
-3. Learn about the available [APIs](https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/api-reference/index.html).
+3. Learn about the available [APIs](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/api-reference/index.html).
