@@ -20,7 +20,7 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getScanRegion()](#getscanregion)                                     | Returns the scan region.                                                                            |
 | [fetchImage()](#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [addImageToBuffer()](#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
+| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `startFetching()` is called when continued fetching has started.            |
 | [getImageFetchInterval()](#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
 | [startFetching()](#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
 | [stopFetching()](#stopfetching)                                       | Stops fetching any more images.                                                                     |
@@ -58,10 +58,10 @@ None.
 
 ```javascript
 let scanRegion = {
-    left: 25,
-    right: 75,
-    top: 25,
-    bottom: 75
+    x: 25,
+    y: 75,
+    width: 25,
+    height: 75
     isMeasuredInPercentage: true
 };
 enhancer.setScanRegion(scanRegion); 
@@ -70,14 +70,14 @@ enhancer.setScanRegion(scanRegion);
 **See also**
 
 * [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/dsrect.html)
+* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
 
 ## getScanRegion
 
 Returns the scan region.
 
 ```typescript
-getScanRegion(): DSRect;
+getScanRegion(): Rect | DSRect;
 ```
 
 **Parameters**
@@ -86,7 +86,7 @@ None.
 
 **Return value**
 
-A `DSRect` object which specifies the scan region.
+A `Rect` or `DSRect` object which specifies the scan region.
 
 **Code Snippet**
 
@@ -150,7 +150,7 @@ enhancer.addImageToBuffer(image);
 
 ## setImageFetchInterval
 
-Sets the interval at which `fetchImage()` is called when continuoued fetching has started.
+Sets the interval at which `startFetching()` is called when continued fetching has started.
 
 ```typescript
 setImageFetchInterval(interval: number): void;
@@ -327,6 +327,7 @@ let imageCount = enhancer.hasImage(10);
 ## getImage
 
 Returns a `DCEFrame` object from the buffer.
+> This function retrieves the latest image added to the buffer, and removing it from the buffer in the process.
 
 ```typescript
 getImage(): DCEFrame;
@@ -421,7 +422,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
+enhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
 **See Also**
@@ -466,7 +467,7 @@ None.
 
 **Return value**
 
-True means the image source can supply more images, false means the image source is closed or exhausted.
+True means the input image source can supply more images, false means the input image source is closed or exhausted.
 
 **Code Snippet**
 
@@ -478,7 +479,7 @@ if(!enhancer.hasNextImageToFetch()) {
 
 ## setPixelFormat
 
-Sets the pixel format of the images returned by `getImage()`.
+Sets the pixel format of the images.
 
 ```typescript
 setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
