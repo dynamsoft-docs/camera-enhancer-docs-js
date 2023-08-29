@@ -33,12 +33,12 @@ static createDrawingStyle(styleDefinition: DrawingStyle): number;
 
 The default values are:
 
-* lineWidth: `1.0`
+* lineWidth: `2`
 * fillStyle: `rgba(245, 236, 73, 0.3)`
 * strokeStyle: `rgba(245, 236, 73, 1)`
 * paintMode: `stroke`
-* fontSize: `10`
-* fontFamily: `sans-serif`
+* fontSize: `40`
+* fontFamily: `consolas`
 
 **Return value**
 
@@ -48,11 +48,11 @@ The id of the created `DrawingStyle` .
 
 ```javascript
 let styleID = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
-    lineWidth: 1.0,
+    lineWidth: 4,
     fillStyle: " rgba(73, 173, 245, 0.8)",
     strokeStyle: " rgba(73, 173, 245, 1)",
     paintMode: "fill",
-    fontSize: 100,
+    fontSize: 50,
     fontFamily: "sans-serif"
 });
 ```
@@ -157,13 +157,13 @@ If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**
 | SDK Name                      | Style IDs                     |
 | ----------------------------- | ----------------------------- |
 | Dynamsoft Document Normalizer | 1 (*default*), 5 (*selected*) |
-| Dynamsoft Label Recognizer    | 2 (*default*), 6 (*selected*) |
-| Dynamsoft Barcode Reader      | 3 (*default*), 7 (*selected*) |
+| Dynamsoft Barcode Reader      | 2 (*default*), 6 (*selected*) |
+| Dynamsoft Label Recognizer    | 3 (*default*), 7 (*selected*) |
 
 You can update these styles to apply changes to the DrawingLayers used by these products. For example, the following code changes the style for highlighting found barcodes:
 
 ```javascript
-Dynamsoft.DCE.DrawingStyleManager.updateDrawingStyle(3, {
+Dynamsoft.DCE.DrawingStyleManager.updateDrawingStyle(2, {
     fillStyle: "rgba(100, 75, 245, 0.3)",
     lineWidth: 5,
     paintMode: "strokeAndFill",

@@ -130,7 +130,11 @@ getState(): EnumDrawingItemState;
 
 **Return Value**
 
-return a value of type `EnumDrawingItemState`.
+A value of type `EnumDrawingItemState`.
+
+**See also**
+
+* [EnumDrawingItemState](enum/EnumDrawingItemState.md)
 
 ## on
 
@@ -143,6 +147,7 @@ on(eventName: string, listener(event: DrawingItemEvent): void): void;
 **Parameters**
 
 `eventName`: The name of the event you want to listen to.  
+
 `listener()`: A function that will be called when the specified event occurs.
 
 > Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
@@ -167,6 +172,7 @@ off(eventName: string, listener(event: DrawingItemEvent): void): void;
 **See also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
+* [on](#on)
 
 ## addNote
 
@@ -199,7 +205,7 @@ getNote(name: string): Note;
 
 **Return Value**
 
-Returns the corresponding Note object based on the provided name.
+The corresponding `Note` object based on the provided name.
 
 ## hasNote
 
@@ -215,7 +221,7 @@ hasNote(name: string): boolean;
 
 **Return Value**
 
-Returns a value of boolean indicates whether a specific note exists with the given name.
+A value of boolean indicates whether a specific note exists with the given name.
 
 ## updateNote
 
@@ -227,8 +233,10 @@ updateNote(name: string, content: any, mergeContent?: boolean): void;
 
 **Parameters**
 
-`name`: The string representing the name of the note.  
-`content`: The content of the note.  
+`name`: The string representing the name of the note.
+
+`content`: The content of the note.
+
 `mergeContent`(optional): If this parameter is set to true, then the new content is added to the Note alongside the original content.
 
 ## deleteNote
@@ -270,7 +278,7 @@ clearNotes(): void;
 Constructor of a `LineDrawingItem`.
 
 ```typescript
-constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number) { super(Object) };
+constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number);
 ```
 
 **See also**
@@ -308,7 +316,7 @@ setLine(line: Core.BasicStructures.LineSegment): void;
 Constructor of a `RectDrawingItem`.
 
 ```typescript
-constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number) { super(Object) };
+constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number);
 ```
 
 **See also**
@@ -346,7 +354,7 @@ setRect(rect: Core.BasicStructures.Rect): void;
 Constructor of a `QuadDrawingItem`.
 
 ```typescript
-constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number) { super(Object) };
+constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number);
 ```
 
 **See also**
@@ -384,7 +392,7 @@ setQuad(quad: Core.BasicStructures.Quadrilateral): void;
 Constructor of a `TextDrawingItem`.
 
 ```typescript
-constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number) { super(Object) };
+constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number);
 ```
 
 ## getText
@@ -446,7 +454,7 @@ constructor(
     image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
     rect: Core.BasicStructures.Rect,
     maintainAspectRatio: boolean,
-    drawingStyleId?: number) { super(Object) };
+    drawingStyleId?: number);
 ```
 
 **Parameters**
@@ -506,7 +514,7 @@ setImageRect(rect: Core.BasicStructures.Rect): void;
 Constructor of a `GroupDrawingItem`.
 
 ```typescript
-constructor(childDrawingItems: Array<DrawingItem>) { super(Object) };
+constructor(childDrawingItems: Array<DrawingItem>);
 ```
 
 ## getChildDrawingItems
