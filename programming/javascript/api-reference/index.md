@@ -293,7 +293,9 @@ Child classes based on `DrawingItem`
 * [Resolution](interface/resolution.md)
 * [Point](interface/point.md)
 * [Region](interface/region.md)
+* [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
+* [VideoFrameTag](interface/videoframetag.md)
 * [Warning](interface/warning.md)
 
 ## Enumerations

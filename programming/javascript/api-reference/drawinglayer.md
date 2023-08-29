@@ -33,8 +33,8 @@ If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**
 | SDK Name                      | DrawingLayer ID |
 | ----------------------------- | --------------- |
 | Dynamsoft Document Normalizer | 1               |
-| Dynamsoft Label Recognizer    | 2               |
-| Dynamsoft Barcode Reader      | 3               |
+| Dynamsoft Barcode Reader      | 2               |
+| Dynamsoft Label Recognizer    | 3               |
 
 You can manipulate these DrawingLayers directly, for example, the following code applies a different DrawingStyle to the DrawingLayer used by **Dynamsoft Label Recognizer**:
 
@@ -43,7 +43,7 @@ You can manipulate these DrawingLayers directly, for example, the following code
 ```javascript
 // Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
 let cameraView = enhancer.getCameraView();
-let dlrDrawingLayer = cameraView.getDrawingLayer(2);
+let dlrDrawingLayer = cameraView.getDrawingLayer(3);
 // Creates a new style to be used.
 let newStyleId = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
     fillStyle: "rgba(100, 75, 245, 0.3)",
@@ -290,7 +290,7 @@ let isRenderedAll = drawingLayer.renderAll();
 Sets the style for `DrawingItems` on the `DrawingLayer`
 
 * If both "state" and "mediaType" are ignored, the style will apply to all `DrawingItems`;
-* If "state" is specified, the style will only apply to `DrawingItems` in that state;
+* If only "state" is specified, all `DrawingItem` with the specified state will use this default style.;
 * If "state" and "mediaType" are both specified, the style will only apply to `DrawingItems` of that "mediaType" in that "state".
 
 ```typescript
@@ -299,9 +299,9 @@ setDefaultStyle(drawingStyleId: number, state?: EnumDrawingItemState, mediaType?
 
 **Parameters**
 
-`drawingStyleId` : specifies a style by its ID.  
-`state` : specifies a state.
-`mediaType` : specifies a mediaType.
+`drawingStyleId`: specifies a style by its ID.  
+`state`(Optional): specifies a state.  
+`mediaType`(Optional): specifies a mediaType.
 
 **Code Snippet**
 
@@ -356,12 +356,12 @@ let drawingLayer = cameraView.getDrawingLayer(100);
 let isVisible = drawingLayer.isVisible();
 ```
 
-## onSelectionChange
+## onSelectionChanged
 
 An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`.
 
 ```typescript
-onSelectionChange(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>): void;
+onSelectionChanged(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingItems: Array<DrawingItem>): void;
 ```
 
 **Parameters**
@@ -374,7 +374,7 @@ onSelectionChange(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingIte
 ```javascript
 let cameraView = enhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
-drawingLayer.onSelectionChange = (selected, deselected) => {
+drawingLayer.onSelectionChanged = (selected, deselected) => {
     //do ...
 }
 ```

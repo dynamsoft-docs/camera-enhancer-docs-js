@@ -54,9 +54,26 @@ A promise resolving to the created `ImageEditorView` object.
 **Code Snippet**
 
 ```javascript
-(async () => {
-    let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
-})();
+let cameraView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+```
+
+or
+
+```javascript
+// Pass the path of the customized UI in the API `createInstance` to set it as the default UI.
+let cameraView = await Dynamsoft.DCE.ImageEditorView.createInstance("THE-URL-TO-THE-FILE");
+```
+
+or
+
+```html
+<div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-image-container" style="width:100%;height:100%;"></div>
+</div>
+<script>
+    // Create 'ImageEditorView' instance and pass an element as its UI.
+    let view = await Dynamsoft.DCE.ImageEditorView.createInstance(document.getElementById("enhancerUIContainer"));
+</script>
 ```
 
 ## dispose
@@ -126,12 +143,12 @@ const uiElement = imageEditorView.getUIElement();
 Specifies an HTML element for the `ImageEditorView` instance to use as its UI element. The structure inside the element determines the appearance of the UI.
 
 ```typescript
-setUIElement(element: HTMLDivElement): Promise<void>;
+setUIElement(element: HTMLDivElement | string): Promise<void>;
 ```
 
 **Parameters**
 
-`element`: Takes an argument element of type HTMLDivElement, which represents the new UI element to be associated with the image editor view.
+`element`: A DIV element in which to build the default UI, or a URL to use an external UI definition.
 
 **Return value**
 
@@ -456,7 +473,7 @@ let videofitType = imageEditorView.getVideoFit();
 Sets the image to be drawn on the image editor view.
 
 ```typescript
-setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): Promise<void>;
+setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): void;
 ```
 
 **Parameters**
@@ -471,8 +488,7 @@ None.
 
 ```javascript
 let currentFrame = enhancer.getFrame();
-let cvs = currentFrame.toCanvas();
-imageEditorView.setOriginalImage(cvs);
+imageEditorView.setOriginalImage(currentFrame);
 ```
 
 ## getOriginalImage
@@ -480,7 +496,7 @@ imageEditorView.setOriginalImage(cvs);
 Returns the image drawn on the image editor.
 
 ```typescript
-getOriginalImage(): Promise<Core.BasicStructures.DSImageData>;
+getOriginalImage(): Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement;
 ```
 
 **Parameters**
@@ -489,7 +505,7 @@ None.
 
 **Return value**
 
-Returns a Promise that resolves to a Core.BasicStructures.DSImageData object representing the original image displayed in the image editor view.
+Either a `DSImageData` object, an HTMLImageElement, or an HTMLCanvasElement.
 
 **Code Snippet**
 
