@@ -46,7 +46,7 @@ A promise resolving to the created `CameraEnhancer` object.
 })();
 ```
 
-**See Also**
+**See also**
 
 [Dispose](#dispose)
 [CameraView](cameraview.md)
@@ -76,7 +76,7 @@ let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 enhancer.dispose();
 ```
 
-**See Also**
+**See also**
 
 [Disposed](#disposed)
 
@@ -96,7 +96,7 @@ let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let flag = enhancer.disposed;
 ```
 
-**See Also**
+**See also**
 
 [Dispose](#dispose)
 
@@ -135,6 +135,6 @@ The following two warnings are returned respectively:
 Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 ```
 
-**See Also**
+**See also**
 
 [Warning](interface/warning.md)

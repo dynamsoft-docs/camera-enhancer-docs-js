@@ -45,7 +45,7 @@ let cameraView = enhancer.getCameraView();
 cameraView.getVisibleRegionOfVideo();
 ```
 
-**See Also**
+**See also**
 
 * [CameraView](cameraview.md)
 
@@ -140,7 +140,7 @@ The converted point.
 enhancer.convertToPageCoordinates({x: 0, y: 0});
 ```
 
-**See Also**
+**See also**
 
 * [Point](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
@@ -166,6 +166,6 @@ The converted point.
 enhancer.convertToClientCoordinates({x: 0, y: 0});
 ```
 
-**See Also**
+**See also**
 
 * [Point](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)

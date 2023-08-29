@@ -30,7 +30,9 @@ permalink: /programming/javascript/api-reference/drawingitem.html
 | [getAllNotes()](drawingitem.md#getallnotes)     | Returns all `Notes` on the `DrawingItem`.                                                                  |
 | [clearNotes()](drawingitem.md#clearnotes)       | Deletes all `Notes` on the `DrawingItem`.                                                                  |
 
-Child classes based on `DrawingItem`
+---
+
+Child classes based on `DrawingItem`:
 
 ## Class LineDrawingItem
 
@@ -140,12 +142,12 @@ on(eventName: string, listener(event: DrawingItemEvent): void): void;
 
 **Parameters**
 
-`eventName`: The name of the event you want to listen to.
+`eventName`: The name of the event you want to listen to.  
 `listener()`: A function that will be called when the specified event occurs.
 
 > Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
 
-**See Also**
+**See also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
 
@@ -157,7 +159,12 @@ Removes an event listener to the `DrawingItem` for the event specified by `event
 off(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
 
-**See Also**
+**Parameters**
+
+`eventName`: The name of the event you want to listen to.  
+`listener()`: A function that will be called when the specified event occurs.
+
+**See also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
 
@@ -171,8 +178,12 @@ addNote(note: Note, replace?: boolean): void;
 
 **Parameters**
 
-`note`: Expects an instance of the Note, including name and content properties to be passed when the method is called.
-`replace`: Determines whether an existing note should be replaced when adding the new note.
+`note`: Expects an object that implements the `Note` interface.
+`replace`(optional): Determines whether to replace the `Note` if the name of the `Note` already exists.
+
+**See also**
+
+* [Note](interface/note.md)
 
 ## getNote
 
@@ -262,6 +273,10 @@ Constructor of a `LineDrawingItem`.
 constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number) { super(Object) };
 ```
 
+**See also**
+
+* [LineSegment](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/line-segment.html)
+
 ## getLine
 
 Returns the `LineSegment` object the item is based on.
@@ -296,6 +311,10 @@ Constructor of a `RectDrawingItem`.
 constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number) { super(Object) };
 ```
 
+**See also**
+
+* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
+
 ## getRect
 
 Returns the `Rect` object the item is based on.
@@ -329,6 +348,10 @@ Constructor of a `QuadDrawingItem`.
 ```typescript
 constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number) { super(Object) };
 ```
+
+**See also**
+
+* [Quadrilateral](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/quadrilateral.html)
 
 ## getQuad
 
@@ -426,13 +449,16 @@ constructor(
     drawingStyleId?: number) { super(Object) };
 ```
 
-## maintainAspectRatio
+**Parameters**
 
-Sets or returns whether aspect ratio of the image is maintained when it is drawn.
+`image`: The image data.
+`rect`: Outer rectangle border of the image.
+`maintainAspectRatio`: Sets whether aspect ratio of the image is maintained when it is drawn.
+`drawingStyleId`(optional): Specifies the `DrawingStyle` that applies to this `ImageDrawingItem`.
 
-```typescript
-maintainAspectRatio: boolean;
-```
+**See also**
+
+* [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
 
 ## getImage
 

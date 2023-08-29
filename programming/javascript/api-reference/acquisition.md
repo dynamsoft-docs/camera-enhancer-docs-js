@@ -399,7 +399,7 @@ None.
 enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
-**See Also**
+**See also**
 
 * [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
@@ -425,7 +425,7 @@ None.
 enhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
-**See Also**
+**See also**
 
 * [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 

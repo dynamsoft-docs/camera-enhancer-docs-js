@@ -116,7 +116,7 @@ let drawingStyles = Dynamsoft.DCE.DrawingStyleManager.getAllDrawingStyles();
 
 Updates an existing `DrawingStyle` specified by its ID. You can update all properties of the `DrawingStyle` or you can update just a few of them. Check the code snippet for more information.
 
-> The update takes effect immediately.
+> The changes take immediate effect on items added to the layer thereafter. If you intend for the changes to apply to items already present on the layer, you must call the `renderAll()` method of the `drawingLayer`.
 
 ```typescript
 static updateDrawingStyle(styleId: number, styleDefinition: DrawingStyle): void; 
@@ -148,6 +148,7 @@ Dynamsoft.DCE.DrawingStyleManager.updateDrawingStyle(100, {
 **See also**
 
 * [DrawingStyle](interface/drawingstyle.md)
+* [`renderAll()`](drawinglayer.md#renderall)
 
 **Special Notice**
 

@@ -190,7 +190,7 @@ enhancer.setUIElement("THE-URL-TO-THE-FILE");
 
 ## createDrawingLayer
 
-Creates a DrawingLayer object and put it in an array of DrawingLayers.
+Creates and returns a DrawingLayer object.
 
 ```typescript
 createDrawingLayer(): DrawingLayer;
@@ -202,7 +202,7 @@ None.
 
 **Return value**
 
-Returns a DrawingLayer object.
+A `DrawingLayer` object.
 
 **Code Snippet**
 
@@ -212,7 +212,7 @@ const newDrawingLayer = cameraView.createDrawingLayer();
 
 ## getDrawingLayer
 
-Gets the DrawingLayer specified by its ID.
+Gets the `DrawingLayer` specified by its ID.
 
 ```typescript
 getDrawingLayer(id: number): DrawingLayer;
@@ -234,7 +234,7 @@ retrievedDrawingLayer = cameraView.getDrawingLayer(layerId);
 
 ## getAllDrawingLayers
 
-Returns an array of all DrawingLayer objects.
+Returns an array of all `DrawingLayer` objects.
 
 ```typescript
 getAllDrawingLayers(): Array<DrawingLayer>;
@@ -246,7 +246,7 @@ None.
 
 **Return value**
 
-Returns an array of all DrawingLayer objects.
+Returns an array of all `DrawingLayer` objects.
 
 **Code Snippet**
 
@@ -256,7 +256,7 @@ DrawingLayers = cameraView.getAllDrawingLayers();
 
 ## deleteUserDefinedDrawingLayer
 
-Deletes a DrawingLayer object specified by its ID.
+Deletes a `DrawingLayer` object specified by its ID.
 
 ```typescript
 deleteUserDefinedDrawingLayer(id: number): void;
@@ -278,7 +278,7 @@ cameraView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 
 ## clearUserDefinedDrawingLayers
 
-Removes all user-defined DrawingLayers.
+Removes all user-defined `DrawingLayers`.
 
 ```typescript
 clearUserDefinedDrawingLayers(): void;
@@ -308,7 +308,7 @@ setTipConfig(tipConfig: TipConfig): void;
 
 **Parameters**
 
-`tipConfig`: Takes a parameter of type TipConfig and is used to set the configuration for a tip in the camera view.
+`tipConfig`: Takes a parameter of type TipConfig and is used to set the configuration for a tip in the `cameraView`.
 
 **Return value**
 
@@ -402,7 +402,7 @@ updateTipMessage(message: string): void;
 
 **Parameters**
 
-`message`: A string used to update or change the content of the tip message displayed in the cameraView.
+`message`: A string used to update or change the content of the tip message displayed in the `cameraView`.
 
 **Return value**
 
@@ -472,9 +472,9 @@ setScanRegionMaskStyle(newStyle: {
 
 **Parameters**
 
-`lineWidth`: The width of the lines used to draw the mask border.
-`strokeStyle`: The color or style of the mask border lines.
-`fillStyle`: The color of the mask's interior fill.
+`lineWidth`: The width of the lines used to draw the mask border.  
+`strokeStyle`: The color or style of the mask border lines.  
+`fillStyle`: The color of the mask's interior fill.  
 
 > The default value is
 >
