@@ -58,28 +58,26 @@ None.
 
 ```javascript
 let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.on("cameraChange", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraChange", (deviceId, previousDeviceId) => {
+    console.log("Camera changed.");
 });
-enhancer.on("cameraOpen", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraOpen", () => {
+    console.log("Camera opened.");
 });
-enhancer.on("cameraClose", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraClose", () => {
+    console.log("Camera closed.");
 });
-enhancer.on("resolutionChange", playCallBackInfo => {
-    console.log("width:" + playCallBackInfo.width);
-    console.log("height:" + playCallBackInfo.height);
+enhancer.on("resolutionChange", (resolution, previousResolution) => {
+    console.log("Resolution changed.");
 });
-enhancer.on("played", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("played", () => {
+    console.log("Video stream started.");
 });
 enhancer.on("singleFrameAcquired", dceFrame => {
-    document.body.appendChild(dceFrame.toCanvas());
+    console.log("An image is acquired under the single-frame mode.");
 });
 enhancer.on("frameAddedToBuffer", () => {
-    let dceFrame = enhancer.getFrameFromBuffer();
-    document.body.appendChild(dceFrame.toCanvas());
+    console.log("A new frame is added to the buffer.");
 });
 ```
 

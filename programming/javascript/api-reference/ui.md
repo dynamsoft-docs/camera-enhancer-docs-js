@@ -19,13 +19,12 @@ permalink: /programming/javascript/api-reference/ui.html
 | [getCameraView()](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
 | [setCameraView()](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
 | [getVideoEl()](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [setVideoEl()](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
 | [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
 
 ## getCameraView
 
-Returns the `CameraView` instance used by the `CameraEnhancer` instance.
+Returns the `CameraView` instance used by the `CameraEnhancer` instance. The `CameraView` is responsible for streaming video with real-time interaction such as highlighting certain objects found in the video.
 
 ```typescript
 getCameraView(): CameraView;
@@ -45,6 +44,10 @@ The `CameraView` instance used by the `CameraEnhancer` instance.
 let cameraView = enhancer.getCameraView();
 cameraView.getVisibleRegionOfVideo();
 ```
+
+**See Also**
+
+* [CameraView](cameraview.md)
 
 ## setCameraView
 
@@ -71,7 +74,7 @@ enhancer.setCameraView(cameraView);
 
 ## getVideoEl
 
-Returns the video element used by the `CameraView` instance.
+Returns the video element used by the `CameraEnhancer` instance.
 
 ```typescript
 getVideoEl(): HTMLVideoElement;
@@ -90,7 +93,7 @@ The video element.
 ```javascript
 let videoElement = enhancer.getVideoEl();
 ```
-
+<!--
 ## setVideoEl
 
 Sets a video element to be used by the `CameraView` instance.
@@ -113,6 +116,7 @@ A promise resolving to none.
 let el = document.getElementById("videoElement");
 enhancer.setVideoEl(el);
 ```
+-->
 
 ## convertToPageCoordinates
 
@@ -124,7 +128,7 @@ convertToPageCoordinates(point: Point): Point;
 
 **Parameters**
 
-* `point`: specifies the original point to be converted.
+* `point`: specifies the original points (refer to the image selected in the video or in `singleFrameMode`) to be converted.
 
 **Return value**
 
@@ -142,7 +146,7 @@ enhancer.convertToPageCoordinates({x: 0, y: 0});
 
 ## convertToClientCoordinates
 
-Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+Converts coordinates of a point to the coordinates within the application's viewport (as opposed to the coordinate within the page).
 
 ```typescript
 convertToClientCoordinates(point: Point): Point;

@@ -11,9 +11,9 @@ permalink: /programming/javascript/user-guide/features/draw-shapes-v3.3.5.html
 
 # Draw Shapes with DCE JS
 
-In version 3.0.0 of DCE-JS, we introduced multiple APIs for drawing basic shapes on the built-in UI. This article will dive into how it works.
+In version 3.x of DCE-JS, we introduced multiple APIs for drawing basic shapes on the built-in UI. This article will dive into how it works.
 
-We will start with the following code which defines a page that has a CameraEnhancer instance embeded:
+We will start with the following code which defines a page that has a CameraEnhancer instance embedded:
 
 ```html
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ The following code shows how to define these types of **DrawingItems**:
 let rect = new Dynamsoft.DCE.DrawingItem.DT_Rect(50, 50, 300, 300);
 let arc = new Dynamsoft.DCE.DrawingItem.DT_Arc(840, 150, 100, 0, 360);
 let line = new Dynamsoft.DCE.DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360);
+let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360, 50);
 let image = new Dynamsoft.DCE.DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
 let polygon = new Dynamsoft.DCE.DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
 ```
@@ -72,7 +72,7 @@ Alternatively, the code might be like this
 import { DrawingItem } from "dynamsoft-camera-enhancer";
 let arc = new DrawingItem.DT_Arc(840, 150, 100, 0, 360);
 let line = new DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-let text = new DrawingItem.DT_Text("TESTING...", 360, 360);
+let text = new DrawingItem.DT_Text("TESTING...", 360, 360, 50);
 let image = new DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
 let polygon = new DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
 ```
@@ -91,7 +91,7 @@ function drawShapes(){
   let rect = new Dynamsoft.DCE.DrawingItem.DT_Rect(50, 50, 300, 300);
   let arc = new Dynamsoft.DCE.DrawingItem.DT_Arc(840, 150, 100, 0, 360);
   let line = new Dynamsoft.DCE.DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-  let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360);
+  let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360, 50);
   let image = new Dynamsoft.DCE.DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
   let polygon = new Dynamsoft.DCE.DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
   drawingLayer.addDrawingItems([rect, arc, line, text, image, polygon]);

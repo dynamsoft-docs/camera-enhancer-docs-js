@@ -13,7 +13,6 @@ permalink: /programming/javascript/api-reference/interface/index.html
 
 Dynamsoft Camera Enhancer JavaScript SDK has the following interfaces.
 
-* [CameraTestResponse](interface/cameratestresponse.md)
 * [DCEFrame](interface/dceframe.md)
 * [DrawingItemEvent](interface/drawingitemevent.md)
 * [DrawingStyle](interface/drawingstyle.md)

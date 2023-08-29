@@ -21,16 +21,16 @@ breadcrumbText: API Reference
 | [dispose()](instantiate.md#dispose)                                            | Releases all resources used by the `CameraEnhancer` instance.                                |
 | [disposed](instantiate.md#disposed)                                            | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
 | `static` [onWarning](instantiate.md#onwarning)                                 | A callback which is triggered when the running environment is not ideal.                     |
-| `static` [isCameraInspectionSkipped](instantiate.md#iscamerainspectionskipped) | Returns or sets whether to skip camera inspection when creating a `CameraEnhancer` instance. |
 
 ### Basic Camera Control
 
 | API Name                                                               | Description                                                                           |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [getAllCameras()](camera-control.md#getallcameras)                     | Returns infomation of all available cameras on the device.                            |
+| `static` [testCameraAccess()](camera-control.md#testcameraaccess)      | Tests whether there is an available camera.                                           |
+| [getAllCameras()](camera-control.md#getallcameras)                     | Returns information of all available cameras on the device.                           |
 | [selectCamera()](camera-control.md#selectcamera)                       | Chooses a camera as the video source.                                                 |
 | [getSelectedCamera()](camera-control.md#getselectedcamera)             | Returns information about the selected / current camera.                              |
-| [getCameraState()](camera-control.md#getcamerastate)                   | Retrusn the state of the selected camera which could be "opening", "open" or "closed" |
+| [getCameraState()](camera-control.md#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
 | [open()](camera-control.md#open)                                       | Turn on the camera to start streaming live video.                                     |
 | [close()](camera-control.md#close)                                     | Stops video streaming and releases the camera.                                        |
 | [isOpen()](camera-control.md#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
@@ -40,9 +40,9 @@ breadcrumbText: API Reference
 | [setResolution()](camera-control.md#setresolution)                     | Sets the resolution of the selected camera.                                           |
 | [getResolution()](camera-control.md#getresolution)                     | Returns the resolution of the selected camera.                                        |
 | [getAvailableResolutions()](camera-control.md#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
-| [testCameraAccess()](camera-control.md#testcameraaccess)               | Tests whether there is an available camera.                                           |
 | [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera)         | Returns or sets whether to save the last used camera and resolution.                  |
 | [videoSrc](camera-control.md#videosrc)                                 | Sets or returns the source of the video.                                              |
+| [ifSkipCameraInspection](camera-control.md#ifskipcamerainspection)     | Whether to opt for an optimal rear camera at the first `open()`.                      |
 
 ### Advanced Camera Control
 
@@ -76,7 +76,7 @@ breadcrumbText: API Reference
 | [getScanRegion()](acquisition.md#getscanregion)                                     | Returns the scan region.                                                                            |
 | [fetchImage()](acquisition.md#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [addImageToBuffer()](acquisition.md#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](acquisition.md#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continuoued fetching has started.          |
+| [setImageFetchInterval()](acquisition.md#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
 | [getImageFetchInterval()](acquisition.md#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
 | [startFetching()](acquisition.md#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
 | [stopFetching()](acquisition.md#stopfetching)                                       | Stops fetching any more images.                                                                     |
@@ -92,7 +92,7 @@ breadcrumbText: API Reference
 | [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
 | [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
 | [singleFrameMode()](acquisition.md#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
+| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
 
 ### UI
 
@@ -101,7 +101,6 @@ breadcrumbText: API Reference
 | [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
 | [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
 | [getVideoEl](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [setVideoEl](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
 | [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
 
@@ -286,10 +285,9 @@ Child classes based on `DrawingItem`
 
 ## Interfaces
 
-* [CameraTestResponse](interface/cameratestresponse.md)
 * [DCEFrame](interface/dceframe.md)
 * [DrawingItemEvent](interface/drawingitemevent.md)
-* [DrawingStyle](interface/drawingstyle.md) 
+* [DrawingStyle](interface/drawingstyle.md)
 * [Note](interface/note.md)
 * [PlayCallbackInfo](interface/playcallbackinfo.md)
 * [Resolution](interface/resolution.md)

@@ -195,7 +195,7 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 Test whether there is an available camera.
 
 ```typescript
-static testCameraAccess(): Promise<CameraTestResponse>;
+static testCameraAccess(): Promise<{ ok: boolean, message: string }>;
 ```
 
 **Parameters**
@@ -204,65 +204,10 @@ None.
 
 **Return value**
 
-A promise resolving to a `CameraTestResponse` object.
+A promise resolving to an object with properties `ok` and `message`.
 
-```typescript
-interface CameraTestResponse {
-    readonly ok: boolean;
-    readonly message: string;
-};
-```
-
-The possible responses are
-
-```json
-{
-    ok: false,
-    message: "Insecure context."
-}
-```
-
-```json
-{
-    ok: false,
-    message: "No camera detected."
-}
-```
-
-```json
-{
-    ok: false,
-    message: "No permission to access camera."
-}
-```
-
-```json
-{
-    ok: false,
-    message: "Some problem occurred which prevented the device from being used."
-}
-```
-
-```json
-{
-    ok: false,
-    message: "A hardware error occurred."
-}
-```
-
-```json
-{
-    ok: false,
-    message: "User media support is disabled."
-}
-```
-
-```json
-{
-    ok: true,
-    message: " Successfully accessed the camera."
-}
-```
+`ok`: Indicates whether the camera access test was successful (true) or not (false).
+`message`: A string type message to provide additional information or details about the camera access test.
 
 **Code Snippet**
 
