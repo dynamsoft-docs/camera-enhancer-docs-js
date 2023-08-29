@@ -31,7 +31,7 @@ static createInstance(cameraView?: CameraView): Promise<CameraEnhancer>;
 
 **Parameters**
 
-* `cameraView`: Optional, Specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
+* `cameraView`(optional): Specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
 
 **Return value**
 
@@ -48,7 +48,7 @@ A promise resolving to the created `CameraEnhancer` object.
 
 **See also**
 
-[Dispose](#dispose)
+[Dispose](#dispose)  
 [CameraView](cameraview.md)
 
 ## dispose

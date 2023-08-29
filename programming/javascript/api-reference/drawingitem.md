@@ -227,9 +227,9 @@ updateNote(name: string, content: any, mergeContent?: boolean): void;
 
 **Parameters**
 
-`name`: The string representing the name of the note.
-`content`: The content of the note.
-`mergeContent`: If this parameter is set to true, then the new content is added to the Note alongside the original content.
+`name`: The string representing the name of the note.  
+`content`: The content of the note.  
+`mergeContent`(optional): If this parameter is set to true, then the new content is added to the Note alongside the original content.
 
 ## deleteNote
 
