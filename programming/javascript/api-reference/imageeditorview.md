@@ -47,12 +47,12 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 Creates a `ImageEditorView` instance.
 
 ```typescript
-static createInstance(): Promise<ImageEditorView>;
+static createInstance(element: HTMLDivElement): Promise<ImageEditorView>;
 ```
 
 **Parameters**
 
-None.
+* `element`: specifies an element in which the UI of the `ImageEditorView` instance is embedded.
 
 **Return value**
 

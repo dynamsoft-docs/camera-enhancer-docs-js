@@ -50,12 +50,12 @@ permalink: /programming/javascript/api-reference/cameraview.html
 Creates a `CameraView` instance.
 
 ```typescript
-static createInstance(): Promise<CameraView>;
+static createInstance(element: HTMLDivElement): Promise<CameraView>;
 ```
 
 **Parameters**
 
-None.
+* `element`: specifies an element in which the UI of the `ImageEditorView` instance is embedded.
 
 **Return value**
 

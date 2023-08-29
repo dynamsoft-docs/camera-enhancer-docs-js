@@ -124,7 +124,7 @@ Step 3 can be done anywhere after step 1.
       let view = await Dynamsoft.DCE.CameraView.createInstance();
       let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
       // use the default UI element
-      enhancerUIContainer.append(view.getUIElement());
+      document.getElementById("enhancerUIContainer").append(view.getUIElement());
       await enhancer.open();
   })();
 </script>
