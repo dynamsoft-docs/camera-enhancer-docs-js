@@ -7,7 +7,6 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: API Reference
-permalink: /programming/javascript/api-reference/index.html
 ---
 
 # Dynamsoft Camera Enhancer JavaScript API Reference
@@ -22,16 +21,16 @@ permalink: /programming/javascript/api-reference/index.html
 | [dispose()](instantiate.md#dispose)                                            | Releases all resources used by the `CameraEnhancer` instance.                                |
 | [disposed](instantiate.md#disposed)                                            | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
 | `static` [onWarning](instantiate.md#onwarning)                                 | A callback which is triggered when the running environment is not ideal.                     |
-| `static` [isCameraInspectionSkipped](instantiate.md#iscamerainspectionskipped) | Returns or sets whether to skip camera inspection when creating a `CameraEnhancer` instance. |
 
 ### Basic Camera Control
 
 | API Name                                                               | Description                                                                           |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [getAllCameras()](camera-control.md#getallcameras)                     | Returns infomation of all available cameras on the device.                            |
+| `static` [testCameraAccess()](camera-control.md#testcameraaccess)      | Tests whether there is an available camera.                                           |
+| [getAllCameras()](camera-control.md#getallcameras)                     | Returns information of all available cameras on the device.                           |
 | [selectCamera()](camera-control.md#selectcamera)                       | Chooses a camera as the video source.                                                 |
 | [getSelectedCamera()](camera-control.md#getselectedcamera)             | Returns information about the selected / current camera.                              |
-| [getCameraState()](camera-control.md#getcamerastate)                   | Retrusn the state of the selected camera which could be "opening", "open" or "closed" |
+| [getCameraState()](camera-control.md#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
 | [open()](camera-control.md#open)                                       | Turn on the camera to start streaming live video.                                     |
 | [close()](camera-control.md#close)                                     | Stops video streaming and releases the camera.                                        |
 | [isOpen()](camera-control.md#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
@@ -41,9 +40,9 @@ permalink: /programming/javascript/api-reference/index.html
 | [setResolution()](camera-control.md#setresolution)                     | Sets the resolution of the selected camera.                                           |
 | [getResolution()](camera-control.md#getresolution)                     | Returns the resolution of the selected camera.                                        |
 | [getAvailableResolutions()](camera-control.md#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
-| [testCameraAccess()](camera-control.md#testcameraaccess)               | Tests whether there is an available camera.                                           |
 | [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera)         | Returns or sets whether to save the last used camera and resolution.                  |
 | [videoSrc](camera-control.md#videosrc)                                 | Sets or returns the source of the video.                                              |
+| [ifSkipCameraInspection](camera-control.md#ifskipcamerainspection)     | Whether to opt for an optimal rear camera at the first `open()`.                      |
 
 ### Advanced Camera Control
 
@@ -77,7 +76,7 @@ permalink: /programming/javascript/api-reference/index.html
 | [getScanRegion()](acquisition.md#getscanregion)                                     | Returns the scan region.                                                                            |
 | [fetchImage()](acquisition.md#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [addImageToBuffer()](acquisition.md#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](acquisition.md#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continuoued fetching has started.          |
+| [setImageFetchInterval()](acquisition.md#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
 | [getImageFetchInterval()](acquisition.md#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
 | [startFetching()](acquisition.md#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
 | [stopFetching()](acquisition.md#stopfetching)                                       | Stops fetching any more images.                                                                     |
@@ -102,7 +101,6 @@ permalink: /programming/javascript/api-reference/index.html
 | [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
 | [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
 | [getVideoEl](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [setVideoEl](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
 | [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
 
@@ -156,7 +154,7 @@ permalink: /programming/javascript/api-reference/index.html
 
 | API Name                                                       | Description                                                                                   |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](imageeditorview.md#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                         |
 | [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -171,15 +169,8 @@ permalink: /programming/javascript/api-reference/index.html
 | [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                            |
 | [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                       |
 | [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                  |
-| [setTipConfig()](imageeditorview.md#settipconfig)                                   | Configures the tip feature.                                              |
-| [getTipConfig()](imageeditorview.md#gettipconig)                                    | Returns the configuration of the tip.                                    |
-| [setTipVisible()](imageeditorview.md#settipvisible)                                 | Sets whether to show the tip.                                            |
-| [isTipVisible()](imageeditorview.md#istipvisible)                                   | Returns whether the tip is visible.                                      |
-| [updateTipMessage()](imageeditorview.md#updatetipmessage)                           | Updates the message shown in the tip.                                    |
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](imageeditorview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](imageeditorview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor imageeditorview.          |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor view.                     |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
 
 ## Class CameraEnhancerModule
@@ -285,7 +276,7 @@ Child classes based on `DrawingItem`
 
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of a `ImageDrawingItem`.                                              |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
 | [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
 | [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
 | [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
@@ -294,16 +285,17 @@ Child classes based on `DrawingItem`
 
 ## Interfaces
 
-* [CameraTestResponse](interface/cameratestresponse.md)
 * [DCEFrame](interface/dceframe.md)
 * [DrawingItemEvent](interface/drawingitemevent.md)
-* [DrawingStyle](interface/drawingstyle.md) 
+* [DrawingStyle](interface/drawingstyle.md)
 * [Note](interface/note.md)
 * [PlayCallbackInfo](interface/playcallbackinfo.md)
 * [Resolution](interface/resolution.md)
 * [Point](interface/point.md)
 * [Region](interface/region.md)
+* [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
+* [VideoFrameTag](interface/videoframetag.md)
 * [Warning](interface/warning.md)
 
 ## Enumerations

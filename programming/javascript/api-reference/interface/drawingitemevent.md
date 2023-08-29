@@ -13,7 +13,7 @@ permalink: /programming/javascript/api-reference/interface/drawingitemevent.html
 
 `interface` DrawingItemEvent
 
-The DrawingItemEvent interface extends the default Event interface of DOM with the following extra fields.
+The DrawingItemEvent interface extends the default `Event` interface of DOM with the following extra fields.
 
 * targetItem: `DrawingItem`
 

@@ -20,19 +20,18 @@ permalink: /programming/javascript/api-reference/instantiate.html
 | [dispose()](#dispose)                                            | Releases all resources used by the `CameraEnhancer` instance.                                |
 | [disposed](#disposed)                                            | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
 | `static` [onWarning](#onwarning)                                 | A callback which is triggered when the running environment is not ideal.                     |
-| `static` [isCameraInspectionSkipped](#iscamerainspectionskipped) | Sets or returns whether to skip camera inspection when creating a `CameraEnhancer` instance. |
 
 ## createInstance
 
 Creates a `CameraEnhancer` instance.
 
 ```typescript
-static createInstance: (cameraView?: CameraView) => Promise<CameraEnhancer>;
+static createInstance(cameraView?: CameraView): Promise<CameraEnhancer>;
 ```
 
 **Parameters**
 
-* cameraView: Specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
+* `cameraView`(optional): Specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
 
 **Return value**
 
@@ -47,12 +46,17 @@ A promise resolving to the created `CameraEnhancer` object.
 })();
 ```
 
-### dispose
+**See also**
+
+[Dispose](#dispose)  
+[CameraView](cameraview.md)
+
+## dispose
 
 Releases all resources used by the `CameraEnhancer` instance. After that, the instance will be left with only the property `disposed` (the value is `true`).
 
 ```typescript
-dispose: () => void;
+dispose(): void;
 ```
 
 **Parameters**
@@ -72,7 +76,11 @@ let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 enhancer.dispose();
 ```
 
-### disposed
+**See also**
+
+[Disposed](#disposed)
+
+## disposed
 
 A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed.
 
@@ -88,9 +96,19 @@ let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let flag = enhancer.disposed;
 ```
 
+**See also**
+
+[Dispose](#dispose)
+
 ## onWarning
 
-A callback which is triggered when the running environment is not ideal. In this version, it may get triggered in two scenarios:
+A callback which is triggered when the running environment is not ideal.
+
+```typescript
+static onWarning: (warning: Warning) => {};
+```
+
+In this version, it may get triggered in two scenarios:
 
 1. If the page is opened from the disk;
 2. The page is hosted in a HTTP site without SSL;
@@ -117,14 +135,6 @@ The following two warnings are returned respectively:
 Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 ```
 
-**See Also**
+**See also**
 
 [Warning](interface/warning.md)
-
-## isCameraInspectionSkipped
-
-Sets or returns whether to skip camera inspection when creating a `CameraEnhancer` instance. If skipped, the instantiation is done faster. Note that if a previously used camera is already available in the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), the inspection is skipped automatically. Read more on [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera).
-
-```typescript
-ifSkipCameraInspection: boolean;
-```

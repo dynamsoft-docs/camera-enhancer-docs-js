@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 
 | API Name                                     | Description                                                                                   |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](#createinstance) | Creates a `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](#createinstance) | Creates an `ImageEditorView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -31,28 +31,21 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 | [getAllDrawingLayers()](#getalldrawinglayers)                           | Returns an array of all DrawingLayer objects.                            |
 | [deleteUserDefinedDrawingLayer()](#deleteuserdefineddrawinglayer)       | Deletes a DrawingLayer object specified by its ID.                       |
 | [clearUserDefinedDrawingLayers()](#clearuserdefineddrawinglayers)       | Removes all user-defined DrawingLayers.                                  |
-| [setTipConfig()](#settipconfig)                                         | Configures the tip feature.                                              |
-| [getTipConfig()](#gettipconfig)                                         | Returns the configuration of the tip.                                    |
-| [setTipVisible()](#settipvisible)                                       | Sets whether to show the tip.                                            |
-| [isTipVisible()](#istipvisible)                                         | Returns whether the tip is visible.                                      |
-| [updateTipMessage()](#updatetipmessage)                                 | Updates the message shown in the tip.                                    |
 | [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](imageeditorview.md#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](imageeditorview.md#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor imageeditorview.          |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor view.                     |
 | [getOriginalImage()](imageeditorview.md#setoriginalimage)               | Returns the image drawn on the image editor.                             |
 
 ## createInstance
 
-Creates a `ImageEditorView` instance.
+Creates an `ImageEditorView` instance. The `ImageEditorView` is responsible for displaying a single image with real-time interaction such as editing the boundaries of an object found in the image.
 
 ```typescript
-static createInstance(element: HTMLDivElement): Promise<ImageEditorView>;
+static createInstance(defaultUIElement?: HTMLDivElement | string): Promise<ImageEditorView>;
 ```
 
 **Parameters**
 
-* `element`: specifies an element in which the UI of the `ImageEditorView` instance is embedded.
+`defaultUIElement`(optional): Either a DIV element in which to build the default UI, a URL to use an external UI definition, or omitted for no initial DOM element.
 
 **Return value**
 
@@ -61,14 +54,31 @@ A promise resolving to the created `ImageEditorView` object.
 **Code Snippet**
 
 ```javascript
-(async () => {
-    let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
-})();
+let cameraView = await Dynamsoft.DCE.ImageEditorView.createInstance();
+```
+
+or
+
+```javascript
+// Pass the path of the customized UI in the API `createInstance` to set it as the default UI.
+let cameraView = await Dynamsoft.DCE.ImageEditorView.createInstance("THE-URL-TO-THE-FILE");
+```
+
+or
+
+```html
+<div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-image-container" style="width:100%;height:100%;"></div>
+</div>
+<script>
+    // Create 'ImageEditorView' instance and pass an element as its UI.
+    let view = await Dynamsoft.DCE.ImageEditorView.createInstance(document.getElementById("enhancerUIContainer"));
+</script>
 ```
 
 ## dispose
 
-Releases all resources used by the `ImageEditorView` instance.
+Releases all resources used by the `ImageEditorView` instance, so that the instance is left with only one property "disposed" as true.
 
 ```typescript
 dispose(): void;
@@ -130,15 +140,15 @@ const uiElement = imageEditorView.getUIElement();
 
 ## setUIElement
 
-Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.
+Specifies an HTML element for the `ImageEditorView` instance to use as its UI element. The structure inside the element determines the appearance of the UI.
 
 ```typescript
-setUIElement(element: HTMLDivElement): Promise<void>;
+setUIElement(element: HTMLDivElement | string): Promise<void>;
 ```
 
 **Parameters**
 
-`element`: Takes an argument element of type HTMLDivElement, which represents the new UI element to be associated with the image editor view.
+`element`: A DIV element in which to build the default UI, or a URL to use an external UI definition.
 
 **Return value**
 
@@ -147,9 +157,19 @@ None.
 **Code Snippet**
 
 ```javascript
-const containerElement1 = document.getElementById('imageEditorContainer1');
-await imageEditorView.setUIElement(containerElement1);
+<div id="enhancerUIContainer" style="width:100%;height:100%;">
+    <div class="dce-image-container" style="display:none; width: 100vw; height: 70vh"></div>
+</div>
+<script>
+    (async () => {
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        await enhancer.setUIElement(document.getElementById("enhancerUIContainer"));
+        await enhancer.open();
+    })();
+</script>
 ```
+
+> If the input HTMLDivElement is not complete, the default image element will be created and appended to the DIV element with the class "dce-image-container". For further customizing the UI please make sure the class name is the same.
 
 ## createDrawingLayer
 
@@ -268,6 +288,7 @@ None.
 imageEditorView.clearUserDefinedDrawingLayers();
 ```
 
+<!--
 ## setTipConfig
 
 Configures the tip feature.
@@ -379,7 +400,7 @@ None.
 ```javascript
 imageEditorView.updateTipMessage('Hold the phone closer.');
 ```
-
+-->
 ## getSelectedDrawingItems
 
 Returns all selected DrawingItem object(s) from different drawing layers.
@@ -402,6 +423,7 @@ Returns a Promise that resolves to an array of DrawingItem objects representing 
 let drawingItems = imageEditorView.getSelectedDrawingItems();
 ```
 
+<!--
 ## setVideoFit
 
 Sets the `object-fit` CSS property of the video element.
@@ -445,13 +467,13 @@ The value of the `object-fit` CSS property.
 ```javascript
 let videofitType = imageEditorView.getVideoFit();
 ```
-
+-->
 ## setOriginalImage
 
-Sets the image to be drawn on the image editor image editor view.
+Sets the image to be drawn on the image editor view.
 
 ```typescript
-setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): Promise<void>;
+setOriginalImage(img: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement): void;
 ```
 
 **Parameters**
@@ -466,8 +488,7 @@ None.
 
 ```javascript
 let currentFrame = enhancer.getFrame();
-let cvs = currentFrame.toCanvas();
-imageEditorView.setOriginalImage(cvs);
+imageEditorView.setOriginalImage(currentFrame);
 ```
 
 ## getOriginalImage
@@ -475,7 +496,7 @@ imageEditorView.setOriginalImage(cvs);
 Returns the image drawn on the image editor.
 
 ```typescript
-getOriginalImage(): Promise<Core.BasicStructures.DSImageData>;
+getOriginalImage(): Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement;
 ```
 
 **Parameters**
@@ -484,7 +505,7 @@ None.
 
 **Return value**
 
-Returns a Promise that resolves to a Core.BasicStructures.DSImageData object representing the original image displayed in the image editor view.
+Either a `DSImageData` object, an HTMLImageElement, or an HTMLCanvasElement.
 
 **Code Snippet**
 

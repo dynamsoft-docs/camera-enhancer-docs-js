@@ -23,4 +23,4 @@ It is denoted by a pair of numbers:
 
 * height: `number`
     
-    Specfies the number of vertical pixels.
+    Specifies the number of vertical pixels.

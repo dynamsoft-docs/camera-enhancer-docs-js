@@ -11,9 +11,9 @@ permalink: /programming/javascript/user-guide/features/draw-shapes.html
 
 # Draw Shapes with DCE JS
 
-In version 3.0.0 of DCE-JS, we introduced multiple APIs for drawing basic shapes on the built-in UI. This article will dive into how it works.
+In version 4.0.0 of DCE-JS, we introduced multiple APIs for drawing basic shapes on the built-in UI. This article will dive into how it works.
 
-We will start with the following code which defines a page that has a CameraEnhancer instance embeded:
+We will start with the following code which defines a page that has a CameraEnhancer instance embedded:
 
 ```html
 <!DOCTYPE html>
@@ -27,14 +27,15 @@ We will start with the following code which defines a page that has a CameraEnha
     <button id="drawShapes">Click to Draw Shapes</button><br /><br />
     <div id="enhancerUIContainer" style="width:100%; height:100%;"></div>
     <script>
-        let enhancer = null;
-        document.getElementById('drawShapes').onclick = drawShapes;
-        (async () => {
-            enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-            await enhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
-            document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
-            await enhancer.open();
-        })();
+      let enhancer = null;
+      let view = null;
+      document.getElementById('drawShapes').onclick = drawShapes;
+      (async () => {
+          view = await Dynamsoft.DCE.CameraView.createInstance();
+          enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+          document.getElementById("enhancerUIContainer").appendChild(view.getUIElement());
+          await enhancer.open();
+      })();
         function drawShapes(){}
     </script>
 </body>
@@ -53,28 +54,29 @@ function drawShapes(){
 
 ## Define DrawingItems
 
-An `DrawingItem` is the basic shape that can be drawn. The SDK classify **DrawingItems** in different types: [`DT_Rect`](../../api-reference/drawingitem.md#dtrect), [`DT_Arc`](../../api-reference/drawingitem.md#dtarc), [`DT_Line`](../../api-reference/drawingitem.md#dtline), [`DT_Polygon`](../../api-reference/drawingitem.md#dtpolygon), [`DT_Text`](../../api-reference/drawingitem.md#dttext), and [`DT_Image`](../../api-reference/drawingitem.md#dtimage). The SDK also allow multiple items to be joined together and form the type called [`DT_Group`](../../api-reference/drawingitem.md#dtgroup).
+An `DrawingItem` is the basic shape that can be drawn. The SDK classify **DrawingItems** in different types: [`LineDrawingItem`](../../api-reference/drawingitem.md#linedrawingItem), [`RectDrawingItem`](../../api-reference/drawingitem.md#rectdrawingitem), [`QuadDrawingItem`](../../api-reference/drawingitem.md#quaddrawingitem), [`TextDrawingItem`](../../api-reference/drawingitem.md#textdrawingitem), and [`ImageDrawingItem`](../../api-reference/drawingitem.md#imagedrawingitem). The SDK also allow multiple items to be joined together and form the type called [`GroupDrawingItem`](../../api-reference/drawingitem.md#groupdrawingitem).
 
 The following code shows how to define these types of **DrawingItems**:
 
 ```javascript
-let rect = new Dynamsoft.DCE.DrawingItem.DT_Rect(50, 50, 300, 300);
-let arc = new Dynamsoft.DCE.DrawingItem.DT_Arc(840, 150, 100, 0, 360);
-let line = new Dynamsoft.DCE.DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360);
-let image = new Dynamsoft.DCE.DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
-let polygon = new Dynamsoft.DCE.DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
+let drawingLayer = view.createDrawingLayer();
+let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
+let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
+let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
+let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
+let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
 ```
 
 Alternatively, the code might be like this
 
 ```javascript
 import { DrawingItem } from "dynamsoft-camera-enhancer";
-let arc = new DrawingItem.DT_Arc(840, 150, 100, 0, 360);
-let line = new DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-let text = new DrawingItem.DT_Text("TESTING...", 360, 360);
-let image = new DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
-let polygon = new DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
+let drawingLayer = view.createDrawingLayer();
+let rect = new DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
+let line = new DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
+let text = new DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
+let quad = new DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
+let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
 ```
 
 > NOTE:
@@ -87,14 +89,13 @@ After **DrawingItems** have been defined, simply call `addDrawingItems()` to dra
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = enhancer.createDrawingLayer();
-  let rect = new Dynamsoft.DCE.DrawingItem.DT_Rect(50, 50, 300, 300);
-  let arc = new Dynamsoft.DCE.DrawingItem.DT_Arc(840, 150, 100, 0, 360);
-  let line = new Dynamsoft.DCE.DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
-  let text = new Dynamsoft.DCE.DrawingItem.DT_Text("TESTING...", 360, 360);
-  let image = new Dynamsoft.DCE.DrawingItem.DT_Image(document.getElementById('testIMG'), 150, 600);
-  let polygon = new Dynamsoft.DCE.DrawingItem.DT_Polygon([{x: 640, y: 100}, {x: 500, y: 300}, {x: 780, y: 300}, {x: 690, y: 100}]);
-  drawingLayer.addDrawingItems([rect, arc, line, text, image, polygon]);
+  let drawingLayer = view.createDrawingLayer();
+  let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
+  let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
+  let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
+  let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
+  let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+  drawingLayer.addDrawingItems([rect,line,text,quad,img]);
 }
 ```
 
@@ -104,10 +105,10 @@ All new **DrawingLayer** objects come with the same predefined style definition
 
 ```javascript
 {
+  id:4,
   fillStyle: "rgba(245, 236, 73, 0.3)",
   fontFamily: "sans-serif",
   fontSize: 10,
-  id: 4,
   lineWidth: 2,
   paintMode: "stroke",
   strokeStyle: "rgba(245, 236, 73, 1)"
@@ -117,15 +118,17 @@ All new **DrawingLayer** objects come with the same predefined style definition
 If the default style doesn't look good, you can create your own style to use:
 
 ```javascript
-let newDrawingStyleID = enhancer.createDrawingStyle({
+let StyleID = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
+  fillStyle: "rgba(65, 105, 225, 0.5)",
+  fontFamily: "Consolas",
+  fontSize: 100,
   lineWidth: 5,
   paintMode: "strokeAndFill",
-  fontSize: 100,
-  fillStyle: "rgba(65, 105, 225, 0.5)",
-  strokeStyle: "rgba(65, 105, 225, 1)",
-  fontFamily: "Consolas"
+  strokeStyle: "rgba(65, 105, 225, 1)"
+  
 });
-drawingLayer.setDrawingStyle(newDrawingStyleID);
+// take new drawing style ID as input parameter
+drawingLayer.setDefaultStyle(StyleID);
 ```
 
 ### Set multiple DrawingStyles
@@ -136,29 +139,19 @@ For each **DrawingLayer**, `DrawingStyles` can be used in three ways
 2. Use a specific **DrawingStyle** for a specific type of **DrawingItems**;
 3. Use a specific **DrawingStyle** for a specific type of **DrawingItems** which are in a particular state.
 
-> As of version 3.0.1, the only available states for a **DrawingStyle** are "default" and "selected".
+> As of version 4.0.0, the only available states for a **DrawingStyle** are "default" and "selected".
 
-The following shows how to do the different settings with the method [`setDrawingStyle`](../../api-reference/drawinglayer.md#setdrawingstyle):
+The following shows how to do the different settings with the method [`setDefaultStyle`](../../api-reference/drawinglayer.md#setdefaultstyle):
 
 ```javascript
 // The following code assumes we have defined 3 different DrawingStyles with IDs 100, 101 and 102.
 // Use DrawingLayer 100 for everything
-drawingLayer.setDrawingStyle(100);
-// Use DrawingLayer 101 for all "rect"s
-drawingLayer.setDrawingStyle(101, "rect");
+drawingLayer.setDefaultStyle(100);
+// Use DrawingLayer 101 for all selected drawingStyles.
+drawingLayer.setDefaultStyle(101, "selected");
 // Use DrawingLayer 102 for selected "rect"s
-drawingLayer.setDrawingStyle(102, "rect", "selected");
+drawingLayer.setDefaultStyle(102, "selected", "rect");
 ```
-
-## Modify existing DrawingItems
-
-The SDK allows **DrawingItems** to be modified after they are drawn on the UI. To do this, we first change the **DrawingLayer** to "editor" mode with the method [`setMode()`](../../api-reference/drawinglayer.md#setmode).
-
-```javascript
-drawingLayer.setMode("editor");
-```
-
-Next, click on the **DrawingItem** you want to modify and you will see its "corners" and a "rotate control point" which, when dragged, modify the original shape in different ways. At the same time, this **DrawingItem** will be marked "selected", which means it might [use a different **DrawingStyle**](#set-multiple-drawingstyles).
 
 ## Try it out
 

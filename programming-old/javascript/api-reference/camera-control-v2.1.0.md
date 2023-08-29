@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Camera Control
-permalink: /programming/javascript/api-reference/camera-control-v3.0.1.html
+permalink: /programming/javascript/api-reference/camera-control-v2.1.0.html
 ---
 
 # Camera Control
@@ -18,7 +18,7 @@ permalink: /programming/javascript/api-reference/camera-control-v3.0.1.html
 |---|---|
 | [ifSkipCameraInspection](#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
 | [ifSaveLastUsedCamera](#ifsavelastusedcamera) | Returns or sets whether to save the last used camera and resolution. |
-| [getAllCameras()](#getallcameras) | Returns infomation of all available cameras on the device. |
+| [getAllCameras()](#getallcameras) | Returns information of all available cameras on the device. |
 | [selectCamera()](#selectcamera) | Chooses a camera as the video source. |
 | [getSelectedCamera()](#getselectedcamera) | Returns information about the selected / current camera. |
 | [open()](#open) | Turns on the camera to start streaming live video. |
@@ -28,8 +28,6 @@ permalink: /programming/javascript/api-reference/camera-control-v3.0.1.html
 | [resume()](#resume) | Resumes video streaming. |
 | [setResolution()](#setresolution) | Sets the resolution of the current video input. |
 | [getResolution()](#getresolution) | Returns the resolution of the current video input. |
-| [getResolutions()](#getresolutions) | Returns the resolutions supported by the current video input. |
-| [videoSrc](#videosrc) | Sets or returns the source of the video. |
 
 **Advanced Control**
 
@@ -60,7 +58,7 @@ ifSkipCameraInspection: boolean;
 Returns or sets whether to save the last used camera and resolution. This feature makes use of the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of the browser.
 
 > NOTE
->
+> 
 > This feature only works on mainstream browsers like Chrome, Firefox and Safari. Other browsers may change the device IDs dynamically thus making it impossible to track the camera.
 
 ```typescript
@@ -69,7 +67,7 @@ ifSaveLastUsedCamera: boolean;
 
 ## getAllCameras
 
-Returns infomation of all available cameras on the device.
+Returns information of all available cameras on the device.
 
 ```typescript
 getAllCameras(): Promise<VideoDeviceInfo[]>;
@@ -101,6 +99,7 @@ if (cameras.length) {
 Chooses a camera as the video source.
 
 > If called before `open()` or `show()`, the selected camera will be used. Otherwise, the system will decide which one to use.
+
 
 ```typescript
 selectCamera(cameraObjectOrDeviceID: VideoDeviceInfo | string): Promise<PlayCallbackInfo>;
@@ -165,15 +164,6 @@ open(appendOrShowUI?: boolean): Promise<PlayCallbackInfo>;
 **Parameters**
 
 `appendOrShowUI` : this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree, the CameraEnhancer instance will append it in the DOM and show it; if the UI already exists in the DOM tree but is hidden, it'll be displayed. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing shows up on the page; if it exists in the DOM tree, it may or may not show up depending on its original state.
-
-> NOTE: if `setUIElement()` is not called before `open()`, the default UI Element will be used, which is equivalent to the following code:
->
-> ```javascript
-> await cameraEnhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
-> await cameraEnhancer.open(appendOrShowUI);
-> ```
->
-> If you want to use a different UI element, call API [`setUIElement()`](initialization.md#setuielement) beforehand.
 
 **Return value**
 
@@ -251,15 +241,13 @@ None.
 
 Sets the resolution of the current video input. If the specified resolution is not exactly supported, the closest resolution will be applied.
 
-> If called before `open()` or `show()`, the camera will use the set resolution when it opens. Otherwise, the default resolution is used, which is 1280 x 720.
-
 ```typescript
 setResolution(widthOrResolution: number | number[], height: number): Promise<PlayCallbackInfo>;
 ```
 
 **Parameters**
 
-`width` : specifies the horizontal resolution.
+`widthOrResolution` : if passed a number, it specifies the horizontal resolution. If passed an array of two numbers, it specifies both the horizontal and the vertial resolutions.
 
 `height` : specifies the vertical resolution.
 
@@ -296,33 +284,8 @@ An array of two numbers representing the resolution in the sequence of [width, h
 **Code Snippet**
 
 ```javascript
-let resolution = enhancer.getResolution();
-console.log(resolution[0] + " x " + resolution[1]);
-```
-
-## getResolutions
-
-Returns the resolutions supported by the current video input.
-
-> The returned resolutions are limited to these values "160 by 120", "320 by 240", "480 by 360", "640 by 480", "800 by 600", "960 by 720", "1280 by 720", "1920 by 1080", "2560 by 1440", "3840 by 2160".
-
-```typescript
-getResolutions(): Promise<Array<[number, number]>>;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A promise that resolves when the operation succeeds.
-
-**Code Snippet**
-
-```javascript
-const resolutions = await enhancer.getResolutions();
-console.log(resolutions);
+let resolution = await enhancer.getResolution();
+console.log(resolution.width + " x " + resolution.height);
 ```
 
 ## setFrameRate
@@ -669,13 +632,3 @@ await enhancer.setExposureCompensation(-0.7);
 **See also**
 
 * [getCapabilities](#getcapabilities)
-
-## videoSrc
-
-Sets or returns the source of the video.
-
-> You can use this property to specify an existing video as the source to play which will be processed the same way as the video feed from a live camera.
-
-```typescript
-videoSrc: string | MediaStream | MediaSource | Blob;
-```

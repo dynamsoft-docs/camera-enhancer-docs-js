@@ -16,7 +16,8 @@ permalink: /programming/javascript/api-reference/camera-control.html
 
 | API Name                                              | Description                                                                           |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [getAllCameras()](#getallcameras)                     | Returns infomation of all available cameras on the device.                            |
+| `static` [testCameraAccess()](#testcameraaccess)      | Tests whether there is an available camera.                                           |
+| [getAllCameras()](#getallcameras)                     | Returns information of all available cameras on the device.                           |
 | [selectCamera()](#selectcamera)                       | Chooses a camera as the video source.                                                 |
 | [getSelectedCamera()](#getselectedcamera)             | Returns information about the selected / current camera.                              |
 | [getCameraState()](#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
@@ -29,9 +30,9 @@ permalink: /programming/javascript/api-reference/camera-control.html
 | [setResolution()](#setresolution)                     | Sets the resolution of the selected camera.                                           |
 | [getResolution()](#getresolution)                     | Returns the resolution of the selected camera.                                        |
 | [getAvailableResolutions()](#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
-| [testCameraAccess()](#testcameraaccess)               | Tests whether there is an available camera.                                           |
 | [ifSaveLastUsedCamera](#ifsavelastusedcamera)         | Returns or sets whether to save the last used camera and resolution.                  |
 | [videoSrc](#videosrc)                                 | Sets or returns the source of the video.                                              |
+| [ifSkipCameraInspection](#ifskipcamerainspection)     | Whether to opt for an optimal rear camera at the first `open()`.                      |
 
 ## Advanced Camera Control
 
@@ -269,7 +270,7 @@ A Boolean value indicating whether the video streaming is paused.
 Resumes video streaming.
 
 ```typescript
-resume(): void;
+resume(): Promise<void>;
 ```
 
 **Parameters**
@@ -278,13 +279,13 @@ None.
 
 **Return value**
 
-None.
+A promise that resolves when the operation succeeds.
 
 ## setResolution
 
 Sets the resolution of the selected camera. If the specified resolution is not exactly supported, the closest resolution will be applied.
 
-> If called before `open()` or `show()` , the camera will use the set resolution when it opens. Otherwise, the default resolution is used, which is 1280 x 720.
+> If called before `open()` or `show()` , the camera will use the set resolution when it opens. Otherwise, the default resolution of 1920x1080 is used (1280x720 on mobile phones and pad devices).
 
 ```typescript
 setResolution(resolution: Resolution): Promise<PlayCallbackInfo>;
@@ -365,10 +366,10 @@ console.log(resolutions);
 
 ## testCameraAccess
 
-Tests whether there is an available camera.
+Tests whether there is an available camera. This method offers the additional advantage of accelerating the camera opening process for the first time.
 
 ```typescript
-static testCameraAccess(): Promise<CameraTestResponse>;
+static testCameraAccess(): Promise<{ ok: boolean, message: string }>;
 ```
 
 **Parameters**
@@ -377,7 +378,7 @@ None.
 
 **Return value**
 
-A promise resolving to a `CameraTestResponse` object.
+A promise resolving to a object containing two `properties` ok and `message`.
 
 **Code Snippet**
 
@@ -409,7 +410,7 @@ Sets or returns the source of the video.
 > 2. When playing an existing video, the camera selection and video selection boxes will be hidden.
 
 ```typescript
-videoSrc: string | MediaStream | MediaSource | Blob;
+videoSrc: string;
 ```
 
 ## setFrameRate
@@ -417,6 +418,7 @@ videoSrc: string | MediaStream | MediaSource | Blob;
 Adjusts the frame rate.
 
 > At present, this method only works in Edge, Safari, Chrome and other Chromium-based browsers (Firefox is not supported). Also, it should be called when a camera is open.
+> If you provide a value that exceeds the camera's capabilities, we will automatically adjust it to the maximum value that can be applied.
 
 ```typescript
 setFrameRate(rate: number): Promise<void>;
@@ -549,8 +551,8 @@ Zooms the video.
 > How it works:
 >
 > 1. If the camera supports zooming and the zoom factor is within its supported range, zooming is done directly by the camera.
-> 2. If the camera does not support zooming, WebGL is used instead.
-> 3. If the camera supports zooming but the zoom factor is beyond what it supports, the camera's maximum zoom is used, and WebGL is used to do the rest. (In this case, you may see a brief video flicker between the two zooming processes).
+> 2. If the camera does not support zooming, software-based magnification is used instead.
+> 3. If the camera supports zooming but the zoom factor is beyond what it supports, the camera's maximum zoom is used, and software-based magnification is used to do the rest. (In this case, you may see a brief video flicker between the two zooming processes).
 
 ```typescript
 setZoom(settings:{factor: number}): Promise<void>;
@@ -608,12 +610,7 @@ type FocusArea = {
     width: string;
     height: string;
 };
-type FocusSettings = {
-    mode: string;
-    distance: number;
-    area: FocusArea;
-};
-getFocusSettings(): FocusSettings;
+getFocusSettings(): {mode: string} | {mode: "manual", area: FocusArea} | {mode: "manual", distance: number};
 ```
 
 **Parameters**
@@ -657,7 +654,7 @@ setFocus(settings: { mode: string } | { mode: 'manual', distance: number } | {
 
 **Parameters**
 
-`settings` : specifies the focus settings. Available `mode` options are `continuous` and `manual` . `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
+`settings` : specifies the focus settings. The value of `mode` depends on the capabilities of the current camera. Typically, "continuous" and "manual" are supported. `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
 
 **Return value**
 
@@ -890,6 +887,8 @@ await enhancer.setExposureCompensation(-0.7);
 
 Sets the range (minimum to maximum) for zoom when it is done automatically.
 
+> Auto-zoom is one of the enhanced features that require a license, and is only effective when used in conjunction with other functional products of Dynamsoft.
+
 ```typescript
 setAutoZoomRange(range: { min: number, max: number }): void;
 ```
@@ -934,8 +933,14 @@ let zoomRange = enhancer.getAutoZoomRange();
 
 Enables the specified enhanced features.
 
+> * Following enhanced features require a license, and only take effect when used in conjunction with other functional products under Dynamsoft Capture Vision（DCV）architecture: `Enhanced-focus`, `Auto-zoom`,`Tap-to-focus`.
+> * `Enhanced-focus` and `Tap-to-focus` only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported. Note that all browsers on iOS (including Chrome) use WebKit as the rendering engine and are not supported.
+
 ```typescript
-enableEnhancedFeatures(features: EnumEnhancedFeatures): void;
+//you need to include cvr and initialize the license for enabling enhanced features
+Dynamsoft.License.LicenseManager.initLicense("YOUR-LICENSE");
+
+enableEnhancedFeatures(features: EnumEnhancedFeatures): Promise<void>;
 ```
 
 **Parameters**
@@ -949,6 +954,7 @@ None.
 **Code Snippet**
 
 ```javascript
+
 await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 ```
 
@@ -981,3 +987,11 @@ await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 **See also**
 
 * [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
+
+## ifSkipCameraInspection
+
+Sets or returns whether to opt for an optimal rear camera at the first `open()`. If skipped, the instantiation is done faster. Note that if a previously used camera is already available in the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), the inspection is skipped automatically. Read more on [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera).
+
+```typescript
+ifSkipCameraInspection: boolean;
+```

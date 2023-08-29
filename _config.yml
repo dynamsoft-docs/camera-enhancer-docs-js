@@ -1,4 +1,5 @@
 repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
+repositoryUrlJS: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
 repository: dynamsoft-docs/camera-enhancer-docs-js
 docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
 firstLevelUrl: /camera-enhancer/docs/web
@@ -42,7 +43,7 @@ dwt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dwt.svg
 dnt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dnt.svg
 
 overview: /camera-enhancer/overview/
-download: /camera-enhancer/downloads/1000021-confirmation/
+download: /camera-enhancer/downloads/
 
 useVersionTree: true
 
@@ -50,7 +51,10 @@ baseurl: "/camera-enhancer/docs/web/"
 plugins:
   - jemoji
   - jekyll-sitemap
-  
+
+
+edition: js
+
 defaults:
   - scope:
       path: "Hide_Tree_Page.html"

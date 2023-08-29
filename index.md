@@ -1,9 +1,13 @@
 ---
-layout: home-page
-title: Dynamsoft Camera Enhancer SDK Documentation
-description: Dynamsoft Camera Enhancer SDK Documentation Homepage
-keywords:  Camera Enhancer
-breadcrumbText: HomePage
+layout: default-layout
+title: Index of Web - Dynamsoft Camera Enhancer
+description: This is the index of Dynamsoft Camera Enhancer web editions.
+keywords:  Camera Enhancer, index
+needAutoGenerateSidebar: true
+breadcrumbText: Start Programming
+permalink: /programming/index.html
 ---
 
-# Dynamsoft Camera Enhancer JS
+# Dynamsoft Camera Enhancer for Web
+
+* [JavaScript](programming/index.md)

@@ -18,8 +18,6 @@ permalink: /programming/javascript/api-reference/auxiliary.html
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
 | [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
-| [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
-| [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
 
 **Type definition used on this page**:
 
@@ -60,28 +58,26 @@ None.
 
 ```javascript
 let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.on("cameraChange", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraChange", (deviceId, previousDeviceId) => {
+    console.log("Camera changed.");
 });
-enhancer.on("cameraOpen", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraOpen", () => {
+    console.log("Camera opened.");
 });
-enhancer.on("cameraClose", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("cameraClose", () => {
+    console.log("Camera closed.");
 });
-enhancer.on("resolutionChange", playCallBackInfo => {
-    console.log("width:" + playCallBackInfo.width);
-    console.log("height:" + playCallBackInfo.height);
+enhancer.on("resolutionChange", (resolution, previousResolution) => {
+    console.log("Resolution changed.");
 });
-enhancer.on("played", playCallBackInfo => {
-    console.log(playCallBackInfo.deviceId);
+enhancer.on("played", () => {
+    console.log("Video stream started.");
 });
 enhancer.on("singleFrameAcquired", dceFrame => {
-    document.body.appendChild(dceFrame.toCanvas());
+    console.log("An image is acquired under the single-frame mode.");
 });
 enhancer.on("frameAddedToBuffer", () => {
-    let dceFrame = enhancer.getFrameFromBuffer();
-    document.body.appendChild(dceFrame.toCanvas());
+    console.log("A new frame is added to the buffer.");
 });
 ```
 
@@ -112,7 +108,7 @@ let cameraChanged = playCallBackInfo => {
 }
 enhancer.on("cameraChange", cameraChanged);
 ```
-
+<!--
 ## offAll
 
 Removes all event handlers from the specified event. If no event is specified, remove all event handlers.
@@ -168,3 +164,4 @@ A JSON object about the running environment. For example
 ```javascript
 await Dynamsoft.DCE.CameraEnhancer.detectEnvironment();
 ```
+-->
