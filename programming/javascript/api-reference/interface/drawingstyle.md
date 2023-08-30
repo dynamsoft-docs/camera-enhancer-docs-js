@@ -58,7 +58,7 @@ permalink: /programming/javascript/api-reference/interface/drawingstyle.html
       strokeStyle: "rgba(73, 173, 245, 1)"
   }
   // DrawingStyle 2
-  // Used by Dynamsoft Label Recognizer for DrawingItems in "default" state.
+  // Used by Dynamsoft Barcode Reader for DrawingItems in "default" state.
   {
       id: 2,
       fillStyle: "rgba(73, 245, 73, 0.3)",
@@ -69,7 +69,7 @@ permalink: /programming/javascript/api-reference/interface/drawingstyle.html
       strokeStyle: "rgba(73, 245, 73, 0.9)"
   }
   // DrawingStyle 3
-  // Used by Dynamsoft Barcode Reader for DrawingItems in "default" state.
+  // Used by Dynamsoft Label Recognizer for DrawingItems in "default" state.
   {
       id: 3,
       fillStyle: "rgba(254, 180, 32, 0.3)",
@@ -102,7 +102,7 @@ permalink: /programming/javascript/api-reference/interface/drawingstyle.html
       strokeStyle: "rgba(73, 173, 245, 1)"
   }
   // DrawingStyle 6
-  // Used by Dynamsoft Label Recognizer for DrawingItems in "selected" state.
+  // Used by Dynamsoft Barcode Reader for DrawingItems in "selected" state.
   {
       id: 6,
       fillStyle: "rgba(73, 245, 73, 0.3)",
@@ -113,7 +113,7 @@ permalink: /programming/javascript/api-reference/interface/drawingstyle.html
       strokeStyle: "rgba(73, 245, 73, 0.9)"
   }
   // DrawingStyle 7
-  // Used by Dynamsoft Barcode Reader for DrawingItems in "selected" state.
+  // Used by Dynamsoft Label Recognizer for DrawingItems in "selected" state.
   {
       id: 7,
       fillStyle: "rgba(254, 180, 32, 0.3)",

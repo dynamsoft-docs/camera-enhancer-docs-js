@@ -91,8 +91,8 @@ breadcrumbText: API Reference
 | [isBufferEmpty()](acquisition.md#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
 | [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode()](acquisition.md#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
+| [singleFrameMode](acquisition.md#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
+| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
 
 ### UI
 
@@ -101,7 +101,6 @@ breadcrumbText: API Reference
 | [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
 | [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
 | [getVideoEl](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [setVideoEl](ui.md#setvideoel)                                   | Sets a video element to be used by the `CameraView` instance.                                                                                                    |
 | [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
 
@@ -294,7 +293,9 @@ Child classes based on `DrawingItem`
 * [Resolution](interface/resolution.md)
 * [Point](interface/point.md)
 * [Region](interface/region.md)
+* [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
+* [VideoFrameTag](interface/videoframetag.md)
 * [Warning](interface/warning.md)
 
 ## Enumerations

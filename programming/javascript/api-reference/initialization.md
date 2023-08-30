@@ -186,7 +186,7 @@ The following two warnings are returned respectively:
 Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 ```
 
-**See Also**
+**See also**
 
 [Warning](interface/warning.md)
 

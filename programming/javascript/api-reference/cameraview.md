@@ -47,7 +47,7 @@ permalink: /programming/javascript/api-reference/cameraview.html
 
 ## createInstance
 
-Creates a `CameraView` instance. The `CameraView` is responsible for streaming video with real-time interaction such as highlighting certain objects found in the video.
+Creates a `CameraView` instance. The `CameraView` is used to display the camera preview and provides UI controlling APIs. You can add interactable UI elements on the view.
 
 ```typescript
 static createInstance(defaultUIElement?: HTMLDivElement | string): Promise<CameraView>;
@@ -64,9 +64,26 @@ A promise resolving to the created `CameraView` object.
 **Code Snippet**
 
 ```javascript
-(async () => {
-    let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-})();
+let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
+```
+
+or
+
+```javascript
+// Pass the path of the customized UI in the API `createInstance` to set it as the default UI.
+let cameraView = await Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
+```
+
+or
+
+```html
+<div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-video-container" style="width:100%;height:100%;"></div>
+</div>
+<script>
+    // Create 'CameraView' instance and pass an element as its UI.
+    let view = await Dynamsoft.DCE.CameraView.createInstance(document.getElementById("enhancerUIContainer"));
+</script>
 ```
 
 ## dispose
@@ -136,12 +153,12 @@ const uiElement = cameraView.getUIElement();
 Specifies an HTML element for the `CameraView` instance to use as its UI element. The structure inside the element determines the appearance of the UI.
 
 ```typescript
-setUIElement(element: HTMLDivElement): Promise<void>;
+setUIElement(element: HTMLDivElement | string): Promise<void>;
 ```
 
 **Parameters**
 
-`element`: Takes an argument element of type HTMLDivElement, which represents the new UI element to be associated with the camera view.
+`element`: A DIV element in which to build the default UI, or a URL to use an external UI definition.
 
 **Return value**
 
@@ -162,11 +179,18 @@ None.
 </script>
 ```
 
+or
+
+```javascript
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+enhancer.setUIElement("THE-URL-TO-THE-FILE");
+```
+
 > If the input HTMLDivElement is not complete, the default video element will be created and appended to the DIV element with the class "dce-video-container". For further customizing the UI please make sure the class name is the same.
 
 ## createDrawingLayer
 
-Creates a DrawingLayer object and put it in an array of DrawingLayers.
+Creates and returns a DrawingLayer object.
 
 ```typescript
 createDrawingLayer(): DrawingLayer;
@@ -178,7 +202,7 @@ None.
 
 **Return value**
 
-Returns a DrawingLayer object.
+A `DrawingLayer` object.
 
 **Code Snippet**
 
@@ -188,7 +212,7 @@ const newDrawingLayer = cameraView.createDrawingLayer();
 
 ## getDrawingLayer
 
-Gets the DrawingLayer specified by its ID.
+Gets the `DrawingLayer` specified by its ID.
 
 ```typescript
 getDrawingLayer(id: number): DrawingLayer;
@@ -210,7 +234,7 @@ retrievedDrawingLayer = cameraView.getDrawingLayer(layerId);
 
 ## getAllDrawingLayers
 
-Returns an array of all DrawingLayer objects.
+Returns an array of all `DrawingLayer` objects.
 
 ```typescript
 getAllDrawingLayers(): Array<DrawingLayer>;
@@ -222,7 +246,7 @@ None.
 
 **Return value**
 
-Returns an array of all DrawingLayer objects.
+Returns an array of all `DrawingLayer` objects.
 
 **Code Snippet**
 
@@ -232,7 +256,7 @@ DrawingLayers = cameraView.getAllDrawingLayers();
 
 ## deleteUserDefinedDrawingLayer
 
-Deletes a DrawingLayer object specified by its ID.
+Deletes a `DrawingLayer` object specified by its ID.
 
 ```typescript
 deleteUserDefinedDrawingLayer(id: number): void;
@@ -254,7 +278,7 @@ cameraView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 
 ## clearUserDefinedDrawingLayers
 
-Removes all user-defined DrawingLayers.
+Removes all user-defined `DrawingLayers`.
 
 ```typescript
 clearUserDefinedDrawingLayers(): void;
@@ -284,7 +308,7 @@ setTipConfig(tipConfig: TipConfig): void;
 
 **Parameters**
 
-`tipConfig`: Takes a parameter of type TipConfig and is used to set the configuration for a tip in the camera view.
+`tipConfig`: Takes a parameter of type TipConfig and is used to set the configuration for a tip in the `cameraView`.
 
 **Return value**
 
@@ -378,7 +402,7 @@ updateTipMessage(message: string): void;
 
 **Parameters**
 
-`message`: A string used to update or change the content of the tip message displayed in the cameraView.
+`message`: A string used to update or change the content of the tip message displayed in the `cameraView`.
 
 **Return value**
 
@@ -448,9 +472,9 @@ setScanRegionMaskStyle(newStyle: {
 
 **Parameters**
 
-`lineWidth`: The width of the lines used to draw the mask border.
-`strokeStyle`: The color or style of the mask border lines.
-`fillStyle`: The color of the mask's interior fill.
+`lineWidth`: The width of the lines used to draw the mask border.  
+`strokeStyle`: The color or style of the mask border lines.  
+`fillStyle`: The color of the mask's interior fill.  
 
 > The default value is
 >
