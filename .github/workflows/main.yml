@@ -45,7 +45,6 @@ jobs:
           port: 21 
           local-dir: /home/ubuntu/DCEDocJS/_site/
           server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
-          server-dir: /www.dynamsoft.com/document-normalizer/docs/web/
 
       - name: Trigger Webhook 
         run: | 
