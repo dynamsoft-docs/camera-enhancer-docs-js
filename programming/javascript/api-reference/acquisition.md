@@ -362,8 +362,9 @@ setNextImageToReturn(imageId: number, keepInBuffer?: boolean): void;
 
 **Parameters**
 
-* `imageId`: specifies the image by its id.
-* `keepInBuffer`: specifies whether to keep the image in buffer after it is returned.
+* `imageId`: specifies the image by its id.  
+
+* `keepInBuffer`(optional): specifies whether to keep the image in buffer after it is returned.
 
 **Return value**
 
@@ -399,7 +400,7 @@ None.
 enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
-**See Also**
+**See also**
 
 * [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
@@ -425,7 +426,7 @@ None.
 enhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
-**See Also**
+**See also**
 
 * [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
@@ -479,7 +480,7 @@ if(!enhancer.hasNextImageToFetch()) {
 
 ## setPixelFormat
 
-Sets the pixel format of the images.
+Determines the format of the images added to the buffer when the `fetchImage()` or `startFetching()` method is called.
 
 ```typescript
 setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
@@ -493,7 +494,7 @@ setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
 
 **Return value**
 
-A `DCEFrame` object which contains the image data of the frame and related information.
+None.
 
 **Code Snippet**
 
@@ -505,7 +506,7 @@ document.body.appendChild(image.toCanvas());
 
 **See also**
 
-* [EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js))
+* [EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js)
 
 ## singleFrameMode
 
@@ -532,12 +533,14 @@ singleFrameMode: boolean;
 })();
 ```
 
+> As shown in the code snippet above, `singleFrameMode` should be set before calling `open()`.
+
 ## takePhoto
 
-Invokes the system camera to take a frame with better image quality.
+Invokes the system camera to take a frame with better image quality or select an existing image from the device storage.
 
 ```typescript
-takePhoto(listener(dceFrame:DCEFrame): void);
+takePhoto(listener: (dceFrame: DCEFrame) => void): void;
 ```
 
 **Parameter**
