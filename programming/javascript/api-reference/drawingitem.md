@@ -30,7 +30,9 @@ permalink: /programming/javascript/api-reference/drawingitem.html
 | [getAllNotes()](drawingitem.md#getallnotes)     | Returns all `Notes` on the `DrawingItem`.                                                                  |
 | [clearNotes()](drawingitem.md#clearnotes)       | Deletes all `Notes` on the `DrawingItem`.                                                                  |
 
-Child classes based on `DrawingItem`
+---
+
+Child classes based on `DrawingItem`:
 
 ## Class LineDrawingItem
 
@@ -128,7 +130,11 @@ getState(): EnumDrawingItemState;
 
 **Return Value**
 
-return a value of type `EnumDrawingItemState`.
+A value of type `EnumDrawingItemState`.
+
+**See also**
+
+* [EnumDrawingItemState](enum/EnumDrawingItemState.md)
 
 ## on
 
@@ -140,12 +146,13 @@ on(eventName: string, listener(event: DrawingItemEvent): void): void;
 
 **Parameters**
 
-`eventName`: The name of the event you want to listen to.
+`eventName`: The name of the event you want to listen to.  
+
 `listener()`: A function that will be called when the specified event occurs.
 
 > Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
 
-**See Also**
+**See also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
 
@@ -157,9 +164,15 @@ Removes an event listener to the `DrawingItem` for the event specified by `event
 off(eventName: string, listener(event: DrawingItemEvent): void): void;
 ```
 
-**See Also**
+**Parameters**
+
+`eventName`: The name of the event you want to listen to.  
+`listener()`: A function that will be called when the specified event occurs.
+
+**See also**
 
 * [DrawingItemEvent](interface/drawingitemevent.md)
+* [on](#on)
 
 ## addNote
 
@@ -171,8 +184,12 @@ addNote(note: Note, replace?: boolean): void;
 
 **Parameters**
 
-`note`: Expects an instance of the Note, including name and content properties to be passed when the method is called.
-`replace`: Determines whether an existing note should be replaced when adding the new note.
+`note`: Expects an object that implements the `Note` interface.
+`replace`(optional): Determines whether to replace the `Note` if the name of the `Note` already exists.
+
+**See also**
+
+* [Note](interface/note.md)
 
 ## getNote
 
@@ -188,7 +205,7 @@ getNote(name: string): Note;
 
 **Return Value**
 
-Returns the corresponding Note object based on the provided name.
+The corresponding `Note` object based on the provided name.
 
 ## hasNote
 
@@ -204,7 +221,7 @@ hasNote(name: string): boolean;
 
 **Return Value**
 
-Returns a value of boolean indicates whether a specific note exists with the given name.
+A value of boolean indicates whether a specific note exists with the given name.
 
 ## updateNote
 
@@ -217,8 +234,10 @@ updateNote(name: string, content: any, mergeContent?: boolean): void;
 **Parameters**
 
 `name`: The string representing the name of the note.
+
 `content`: The content of the note.
-`mergeContent`: If this parameter is set to true, then the new content is added to the Note alongside the original content.
+
+`mergeContent`(optional): If this parameter is set to true, then the new content is added to the Note alongside the original content.
 
 ## deleteNote
 
@@ -259,8 +278,12 @@ clearNotes(): void;
 Constructor of a `LineDrawingItem`.
 
 ```typescript
-constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number) { super(Object) };
+constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number);
 ```
+
+**See also**
+
+* [LineSegment](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/line-segment.html)
 
 ## getLine
 
@@ -293,8 +316,12 @@ setLine(line: Core.BasicStructures.LineSegment): void;
 Constructor of a `RectDrawingItem`.
 
 ```typescript
-constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number) { super(Object) };
+constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number);
 ```
+
+**See also**
+
+* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
 
 ## getRect
 
@@ -327,8 +354,12 @@ setRect(rect: Core.BasicStructures.Rect): void;
 Constructor of a `QuadDrawingItem`.
 
 ```typescript
-constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number) { super(Object) };
+constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number);
 ```
+
+**See also**
+
+* [Quadrilateral](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/quadrilateral.html)
 
 ## getQuad
 
@@ -361,7 +392,7 @@ setQuad(quad: Core.BasicStructures.Quadrilateral): void;
 Constructor of a `TextDrawingItem`.
 
 ```typescript
-constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number) { super(Object) };
+constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number);
 ```
 
 ## getText
@@ -423,16 +454,22 @@ constructor(
     image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
     rect: Core.BasicStructures.Rect,
     maintainAspectRatio: boolean,
-    drawingStyleId?: number) { super(Object) };
+    drawingStyleId?: number);
 ```
 
-## maintainAspectRatio
+**Parameters**
 
-Sets or returns whether aspect ratio of the image is maintained when it is drawn.
+`image`: The image data.
 
-```typescript
-maintainAspectRatio: boolean;
-```
+`rect`: Outer rectangle border of the image.
+
+`maintainAspectRatio`: Sets whether aspect ratio of the image is maintained when it is drawn.
+
+`drawingStyleId`(optional): Specifies the `DrawingStyle` that applies to this `ImageDrawingItem`.
+
+**See also**
+
+* [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
 
 ## getImage
 
@@ -480,7 +517,7 @@ setImageRect(rect: Core.BasicStructures.Rect): void;
 Constructor of a `GroupDrawingItem`.
 
 ```typescript
-constructor(childDrawingItems: Array<DrawingItem>) { super(Object) };
+constructor(childDrawingItems: Array<DrawingItem>);
 ```
 
 ## getChildDrawingItems

@@ -13,6 +13,8 @@ permalink: /programming/javascript/api-reference/interface/dceframe.html
 
 `interface` DCEFrame
 
+The DCEFrame interface inherits from the `DSImageData` in the `Core.BasicStructures` namespace.
+
 * isDCEFrame: `boolean`
   
   Returns whether this is a `DCEFrame`.
