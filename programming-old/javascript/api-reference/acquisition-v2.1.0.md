@@ -66,7 +66,7 @@ enhancer.setScanRegion(region);
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## getScanRegion
 
@@ -92,7 +92,7 @@ let region = enhancer.getScanRegion();
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## getFrame
 
@@ -119,7 +119,7 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
+* [DCEFrame](interface/dceframe.html)
 
 ## getFrameFromBuffer
 
@@ -146,7 +146,7 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
+* [DCEFrame](interface/dceframe.html)
 * [startFetchingLoop](#startfetchingloop)
 
 ## startFetchingLoop
@@ -169,7 +169,7 @@ None.
 
 **See Also**
 
-* [DCEFrame](interface/dceframe.md)
+* [DCEFrame](interface/dceframe.html)
 * [loopInterval](#loopinterval)
 
 ## stopFetchingLoop
@@ -255,7 +255,7 @@ croppingRegions: Array<Region>;
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## croppingRegionIndex
 

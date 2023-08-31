@@ -23,7 +23,7 @@ permalink: /programming/javascript/release-note/release-notes-2.x.html
 
 <div class="fold-panel-start"></div>
 
-{%- include release-notes/product-highlight-2.3.0.md -%}
+{%- include release-notes/product-highlight-2.3.0.html -%}
 
 <div class="fold-panel-end"></div>
 
@@ -44,7 +44,7 @@ permalink: /programming/javascript/release-note/release-notes-2.x.html
 
 <div class="fold-panel-start"></div>
 
-{%- include release-notes/product-highlight-2.1.0.md -%}
+{%- include release-notes/product-highlight-2.1.0.html -%}
 
 <div class="fold-panel-end"></div>
 

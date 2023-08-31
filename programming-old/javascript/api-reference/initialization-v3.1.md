@@ -184,4 +184,4 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See Also**
 
-[Warning](interface/warning.md)
+[Warning](interface/warning.html)

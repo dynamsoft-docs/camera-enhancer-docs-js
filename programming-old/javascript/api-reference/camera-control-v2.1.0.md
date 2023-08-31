@@ -92,7 +92,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## selectCamera
 
@@ -124,7 +124,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getSelectedCamera
 
@@ -151,7 +151,7 @@ console.log(camera.label);
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## open
 
@@ -171,7 +171,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## close
 
@@ -263,7 +263,7 @@ await enhancer.setResolution(width, height);
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getResolution
 

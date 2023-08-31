@@ -114,48 +114,48 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 #### New
 
-* Added callback [`onWarning`](../api-reference/initialization.md#onwarning) which is triggered when the running environment is not ideal.
-* Added property [`isDisposed`](../api-reference/auxiliary.md#isdisposed) to indicate whether the **CameraEnhancer** instance has been disposed.
-* Added method [`offAll()`](../api-reference/auxiliary.md#offall) to remove all event handlers from the specified event. If no event is specified, remove all event handlers.
-* Added method [`removeScanRegionOverlayCanvas()`](../api-reference/ui.md#removescanregionoverlaycanvas) to remove the specified Canvas element which was added with **addScanRegionOverlayCanvas()**.
+* Added callback [`onWarning`](../api-reference/initialization.html#onwarning) which is triggered when the running environment is not ideal.
+* Added property [`isDisposed`](../api-reference/auxiliary.html#isdisposed) to indicate whether the **CameraEnhancer** instance has been disposed.
+* Added method [`offAll()`](../api-reference/auxiliary.html#offall) to remove all event handlers from the specified event. If no event is specified, remove all event handlers.
+* Added method [`removeScanRegionOverlayCanvas()`](../api-reference/ui.html#removescanregionoverlaycanvas) to remove the specified Canvas element which was added with **addScanRegionOverlayCanvas()**.
 
-The following APIs are for the new feature of drawing shapes. Read more on [Draw Shapes with DCE JS](../user-guide/features/draw-shapes.md).
+The following APIs are for the new feature of drawing shapes. Read more on [Draw Shapes with DCE JS](../user-guide/features/draw-shapes.html).
 
-* Added type [`DrawingItem`](../api-reference/drawingitem.md) to define basic shapes to be drawn.
+* Added type [`DrawingItem`](../api-reference/drawingitem.html) to define basic shapes to be drawn.
 * Added class `DT_Rect`, `DT_Arc`, `DT_Text`, `DT_Line`, `DT_Polygon`, `DT_Image`, and `DT_Group` to define different shapes of **DrawingItem**.
 * Added interface `Point` to describe the vertices when constructing objects of `DT_Line` and `DT_Polygon`.
 
-* Added interface [`DrawingLayer`](../api-reference/drawinglayer.md) to organize items.
-* Added method [`createDrawingLayer()`](../api-reference/ui.md#createdrawinglayer) to create a **DrawingLayer** object.
-* Added method [`getDrawingLayer()`](../api-reference/ui.md#getdrawinglayer) to get the **DrawingLayer** specified by its ID.
-* Added method [`clearDrawingLayers()`](../api-reference/ui.md#cleardrawinglayers) to remove all **DrawingLayer** objects.
+* Added interface [`DrawingLayer`](../api-reference/drawinglayer.html) to organize items.
+* Added method [`createDrawingLayer()`](../api-reference/ui.html#createdrawinglayer) to create a **DrawingLayer** object.
+* Added method [`getDrawingLayer()`](../api-reference/ui.html#getdrawinglayer) to get the **DrawingLayer** specified by its ID.
+* Added method [`clearDrawingLayers()`](../api-reference/ui.html#cleardrawinglayers) to remove all **DrawingLayer** objects.
 
-* Added interface [`DrawingStyle`](../api-reference/interface/drawingstyle.md) to customize styles for drawing **DrawingItems**.
-* Added method [`createDrawingStyle()`](../api-reference/ui.md#createdrawingstyle) to create a **DrawingStyle** object and return its ID.
-* Added method [`getDrawingStyle()`](../api-reference/ui.md#getdrawingstyle) to get the **DrawingStyle** specified by its ID.
-* Added method [`getDrawingStyles()`](../api-reference/ui.md#getdrawingstyles) to get all **DrawingStyle** objects.
-* Added method [`updateDrawingStyle()`](../api-reference/ui.md#updatedrawingstyle) to update a **DrawingStyle** specified by its ID.
+* Added interface [`DrawingStyle`](../api-reference/interface/drawingstyle.html) to customize styles for drawing **DrawingItems**.
+* Added method [`createDrawingStyle()`](../api-reference/ui.html#createdrawingstyle) to create a **DrawingStyle** object and return its ID.
+* Added method [`getDrawingStyle()`](../api-reference/ui.html#getdrawingstyle) to get the **DrawingStyle** specified by its ID.
+* Added method [`getDrawingStyles()`](../api-reference/ui.html#getdrawingstyles) to get all **DrawingStyle** objects.
+* Added method [`updateDrawingStyle()`](../api-reference/ui.html#updatedrawingstyle) to update a **DrawingStyle** specified by its ID.
 
-* Added method [`setOriginalImage()`](../api-reference/ui.md#setoriginalimage) to set an original image to be drawn on a built-in canvas above which shapes are drawn usually based on coordinates of certain objects found on this image by other SDKs such as barcode locations found by DBR.
-* Added method [`getOriginalImage()`](../api-reference/ui.md#getoriginalimage) to return the original image.
-* Added method [`showOriginalImage()`](../api-reference/ui.md#showoriginalimage) to show the built-in canvas on which the original image is drawn.
-* Added method [`hideOriginalImage()`](../api-reference/ui.md#hideoriginalimage) to hide the built-in canvas on which the original image is drawn.
-* Added method [`deleteOriginalImage()`](../api-reference/ui.md#deleteoriginalimage) to delete the original image and remove the built-in canvas that shows it.
-* Added method [`getSelectedDrawingItems()`](../api-reference/ui.md#getselecteddrawingitems) to get the selected **DrawingItems** which will be helpful in further processing of the original image by another SDK. For example, the **DrawingItem** may refer to the boundaries of the region of interest that the user wishes to crop from the image.
+* Added method [`setOriginalImage()`](../api-reference/ui.html#setoriginalimage) to set an original image to be drawn on a built-in canvas above which shapes are drawn usually based on coordinates of certain objects found on this image by other SDKs such as barcode locations found by DBR.
+* Added method [`getOriginalImage()`](../api-reference/ui.html#getoriginalimage) to return the original image.
+* Added method [`showOriginalImage()`](../api-reference/ui.html#showoriginalimage) to show the built-in canvas on which the original image is drawn.
+* Added method [`hideOriginalImage()`](../api-reference/ui.html#hideoriginalimage) to hide the built-in canvas on which the original image is drawn.
+* Added method [`deleteOriginalImage()`](../api-reference/ui.html#deleteoriginalimage) to delete the original image and remove the built-in canvas that shows it.
+* Added method [`getSelectedDrawingItems()`](../api-reference/ui.html#getselecteddrawingitems) to get the selected **DrawingItems** which will be helpful in further processing of the original image by another SDK. For example, the **DrawingItem** may refer to the boundaries of the region of interest that the user wishes to crop from the image.
 
 On the **DrawingLayer** interface:
 
-* Added method [`addDrawingItems()`](../api-reference/drawinglayer.md#adddrawingitems) to add one or multiple **DrawingItems**.
-* Added method [`getDrawingItems()`](../api-reference/drawinglayer.md#getdrawingitems) to return all **DrawingItems**.
-* Added method [`removeDrawingItems()`](../api-reference/drawinglayer.md#removedrawingitems) to remove one or multiple **DrawingItems**.
-* Added method [`setDrawingItems()`](../api-reference/drawinglayer.md#setdrawingitems) to set new **DrawingItems** which means old  **DrawingItems** will be removed.
-* Added method [`hasDrawingItem()`](../api-reference/drawinglayer.md#hasdrawingitem) to determine whether a **DrawingItem** exists on this **DrawingLayer**.
-* Added method [`clearDrawingItems()`](../api-reference/drawinglayer.md#cleardrawingitems) to remove all **DrawingItems** from this **DrawingLayer**.
-* Added method [`setMode()`](../api-reference/drawinglayer.md#setmode) to switch the **DrawingLayer** between editor and viewer mode.
-* Added method [`getMode()`](../api-reference/drawinglayer.md#getmode) to get the current mode the **DrawingLayer** is in.
-* Added method [`getId()`](../api-reference/drawinglayer.md#getid) to return the ID of the **DrawingLayer**.
-* Added method [`setDrawingStyle()`](../api-reference/drawinglayer.md#setdrawingstyle) to use different **DrawingStyles** on the **DrawingLayer**.
-* Added method [`setVisible()`](../api-reference/drawinglayer.md#setvisible) to show or hide the **DrawingLayer**.
-* Added method [`isVisible()`](../api-reference/drawinglayer.md#isvisible) to return whether the **DrawingLayer** is visible.
-* Added method [`renderAll()`](../api-reference/drawinglayer.md#renderall) to redraw all **DrawingItems**.
-* Added event [`onSelectionChange()`](../api-reference/drawinglayer.md#onselectionchange) to listen on the selection or deselection of **DrawingItems** on the **DrawingLayer**.
+* Added method [`addDrawingItems()`](../api-reference/drawinglayer.html#adddrawingitems) to add one or multiple **DrawingItems**.
+* Added method [`getDrawingItems()`](../api-reference/drawinglayer.html#getdrawingitems) to return all **DrawingItems**.
+* Added method [`removeDrawingItems()`](../api-reference/drawinglayer.html#removedrawingitems) to remove one or multiple **DrawingItems**.
+* Added method [`setDrawingItems()`](../api-reference/drawinglayer.html#setdrawingitems) to set new **DrawingItems** which means old  **DrawingItems** will be removed.
+* Added method [`hasDrawingItem()`](../api-reference/drawinglayer.html#hasdrawingitem) to determine whether a **DrawingItem** exists on this **DrawingLayer**.
+* Added method [`clearDrawingItems()`](../api-reference/drawinglayer.html#cleardrawingitems) to remove all **DrawingItems** from this **DrawingLayer**.
+* Added method [`setMode()`](../api-reference/drawinglayer.html#setmode) to switch the **DrawingLayer** between editor and viewer mode.
+* Added method [`getMode()`](../api-reference/drawinglayer.html#getmode) to get the current mode the **DrawingLayer** is in.
+* Added method [`getId()`](../api-reference/drawinglayer.html#getid) to return the ID of the **DrawingLayer**.
+* Added method [`setDrawingStyle()`](../api-reference/drawinglayer.html#setdrawingstyle) to use different **DrawingStyles** on the **DrawingLayer**.
+* Added method [`setVisible()`](../api-reference/drawinglayer.html#setvisible) to show or hide the **DrawingLayer**.
+* Added method [`isVisible()`](../api-reference/drawinglayer.html#isvisible) to return whether the **DrawingLayer** is visible.
+* Added method [`renderAll()`](../api-reference/drawinglayer.html#renderall) to redraw all **DrawingItems**.
+* Added event [`onSelectionChange()`](../api-reference/drawinglayer.html#onselectionchange) to listen on the selection or deselection of **DrawingItems** on the **DrawingLayer**.
