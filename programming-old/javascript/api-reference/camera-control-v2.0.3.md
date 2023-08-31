@@ -70,7 +70,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## selectCamera
 
@@ -101,7 +101,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getSelectedCamera
 
@@ -127,7 +127,7 @@ let camera = await enhancer.getSelectedCamera();
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## open
 
@@ -204,7 +204,7 @@ let pEnhancer = null;
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## pause
 
@@ -264,7 +264,7 @@ await enhancer.setResolution(width, height);
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getResolution
 

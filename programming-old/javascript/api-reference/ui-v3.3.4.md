@@ -100,7 +100,7 @@ enhancer.getVisibleRegion();
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## addScanRegionOverlayCanvas
 
@@ -282,7 +282,7 @@ enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## getViewDecorator
 
@@ -294,7 +294,7 @@ getViewDecorator(): {type: string[], area: Area, canvas: HTMLCanvasElement};
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## setViewDecoratorLineWidth
 
@@ -436,7 +436,7 @@ let newDrawingLayer = enhancer.createDrawingLayer();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## deleteDrawingLayer
 
@@ -460,7 +460,7 @@ enhancer.deleteDrawingLayer(newDrawingLayer.getId());
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayer
 
@@ -514,7 +514,7 @@ dlrDrawingLayer.setDrawingStyle(newStyleId)
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayers
 
@@ -540,7 +540,7 @@ let drawingLayers = enhancer.getDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## clearDrawingLayers
 
@@ -558,7 +558,7 @@ enhancer.clearDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## createDrawingStyle
 
@@ -598,13 +598,13 @@ let styleID = enhancer.createDrawingStyle({
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyle
 
 Returns the `DrawingStyle` object specified by its Id.
 
-> The SDK comes with 8 default styles with the IDs 1 ~ 8, check [DrawingStyle](interface/drawingstyle.md) for more information.
+> The SDK comes with 8 default styles with the IDs 1 ~ 8, check [DrawingStyle](interface/drawingstyle.html) for more information.
 
 ```typescript
 getDrawingStyle(styleId: number): DrawingStyle; 
@@ -627,7 +627,7 @@ let drawingStyle = enhancer.getDrawingStyle(100);
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyles
 
@@ -649,7 +649,7 @@ let drawingStyles = enhancer.getDrawingStyles();
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## updateDrawingStyle
 
@@ -686,7 +686,7 @@ enhancer.updateDrawingStyle(100, {
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 **Special Notice**
 
@@ -811,7 +811,7 @@ let drawingItems = enhancer.getSelectedDrawingItems();
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## showTip
 

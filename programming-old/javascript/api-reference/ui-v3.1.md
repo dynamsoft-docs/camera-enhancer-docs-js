@@ -89,7 +89,7 @@ enhancer.getVisibleRegion();
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## addScanRegionOverlayCanvas
 
@@ -273,7 +273,7 @@ enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## getViewDecorator
 
@@ -285,7 +285,7 @@ getViewDecorator(): {type: string[], area: Area, canvas: HTMLCanvasElement};
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## setViewDecoratorLineWidth
 
@@ -431,7 +431,7 @@ let newDrawingLayer = enhancer.createDrawingLayer();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayer
 
@@ -467,7 +467,7 @@ If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**
 
 You can manipulate these DrawingLayers directly, for example, the following code applies a different DrawingStyle to the DrawingLayer used by **Dynamsoft Label Recognizer**:
 
-> Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.md#updatedrawingstyle).
+> Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.html#updatedrawingstyle).
 
 ```javascript
 // Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
@@ -485,7 +485,7 @@ dlrDrawingLayer.setDrawingStyle(newStyleId)
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayers
 
@@ -511,7 +511,7 @@ let drawingLayers = enhancer.getDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## clearDrawingLayers
 
@@ -529,7 +529,7 @@ enhancer.clearDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.md)
+* [DrawingLayer](drawinglayer.html)
 
 ## createDrawingStyle
 
@@ -569,13 +569,13 @@ let styleID = enhancer.createDrawingStyle({
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyle
 
 Returns the `DrawingStyle` object specified by its Id.
 
-> The SDK comes with 8 default styles with the IDs 1 ~ 8, check [DrawingStyle](interface/drawingstyle.md) for more information.
+> The SDK comes with 8 default styles with the IDs 1 ~ 8, check [DrawingStyle](interface/drawingstyle.html) for more information.
 
 ```typescript
 getDrawingStyle(styleId: number): DrawingStyle; 
@@ -598,7 +598,7 @@ let drawingStyle = enhancer.getDrawingStyle(100);
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyles
 
@@ -620,7 +620,7 @@ let drawingStyles = enhancer.getDrawingStyles();
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## updateDrawingStyle
 
@@ -656,7 +656,7 @@ enhancer.updateDrawingStyle(100, { fontSize: 30 });
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 **Special Notice**
 
@@ -783,4 +783,4 @@ let drawingItems = enhancer.getSelectedDrawingItems();
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
