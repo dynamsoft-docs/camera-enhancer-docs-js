@@ -84,7 +84,7 @@ breadcrumbText: API Reference
 | [getMaxImageCount()](acquisition.md#getmaximagecount)                               | Returns the size of the buffer.                                                                     |
 | [getImageCount()](acquisition.md#getimagecount)                                     | Returns how many images are in buffer.                                                              |
 | [hasImage()](acquisition.md#hasimage)                                               | Checks whether an image exists. The image is specified by its id.                                   |
-| [getImage()](acquisition.md#getimgae)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
+| [getImage()](acquisition.md#getimage)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
 | [setNextImageToReturn()](acquisition.md#setnextimagetoreturn)                       | Specifies an image by its id to be returned when `getImage()` is called the next time.              |
 | [setBufferOverflowProtectionMode()](acquisition.md#setbufferoverflowprotectionmode) | Sets a protection mode that determines what happens when the buffer overflows.                      |
 | [getBufferOverflowProtectionMode()](acquisition.md#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
@@ -92,7 +92,7 @@ breadcrumbText: API Reference
 | [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
 | [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
 | [singleFrameMode](acquisition.md#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the systme camera to take a frame with better image quality.                                |
+| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
 
 ### UI
 
