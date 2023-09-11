@@ -46,6 +46,10 @@ jobs:
           local-dir: /home/ubuntu/DCEDocJS/_site/
           server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
 
+      - name: Trigger Webhook 
+        run: | 
+          curl -X POST -H "${{ secrets.WEBHOOK_USER }}" -H "${{ secrets.WEBHOOK_TOKEN }}" -H "Content-Type: application/json" -d "[\"/camera-enhancer/docs/web/*\"]" ${{ secrets.WEBHOOK_URL }}
+  
   Build-Preview:
     if: ${{ github.ref == 'refs/heads/preview' }}
     # The type of runner that the job will run on

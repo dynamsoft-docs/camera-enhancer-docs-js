@@ -363,6 +363,7 @@ setNextImageToReturn(imageId: number, keepInBuffer?: boolean): void;
 **Parameters**
 
 * `imageId`: specifies the image by its id.  
+
 * `keepInBuffer`(optional): specifies whether to keep the image in buffer after it is returned.
 
 **Return value**

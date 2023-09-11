@@ -40,7 +40,7 @@ If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**
 
 You can manipulate these DrawingLayers directly, for example, the following code applies a different DrawingStyle to the DrawingLayer used by **Dynamsoft Label Recognizer**:
 
-> Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.md#updatedrawingstyle).
+> Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.html#updatedrawingstyle).
 
 ```javascript
 // Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
@@ -100,7 +100,7 @@ drawingLayer.addDrawingItems(drawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## getDrawingItems
 
@@ -119,7 +119,7 @@ let drawingItems = drawingLayer.getDrawingItems();
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## setDrawingItems
 
@@ -149,7 +149,7 @@ drawingLayer.setDrawingItems(newDrawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## hasDrawingItem
 
@@ -169,7 +169,7 @@ let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## removeDrawingItems
 
@@ -192,7 +192,7 @@ drawingLayer.removeDrawingItems(drawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.md)
+* [DrawingItem](drawingitem.html)
 
 ## clearDrawingItems
 
@@ -245,7 +245,7 @@ drawingLayer.setDrawingStyle(1, "rect", "selected");
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.html)
 
 ## setVisible
 

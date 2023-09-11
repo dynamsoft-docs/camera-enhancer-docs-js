@@ -147,7 +147,7 @@ Dynamsoft.DCE.DrawingStyleManager.updateDrawingStyle(100, {
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.md)
+* [DrawingStyle](interface/drawingstyle.md)  
 * [`renderAll()`](drawinglayer.md#renderall)
 
 **Special Notice**

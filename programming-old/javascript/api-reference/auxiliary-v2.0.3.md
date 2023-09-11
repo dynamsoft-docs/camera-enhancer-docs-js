@@ -14,8 +14,8 @@ permalink: /programming/javascript/api-reference/auxiliary-v2.0.3.html
 
 | API Name | Description |
 |---|---|
-| [getVersion()](auxiliary.md#getversion) | Returns the version of the library. |
-| [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments. |
+| [getVersion()](auxiliary.html#getversion) | Returns the version of the library. |
+| [detectEnvironment()](auxiliary.html#detectenvironment) | Returns a report on the current running environments. |
 
 ## getVersion
 
