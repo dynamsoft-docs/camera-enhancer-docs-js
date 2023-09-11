@@ -11,6 +11,16 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
+## 3.3.6 (/2023)
+
+### Changed
+
+* Updated the API singleFrameMode to allow direct camera access on mobile devices.
+
+### Fixed
+
+* Fixed a issue may causing an unnecessary input element to appear in Safari on iOS 16.
+
 ## 3.3.5 (08/02/2023)
 
 ### Fixed
