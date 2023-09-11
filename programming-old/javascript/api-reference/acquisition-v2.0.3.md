@@ -50,8 +50,8 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
-* [Region](interface/region.md)
+* [DCEFrame](interface/dceframe.html)
+* [Region](interface/region.html)
 
 ## singleFrameMode
 
@@ -99,4 +99,4 @@ let pEnhancer = null;
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
+* [DCEFrame](interface/dceframe.html)

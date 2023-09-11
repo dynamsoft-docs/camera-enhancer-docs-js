@@ -52,7 +52,7 @@ enhancer.getVisibleRegion();
 
 **See also**
 
-* [Region](interface/region.md)
+* [Region](interface/region.html)
 
 ## addScanRegionOverlayCanvas
 
@@ -211,7 +211,7 @@ enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## getViewDecorator
 
@@ -223,7 +223,7 @@ getViewDecorator(): {type: string[], area: Area, canvas: Canvas};
 
 **See also**
 
-* [Area](interface/area.md)
+* [Area](interface/area.html)
 
 ## setViewDecoratorLineWidth
 

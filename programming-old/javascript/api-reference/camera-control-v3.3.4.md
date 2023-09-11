@@ -101,7 +101,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## selectCamera
 
@@ -132,7 +132,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getSelectedCamera
 
@@ -159,7 +159,7 @@ console.log(camera.label);
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+* [VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## open
 
@@ -180,7 +180,7 @@ open(appendOrShowUI?: boolean): Promise<PlayCallbackInfo>;
 > await cameraEnhancer.open(appendOrShowUI); 
 > ```
 >
-> If you want to use a different UI element, call API [ `setUIElement()` ](initialization.md#setuielement) beforehand.
+> If you want to use a different UI element, call API [ `setUIElement()` ](initialization.html#setuielement) beforehand.
 
 **Return value**
 
@@ -188,7 +188,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## close
 
@@ -281,7 +281,7 @@ await enhancer.setResolution(width, height);
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+* [PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getResolution
 

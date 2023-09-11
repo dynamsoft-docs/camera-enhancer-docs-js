@@ -23,7 +23,7 @@ The DCEFrame interface inherits from the `DSImageData` in the `Core.BasicStructu
 
   A `Function` which converts the image data to an `HTMLCanvasElement` object.
 
-The following are extended from the basic interface [DSImgaeData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
+The following are extended from the basic interface [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
 
 * bytes: `Uint8Array`
 
