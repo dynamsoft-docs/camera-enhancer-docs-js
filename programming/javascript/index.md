@@ -13,14 +13,14 @@ permalink: /programming/javascript/index.html
 
 ## Getting Started
 
-* [User Guide](user-guide/index.md)
+* [User Guide](user-guide/index.html)
 
 ## API Reference
 
-* [API Reference](api-reference/index.md)
+* [API Reference](api-reference/index.html)
 
 ## Release Notes
 
-* [Version 4.x](release-note/release-notes-4.x.md)
-* [Version 3.x](release-note/release-notes-3.x.md)
-* [Version 2.x](release-note/release-notes-2.x.md)
+* [Version 4.x](release-note/release-notes-4.x.html)
+* [Version 3.x](release-note/release-notes-3.x.html)
+* [Version 2.x](release-note/release-notes-2.x.html)
