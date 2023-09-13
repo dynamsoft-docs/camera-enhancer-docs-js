@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition-v3.3.4.html
+permalink: /programming/javascript/api-reference/acquisition-v3.3.6.html
 ---
 
 # Frame Acquisition
@@ -304,7 +304,7 @@ Returns or sets whether to enable the singe-frame mode. When the single-frame mo
 To get the actual data, add a event handler to the event 'singleFrameAcquired'.
 
 ```typescript
-singleFrameMode: boolean;
+singleFrameMode: boolean | "disabled" | "image" | "camera";
 ```
 
 **Code Snippet**
