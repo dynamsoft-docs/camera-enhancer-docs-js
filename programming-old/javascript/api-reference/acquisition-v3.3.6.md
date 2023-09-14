@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition-v3.3.4.html
+permalink: /programming/javascript/api-reference/acquisition-v3.3.6.html
 ---
 
 # Frame Acquisition
@@ -299,12 +299,16 @@ croppingRegionIndex: number;
 
 ## singleFrameMode
 
-Returns or sets whether to enable the singe-frame mode. When the single-frame mode is enabled, the video will not stream in the built-in UI of the library. Instead, the user can click the UI to invoke the system camera interface to catch a frame or select an existing image from the device storage.
-
-To get the actual data, add a event handler to the event 'singleFrameAcquired'.
+Returns or sets whether to enable the singe-frame mode. This mode allows CameraEnhancer to fetch images when there is no camera support in the browser or when you just want to process a local file.
+> It’s important to note that it will behave differently in different environments:
+ > - false: Stream the camera in the browser.
+ > - true / "image": Prompt the user to select a local image.
+ > - "camera":
+ >   - On desktop: Prompt the user to select a local image.
+ >   - On mobile devices: Invoke the system camera.
 
 ```typescript
-singleFrameMode: boolean;
+singleFrameMode: boolean | "image" | "camera";
 ```
 
 **Code Snippet**
