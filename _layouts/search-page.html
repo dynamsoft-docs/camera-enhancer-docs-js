@@ -97,6 +97,9 @@
     #searchResult .gsc-results .gsc-cursor-box { margin-bottom: 25px; }
     #searchResult td.gsc-clear-button {display:none;}
   }
+  @media (min-width: 1680px) {
+    .docContainer { min-height: calc(100vh - 155px); }
+  }
   @media (max-width: 991px) {
     #searchContent { min-height: calc(100vh - 325px); }
   }
@@ -105,31 +108,10 @@
   }
 </style>
 <body>
-    <div class="headWrapper">
-        {%- include page_header.html -%}
-    </div>
-    <div class="subHeadWrapper">
-        <div class="subHeader container">
-            <div class="row">
-                <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                    <li class="title"><a class="f18 fontOswald" href="{{site.overview}}">Dynamsoft Camera Enhancer</a> <span class="fc9">|</span> Developer's Center</li>
-                    <li class="on"><a class="orangelink" href="{{ site.overview }}">Overview</a></li>
-                    <li class="on"><a class="orangelink" href="{{ site.firstLevelUrl }}">Documentation</a></li>
-                    <!--<li><a class="whitelink hide-xs" href="{{site.download}}">Code Gallery</a></li>-->
-                    <!--<li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Camera-Enhancer-Resources.aspx">Resources</a></li>-->
-                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="{{site.download}}">Download Free Trial</a></li>
-                </ul>
-            </div>
-            <div class="row mobileSubHeaderMenu">
-                <ul class="col-xs-12 show-xs">
-                    <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink" href="{{site.download}}">Code Gallery</a></li>
-                    <!--<li><a class="whitelink" href="https://www.dynamsoft.com/Products/Camera-Enhancer-Resources.aspx">Resources</a></li>-->
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
+    {% assign url = 'https://www.dynamsoft.com/shared/head/' %}
+    {% remote_include {{ url }} %}
+
+    {%- include dceNav.html -%}
     <div class="container" id="searchContent">
       <div class="row">
           <div class="docContainer col-xs-12" style="border-left: 0;">
@@ -138,12 +120,12 @@
                       <div class="row">
                           <div class="col-xs-12">
                               <h1>Search</h1>                        
-                              <script async src="https://cse.google.com/cse.js?cx=cae0d1a11d5253604"></script>
+                              <script async src="https://cse.google.com/cse.js?cx=90b37820e9a5e454e"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
                   </div>
-                  <div class="content markdown-body headCounter col-xs-12" style="min-height: unset;">
+                  <div class="content markdown-body headCounter col-xs-12" style="min-height: unset;display: none;">
                       {{ content }}
                       
                   </div>
@@ -154,26 +136,6 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
-        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-
-    {%- if page.needAutoGenerateSidebar -%}
-    {%- unless page.needGenerateH3Content -%}
-    <script>
-        FullTreeMenuList(true, false);
-    </script>
-    {%- else -%}
-    <script>
-        FullTreeMenuList(true);
-    </script>
-    {%- endunless -%}
-    {%- else -%}
-    <script>
-        FullTreeMenuList(false);
-    </script>
-    {%- endif -%}
 
     <script type="text/javascript">
       $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
@@ -235,39 +197,62 @@
           }
       }
 
-      $('.sideBarIcon').click(function() {
-          $(".sideBar").toggleClass('hide-sm');
-          $(".sideBar").toggleClass('hide-xs');
-          setTimeout(function() {
-              console.log('sidebar' + $('.sideBar').width())
-              $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
-          }, 100)
-      })
-
-      let timeInt = setInterval(function() {
-          var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-          console.log(scrollTo)
-          if (scrollTo.length>0) {
-              container.scrollTop(
-                  scrollTo.offset().top - container.offset().top + container.scrollTop()
-              );
-              clearInterval(timeInt)
-          }
-      }, 500)
-  
-      function onSearchFinish(e) {
-          var evt = window.event || e;
-          if (evt.keyCode == 13) {
-
-          }
-      }
-
       $('#txtSearch').keydown(function(e) { 
           if (e.keyCode == 13) {
-              window.location.href = '/Camera-Enhancer/search.html?q=' + $('#txtSearch').val()
+              window.location.href = '/camera-enhancer/docs/web/search.html?q=' + $('#txtSearch').val()
           }
       })
 
+      $("body").delegate("#searchResult .gsc-resultsRoot a.gs-title", "click", function(e) {
+        e.preventDefault();
+        
+        var link = $(this).eq(0).data("ctorig")
+        if (link.indexOf("capture-vision/docs") > 0) {
+            var repoType = getRepoType("web", link);
+            if (link.indexOf("?") > 0) {
+                var arr = link.split("?")
+                if(arr[1].indexOf("#") > 0) {
+                    var subArr = arr[1].split("#")
+                    link = link +"?product=dce&repoType="+ repoType +"&" + arr[1]
+                } else {
+                    link = link + "&product=dce&repoType=" + repoType
+                }
+            } else {
+                link = link + "?product=dce&repoType=" + repoType
+            }
+        }
+        window.location.href = link
+      });
+
+      function getRepoType(defaultValue, link) {
+        var lang = getCurrentUrlLang(link, true)
+        var repoType = defaultValue
+        if (lang) {
+            if (lang == 'android' || lang == 'objectivec-swift') {
+                repoType = "web"
+            } else if (lang == 'javascript') {
+                repoType = "web"
+            } else if (lang == 'cplusplus' || lang == 'c' || lang == 'java' || lang == 'dotnet') {
+                repoType = "server"
+            } else {
+                repoType = "core"
+            }
+        } else {
+            if(link.indexOf("/docs/server/") > 0) {
+                repoType = "server"
+            }
+            if (link.indexOf("/docs/core/") > 0) {
+                repoType = "core"
+            }
+            if (link.indexOf("/docs/mobile") > 0) {
+                repoType = "mobile"
+            }
+            if (link.indexOf("/docs/web/") > 0) {
+                repoType = "web"
+            }
+        }
+        return repoType
+      }
   </script>
 
     {%- include livehelp.html -%}
