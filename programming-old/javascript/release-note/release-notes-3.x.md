@@ -19,7 +19,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Fixed
 
-* Fixed a issue that could lead to an unnecessary input element appearing in Safari on iOS 16.
+* Fixed a issue may causing an unnecessary input element to appear in Safari on iOS 16.
 
 ## 3.3.5 (08/02/2023)
 
@@ -99,7 +99,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 ### New
 
 * Added methods `getZoom()`, `getColorTemperature()`, `getExposureCompensation()` for better camera control.
-* Added the "Note" feature to DrawingItems to allow extra information to be added to them for timely interaction. Related methods include `addNote()`, `getNote()`, `hasNote()`, `updateNote()`, `deleteNote()`, `getNotes()`, and `clearNotes()`.
+* Added the "Note" feature to DrawingItems to allow extra information to be added to them for timely interation. Related methods include `addNote()`, `getNote()`, `hasNote()`, `updateNote()`, `deleteNote()`, `getNotes()`, and `clearNotes()`.
 * Added methods `setAttribute()` and `getAttribute()` to DrawingItems to allow the change and retrieval of their properties.
 * Added methods `on()` and `off()` to DrawingItems to allow binding and unbinding of event listeners to the events **mousedown**, **mouseup**, **dblclick**, **mouseover**, **mouseout** (the last three don't work on mobile devices).
 
