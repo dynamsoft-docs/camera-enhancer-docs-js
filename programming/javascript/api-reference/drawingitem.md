@@ -134,7 +134,7 @@ A value of type `EnumDrawingItemState`.
 
 **See also**
 
-* [EnumDrawingItemState](enum/EnumDrawingItemState.md)
+* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
 
 ## on
 
