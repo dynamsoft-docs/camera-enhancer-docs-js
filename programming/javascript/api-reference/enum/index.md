@@ -6,7 +6,7 @@ keywords: Enumerations, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Enumeration Index
-permalink: /programming/javascript/api-reference/enumerations/index.html
+permalink: /programming/javascript/api-reference/enum/index.html
 ---
 
 # Enumerations

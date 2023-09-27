@@ -96,7 +96,7 @@ let region = enhancer.getScanRegion();
 
 **See also**
 
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/dsrect.html)
+* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
 
 ## fetchImage
 

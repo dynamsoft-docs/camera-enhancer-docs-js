@@ -300,6 +300,6 @@ Child classes based on `DrawingItem`
 
 ## Enumerations
 
-* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
-* [EnumDrawingItemState](enumerations/enumdrawingitemstate)
-* [EnumDrawingItemMediaType](enumerations/enumdrawingitemmediatype)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
+* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
+* [EnumDrawingItemMediaType](enum/enumdrawingitemmediatype.md)

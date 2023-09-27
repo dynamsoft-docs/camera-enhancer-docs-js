@@ -317,8 +317,8 @@ drawingLayer.setDefaultStyle(1, EnumDrawingItemState.DIS_SELECTED, EnumDrawingIt
 **See also**
 
 * [DrawingStyle](interface/drawingstyle.md)
-* [EnumDrawingItemState](enumerations/enumdrawingitemstate.md)
-* [EnumDrawingItemMediaType](enumerations/enumdrawingitemmediatype.md)
+* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
+* [EnumDrawingItemMediaType](enum/enumdrawingitemmediatype.md)
 
 ## setVisible
 
