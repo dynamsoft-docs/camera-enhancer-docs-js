@@ -937,9 +937,6 @@ Enables the specified enhanced features.
 > * `Enhanced-focus` and `Tap-to-focus` only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported. Note that all browsers on iOS (including Chrome) use WebKit as the rendering engine and are not supported.
 
 ```typescript
-//you need to include cvr and initialize the license for enabling enhanced features
-Dynamsoft.License.LicenseManager.initLicense("YOUR-LICENSE");
-
 enableEnhancedFeatures(features: EnumEnhancedFeatures): Promise<void>;
 ```
 
@@ -954,13 +951,15 @@ None.
 **Code Snippet**
 
 ```javascript
+//you need to include cvr and initialize the license for enabling enhanced features
+Dynamsoft.License.LicenseManager.initLicense("YOUR-LICENSE");
 
 await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 ```
 
 **See also**
 
-* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## disableEnhancedFeatures
 
@@ -986,7 +985,7 @@ await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## ifSkipCameraInspection
 

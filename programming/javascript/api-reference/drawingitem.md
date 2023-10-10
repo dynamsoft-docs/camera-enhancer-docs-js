@@ -134,7 +134,7 @@ A value of type `EnumDrawingItemState`.
 
 **See also**
 
-* [EnumDrawingItemState](enum/EnumDrawingItemState.md)
+* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
 
 ## on
 
@@ -460,8 +460,11 @@ constructor(
 **Parameters**
 
 `image`: The image data.
+
 `rect`: Outer rectangle border of the image.
+
 `maintainAspectRatio`: Sets whether aspect ratio of the image is maintained when it is drawn.
+
 `drawingStyleId`(optional): Specifies the `DrawingStyle` that applies to this `ImageDrawingItem`.
 
 **See also**

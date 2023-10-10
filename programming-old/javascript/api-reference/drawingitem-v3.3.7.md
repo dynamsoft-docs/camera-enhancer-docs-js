@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: DrawingItem
-permalink: /programming/javascript/api-reference/drawingitem-v3.3.4.html
+permalink: /programming/javascript/api-reference/drawingitem-v3.3.7.html
 ---
 
 # DrawingItem
@@ -74,8 +74,8 @@ class DT_Rect {
 
 **See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Arc
 
@@ -125,8 +125,8 @@ class DT_Arc {
 
 **See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Line
 
@@ -174,9 +174,9 @@ class DT_Line {
 
 **See also**
 
-* [Point](interface/point.md)
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Point](interface/point.html)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Polygon
 
@@ -220,9 +220,9 @@ class DT_Polygon {
 
 **See also**
 
-* [Point](interface/point.md)
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Point](interface/point.html)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Text
 
@@ -278,8 +278,8 @@ class DT_Text {
 
 **See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Image
 
@@ -328,8 +328,8 @@ class DT_Image {
 
 **See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Group
 
@@ -374,5 +374,5 @@ class DT_Group {
 
 **See also**
 
-* [Note](interface/note.md)
-* [DrawingItemEvent](interface/drawingitemevent.md)
+* [Note](interface/note.html)
+* [DrawingItemEvent](interface/drawingitemevent.html)

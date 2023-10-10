@@ -1,13 +1,13 @@
 ---
 layout: default-layout
 title: Initialization - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Initialization.
+description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Initialization v 3.1.
 keywords: camera enhancer, initialization, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Initialization
-permalink: /programming/javascript/api-reference/initialization-v3.1.html
+permalink: /programming/javascript/api-reference/initialization-v3.3.6.html
 ---
 
 # Initialization APIs
@@ -184,4 +184,4 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See Also**
 
-[Warning](interface/warning.md)
+[Warning](interface/warning.html)

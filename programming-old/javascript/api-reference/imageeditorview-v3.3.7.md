@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: ImageEditorView
-permalink: /programming/javascript/api-reference/imageeditorview-v3.3.4.html
+permalink: /programming/javascript/api-reference/imageeditorview-v3.3.7.html
 ---
 
 # ImageEditorView
@@ -36,11 +36,11 @@ permalink: /programming/javascript/api-reference/imageeditorview-v3.3.4.html
 | [setTipVisible()](#settipvisible)                                       | Sets whether to show the tip.                                            |
 | [isTipVisible()](#istipvisible)                                         | Returns whether the tip is visible.                                      |
 | [updateTipMessage()](#updatetipmessage)                                 | Updates the message shown in the tip.                                    |
-| [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
-| [setVideoFit()](imageeditorview.md#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
-| [getVideoFit()](imageeditorview.md#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)               | Sets the image to be drawn on the image editor view.          |
-| [getOriginalImage()](imageeditorview.md#setoriginalimage)               | Returns the image drawn on the image editor.                             |
+| [getSelectedDrawingItems()](imageeditorview.html#getselecteddrawingitems) | Returns the selected DrawingItem object(s).                              |
+| [setVideoFit()](imageeditorview.html#setvideofit)                         | Sets the `object-fit` CSS property of the video element.                 |
+| [getVideoFit()](imageeditorview.html#getvideofit)                         | Returns the value of the `object-fit` CSS property of the video element. |
+| [setOriginalImage()](imageeditorview.html#setoriginalimage)               | Sets the image to be drawn on the image editor view.          |
+| [getOriginalImage()](imageeditorview.html#setoriginalimage)               | Returns the image drawn on the image editor.                             |
 
 ## createInstance
 

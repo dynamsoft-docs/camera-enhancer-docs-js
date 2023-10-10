@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: JavaScript 4.x Release Notes  - Dynamsoft Camera Enhancer
-description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK.
+description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK v 4.x.
 keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true

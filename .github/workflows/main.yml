@@ -34,7 +34,7 @@ jobs:
           git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo
           cp -rfp ./camera-enhancer-docs-js/* ./DCEDocJS/
           cp -rfp ./Docs-Template-Repo/* ./DCEDocJS/
-          cd DCEDocJS && bundle exec jekyll build --incremental
+          cd DCEDocJS && bundle install && bundle exec jekyll build
 
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -46,6 +46,10 @@ jobs:
           local-dir: /home/ubuntu/DCEDocJS/_site/
           server-dir: /www.dynamsoft.com/camera-enhancer/docs/web/
 
+      - name: Trigger Webhook 
+        run: | 
+          curl -X POST -H "${{ secrets.WEBHOOK_USER }}" -H "${{ secrets.WEBHOOK_TOKEN }}" -H "Content-Type: application/json" -d "[\"/camera-enhancer/docs/web/*\"]" ${{ secrets.WEBHOOK_URL }}
+  
   Build-Preview:
     if: ${{ github.ref == 'refs/heads/preview' }}
     # The type of runner that the job will run on
@@ -71,7 +75,7 @@ jobs:
         cp -rfp ./Docs-Template-Repo-Preview/* ./DCEDocJSPreview/
         sed -i -e "1,3s/blob\/master$/blob\/preview/" \
         -e "1,3s/blob\/main$/blob\/preview/" /home/ubuntu/DCEDocJSPreview/_config.yml
-        cd DCEDocJSPreview && bundle exec jekyll build --incremental
+        cd DCEDocJSPreview && bundle install && bundle exec jekyll build
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
