@@ -959,7 +959,7 @@ await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## disableEnhancedFeatures
 
@@ -985,7 +985,7 @@ await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enumerations/enumenhancedfeatures.md)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## ifSkipCameraInspection
 
