@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: ImageEditorView
-permalink: /programming/javascript/api-reference/imageeditorview-v3.3.7.html
+permalink: /programming/javascript/api-reference/imageeditorview-v3.3.8.html
 ---
 
 # ImageEditorView
