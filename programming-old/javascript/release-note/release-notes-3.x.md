@@ -11,6 +11,12 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
+## 3.3.7 (10/11/2023)
+
+### Fixed
+
+* Fixed an issue where incorrect data was retrieved when fetching grayscale images or fetching images by 'context2d'.
+
 ## 3.3.6 (09/13/2023)
 
 ### Changed
