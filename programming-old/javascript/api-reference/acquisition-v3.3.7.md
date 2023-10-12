@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition-v3.3.6.html
+permalink: /programming/javascript/api-reference/acquisition-v3.3.7.html
 ---
 
 # Frame Acquisition
