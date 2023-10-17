@@ -15,12 +15,12 @@ breadcrumbText: API Reference
 
 ### Create and Destroy Instances
 
-| API Name                                                                       | Description                                                                                  |
-| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](instantiate.md#createinstance)                     | Creates a `CameraEnhancer` instance.                                                         |
-| [dispose()](instantiate.md#dispose)                                            | Releases all resources used by the `CameraEnhancer` instance.                                |
-| [disposed](instantiate.md#disposed)                                            | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
-| `static` [onWarning](instantiate.md#onwarning)                                 | A callback which is triggered when the running environment is not ideal.                     |
+| API Name                                                   | Description                                                                                  |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `static` [createInstance()](instantiate.md#createinstance) | Creates a `CameraEnhancer` instance.                                                         |
+| [dispose()](instantiate.md#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.                                |
+| [disposed](instantiate.md#disposed)                        | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
+| `static` [onWarning](instantiate.md#onwarning)             | A callback which is triggered when the running environment is not ideal.                     |
 
 ### Basic Camera Control
 
@@ -138,6 +138,8 @@ breadcrumbText: API Reference
 | [getTipConfig()](cameraview.md#gettipconig)                                    | Returns the configuration of the tip.                                                                     |
 | [setTipVisible()](cameraview.md#settipvisible)                                 | Sets whether to show the tip.                                                                             |
 | [isTipVisible()](cameraview.md#istipvisible)                                   | Returns whether the tip is visible.                                                                       |
+| [setVideoFit()](cameraview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                                                  |
+| [getVideoFit()](cameraview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element.                                  |
 | [updateTipMessage()](cameraview.md#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
 | [getVisibleRegionOfVideo()](cameraview.md#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [getVideoElement()](cameraview.md#getvideoelement)                             | Returns the video element used by the `CameraView` instance.                                              |
@@ -154,7 +156,7 @@ breadcrumbText: API Reference
 
 | API Name                                                       | Description                                                                                   |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                         |
+| `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                        |
 | [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
 | [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
 | [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
@@ -162,16 +164,16 @@ breadcrumbText: API Reference
 
 ### Drawing and UI
 
-| API Name                                                                            | Description                                                              |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.   |
-| [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                               |
-| [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                            |
-| [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                       |
-| [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                  |
-| [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                              |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor view.                     |
-| [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                             |
+| API Name                                                                            | Description                                                            |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers. |
+| [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                             |
+| [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                          |
+| [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                     |
+| [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                |
+| [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                            |
+| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor view.                   |
+| [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                           |
 
 ## Class CameraEnhancerModule
 
@@ -276,7 +278,7 @@ Child classes based on `DrawingItem`
 
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                             |
 | [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
 | [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
 | [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
