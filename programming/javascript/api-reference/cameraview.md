@@ -36,6 +36,8 @@ permalink: /programming/javascript/api-reference/cameraview.html
 | [setTipVisible()](#settipvisible)                                 | Sets whether to show the tip.                                                                             |
 | [isTipVisible()](#istipvisible)                                   | Returns whether the tip is visible.                                                                       |
 | [updateTipMessage()](#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
+| [setVideoFit()](#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                                                  |
+| [getVideoFit()](#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element.                                  |
 | [getVisibleRegionOfVideo()](#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [getVideoElement](#getvideoelement)                               | Returns the video element used by the `CameraView` instance.                                              |
 | [setScanRegionMaskStyle()](#setscanregionmaskstyle)               | Sets the drawing style for the scan-region mask.                                                          |
@@ -166,27 +168,17 @@ None.
 
 **Code Snippet**
 
-```javascript
+```html
 <div id="enhancerUIContainer" style="width:100%;height:100%;">
     <div class="dce-video-container" style="position:relative;width:100%;height:500px;"></div>
 </div>
 <script>
     (async () => {
-        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-        await enhancer.setUIElement(document.getElementById("enhancerUIContainer"));
-        await enhancer.open();
+        let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
+        await cameraView.setUIElement(document.getElementById("enhancerUIContainer"));
     })();
 </script>
 ```
-
-or
-
-```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.setUIElement("THE-URL-TO-THE-FILE");
-```
-
-> If the input HTMLDivElement is not complete, the default video element will be created and appended to the DIV element with the class "dce-video-container". For further customizing the UI please make sure the class name is the same.
 
 ## createDrawingLayer
 
@@ -412,6 +404,50 @@ None.
 
 ```javascript
 cameraView.updateTipMessage('Hold the phone closer.');
+```
+
+## setVideoFit
+
+Sets the `object-fit` CSS property of the video element.
+
+```typescript
+setVideoFit(objectFit: string): void;
+```
+
+**Parameters**
+
+`objectFit` : specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+cameraView.setVideoFit("cover");
+```
+
+## getVideoFit
+
+Returns the value of the `object-fit` CSS property of the video element.
+
+```typescript
+getVideoFit(): string;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+The value of the `object-fit` CSS property.
+
+**Code Snippet**
+
+```javascript
+cameraView.getVideoFit();
 ```
 
 ## getVisibleRegionOfVideo
