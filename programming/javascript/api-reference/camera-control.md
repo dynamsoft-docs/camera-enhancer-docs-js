@@ -27,6 +27,8 @@ permalink: /programming/javascript/api-reference/camera-control.html
 | [pause()](#pause)                                     | Pauses video streaming without releasing the camera.                                  |
 | [isPaused()](#ispaused)                               | Returns whether the video streaming is paused.                                        |
 | [resume()](#resume)                                   | Resumes video streaming.                                                              |
+| [getVideoSettings()](#getvideosettings)               | Returns the current video settings.                                                   |
+| [updateVideoSettings()](#updatevideosettings)         | Changes the video input.                                                              |
 | [setResolution()](#setresolution)                     | Sets the resolution of the selected camera.                                           |
 | [getResolution()](#getresolution)                     | Returns the resolution of the selected camera.                                        |
 | [getAvailableResolutions()](#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
@@ -280,6 +282,61 @@ None.
 **Return value**
 
 A promise that resolves when the operation succeeds.
+
+## getVideoSettings
+
+Returns the current video settings.
+
+```typescript
+getVideoSettings(): MediaStreamConstraints
+```
+
+**Return value**
+
+A `MediaStreamConstraints` object.
+
+**See also**
+
+* [MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
+
+## updateVideoSettings
+
+Changes the video input.
+
+```typescript
+updateVideoSettings(constraints: MediaStreamConstraints): Promise<ScannerPlayCallbackInfo | void>
+```
+
+**Parameters**
+
+`constraints` : specifies the new video settings.
+
+**Return value**
+
+A promise resolving to a `ScannerPlayCallbackInfo` object.
+
+**Code Snippet**
+
+```js
+await scanner.updateVideoSettings({
+    video: {
+        width: {
+            ideal: 1280
+        },
+        height: {
+            ideal: 720
+        },
+        facingMode: {
+            ideal: 'environment'
+        }
+    }
+});
+```
+
+**See also**
+
+* [MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
+* [ScannerPlayCallbackInfo](./interface/playcallbackinfo.md)
 
 ## setResolution
 
@@ -887,7 +944,7 @@ await enhancer.setExposureCompensation(-0.7);
 
 Sets the range (minimum to maximum) for zoom when it is done automatically.
 
-> Auto-zoom is one of the enhanced features that require a license, and is only effective when used in conjunction with other functional products of Dynamsoft.
+> `EF_AUTO_ZOOM` is one of the enhanced features that require a license, and is only effective when used in conjunction with other functional products of Dynamsoft.
 
 ```typescript
 setAutoZoomRange(range: { min: number, max: number }): void;
@@ -933,8 +990,8 @@ let zoomRange = enhancer.getAutoZoomRange();
 
 Enables the specified enhanced features.
 
-> * Following enhanced features require a license, and only take effect when used in conjunction with other functional products under Dynamsoft Capture Vision（DCV）architecture: `Enhanced-focus`, `Auto-zoom`,`Tap-to-focus`.
-> * `Enhanced-focus` and `Tap-to-focus` only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported. Note that all browsers on iOS (including Chrome) use WebKit as the rendering engine and are not supported.
+> * The enhanced features require a license, and only take effect when used in conjunction with other functional products under Dynamsoft Capture Vision（DCV）architecture: `EF_ENHANCED_FOCUS`, `EF_AUTO_ZOOM`,`EF_TAP_TO_FOCUS`.
+> * `EF_ENHANCED_FOCUS` and `EF_TAP_TO_FOCUS` only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported. Note that all browsers on iOS (including Chrome) use WebKit as the rendering engine and are not supported.
 
 ```typescript
 enableEnhancedFeatures(features: EnumEnhancedFeatures): Promise<void>;

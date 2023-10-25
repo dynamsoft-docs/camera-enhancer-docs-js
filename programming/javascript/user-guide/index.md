@@ -9,6 +9,7 @@ needGenerateH3Content: true
 needAutoGenerateSidebar: true
 permalink: /programming/javascript/user-guide/index.html
 ---
+
 # Dynamsoft Camera Enhancer for Your Website
 
 Dynamsoft Camera Enhancer allows your website to easily control the camera in the browser on desktop or mobile devices.

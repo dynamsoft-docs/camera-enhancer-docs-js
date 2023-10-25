@@ -37,6 +37,8 @@ breadcrumbText: API Reference
 | [pause()](camera-control.md#pause)                                     | Pauses video streaming without releasing the camera.                                  |
 | [isPaused()](camera-control.md#ispaused)                               | Returns whether the video streaming is paused.                                        |
 | [resume()](camera-control.md#resume)                                   | Resumes video streaming.                                                              |
+| [getVideoSettings()](camera-control.md#getvideosettings)               | Returns the current video settings.                                                   |
+| [updateVideoSettings()](camera-control.md#updatevideosettings)         | Changes the video input.                                                              |
 | [setResolution()](camera-control.md#setresolution)                     | Sets the resolution of the selected camera.                                           |
 | [getResolution()](camera-control.md#getresolution)                     | Returns the resolution of the selected camera.                                        |
 | [getAvailableResolutions()](camera-control.md#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
