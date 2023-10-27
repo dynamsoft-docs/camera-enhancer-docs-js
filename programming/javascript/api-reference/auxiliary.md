@@ -39,6 +39,10 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
 | frameAddedToBuffer  | Triggered each time a new frame is added to the buffer.          |
 
+> NOTE:
+>
+> When the event "singleFrameAcquired" is triggered, the acquired image data will be returned as a reference, not a copy. Therefore, any changes to it will change the data source, and if another callback returns the same image data, the modifications will be synchronized.
+
 ## on
 
 Attaches an event handler function for a built-in event.
