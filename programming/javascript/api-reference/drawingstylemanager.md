@@ -19,6 +19,34 @@ permalink: /programming/javascript/api-reference/drawingstylemanager.html
 | `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
 | `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
+## Built-in styles
+
+> DDN: Dynamsoft Document Normalizer
+> DBR: Dynamsoft Barcode Reader
+> DLR: Dynamsoft Label Recognizer
+
+| Style Name                      | Style ID | Description                                                                     |
+| ------------------------------- | -------- | ------------------------------------------------------------------------------- |
+| STYLE_BLUE_STROKE               | 1        | Used by DDN for drawing found document boundaries.                              |
+| STYLE_GREEN_STROKE              | 2        | Used by DLR for highlighting found text lines.                                  |
+| STYLE_ORANGE_STROKE             | 3        | Used by DBR for highlighting found barcode symbols.                             |
+| STYLE_YELLOW_STROKE             | 4        | Used as the default style for user-defined drawing layers.                      |
+| STYLE_BLUE_STROKE_FILL          | 5        | Used by DDN for drawing selected document boundaries.                           |
+| STYLE_GREEN_STROKE_FILL         | 6        | Used by DLR for highlighting selected text lines.                               |
+| STYLE_ORANGE_STROKE_FILL        | 7        | Used by DBR for highlighting selected barcode symbols.                          |
+| STYLE_YELLOW_STROKE_FILL        | 8        | Used as the style for selected drawing items on user-defined drawing layers.    |
+| STYLE_BLUE_STROKE_TRANSPARENT   | 9        | Used by DDN for drawing found document boundaries that haven't been validated.  |
+| STYLE_GREEN_STROKE_TRANSPARENT  | 10       | Used by DLR for highlighting found text lines that haven't been validated.      |
+| STYLE_ORANGE_STROKE_TRANSPARENT | 11       | Used by DBR for highlighting found barcode symbols that haven't been validated. |
+
+**Code Snippet**
+
+```javascript
+let style = Dynamsoft.DCE.DrawingStyleManager.getDrawingStyle(Dynamsoft.DCE.DrawingStyleManager.STYLE_GREEN_STROKE);
+// Update style
+Dynamsoft.DCE.DrawingStyleManager.updateDrawingStyle(Dynamsoft.DCE.DrawingStyleManager.STYLE_GREEN_STROKE, style);
+```
+
 ## createDrawingStyle
 
 Creates a new `DrawingStyle` object and returns its ID. The newly generated ID begins at 1024 and increments sequentially.

@@ -20,7 +20,7 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [getScanRegion()](#getscanregion)                                     | Returns the scan region.                                                                            |
 | [fetchImage()](#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [addImageToBuffer()](#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `startFetching()` is called when continued fetching has started.         |
+| [setImageFetchInterval()](#setimagefetchinterval)                     | Sets the interval at which `startFetching()` is called when continued fetching has started.            |
 | [getImageFetchInterval()](#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
 | [startFetching()](#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
 | [stopFetching()](#stopfetching)                                       | Stops fetching any more images.                                                                     |
@@ -35,7 +35,7 @@ permalink: /programming/javascript/api-reference/acquisition.html
 | [isBufferEmpty()](#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
 | [setPixelFormat()](#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode()](#singleframemode)                                 | Returns or sets the singe-frame mode.                                                               |
+| [singleFrameMode()](#singleframemode)                                 | Returns or sets whether to enable the singe-frame mode.                                             |
 | [takePhoto()](#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
 
 ## setScanRegion
@@ -43,12 +43,12 @@ permalink: /programming/javascript/api-reference/acquisition.html
 Specifies which part of the original video is considered when processing frames.
 
 ```typescript
-setScanRegion(region?: Rect | DSRect): void;
+setScanRegion(region: Rect | DSRect): void;
 ```
 
 **Parameters**
 
-`region`: a `Rect` or `DSRect` object that specifies a part of the video. If nothing is passed in or `null` is passed, then the previous scan region setting will be cancelled.
+`region`: a `Rect` or `DSRect` object that specifies a part of the video.
 
 **Return value**
 
@@ -65,8 +65,6 @@ let scanRegion = {
     isMeasuredInPercentage: true
 };
 enhancer.setScanRegion(scanRegion); 
-//...
-enhancer.setScanRegion(null); //Cancel the scan region.
 ```
 
 **See also**
@@ -511,17 +509,9 @@ document.body.appendChild(image.toCanvas());
 
 ## singleFrameMode
 
-Returns or sets the singe-frame mode.
+Returns or sets whether to enable the singe-frame mode.
 
-There are three availabe modes:
-
-* "disabled": the video is displayed.
-* "image": the video is not displayed. On Android or iOS devices, the user has two options to get an image:
-  * invoke the system camera to catch a frame.
-  * select an existing image from the device.
-* "camera": the video is not displayed. On Android or iOS devices, the user can only invoke the system camera to catch a frame.
-
-> If the browser is not running on an Android or iOS device, the user can only select an existing image from the device.
+When the single-frame mode is enabled, the video will not stream in the built-in UI of the library. Instead, the user can click the UI to invoke the system camera interface to catch a frame or select an existing image from the device storage.
 
 To get the actual data, add a event handler to the event 'singleFrameAcquired'.
 

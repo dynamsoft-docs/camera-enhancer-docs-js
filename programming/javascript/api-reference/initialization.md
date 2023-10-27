@@ -188,7 +188,7 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See also**
 
-[Warning](interface/warning.md)
+[Warning](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html)
 
 ## testCameraAccess
 

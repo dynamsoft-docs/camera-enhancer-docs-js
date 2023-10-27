@@ -73,7 +73,6 @@ Child classes based on `DrawingItem`:
 | API Name                                                  | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
-| [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
 | [getImage()](drawingitem.md#getimage)                     | Returns the image drawn.                                                          |
 | [setImage()](drawingitem.md#setimage)                     | Specifies the image to draw.                                                      |
 | [getImageRect()](drawingitem.md#gettextrect)              | Returns the `Rect` object which determines where the image is drawn.              |
@@ -445,7 +444,7 @@ setTextRect(rect: Core.BasicStructures.Rect): void;
 
 ---
 
-## ImageDrawingItem
+## ImageDrawingItem()
 
 Constructor of an `ImageDrawingItem`.
 
@@ -453,7 +452,6 @@ Constructor of an `ImageDrawingItem`.
 constructor(
     image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
     rect: Core.BasicStructures.Rect,
-    maintainAspectRatio: boolean,
     drawingStyleId?: number);
 ```
 
@@ -462,8 +460,6 @@ constructor(
 `image`: The image data.
 
 `rect`: Outer rectangle border of the image.
-
-`maintainAspectRatio`: Sets whether aspect ratio of the image is maintained when it is drawn.
 
 `drawingStyleId`(optional): Specifies the `DrawingStyle` that applies to this `ImageDrawingItem`.
 

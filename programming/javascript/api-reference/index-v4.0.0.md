@@ -93,7 +93,7 @@ breadcrumbText: API Reference
 | [isBufferEmpty()](acquisition.md#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
 | [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
 | [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode](acquisition.md#singleframemode)                                   | Returns or sets the singe-frame mode.                                                               |
+| [singleFrameMode](acquisition.md#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
 | [takePhoto()](acquisition.md#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
 
 ### UI
@@ -114,8 +114,6 @@ breadcrumbText: API Reference
 | [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
 | [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
 | [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
-| [setErrorListener()](auxiliary.md#seterrorlistener)   | Sets the error listener to receive notifications should errors occur during image acquisition.            |
-
 
 ## Class CameraView
 
@@ -138,6 +136,7 @@ breadcrumbText: API Reference
 | [getAllDrawingLayers()](cameraview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
 | [deleteUserDefinedDrawingLayer()](cameraview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                                                        |
 | [clearUserDefinedDrawingLayers()](cameraview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                                                   |
+| [clearAllInnerDrawingItems()](cameraview.md#clearallinnerdrawingitems)         | Removes all automatically added DrawingItems.                                                             |
 | [setTipConfig()](cameraview.md#settipconfig)                                   | Configures the tip feature.                                                                               |
 | [getTipConfig()](cameraview.md#gettipconig)                                    | Returns the configuration of the tip.                                                                     |
 | [setTipVisible()](cameraview.md#settipvisible)                                 | Sets whether to show the tip.                                                                             |
@@ -189,12 +188,10 @@ breadcrumbText: API Reference
 
 ### Feedback
 
-| API Name                                       | Description                                                   |
-| ---------------------------------------------- | ------------------------------------------------------------- |
-| [beep()](feedback.md#beep)                     | Trigger a beep when the method is called.                     |
-| [vibrate()](feedback.md#vibrate)               | Trigger a vibrate when the method is called.                  |
-| [beepSound](feedback.md#beepsound)             | Returns or sets the sound source for the beep.                |
-| [vibrateDuration](feedback.md#vibrateduration) | Returns or sets how long the vibration lasts in milliseconds. |
+| API Name                         | Description                                  |
+| -------------------------------- | -------------------------------------------- |
+| [beep()](feedback.md#beep)       | Trigger a beep when the method is called.    |
+| [vibrate()](feedback.md#vibrate) | Trigger a vibrate when the method is called. |
 
 ### DrawingLayer
 
@@ -282,14 +279,13 @@ Child classes based on `DrawingItem`
 
 #### ImageDrawingItem
 
-| API Name                                                  | Description                                                                       |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                             |
-| [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
-| [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
-| [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
-| [getImageRect](drawingitem.md#gettextrect)                | Returns the `Rect` object which determines where the image is drawn.              |
-| [setImageRect](drawingitem.md#settextrect)                | Specifies a `Rect` object in which the image is drawn.                            |
+| API Name                                              | Description                                                          |
+| ----------------------------------------------------- | -------------------------------------------------------------------- |
+| [ImageDrawingItem()](drawingitem.md#imagedrawingitem) | Constructor of an `ImageDrawingItem`.                                |
+| [getImage](drawingitem.md#getimage)                   | Returns the image drawn.                                             |
+| [setImage](drawingitem.md#setimage)                   | Specifies the image to draw.                                         |
+| [getImageRect](drawingitem.md#gettextrect)            | Returns the `Rect` object which determines where the image is drawn. |
+| [setImageRect](drawingitem.md#settextrect)            | Specifies a `Rect` object in which the image is drawn.               |
 
 ## Interfaces
 
@@ -304,6 +300,7 @@ Child classes based on `DrawingItem`
 * [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
 * [VideoFrameTag](interface/videoframetag.md)
+* [Warning](interface/warning.md)
 
 ## Enumerations
 
