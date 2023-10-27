@@ -135,8 +135,6 @@ We can create a `CameraEnhancer` instance to open and show the video stream on t
 3. Show the UI element of `view` by appending it to an existing element in the DOM;
 4. Open the video stream which will show up in the UI Element.
 
-Step 3 can be done anywhere after step 1.
-
 ```html
 <!-- Define an element to hold the UI element -->
 <div id="enhancerUIContainer" style="width:1280px;height:720px;"></div>
@@ -246,20 +244,20 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 
   ```html
   <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
-    <div style="position:absolute;left:0;top:0;">
-      <select class="dce-sel-camera" style="display:block;"></select>
-    </div>
     <div class="dce-video-container" style="width:100%;height:100%;"></div>
+    <div style="position: absolute;left: 0;top: 0;">
+      <select class="dce-sel-camera" style="display: block;"></select>
+    </div>
   </div>
   ```
 
   ```html
   <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+    <div class="dce-video-container" style="width:100%;height:100%;"></div>
     <div style="position:absolute;left:0;top:0;">
       <select class="dce-sel-camera" style="display:block;"></select>
       <select class="dce-sel-resolution" style="display:block;margin-top:5px;"></select>
     </div>
-    <div class="dce-video-container" style="width:100%;height:100%;"></div>
   </div>
   ```
 
@@ -267,7 +265,6 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 
   ```html
   <select class="dce-sel-resolution">
-      <option class="dce-opt-gotResolution" value="got"></option>
       <option data-width="1920" data-height="1080">1920x1080</option>
       <option data-width="1280" data-height="720">1280x720</option>
       <option data-width="640" data-height="480">640x480</option>
@@ -357,12 +354,12 @@ DCE requires the following features to work:
 
 The following table is a list of supported browsers based on the above requirements:
 
-  Browser Name | Version
-  :-: | :-:
-  Chrome | v59+
-  Firefox | v63+
-  Edge | v79+
-  Safari | v11+
+  | Browser Name | Version |
+  | :----------: | :-----: |
+  |    Chrome    |  v59+   |
+  |   Firefox    |  v63+   |
+  |     Edge     |  v79+   |
+  |    Safari    |  v11+   |
 
 Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDK. Browser compatibility ultimately depends on whether the browser on that particular operating system supports the features listed above.
 
