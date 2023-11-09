@@ -15,7 +15,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Fixed
 
-* Fixed an issue may causing error when using WebGL to fetch images on iOS 16.7 and iOS 17.
+* Fixed an issue that may cause an error when using WebGL to fetch images on iOS 16.7 and iOS 17.
 
 ## 3.3.7 (10/11/2023)
 
@@ -31,7 +31,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Fixed
 
-* Fixed a issue may causing an unnecessary input element to appear in Safari on iOS 16.
+* Fixed an issue that may cause an extraneous input element to appear on Safari in iOS 16.
 
 ## 3.3.5 (08/02/2023)
 
@@ -45,7 +45,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Improved
 
-* Optimized the logic of default camera selection on iOS.
+* Refined the default camera selection logic on iOS, enhancing the scanner's functionality. When Safari supports it, the scanner will now default to auto-switch-triple-camera, ensuring improved support for Ultra Wide, Wide, and Telephoto scenarios.
 * Modified `convertToPageCoordinates()` and `convertToClientCoordinates()` to return decimal results directly instead of rounded results.
 
 ## 3.3.4 (04/17/2023)
