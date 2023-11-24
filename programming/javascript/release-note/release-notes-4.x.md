@@ -19,6 +19,7 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 * Added `maintainAspectRatio` to [`ImageDrawingItem`](../api-reference/drawingitem.md#imagedrawingitem).
 * Added [`clearAllInnerDrawingItems()`](../api-reference/cameraview.md#clearallinnerdrawingitems) to clear internally added DrawingItems.
 * Added [`setErrorListener()`](../api-reference/auxiliary.md#seterrorlistener) to receive errors occured during image acquisition.
+* Added [`cameraOpenTimeout`](../api-reference/camera-control.md#cameraopentimeout) to control the maximum time allowed for opening a selected camera.
 
 ### Changed
 

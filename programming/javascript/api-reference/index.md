@@ -32,6 +32,7 @@ breadcrumbText: API Reference
 | [getSelectedCamera()](camera-control.md#getselectedcamera)             | Returns information about the selected / current camera.                              |
 | [getCameraState()](camera-control.md#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
 | [open()](camera-control.md#open)                                       | Turn on the camera to start streaming live video.                                     |
+| [cameraOpenTimeout](camera-control.md#cameraopentimeout)               | Sets or returns the maximum time allowed for opending a selected camera.              |
 | [close()](camera-control.md#close)                                     | Stops video streaming and releases the camera.                                        |
 | [isOpen()](camera-control.md#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
 | [pause()](camera-control.md#pause)                                     | Pauses video streaming without releasing the camera.                                  |
