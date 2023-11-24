@@ -31,8 +31,6 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 * Fixed issues with the methods `setZoom()` & `getZoomSettings()` so that they can now work with static videos.
 * Fixed issues with the autozoom or enhancedfocus features to prevent them from throwing unnecessary error messages.
 
-### Changelog
-
 ## 4.0.0 (08/24/2023)
 
 ### Changelog
