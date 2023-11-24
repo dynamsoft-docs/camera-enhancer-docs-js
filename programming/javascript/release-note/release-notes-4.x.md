@@ -11,7 +11,7 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 
 # Release Notes - JavaScript 4.x
 
-## 4.0.1 (11/02/2023)
+## 4.0.1 (12/xx/2023)
 
 ### Added
 
