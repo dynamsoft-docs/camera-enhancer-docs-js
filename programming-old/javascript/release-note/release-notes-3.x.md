@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: JavaScript 3.x Release Notes  - Dynamsoft Camera Enhancer
-description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK.
+description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK v 2.x.
 keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true
@@ -10,6 +10,18 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 ---
 
 # Release Notes - JavaScript 3.x
+
+## 3.3.8 (10/12/2023)
+
+### Fixed
+
+* Fixed an issue may causing error when using WebGL to fetch images on iOS 16.7 and iOS 17.
+
+## 3.3.7 (10/11/2023)
+
+### Fixed
+
+* Fixed an issue where incorrect data was retrieved when fetching grayscale images or fetching images by 'context2d'.
 
 ## 3.3.6 (09/13/2023)
 

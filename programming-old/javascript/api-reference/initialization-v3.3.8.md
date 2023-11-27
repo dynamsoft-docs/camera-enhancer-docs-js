@@ -1,13 +1,13 @@
 ---
 layout: default-layout
 title: Initialization - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the Initialization of Dynamsoft Camera Enhancer JavaScript SDK Initialization.
+description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Initialization.
 keywords: camera enhancer, initialization, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Initialization
-permalink: /programming/javascript/api-reference/initialization.html
+permalink: /programming/javascript/api-reference/initialization-v3.3.8.html
 ---
 
 # Initialization APIs
@@ -19,7 +19,6 @@ permalink: /programming/javascript/api-reference/initialization.html
 | [getUIElement()](#getuielement) | Returns the HTML element that is used by the `CameraEnhancer` instance. |
 | [setUIElement()](#setuielement) | Specifies an HTML element for the `CameraEnhancer` instance to use as its UI element. |
 | [onWarning](#onwarning) | A callback which is triggered when the running environment is not ideal. |
-| [testCameraAccess](#testcameraaccess) | Test whether there is an available camera. |
 
 ## createInstance
 
@@ -53,14 +52,14 @@ Returns or sets the URL of the *.html* file that defines the default UI Element.
 static defaultUIElementURL: string;
 ```
 
-> NOTE: if `defaultUIElementURL` is not set before `open()` , it will not take effect and the preset one, which is "dce.ui.html" will be used. If you want to use a different UI element, set `defaultUIElementURL` beforehand like this:
+> NOTE: if `defaultUIElementURL` is not set before `open()`, it will not take effect and the preset one, which is "dce.ui.html" will be used. If you want to use a different UI element, set `defaultUIElementURL` beforehand like this:
 >
 > ```javascript
-> Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "URL-TO-NEW-UIELEMENT"; 
-> await cameraEnhancer.open(true); 
+> Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "URL-TO-NEW-UIELEMENT";
+> await cameraEnhancer.open(true);
 > ```
 >
-> Also note that the SDK comes with 3 default UI definitions which takes effect automatically (no need to change `defaultUIElementURL` ):
+> Also note that the SDK comes with 3 default UI definitions which takes effect automatically (no need to change `defaultUIElementURL`):
 >
 > | Definition Name | Notes |
 > | ---             | ----- |
@@ -72,7 +71,7 @@ static defaultUIElementURL: string;
 
 ```javascript
 // The following line is redundant and is for demonstration purposes only.
-Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer/dist/dce.ui.html";
+Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.1.0/dist/dce.ui.html";
 (async () => {
     let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
     await enhancer.open(true);
@@ -150,7 +149,7 @@ Besides, the CSS property 'position' of the DIV element must be either 'relative
         let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
         // The following line is not needed if you just want to use the official UI element for CameraEnhancer.
         // Only use it when you want to specify a different HTML page that contains a different UI definition.
-        await enhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer/dist/dce.ui.html");
+        await enhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.1.0/dist/dce.ui.html");
         // Note that because the element is not on the current page, you need to pass "true" when calling open() in order to show it.
         await enhancer.open(true);
     })();
@@ -166,17 +165,14 @@ A callback which is triggered when the running environment is not ideal. In this
 
 The following two warnings are returned respectively:
 
-```json
+```javascript
 {
     id: 1,
-    message: "The page is opened over file:// and Dynamsoft Camera Enhancer may not work properly. Please open the page via https://."
+    message: "Not using HTTP protocol, the SDK may not work correctly."
 }
-```
-
-```json
 {
     id: 2,
-    message: "Dynamsoft Camera Enhancer may not work properly in a non-secure context. Please open the page via https://."
+    message: "Not connected via SSL (HTTPS), the SDK may not work correctly."
 }
 ```
 
@@ -186,34 +182,6 @@ The following two warnings are returned respectively:
 Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 ```
 
-**See also**
+**See Also**
 
-[Warning](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html)
-
-## testCameraAccess
-
-Test whether there is an available camera.
-
-```typescript
-static testCameraAccess(): Promise<{ ok: boolean, message: string }>;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-A promise resolving to an object with properties `ok` and `message`.
-
-`ok`: Indicates whether the camera access test was successful (true) or not (false).
-`message`: A string type message to provide additional information or details about the camera access test.
-
-**Code Snippet**
-
-```javascript
-const testResponse = await Dynamsoft.DCE.CameraEnhancer.testCameraAccess();
-if (testResponse.ok) {
-    console.log(testResponse.message);
-}
-```
+[Warning](interface/warning.html)

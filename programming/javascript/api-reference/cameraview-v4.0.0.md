@@ -31,7 +31,6 @@ permalink: /programming/javascript/api-reference/cameraview.html
 | [getAllDrawingLayers()](#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
 | [deleteUserDefinedDrawingLayer()](#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                                                        |
 | [clearUserDefinedDrawingLayers()](#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                                                   |
-| [clearAllInnerDrawingItems()](#clearallinnerdrawingitems)         | Removes all automatically added DrawingItems.                                                             |
 | [setTipConfig()](#settipconfig)                                   | Configures the tip feature.                                                                               |
 | [getTipConfig()](#gettipconfig)                                   | Returns the configuration of the tip.                                                                     |
 | [setTipVisible()](#settipvisible)                                 | Sets whether to show the tip.                                                                             |
@@ -289,28 +288,6 @@ None.
 
 ```javascript
 cameraView.clearUserDefinedDrawingLayers();
-```
-
-## clearAllInnerDrawingItems
-
-Removes all automatically added `DrawingItems`.
-
-```typescript
-clearAllInnerDrawingItems(): void;
-```
-
-**Parameters**
-
-None.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-cameraView.clearAllInnerDrawingItems();
 ```
 
 ## setTipConfig

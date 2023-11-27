@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: JavaScript 4.x Release Notes  - Dynamsoft Camera Enhancer
-description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK.
+description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK v 4.x.
 keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true
@@ -10,6 +10,26 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 ---
 
 # Release Notes - JavaScript 4.x
+
+## 4.0.1 (12/xx/2023)
+
+### Added
+
+* Added `beepSoundSource` & `vibrateDuration` to the class [`Feedback`](../api-reference/feedback.md).
+* Added `maintainAspectRatio` to [`ImageDrawingItem`](../api-reference/drawingitem.md#imagedrawingitem).
+* Added [`clearAllInnerDrawingItems()`](../api-reference/cameraview.md#clearallinnerdrawingitems) to clear internally added DrawingItems.
+* Added [`setErrorListener()`](../api-reference/auxiliary.md#seterrorlistener) to receive errors occured during image acquisition.
+* Added [`cameraOpenTimeout`](../api-reference/camera-control.md#cameraopentimeout) to control the maximum time allowed for opening a selected camera.
+
+### Changed
+
+* Updated the behaviour of [`SingleFrameMode`](../api-reference/acquisition.md#singleframemode) to allow an Android or iOS device user to make use of the camera without having to select between the camera and image gallery as the image source. 
+* Updated the method [`setScanRegion()`](../api-reference/acquisition.md#setscanregion) to allow passing `null` to clear the scan region.
+
+### Fixed
+
+* Fixed issues with the methods `setZoom()` & `getZoomSettings()` so that they can now work with static videos.
+* Fixed issues with the autozoom or enhancedfocus features to prevent them from throwing unnecessary error messages.
 
 ## 4.0.0 (08/24/2023)
 

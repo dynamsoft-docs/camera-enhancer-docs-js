@@ -12,10 +12,12 @@ permalink: /programming/javascript/api-reference/feedback.html
 
 # Class Feedback
 
-| API Name              | Description                                  |
-| --------------------- | -------------------------------------------- |
-| [beep()](#beep)       | Trigger a beep when the method is called.    |
-| [vibrate()](#vibrate) | Trigger a vibrate when the method is called. |
+| API Name                            | Description                                                   |
+| ----------------------------------- | ------------------------------------------------------------- |
+| [beep()](#beep)                     | Trigger a beep when the method is called.                     |
+| [vibrate()](#vibrate)               | Trigger a vibrate when the method is called.                  |
+| [beepSoundSource](#beepsoundsource) | Returns or sets the sound source for the beep.                |
+| [vibrateDuration](#vibrateduration) | Returns or sets how long the vibration lasts in milliseconds. |
 
 ## beep
 
@@ -43,4 +45,20 @@ vibrate(): void;
 
 ```javascript
 enhancerFeedback.vibrate();
+```
+
+## beepSoundSource
+
+Returns or sets the sound source for the beep. The value is either a base64 encoded string that represents the sound or a URL to the sound file.
+
+```typescript
+beepSoundSource: string;
+```
+
+## vibrateDuration
+
+Returns or sets how long the vibration lasts in milliseconds. The default value is 300 .
+
+```typescript
+vibrateDuration: number;
 ```

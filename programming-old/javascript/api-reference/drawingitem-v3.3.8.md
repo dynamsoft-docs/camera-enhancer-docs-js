@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: DrawingItem
-permalink: /programming/javascript/api-reference/drawingitem-v3.3.6.html
+permalink: /programming/javascript/api-reference/drawingitem-v3.3.8.html
 ---
 
 # DrawingItem

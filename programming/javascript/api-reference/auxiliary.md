@@ -14,10 +14,12 @@ permalink: /programming/javascript/api-reference/auxiliary.html
 
 ## Auxiliary
 
-| API Name                                              | Description                                                                                               |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
-| [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
+| API Name                                           | Description                                                                                    |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [on()](#on)                                        | Attaches an event handler function for a built-in event.                                       |
+| [off()](#off)                                      | Removes an event handler.                                                                      |
+| `static` [detectEnvironment()](#detectenvironment) | Returns a report on the current running environments.                                          |
+| [setErrorListener()](#seterrorlistener)            | Sets the error listener to receive notifications should errors occur during image acquisition. |
 
 **Type definition used on this page**:
 
@@ -29,13 +31,17 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 
 | Event Name          | Description                                                      |
 | ------------------- | ---------------------------------------------------------------- |
-| cameraChange        | Triggered when a different camera is used.                        |
+| cameraChange        | Triggered when a different camera is used.                       |
 | cameraOpen          | Triggered when the camera opens.                                 |
 | cameraClose         | Triggered when the camera closes.                                |
 | resolutionChange    | Triggered when the resolution changes.                           |
 | played              | Triggered when the video starts playing/streaming.               |
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
 | frameAddedToBuffer  | Triggered each time a new frame is added to the buffer.          |
+
+> NOTE:
+>
+> When the event "singleFrameAcquired" is triggered, the acquired image data will be returned as a reference, not a copy. Therefore, any changes to it will change the data source, and if another callback returns the same image data, the modifications will be synchronized.
 
 ## on
 
@@ -108,6 +114,7 @@ let cameraChanged = playCallBackInfo => {
 }
 enhancer.on("cameraChange", cameraChanged);
 ```
+
 <!--
 ## offAll
 
@@ -130,6 +137,7 @@ None.
 ```javascript
 enhancer.offAll("cameraChange");
 ```
+-->
 
 ## detectEnvironment
 
@@ -164,4 +172,27 @@ A JSON object about the running environment. For example
 ```javascript
 await Dynamsoft.DCE.CameraEnhancer.detectEnvironment();
 ```
--->
+
+## setErrorListener
+
+Sets the error listener to receive notifications should errors occur during image acquisition.
+
+```typescript
+setErrorListener(listener: ImageSourceErrorListener): void;
+```
+
+**Parameters**
+
+`listener`: the callback function that is triggered when an error occurs during image acquisition.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.setErrorListener(
+    {
+        onErrorReceived: (errorCode, errorMessage) => {
+            console.log(errorMessage);
+        },
+    }
+);
+```

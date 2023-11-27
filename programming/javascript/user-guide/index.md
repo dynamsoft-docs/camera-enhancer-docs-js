@@ -9,6 +9,7 @@ needGenerateH3Content: true
 needAutoGenerateSidebar: true
 permalink: /programming/javascript/user-guide/index.html
 ---
+
 # Dynamsoft Camera Enhancer for Your Website
 
 Dynamsoft Camera Enhancer allows your website to easily control the camera in the browser on desktop or mobile devices.
@@ -43,11 +44,11 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
 
 ### Include the SDK
 
-To build the web solution, we may need to include three packages
+To use the SDK, we first include the following packages:
 
-1. `dynamsoft-camera-enhancer`: Required, it provides the camera related functionalities used in this guide.
-2. `dynamsoft-core`: Required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
-3. `dynamsoft-capture-vision-router`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
+1. `dynamsoft-camera-enhancer`: required, it provides the camera related functionalities used in this guide.
+2. `dynamsoft-core`: required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
+3. `dynamsoft-capture-vision-router`: optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
 
 #### Use a CDN
 
@@ -57,19 +58,22 @@ The simplest way to include the SDK is to use either the [jsDelivr](https://jsde
 
   ```html
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.10/dist/core.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-capture-vision-router@2.0.20/dist/cvr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
   <script src="https://unpkg.com/dynamsoft-core@3.0.10/dist/core.js"></script>
-  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
+  <script src="https://unpkg.com/dynamsoft-capture-vision-router@2.0.20/dist/cvr.js"></script>
+  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
   ```
 
 > In some rare cases, you might not be able to access the CDN. If this happens, you can use
->- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js)
->- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.0.20/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.0.20/dist/core.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-capture-vision-router@2.0.20/dist/cvr.js](https://download2.dynamsoft.com/packages/dynamsoft-capture-vision-router@2.0.20/dist/cvr.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.1/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.1/dist/dce.js)
 
 #### Host the SDK yourself
 
@@ -99,9 +103,9 @@ Depending on how you downloaded the SDK and where you put it. You can typically 
 
 ```html
 <!-- Upon extracting the zip package into your project, you can generally include it in the following manner -->
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js"></script>
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.11/dist/cvr.js"></script>
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.11/dist/cvr.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
 ```
 
 or
@@ -130,8 +134,6 @@ We can create a `CameraEnhancer` instance to open and show the video stream on t
 2. Pass `view` to the method `createInstance()` for creating a `CameraEnhancer` instance. This way, `view` is bound to the created object `enhancer`;
 3. Show the UI element of `view` by appending it to an existing element in the DOM;
 4. Open the video stream which will show up in the UI Element.
-
-Step 3 can be done anywhere after step 1.
 
 ```html
 <!-- Define an element to hold the UI element -->
@@ -242,20 +244,20 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 
   ```html
   <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
-    <div style="position:absolute;left:0;top:0;">
-      <select class="dce-sel-camera" style="display:block;"></select>
-    </div>
     <div class="dce-video-container" style="width:100%;height:100%;"></div>
+    <div style="position: absolute;left: 0;top: 0;">
+      <select class="dce-sel-camera" style="display: block;"></select>
+    </div>
   </div>
   ```
 
   ```html
   <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+    <div class="dce-video-container" style="width:100%;height:100%;"></div>
     <div style="position:absolute;left:0;top:0;">
       <select class="dce-sel-camera" style="display:block;"></select>
       <select class="dce-sel-resolution" style="display:block;margin-top:5px;"></select>
     </div>
-    <div class="dce-video-container" style="width:100%;height:100%;"></div>
   </div>
   ```
 
@@ -263,7 +265,6 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 
   ```html
   <select class="dce-sel-resolution">
-      <option class="dce-opt-gotResolution" value="got"></option>
       <option data-width="1920" data-height="1080">1920x1080</option>
       <option data-width="1280" data-height="720">1280x720</option>
       <option data-width="640" data-height="480">640x480</option>
@@ -353,12 +354,12 @@ DCE requires the following features to work:
 
 The following table is a list of supported browsers based on the above requirements:
 
-  Browser Name | Version
-  :-: | :-:
-  Chrome | v59+
-  Firefox | v63+
-  Edge | v79+
-  Safari | v11+
+  | Browser Name | Version |
+  | :----------: | :-----: |
+  |    Chrome    |  v59+   |
+  |   Firefox    |  v63+   |
+  |     Edge     |  v79+   |
+  |    Safari    |  v11+   |
 
 Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDK. Browser compatibility ultimately depends on whether the browser on that particular operating system supports the features listed above.
 

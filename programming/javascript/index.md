@@ -9,7 +9,7 @@ noTitleIndex: true
 permalink: /programming/javascript/index.html
 ---
 
-# JavaScript Documentation
+# Dynamsoft Camera Enhancer for Web
 
 ## Getting Started
 

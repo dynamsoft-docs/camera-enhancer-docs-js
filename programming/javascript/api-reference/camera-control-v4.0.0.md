@@ -22,7 +22,6 @@ permalink: /programming/javascript/api-reference/camera-control.html
 | [getSelectedCamera()](#getselectedcamera)             | Returns information about the selected / current camera.                              |
 | [getCameraState()](#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
 | [open()](#open)                                       | Turns on the camera to start streaming live video.                                    |
-| [cameraOpenTimeout](#cameraopentimeout)               | Sets or returns the maximum time allowed for opending a selected camera.              |
 | [close()](#close)                                     | Stops video streaming and releases the camera.                                        |
 | [isOpen()](#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
 | [pause()](#pause)                                     | Pauses video streaming without releasing the camera.                                  |
@@ -203,22 +202,6 @@ await enhancer.open();
 **See also**
 
 * [PlayCallbackInfo](interface/playcallbackinfo.md)
-
-## cameraOpenTimeout
-
-Sets or returns the maximum time allowed for opending a selected camera. The default value is 4000 ms.
-
-> Setting 0 means canceling the timeout or waiting indefinitely.
-
-```typescript
-cameraOpenTimeout: number;
-```
-
-**Code Snippet**
-
-```javascript
-enhancer.cameraOpenTimeout = 10000; // Set the timeout to 10 seconds.
-```
 
 ## close
 
