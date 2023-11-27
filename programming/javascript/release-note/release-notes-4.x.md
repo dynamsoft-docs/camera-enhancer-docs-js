@@ -25,6 +25,7 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 
 * Updated the behaviour of [`SingleFrameMode`](../api-reference/acquisition.md#singleframemode) to allow an Android or iOS device user to make use of the camera without having to select between the camera and image gallery as the image source. 
 * Updated the method [`setScanRegion()`](../api-reference/acquisition.md#setscanregion) to allow passing `null` to clear the scan region.
+* Updated the resolution selection drop-down box to make it more intuitive.
 
 ### Fixed
 
