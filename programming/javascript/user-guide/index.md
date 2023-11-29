@@ -136,13 +136,15 @@ We can create a `CameraEnhancer` instance to open and show the video stream on t
 <div id="enhancerUIContainer" style="width:1280px;height:720px;"></div>
 <script>
   (async () => {
+      // Initializes the license for using the SDK in the application.
+      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9");
       // A default UI will be used if no parameter is passed to 'CameraView.createInstance()'.
       let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
        // Create 'CameraEnhancer' instance and pass 'cameraView' to it.
       let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
       // Get 'CameraView' instance's UI and append it to DOM.
       document.querySelector("#enhancerUIContainer").append(cameraView.getUIElement());
-      
+      // Open the camera and start streaming the video on the page.
       await cameraEnhancer.open();
   })();
 </script>
@@ -226,6 +228,8 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
   </div>
   <script>
       (async () => {
+        // Initializes the license for using the SDK in the application.
+        Dynamsoft.License.LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9");
         // Create 'CameraView' instance and pass the element "enhancerUIContainer" as its UI.
         let cameraView = await Dynamsoft.DCE.CameraView.createInstance(document.getElementById("enhancerUIContainer"));
         let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
