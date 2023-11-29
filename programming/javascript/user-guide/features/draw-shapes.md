@@ -27,14 +27,14 @@ We will start with the following code which defines a page that has a CameraEnha
     <button id="drawShapes">Click to Draw Shapes</button><br /><br />
     <div id="enhancerUIContainer" style="width:100%; height:100%;"></div>
     <script>
-      let enhancer = null;
+      let cameraEnhancer = null;
       let view = null;
       document.getElementById('drawShapes').onclick = drawShapes;
       (async () => {
           view = await Dynamsoft.DCE.CameraView.createInstance();
-          enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+          cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
           document.getElementById("enhancerUIContainer").appendChild(view.getUIElement());
-          await enhancer.open();
+          await cameraEnhancer.open();
       })();
         function drawShapes(){}
     </script>
@@ -48,7 +48,7 @@ All shapes are drawn on specific [`DrawingLayer`](../../api-reference/drawinglay
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = enhancer.createDrawingLayer();
+  let drawingLayer = cameraEnhancer.createDrawingLayer();
 }
 ```
 

@@ -47,7 +47,7 @@ The visible region represented by a `Region` object.
 **Code Snippet**
 
 ```javascript
-enhancer.getVisibleRegion();
+cameraEnhancer.getVisibleRegion();
 ```
 
 **See also**
@@ -73,7 +73,7 @@ The added `Canvas` object.
 **Code Snippet**
 
 ```javascript
-let cvs = enhancer.addScanRegionOverlayCanvas();
+let cvs = cameraEnhancer.addScanRegionOverlayCanvas();
 let ctx = cvs.getContext('2d');
 ctx.fillStyle = "white";
 ctx.font = '50px serif';
@@ -125,7 +125,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setScanRegionMaskStyle({
+cameraEnhancer.setScanRegionMaskStyle({
     lineWidth: 5,
     strokeStyle: "white",
     fillStyle: "rgba(50,50,50,0.3)"
@@ -151,7 +151,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setVideoFit("cover");
+cameraEnhancer.setVideoFit("cover");
 ```
 
 ## getVideoFit
@@ -173,7 +173,7 @@ The value of the `object-fit` CSS property.
 **Code Snippet**
 
 ```javascript
-enhancer.getVideoFit();
+cameraEnhancer.getVideoFit();
 ```
 
 ## setViewDecorator
@@ -206,7 +206,7 @@ let area = {
     width: 90,
     height: 80
 };
-enhancer.setViewDecorator(["rectangle", "crosshair"], area);
+cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 **See also**
@@ -252,8 +252,8 @@ let area = {
     width: 90,
     height: 80
 };
-enhancer.setViewDecoratorLineWidth("rectangle", 10);
-enhancer.setViewDecorator(["rectangle", "crosshair"], area);
+cameraEnhancer.setViewDecoratorLineWidth("rectangle", 10);
+cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorStrokeStyle
@@ -283,8 +283,8 @@ let area = {
     width: 90,
     height: 80
 };
-enhancer.setViewDecoratorStrokeStyle("rectangle", "white");
-enhancer.setViewDecorator(["rectangle", "crosshair"], area);
+cameraEnhancer.setViewDecoratorStrokeStyle("rectangle", "white");
+cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorFillStyle
@@ -314,8 +314,8 @@ let area = {
     width: 90,
     height: 80
 };
-enhancer.setViewDecoratorFillStyle("rectangle", "rgba(50,50,50,0.3)");
-enhancer.setViewDecorator(["rectangle", "crosshair"], area);
+cameraEnhancer.setViewDecoratorFillStyle("rectangle", "rgba(50,50,50,0.3)");
+cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorMaskFillStyle
@@ -345,6 +345,6 @@ let area = {
     width: 90,
     height: 80
 };
-enhancer.setViewDecoratorMaskFillStyle("rectangle", "rgba(50,50,50,0.3)");
-enhancer.setViewDecorator(["rectangle", "crosshair"], area);
+cameraEnhancer.setViewDecoratorMaskFillStyle("rectangle", "rgba(50,50,50,0.3)");
+cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```

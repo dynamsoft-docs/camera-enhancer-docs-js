@@ -80,9 +80,9 @@ A promise resolving to an array of `VideoDeviceInfo` objects.
 **Code Snippet**
 
 ```javascript
-let cameras = await enhancer.getAllCameras();
+let cameras = await cameraEnhancer.getAllCameras();
 if (cameras.length) {
-    await enhancer.selectCamera(cameras[0]);
+    await cameraEnhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -111,9 +111,9 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-let cameras = await enhancer.getAllCameras();
+let cameras = await cameraEnhancer.getAllCameras();
 if (cameras.length) {
-    await enhancer.selectCamera(cameras[0]);
+    await cameraEnhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -140,7 +140,7 @@ A `VideoDeviceInfo` object with details about the selected camera.
 **Code Snippet**
 
 ```javascript
-let camera = enhancer.getSelectedCamera();
+let camera = cameraEnhancer.getSelectedCamera();
 console.log(camera.label);
 ```
 
@@ -167,7 +167,7 @@ A string indicating the camera state, it is either "opening", "open" or "closed"
 **Code Snippet**
 
 ```javascript
-let state = enhancer.getCameraState();
+let state = cameraEnhancer.getCameraState();
 console.log("The camera is " + state);
 ```
 
@@ -196,8 +196,8 @@ A promise resolving to a `PlayCallbackInfo` object.
 ```javascript
 let view = await Dynamsoft.DCE.CameraView.createInstance();
 document.getElementById("enhancerUIContainer").append(view.getUIElement());
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
-await enhancer.open();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+await cameraEnhancer.open();
 ```
 
 **See also**
@@ -217,7 +217,7 @@ cameraOpenTimeout: number;
 **Code Snippet**
 
 ```javascript
-enhancer.cameraOpenTimeout = 10000; // Set the timeout to 10 seconds.
+cameraEnhancer.cameraOpenTimeout = 10000; // Set the timeout to 10 seconds.
 ```
 
 ## close
@@ -376,7 +376,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-await enhancer.setResolution({width:1280, height:720});
+await cameraEnhancer.setResolution({width:1280, height:720});
 ```
 
 **See also**
@@ -402,7 +402,7 @@ The resolution.
 **Code Snippet**
 
 ```javascript
-let resolution = enhancer.getResolution();
+let resolution = cameraEnhancer.getResolution();
 console.log(resolution.width + " x " + resolution.height);
 ```
 
@@ -434,7 +434,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-const resolutions = await enhancer.getAvailableResolutions();
+const resolutions = await cameraEnhancer.getAvailableResolutions();
 console.log(resolutions);
 ```
 
@@ -509,7 +509,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setFrameRate(10);
+await cameraEnhancer.setFrameRate(10);
 ```
 
 **See also**
@@ -535,7 +535,7 @@ The calculated real-time frame rate.
 **Code Snippet**
 
 ```javascript
-await enhancer.getFrameRate();
+await cameraEnhancer.getFrameRate();
 ```
 
 ## turnOnTorch
@@ -559,7 +559,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.turnOnTorch();
+await cameraEnhancer.turnOnTorch();
 ```
 
 **See also**
@@ -588,7 +588,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.turnOffTorch();
+await cameraEnhancer.turnOffTorch();
 ```
 
 **See also**
@@ -615,7 +615,7 @@ An object that describes the zoom settings. As of version 3.2, it contains only 
 **Code Snippet**
 
 ```javascript
-console.log(enhancer.getZoomSettings().factor);
+console.log(cameraEnhancer.getZoomSettings().factor);
 ```
 
 ## setZoom
@@ -643,9 +643,11 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setZoom({
-    factor: 3
-});
+if(cameraEnhancer.getCapabilities().zoom) {
+    await cameraEnhancer.setZoom({
+        factor: 3
+    });
+}
 ```
 
 **See also**
@@ -671,7 +673,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.resetZoom();
+await cameraEnhancer.resetZoom();
 ```
 
 ## getFocusSettings
@@ -698,7 +700,7 @@ The current focus settings.
 **Code Snippet**
 
 ```javascript
-enhancer.getFocusSettings();
+cameraEnhancer.getFocusSettings();
 ```
 
 **See also**
@@ -739,8 +741,8 @@ A promise that resolves when the operation succeeds.
 > The "continuous" mode invokes the camera to focus automatically and continuously. Use [getCapabilities()](#getcapabilities) to inspect whether the camera supports "continuous" mode.
 
 ```javascript
-if (enhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('continuous') == 0)) {
-    await enhancer.setFocus({
+if (cameraEnhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('continuous') == 0)) {
+    await cameraEnhancer.setFocus({
         mode: "continuous"
     });
 }
@@ -750,13 +752,13 @@ if (enhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('contin
 > Use [getCapabilities()](#getcapabilities) to inspect the distance range.
 >
 > ```javascript
-> enhancer.getCapabilities().focusDistance; > //{max: 1024, min: 0, step: 10}
+> cameraEnhancer.getCapabilities().focusDistance; > //{max: 1024, min: 0, step: 10}
 > ```
 >
 > NOTE: If the set distance is between two allowed values, it will be rounded to the nearest value.
 
 ```javascript
-await enhancer.setFocus({
+await cameraEnhancer.setFocus({
     mode: "manual",
     distance: 200
 });
@@ -767,7 +769,7 @@ await enhancer.setFocus({
 > NOTE: the area is a rectangle defined by its center point and its width and height. All coordinates can be in pixels or percentages, such as "500px" or "50%". Percentages are based on stream dimensions.
 
 ```javascript
-await enhancer.setFocus({
+await cameraEnhancer.setFocus({
     mode: "manual",
     area: {
         centerPoint: {
@@ -805,7 +807,7 @@ A `MediaTrackCapabilities` object which specifies the values or range of values 
 **Code Snippet**
 
 ```javascript
-enhancer.getCapabilities();
+cameraEnhancer.getCapabilities();
 /* Result sample
 {
   aspectRatio: {max: 1280, min: 0.001388888888888889},
@@ -853,7 +855,7 @@ The current values for each constrainable property of the current camera in the 
 **Code Snippet**
 
 ```javascript
-enhancer.getCameraSettings();
+cameraEnhancer.getCameraSettings();
 /* Result sample
 {
   aspectRatio: 1.3333333333333333,
@@ -912,7 +914,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setColorTemperature(5000);
+await cameraEnhancer.setColorTemperature(5000);
 ```
 
 **See also**
@@ -950,7 +952,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setExposureCompensation(-0.7);
+await cameraEnhancer.setExposureCompensation(-0.7);
 ```
 
 **See also**
@@ -978,7 +980,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setAutoZoomRange({min: 1, max: 5});
+cameraEnhancer.setAutoZoomRange({min: 1, max: 5});
 ```
 
 ## getAutoZoomRange
@@ -1000,7 +1002,7 @@ The zoom range.
 **Code Snippet**
 
 ```javascript
-let zoomRange = enhancer.getAutoZoomRange();
+let zoomRange = cameraEnhancer.getAutoZoomRange();
 ```
 
 ## enableEnhancedFeatures
@@ -1028,7 +1030,7 @@ None.
 //you need to include cvr and initialize the license for enabling enhanced features
 Dynamsoft.License.LicenseManager.initLicense("YOUR-LICENSE");
 
-await enhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
+await cameraEnhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 ```
 
 **See also**
@@ -1054,7 +1056,7 @@ None.
 **Code Snippet**
 
 ```javascript
-await enhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
+await cameraEnhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 ```
 
 **See also**

@@ -42,7 +42,7 @@ A promise resolving to the created `CameraEnhancer` object.
 ```javascript
 (async () => {
     let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
+    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
 })();
 ```
 
@@ -70,10 +70,10 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
 //...
-enhancer.dispose();
+cameraEnhancer.dispose();
 ```
 
 **See also**
@@ -91,9 +91,9 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 //...
-let flag = enhancer.disposed;
+let flag = cameraEnhancer.disposed;
 ```
 
 **See also**

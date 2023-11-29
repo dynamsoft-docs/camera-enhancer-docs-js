@@ -41,8 +41,8 @@ You can manipulate these DrawingLayers directly, for example, the following code
 > Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.md#updatedrawingstyle).
 
 ```javascript
-// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
-let cameraView = enhancer.getCameraView();
+// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which cameraEnhancer is bound.
+let cameraView = cameraEnhancer.getCameraView();
 let dlrDrawingLayer = cameraView.getDrawingLayer(3);
 // Creates a new style to be used.
 let newStyleId = Dynamsoft.DCE.DrawingStyleManager.createDrawingStyle({
@@ -66,8 +66,8 @@ getId(): number;
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-let drawingLayer = enhancer.createDrawingLayer();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let drawingLayer = cameraEnhancer.createDrawingLayer();
 let drawingLayerId = drawingLayer.getId();
 ```
 
@@ -107,7 +107,7 @@ let drawingItems = new Array(
             y: 50
         }
     }));
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.addDrawingItems(drawingItems);
 ```
@@ -131,7 +131,7 @@ getDrawingItems(filter?: (item: DrawingItem) => boolean): Array<DrawingItem>;
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 // Return only DrawingItems belong to the type DT_Rect.
 let drawingItems = drawingLayer.getDrawingItems(item => item.mediaType === EnumDrawingItemMediaType.DIMT_RECTANGLE);
@@ -177,7 +177,7 @@ let drawingItems = new Array(
             y: 50
         }
     }));
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.setDrawingItems(newDrawingItems);
 ```
@@ -204,7 +204,7 @@ let drawingItem = new RectDrawingItem({
         height: 100,
         isMeasuredInPercentage: true
     });
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 ```
@@ -240,7 +240,7 @@ let drawingItems = new Array(
         isMeasuredInPercentage: true
     })
 );
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.removeDrawingItems(drawingItems);
 ```
@@ -260,7 +260,7 @@ clearDrawingItems(): void;
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.clearDrawingItems();
 ```
@@ -279,7 +279,7 @@ renderAll(): boolean;
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.getDrawingItems()[0].styleId = customId;
 let isRenderedAll = drawingLayer.renderAll();
@@ -335,7 +335,7 @@ setVisible(visibility: boolean): void;
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.setVisible(false);
 ```
@@ -351,7 +351,7 @@ isVisible(): boolean;
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 let isVisible = drawingLayer.isVisible();
 ```
@@ -372,7 +372,7 @@ onSelectionChanged(selectedDrawingItems: Array<DrawingItem>, deselectedDrawingIt
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.getDrawingLayer(100);
 drawingLayer.onSelectionChanged = (selected, deselected) => {
     //do ...

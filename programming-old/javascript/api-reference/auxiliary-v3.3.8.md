@@ -60,28 +60,28 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.on("cameraChange", playCallBackInfo => {
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+cameraEnhancer.on("cameraChange", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-enhancer.on("cameraOpen", playCallBackInfo => {
+cameraEnhancer.on("cameraOpen", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-enhancer.on("cameraClose", playCallBackInfo => {
+cameraEnhancer.on("cameraClose", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-enhancer.on("resolutionChange", playCallBackInfo => {
+cameraEnhancer.on("resolutionChange", playCallBackInfo => {
     console.log("width:" + playCallBackInfo.width);
     console.log("height:" + playCallBackInfo.height);
 });
-enhancer.on("played", playCallBackInfo => {
+cameraEnhancer.on("played", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-enhancer.on("singleFrameAcquired", dceFrame => {
+cameraEnhancer.on("singleFrameAcquired", dceFrame => {
     document.body.appendChild(dceFrame.toCanvas());
 });
-enhancer.on("frameAddedToBuffer", () => {
-    let dceFrame = enhancer.getFrameFromBuffer();
+cameraEnhancer.on("frameAddedToBuffer", () => {
+    let dceFrame = cameraEnhancer.getFrameFromBuffer();
     document.body.appendChild(dceFrame.toCanvas());
 });
 ```
@@ -106,12 +106,12 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let cameraChanged = playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
-    enhancer.off("cameraChange", cameraChanged);
+    cameraEnhancer.off("cameraChange", cameraChanged);
 }
-enhancer.on("cameraChange", cameraChanged);
+cameraEnhancer.on("cameraChange", cameraChanged);
 ```
 
 ## offAll
@@ -133,7 +133,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.offAll("cameraChange");
+cameraEnhancer.offAll("cameraChange");
 ```
 
 ## dispose
@@ -157,9 +157,9 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
-enhancer.dispose();
+cameraEnhancer.dispose();
 ```
 
 ## disposed
@@ -175,9 +175,9 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 //...
-let flag = enhancer.disposed;
+let flag = cameraEnhancer.disposed;
 ```
 
 ## getVersion

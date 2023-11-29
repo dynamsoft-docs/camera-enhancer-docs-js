@@ -38,7 +38,7 @@ A `DCEFrame` object which contains the image data of the (cropped) frame and rel
 
 ```javascript
 // Returns only the 25% center area of the frame
-let frameData = enhancer.getFrame({
+let frameData = cameraEnhancer.getFrame({
     regionBottom: 75,
     regionRight: 75,
     regionLeft: 25,
@@ -66,9 +66,9 @@ singleFrameMode: boolean
 ```javascript
 let pEnhancer = null;
 (async () => {
-    let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-    enhancer.singleFrameMode = true;
-    await enhancer.open();
+    let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+    cameraEnhancer.singleFrameMode = true;
+    await cameraEnhancer.open();
 })();
 ```
 
@@ -89,11 +89,11 @@ onSingleFrameAcquired: (file: File) => {}
 ```javascript
 let pEnhancer = null;
 (async () => {
-    let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-    enhancer.onSingleFrameAcquired = file => {
+    let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+    cameraEnhancer.onSingleFrameAcquired = file => {
         console.log(file.size);
     };
-    await enhancer.open();
+    await cameraEnhancer.open();
 })();
 ```
 

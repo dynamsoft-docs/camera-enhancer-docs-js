@@ -64,9 +64,9 @@ let scanRegion = {
     height: 75
     isMeasuredInPercentage: true
 };
-enhancer.setScanRegion(scanRegion); 
+cameraEnhancer.setScanRegion(scanRegion); 
 //...
-enhancer.setScanRegion(null); //Cancel the scan region.
+cameraEnhancer.setScanRegion(null); //Cancel the scan region.
 ```
 
 **See also**
@@ -93,7 +93,7 @@ A `Rect` or `DSRect` object which specifies the scan region.
 **Code Snippet**
 
 ```javascript
-let region = enhancer.getScanRegion();
+let region = cameraEnhancer.getScanRegion();
 ```
 
 **See also**
@@ -119,7 +119,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let image = enhancer.fetchImage();
+let image = cameraEnhancer.fetchImage();
 document.body.appendChild(image.toCanvas());
 ```
 
@@ -146,8 +146,8 @@ None.
 **Code Snippet**
 
 ```javascript
-let image = enhancer.fetchImage();
-enhancer.addImageToBuffer(image);
+let image = cameraEnhancer.fetchImage();
+cameraEnhancer.addImageToBuffer(image);
 ```
 
 ## setImageFetchInterval
@@ -169,7 +169,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setImageFetchInterval(200);
+cameraEnhancer.setImageFetchInterval(200);
 ```
 
 ## getImageFetchInterval
@@ -191,7 +191,7 @@ The fetch interval.
 **Code Snippet**
 
 ```javascript
-let fetchInterval = enhancer.getImageFetchInterval();
+let fetchInterval = cameraEnhancer.getImageFetchInterval();
 ```
 
 ## startFetching
@@ -213,7 +213,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.startFetching();
+cameraEnhancer.startFetching();
 ```
 
 ## stopFetching
@@ -235,7 +235,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.stopFetching();
+cameraEnhancer.stopFetching();
 ```
 
 ## setMaxImageCount
@@ -257,7 +257,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setMaxImageCount(10);
+cameraEnhancer.setMaxImageCount(10);
 ```
 
 ## getMaxImageCount
@@ -279,7 +279,7 @@ A number indicating how many images can be held in buffer.
 **Code Snippet**
 
 ```javascript
-let bufferSize = enhancer.getMaxImageCount();
+let bufferSize = cameraEnhancer.getMaxImageCount();
 ```
 
 ## getImageCount
@@ -301,7 +301,7 @@ A number indicating how many images are held in buffer.
 **Code Snippet**
 
 ```javascript
-let imageCount = enhancer.getImageCount();
+let imageCount = cameraEnhancer.getImageCount();
 ```
 
 ## hasImage
@@ -323,7 +323,7 @@ True means the image exists in the buffer, false the opposite.
 **Code Snippet**
 
 ```javascript
-let imageCount = enhancer.hasImage(10);
+let imageCount = cameraEnhancer.hasImage(10);
 ```
 
 ## getImage
@@ -346,7 +346,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let image = enhancer.getImage();
+let image = cameraEnhancer.getImage();
 document.body.appendChild(image.toCanvas());
 ```
 
@@ -374,8 +374,8 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setNextImageToReturn(10);
-let image = enhancer.getImage();
+cameraEnhancer.setNextImageToReturn(10);
+let image = cameraEnhancer.getImage();
 document.body.appendChild(image.toCanvas());
 ```
 
@@ -398,7 +398,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
+cameraEnhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
 **See also**
@@ -424,7 +424,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
+cameraEnhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.BOPM_Append);
 ```
 
 **See also**
@@ -450,7 +450,7 @@ True means the buffer is empty, false the opposite.
 **Code Snippet**
 
 ```javascript
-if(enhancer.isBufferEmpty()) {
+if(cameraEnhancer.isBufferEmpty()) {
     console.log("There is no image in buffer!");
 }
 ```
@@ -474,7 +474,7 @@ True means the input image source can supply more images, false means the input 
 **Code Snippet**
 
 ```javascript
-if(!enhancer.hasNextImageToFetch()) {
+if(!cameraEnhancer.hasNextImageToFetch()) {
     console.log("The image source is exhausted!");
 }
 ```
@@ -500,8 +500,8 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.setPixelFormat(EnumImagePixelFormat.IPF_ARGB_8888);
-let image = enhancer.getImage();
+cameraEnhancer.setPixelFormat(EnumImagePixelFormat.IPF_ARGB_8888);
+let image = cameraEnhancer.getImage();
 document.body.appendChild(image.toCanvas());
 ```
 
@@ -533,12 +533,12 @@ singleFrameMode: boolean;
 
 ```javascript
 (async () => {
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    enhancer.on('singleFrameAcquired', frameData => {
+    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    cameraEnhancer.on('singleFrameAcquired', frameData => {
         document.body.appendChild(frameData.toCanvas());
     });
-    enhancer.singleFrameMode = true;
-    await enhancer.open(true);
+    cameraEnhancer.singleFrameMode = true;
+    await cameraEnhancer.open(true);
 })();
 ```
 
@@ -569,5 +569,5 @@ function handleCapturedPhoto(dceFrame) {
 }
 
 // Capture a photo and invoke the listener with the captured data.
-enhancer.takePhoto(handleCapturedPhoto);
+cameraEnhancer.takePhoto(handleCapturedPhoto);
 ```

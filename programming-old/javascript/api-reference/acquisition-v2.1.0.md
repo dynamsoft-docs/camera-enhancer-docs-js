@@ -61,7 +61,7 @@ let region = {
 	regionBottom: 75, 
 	regionMeasuredByPercentage: true
 };
-enhancer.setScanRegion(region); 
+cameraEnhancer.setScanRegion(region); 
 ```
 
 **See also**
@@ -87,7 +87,7 @@ A `Region` object which specifies the scan region.
 **Code Snippet**
 
 ```javascript
-let region = enhancer.getScanRegion();
+let region = cameraEnhancer.getScanRegion();
 ```
 
 **See also**
@@ -113,7 +113,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = enhancer.getFrame();
+let frameData = cameraEnhancer.getFrame();
 document.body.appendChild(frameData.canvas);
 ```
 
@@ -140,7 +140,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = enhancer.getFrameFromBuffer();
+let frameData = cameraEnhancer.getFrameFromBuffer();
 document.body.appendChild(frameData.canvas);
 ```
 
@@ -282,11 +282,11 @@ singleFrameMode: boolean;
 ```javascript
 let pEnhancer = null;
 (async () => {
-    let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-    enhancer.on('singleFrameAcquired', frame => {
+    let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+    cameraEnhancer.on('singleFrameAcquired', frame => {
         document.body.appendChild(frameData.canvas);
     });
-    enhancer.singleFrameMode = true;
-    await enhancer.open();
+    cameraEnhancer.singleFrameMode = true;
+    await cameraEnhancer.open();
 })();
 ```

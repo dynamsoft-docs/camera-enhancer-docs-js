@@ -27,13 +27,13 @@ We will start with the following code which defines a page that has a CameraEnha
     <button id="drawShapes">Click to Draw Shapes</button><br /><br />
     <div id="enhancerUIContainer" style="width:100%; height:100%;"></div>
     <script>
-        let enhancer = null;
+        let cameraEnhancer = null;
         document.getElementById('drawShapes').onclick = drawShapes;
         (async () => {
-            enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-            await enhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
-            document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
-            await enhancer.open();
+            cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+            await cameraEnhancer.setUIElement(Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL);
+            document.getElementById("enhancerUIContainer").appendChild(cameraEnhancer.getUIElement());
+            await cameraEnhancer.open();
         })();
         function drawShapes(){}
     </script>
@@ -47,7 +47,7 @@ All shapes are drawn on specific [`DrawingLayer`](../../api-reference/drawinglay
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = enhancer.createDrawingLayer();
+  let drawingLayer = cameraEnhancer.createDrawingLayer();
 }
 ```
 
@@ -87,7 +87,7 @@ After **DrawingItems** have been defined, simply call `addDrawingItems()` to dra
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = enhancer.createDrawingLayer();
+  let drawingLayer = cameraEnhancer.createDrawingLayer();
   let rect = new Dynamsoft.DCE.DrawingItem.DT_Rect(50, 50, 300, 300);
   let arc = new Dynamsoft.DCE.DrawingItem.DT_Arc(840, 150, 100, 0, 360);
   let line = new Dynamsoft.DCE.DrawingItem.DT_Line({x: 600, y: 600}, {x: 1050, y: 400});
@@ -117,7 +117,7 @@ All new **DrawingLayer** objects come with the same predefined style definition
 If the default style doesn't look good, you can create your own style to use:
 
 ```javascript
-let newDrawingStyleID = enhancer.createDrawingStyle({
+let newDrawingStyleID = cameraEnhancer.createDrawingStyle({
   lineWidth: 5,
   paintMode: "strokeAndFill",
   fontSize: 100,

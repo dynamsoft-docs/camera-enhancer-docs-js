@@ -162,9 +162,9 @@ None.
 </div>
 <script>
     (async () => {
-        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-        await enhancer.setUIElement(document.getElementById("enhancerUIContainer"));
-        await enhancer.open();
+        let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        await cameraEnhancer.setUIElement(document.getElementById("enhancerUIContainer"));
+        await cameraEnhancer.open();
     })();
 </script>
 ```
@@ -487,7 +487,7 @@ None.
 **Code Snippet**
 
 ```javascript
-let currentFrame = enhancer.getFrame();
+let currentFrame = cameraEnhancer.getFrame();
 imageEditorView.setOriginalImage(currentFrame);
 ```
 

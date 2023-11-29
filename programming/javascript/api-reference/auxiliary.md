@@ -63,26 +63,26 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.on("cameraChange", (deviceId, previousDeviceId) => {
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+cameraEnhancer.on("cameraChange", (deviceId, previousDeviceId) => {
     console.log("Camera changed.");
 });
-enhancer.on("cameraOpen", () => {
+cameraEnhancer.on("cameraOpen", () => {
     console.log("Camera opened.");
 });
-enhancer.on("cameraClose", () => {
+cameraEnhancer.on("cameraClose", () => {
     console.log("Camera closed.");
 });
-enhancer.on("resolutionChange", (resolution, previousResolution) => {
+cameraEnhancer.on("resolutionChange", (resolution, previousResolution) => {
     console.log("Resolution changed.");
 });
-enhancer.on("played", () => {
+cameraEnhancer.on("played", () => {
     console.log("Video stream started.");
 });
-enhancer.on("singleFrameAcquired", dceFrame => {
+cameraEnhancer.on("singleFrameAcquired", dceFrame => {
     console.log("An image is acquired under the single-frame mode.");
 });
-enhancer.on("frameAddedToBuffer", () => {
+cameraEnhancer.on("frameAddedToBuffer", () => {
     console.log("A new frame is added to the buffer.");
 });
 ```
@@ -107,12 +107,12 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let cameraChanged = playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
-    enhancer.off("cameraChange", cameraChanged);
+    cameraEnhancer.off("cameraChange", cameraChanged);
 }
-enhancer.on("cameraChange", cameraChanged);
+cameraEnhancer.on("cameraChange", cameraChanged);
 ```
 
 <!--
@@ -135,7 +135,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.offAll("cameraChange");
+cameraEnhancer.offAll("cameraChange");
 ```
 -->
 
