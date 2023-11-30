@@ -21,16 +21,18 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 * Added [`setErrorListener()`](../api-reference/auxiliary.md#seterrorlistener) to receive errors occured during image acquisition.
 * Added [`cameraOpenTimeout`](../api-reference/camera-control.md#cameraopentimeout) to control the maximum time allowed for opening a selected camera.
 
-### Changed
+### Improved
 
 * Updated the behaviour of [`SingleFrameMode`](../api-reference/acquisition.md#singleframemode) to allow an Android or iOS device user to make use of the camera without having to select between the camera and image gallery as the image source. 
 * Updated the method [`setScanRegion()`](../api-reference/acquisition.md#setscanregion) to allow passing `null` to clear the scan region.
 * Updated the resolution selection drop-down box to make it more intuitive.
+* Updated `setZoom()` to support Safari on iOS v17.x.
 
 ### Fixed
 
 * Fixed issues with the methods `setZoom()` & `getZoomSettings()` so that they can now work with static videos.
 * Fixed issues with the autozoom or enhancedfocus features to prevent them from throwing unnecessary error messages.
+* Fixed an issue with unstable video streaming upon opening the camera on iOS 17.x.
 
 ## 4.0.0 (08/24/2023)
 
