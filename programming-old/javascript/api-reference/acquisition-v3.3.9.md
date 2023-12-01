@@ -300,9 +300,10 @@ croppingRegionIndex: number;
 ## singleFrameMode
 
 Returns or sets whether to enable the singe-frame mode. This mode allows CameraEnhancer to fetch images when there is no camera support in the browser or when you just want to process a local file.
+
 > It’s important to note that it will behave differently in different environments:
  > - false: Stream the camera in the browser.
- > - true / "image": Prompt the user to select a local image.
+ > - true \| "image": Prompt the user to select a local image.
  > - "camera":
  >   - On desktop: Prompt the user to select a local image.
  >   - On mobile devices: Invoke the system camera.

@@ -13,11 +13,19 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ## 3.3.9 (10//2023)
 
+### Added
+
+* Added cameraOpenTimeout to control the maximum time allowed for opening a selected camera.
+
+### Improved
+
+* Updated the resolution selection drop-down box to make it more intuitive.
+* Updated setZoom() to support Safari on iOS v17.x.
+
 ### Fixed
 
-* 
-* 
-* 
+* Fixed an issue with unstable video streaming upon opening the camera on iOS 17.x.
+* Fixed an issue when `refreshInterval` is greater than 0, the buffer is refreshed during each `loopInterval`, instead of when `refreshInterval` is reached.
 
 ## 3.3.8 (10/12/2023)
 
