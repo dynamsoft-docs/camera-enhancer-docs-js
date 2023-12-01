@@ -6,7 +6,7 @@ keywords: interfaces, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: Interface Index
-permalink: /programming/javascript/api-reference/interface/index-v3.3.4.html
+permalink: /programming/javascript/api-reference/interface/index-v3.3.9.html
 ---
 
 # Interfaces

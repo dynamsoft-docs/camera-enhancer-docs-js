@@ -13,6 +13,7 @@ permalink: /programming/javascript/release-note/index.html
 
 
 * [4.0.0 (08/24/2023)](release-notes-4.x.html#400-08242023)
+* [3.3.9 (12//2023)](release-notes-3.x.html#339-12023)
 * [3.3.8 (10/12/2023)](release-notes-3.x.html#338-10122023)
 * [3.3.7 (10/11/2023)](release-notes-3.x.html#337-10112023)
 * [3.3.6 (09/13/2023)](release-notes-3.x.html#336-09132023)
