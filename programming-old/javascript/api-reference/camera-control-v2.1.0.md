@@ -417,7 +417,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setZoom(400);
+await enhancer.setZoom(2);
 ```
 
 **See also**
