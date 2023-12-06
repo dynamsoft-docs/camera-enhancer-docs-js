@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: UI
-permalink: /programming/javascript/api-reference/ui-v3.3.8.html
+permalink: /programming/javascript/api-reference/ui-v3.3.9.html
 ---
 
 # UI Manipulation
@@ -76,6 +76,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.8.html
 | [onTipSuggested()](#ontipsuggested)                         | An event that gets triggered whenever a Tip is suggested.                                                                                                                   |
 | [convertToPageCoordinates()](#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
 | [convertToClientCoordinates()](#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
+
 ## getVisibleRegion
 
 Returns a `Region` object which specifies which part of the original video is shown in the video element.

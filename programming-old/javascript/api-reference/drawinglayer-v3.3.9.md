@@ -6,7 +6,7 @@ keywords: DrawingLayer, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingLayer
-permalink: /programming/javascript/api-reference/drawinglayer-v3.3.8.html
+permalink: /programming/javascript/api-reference/drawinglayer-v3.3.9.html
 ---
 
 # DrawingLayer

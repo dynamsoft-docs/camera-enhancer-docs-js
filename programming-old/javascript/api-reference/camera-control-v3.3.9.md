@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Camera Control
-permalink: /programming/javascript/api-reference/camera-control-v3.3.8.html
+permalink: /programming/javascript/api-reference/camera-control-v3.3.9.html
 ---
 
 # Camera Control

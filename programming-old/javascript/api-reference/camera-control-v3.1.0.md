@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Camera Control
-permalink: /programming/javascript/api-reference/camera-control-v3.1.html
+permalink: /programming/javascript/api-reference/camera-control-v3.1.0.html
 ---
 
 # Camera Control
@@ -469,7 +469,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await enhancer.setZoom(400);
+await enhancer.setZoom(2);
 ```
 
 **See also**
