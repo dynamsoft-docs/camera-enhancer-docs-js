@@ -11,7 +11,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
-## 3.3.9 (10//2023)
+## 3.3.9 (12/06/2023)
 
 ### Added
 
