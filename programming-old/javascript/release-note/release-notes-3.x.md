@@ -15,12 +15,12 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Added
 
-* Added cameraOpenTimeout to control the maximum time allowed for opening a selected camera.
+* Added `cameraOpenTimeout` to control the maximum time allowed for opening a selected camera.
 
 ### Improved
 
 * Updated the resolution selection drop-down box to make it more intuitive.
-* Updated setZoom() to support Safari on iOS v17.x.
+* Updated setZoom() to support Safari on iOS 17.x.
 
 ### Fixed
 
