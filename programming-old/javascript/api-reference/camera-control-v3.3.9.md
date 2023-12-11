@@ -31,6 +31,7 @@ permalink: /programming/javascript/api-reference/camera-control-v3.3.9.html
 | [getResolution()](#getresolution) | Returns the resolution of the current video input. |
 | [getResolutions()](#getresolutions) | Returns the resolutions supported by the current video input. |
 | [videoSrc](#videosrc) | Sets or returns the source of the video. |
+| [cameraOpenTimeout](#cameraOpenTimeout) | Control the maximum time allowed for opening a selected camera. |
 
 **Advanced Control**
 
@@ -63,6 +64,10 @@ Returns or sets whether to skip camera inspection at initialization to save time
 ifSkipCameraInspection: boolean;
 ```
 
+**Default value**
+
+`false`
+
 ## ifSaveLastUsedCamera
 
 Returns or sets whether to save the last used camera and resolution. This feature makes use of the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of the browser.
@@ -74,6 +79,10 @@ Returns or sets whether to save the last used camera and resolution. This featur
 ```typescript
 ifSaveLastUsedCamera: boolean;
 ```
+
+**Default value**
+
+`false`
 
 ## getAllCameras
 
@@ -350,6 +359,18 @@ A promise that resolves when the operation succeeds.
 const resolutions = await enhancer.getResolutions();
 console.log(resolutions);
 ```
+
+## cameraOpenTimeout
+
+Sets or returns the the maximum time allowed for opening a selected camera.
+
+```typescript
+cameraOpenTimeout: number;
+```
+
+**Default value**
+
+`4000`
 
 ## setFrameRate
 
