@@ -43,6 +43,7 @@ permalink: /programming/javascript/api-reference/index-v3.3.9.html
 | [getResolution()](camera-control.html#getresolution)                 | Returns the resolution of the current video input.                                |
 | [getResolutions()](camera-control.html#getresolutions)               | Returns the resolutions supported by the current video input.                     |
 | [videoSrc](camera-control.html#videosrc)                             | Sets or returns the source of the video.                                          |
+| [cameraOpenTimeout](#cameraOpenTimeout)                              | Control the maximum time allowed for opening a selected camera. |
 
 ### Advanced Camera Control
 
