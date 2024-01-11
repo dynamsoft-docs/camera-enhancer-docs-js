@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Auxiliary
-permalink: /programming/javascript/api-reference/auxiliary-v3.3.8.html
+permalink: /programming/javascript/api-reference/auxiliary-v3.3.9.html
 ---
 
 # Auxiliary
@@ -60,28 +60,28 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-cameraEnhancer.on("cameraChange", playCallBackInfo => {
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+enhancer.on("cameraChange", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("cameraOpen", playCallBackInfo => {
+enhancer.on("cameraOpen", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("cameraClose", playCallBackInfo => {
+enhancer.on("cameraClose", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("resolutionChange", playCallBackInfo => {
+enhancer.on("resolutionChange", playCallBackInfo => {
     console.log("width:" + playCallBackInfo.width);
     console.log("height:" + playCallBackInfo.height);
 });
-cameraEnhancer.on("played", playCallBackInfo => {
+enhancer.on("played", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("singleFrameAcquired", dceFrame => {
+enhancer.on("singleFrameAcquired", dceFrame => {
     document.body.appendChild(dceFrame.toCanvas());
 });
-cameraEnhancer.on("frameAddedToBuffer", () => {
-    let dceFrame = cameraEnhancer.getFrameFromBuffer();
+enhancer.on("frameAddedToBuffer", () => {
+    let dceFrame = enhancer.getFrameFromBuffer();
     document.body.appendChild(dceFrame.toCanvas());
 });
 ```
@@ -106,12 +106,12 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let cameraChanged = playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
-    cameraEnhancer.off("cameraChange", cameraChanged);
+    enhancer.off("cameraChange", cameraChanged);
 }
-cameraEnhancer.on("cameraChange", cameraChanged);
+enhancer.on("cameraChange", cameraChanged);
 ```
 
 ## offAll
@@ -133,7 +133,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.offAll("cameraChange");
+enhancer.offAll("cameraChange");
 ```
 
 ## dispose
@@ -157,9 +157,9 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
-cameraEnhancer.dispose();
+enhancer.dispose();
 ```
 
 ## disposed
@@ -175,9 +175,9 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 //...
-let flag = cameraEnhancer.disposed;
+let flag = enhancer.disposed;
 ```
 
 ## getVersion

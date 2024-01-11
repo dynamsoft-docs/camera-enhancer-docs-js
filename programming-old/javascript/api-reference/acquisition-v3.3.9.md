@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition-v3.3.8.html
+permalink: /programming/javascript/api-reference/acquisition-v3.3.9.html
 ---
 
 # Frame Acquisition
@@ -61,7 +61,7 @@ let region = {
     regionBottom: 75, 
     regionMeasuredByPercentage: true
 };
-cameraEnhancer.setScanRegion(region); 
+enhancer.setScanRegion(region); 
 ```
 
 **See also**
@@ -87,7 +87,7 @@ A `Region` object which specifies the scan region.
 **Code Snippet**
 
 ```javascript
-let region = cameraEnhancer.getScanRegion();
+let region = enhancer.getScanRegion();
 ```
 
 **See also**
@@ -113,7 +113,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = cameraEnhancer.getFrame();
+let frameData = enhancer.getFrame();
 document.body.appendChild(frameData.toCanvas());
 ```
 
@@ -140,7 +140,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = cameraEnhancer.getFrameFromBuffer();
+let frameData = enhancer.getFrameFromBuffer();
 document.body.appendChild(frameData.toCanvas());
 ```
 
@@ -168,7 +168,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.clearFrameBuffer();
+enhancer.clearFrameBuffer();
 ```
 
 ## startFetchingLoop
@@ -300,9 +300,10 @@ croppingRegionIndex: number;
 ## singleFrameMode
 
 Returns or sets whether to enable the singe-frame mode. This mode allows CameraEnhancer to fetch images when there is no camera support in the browser or when you just want to process a local file.
+
 > It’s important to note that it will behave differently in different environments:
  > - false: Stream the camera in the browser.
- > - true / "image": Prompt the user to select a local image.
+ > - true \| "image": Prompt the user to select a local image.
  > - "camera":
  >   - On desktop: Prompt the user to select a local image.
  >   - On mobile devices: Invoke the system camera.
@@ -315,11 +316,11 @@ singleFrameMode: boolean | "image" | "camera";
 
 ```javascript
 (async () => {
-    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    cameraEnhancer.on('singleFrameAcquired', frameData => {
+    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    enhancer.on('singleFrameAcquired', frameData => {
         document.body.appendChild(frameData.toCanvas());
     });
-    cameraEnhancer.singleFrameMode = true;
-    await cameraEnhancer.open(true);
+    enhancer.singleFrameMode = true;
+    await enhancer.open(true);
 })();
 ```

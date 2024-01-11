@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: UI
-permalink: /programming/javascript/api-reference/ui-v3.1.html
+permalink: /programming/javascript/api-reference/ui-v3.1.0.html
 ---
 
 # UI Manipulation
@@ -84,7 +84,7 @@ The visible region represented by a `Region` object.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getVisibleRegion();
+enhancer.getVisibleRegion();
 ```
 
 **See also**
@@ -110,7 +110,7 @@ The added `HTMLCanvasElement` object.
 **Code Snippet**
 
 ```javascript
-let cvs = cameraEnhancer.addScanRegionOverlayCanvas();
+let cvs = enhancer.addScanRegionOverlayCanvas();
 let ctx = cvs.getContext('2d');
 ctx.fillStyle = "white";
 ctx.font = '50px serif';
@@ -136,9 +136,9 @@ None.
 **Code Snippet**
 
 ```javascript
-let cvs = cameraEnhancer.addScanRegionOverlayCanvas();
+let cvs = enhancer.addScanRegionOverlayCanvas();
 //...
-cameraEnhancer.removeScanRegionOverlayCanvas(cvs);
+enhancer.removeScanRegionOverlayCanvas(cvs);
 ```
 
 ## ifShowScanRegionMask
@@ -186,7 +186,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.setScanRegionMaskStyle({
+enhancer.setScanRegionMaskStyle({
     lineWidth: 5,
     strokeStyle: "white",
     fillStyle: "rgba(50,50,50,0.3)"
@@ -213,7 +213,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.setVideoFit("cover");
+enhancer.setVideoFit("cover");
 ```
 
 ## getVideoFit
@@ -235,7 +235,7 @@ The value of the `object-fit` CSS property.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getVideoFit();
+enhancer.getVideoFit();
 ```
 
 ## setViewDecorator
@@ -268,7 +268,7 @@ let area = {
     width: 90,
     height: 80
 };
-cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
+enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 **See also**
@@ -314,8 +314,8 @@ let area = {
     width: 90,
     height: 80
 };
-cameraEnhancer.setViewDecoratorLineWidth("rectangle", 10);
-cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
+enhancer.setViewDecoratorLineWidth("rectangle", 10);
+enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorStrokeStyle
@@ -345,8 +345,8 @@ let area = {
     width: 90,
     height: 80
 };
-cameraEnhancer.setViewDecoratorStrokeStyle("rectangle", "white");
-cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
+enhancer.setViewDecoratorStrokeStyle("rectangle", "white");
+enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorFillStyle
@@ -376,8 +376,8 @@ let area = {
     width: 90,
     height: 80
 };
-cameraEnhancer.setViewDecoratorFillStyle("rectangle", "rgba(50,50,50,0.3)");
-cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
+enhancer.setViewDecoratorFillStyle("rectangle", "rgba(50,50,50,0.3)");
+enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## setViewDecoratorMaskFillStyle
@@ -407,8 +407,8 @@ let area = {
     width: 90,
     height: 80
 };
-cameraEnhancer.setViewDecoratorMaskFillStyle("rectangle", "rgba(50,50,50,0.3)");
-cameraEnhancer.setViewDecorator(["rectangle", "crosshair"], area);
+enhancer.setViewDecoratorMaskFillStyle("rectangle", "rgba(50,50,50,0.3)");
+enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 ```
 
 ## createDrawingLayer
@@ -426,7 +426,7 @@ The visible layer represented by a `DrawingLayer` object.
 **Code Snippet**
 
 ```javascript
-let newDrawingLayer = cameraEnhancer.createDrawingLayer();
+let newDrawingLayer = enhancer.createDrawingLayer();
 ```
 
 **See also**
@@ -452,7 +452,7 @@ The `DrawingLayer` object specified by its input id.
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 ```
 
 **Special Notice**
@@ -470,10 +470,10 @@ You can manipulate these DrawingLayers directly, for example, the following code
 > Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.html#updatedrawingstyle).
 
 ```javascript
-// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which cameraEnhancer is bound.
-let dlrDrawingLayer = cameraEnhancer.getDrawingLayer(2);
+// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
+let dlrDrawingLayer = enhancer.getDrawingLayer(2);
 // Creates a new style to be used.
-let newStyleId = cameraEnhancer.createDrawingStyle({
+let newStyleId = enhancer.createDrawingStyle({
     fillStyle: "rgba(100, 75, 245, 0.3)",
     lineWidth: 5,
     paintMode: "strokeAndFill",
@@ -506,7 +506,7 @@ The array of all the `DrawingLayer` objects.
 **Code Snippet**
 
 ```javascript
-let drawingLayers = cameraEnhancer.getDrawingLayers();
+let drawingLayers = enhancer.getDrawingLayers();
 ```
 
 **See also**
@@ -524,7 +524,7 @@ clearDrawingLayers(): void;
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.clearDrawingLayers();
+enhancer.clearDrawingLayers();
 ```
 
 **See also**
@@ -557,7 +557,7 @@ The id of the created `DrawingStyle`.
 **Code Snippet**
 
 ```javascript
-let styleID = cameraEnhancer.createDrawingStyle({    
+let styleID = enhancer.createDrawingStyle({    
     lineWidth: 1.0,
     fillStyle: " rgba(73, 173, 245, 0.8)",
     strokeStyle: " rgba(73, 173, 245, 1)",
@@ -593,7 +593,7 @@ The `DrawingStyle` specified by the input id.
 
 ```javascript
 // Change `styleId` to one that you know exists at runtime. 
-let drawingStyle = cameraEnhancer.getDrawingStyle(100);
+let drawingStyle = enhancer.getDrawingStyle(100);
 ```
 
 **See also**
@@ -615,7 +615,7 @@ The array of all of the `DrawingStyle` objects of current `CameraEnhancer`.
 **Code Snippet**
 
 ```javascript
-let drawingStyles = cameraEnhancer.getDrawingStyles();
+let drawingStyles = enhancer.getDrawingStyles();
 ```
 
 **See also**
@@ -642,7 +642,7 @@ updateDrawingStyle(styleId: number, styleDefinition: DrawingStyle): void;
 
 ```javascript
 // Change the whole style
-cameraEnhancer.updateDrawingStyle(100,  {
+enhancer.updateDrawingStyle(100,  {
     fillStyle: "rgba(100, 75, 245, 0.3)",
     fontFamily: "sans-serif",
     fontSize: 25,
@@ -651,7 +651,7 @@ cameraEnhancer.updateDrawingStyle(100,  {
     strokeStyle: "rgba(73, 173, 245, 1)"
 });
 // Only change the fontSize
-cameraEnhancer.updateDrawingStyle(100, { fontSize: 30 });
+enhancer.updateDrawingStyle(100, { fontSize: 30 });
 ```
 
 **See also**
@@ -671,7 +671,7 @@ If you are using **Dynamsoft Camera Enhancer** with **Dynamsoft Barcode Reader**
 You can update these styles to apply changes to the DrawingLayers used by these products. For example, the following code changes the style for highlighting found barcodes:
 
 ```javascript
-cameraEnhancer.updateDrawingStyle(3,  {
+enhancer.updateDrawingStyle(3,  {
     fillStyle: "rgba(100, 75, 245, 0.3)",
     lineWidth: 5,
     paintMode: "strokeAndFill",
@@ -698,9 +698,9 @@ setOriginalImage(imageData: Uint8Array | Uint8ClampedArray | HTMLCanvasElement, 
 **Code Snippet**
 
 ```javascript
-let currentFrame = cameraEnhancer.getFrame();
+let currentFrame = enhancer.getFrame();
 let cvs = currentFrame.toCanvas();
-cameraEnhancer.setOriginalImage(cvs, cvs.width, cvs.height);
+enhancer.setOriginalImage(cvs, cvs.width, cvs.height);
 ```
 
 ## getOriginalImage
@@ -718,7 +718,7 @@ The current original image in the format that it was passed in and its dimension
 **Code Snippet**
 
 ```javascript
-let image = cameraEnhancer.getOriginalImage();
+let image = enhancer.getOriginalImage();
 ```
 
 ## deleteOriginalImage
@@ -732,7 +732,7 @@ async deleteOriginalImage(): Promise<void>;
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.deleteOriginalImage();
+await enhancer.deleteOriginalImage();
 ```
 
 ## showOriginalImage
@@ -746,7 +746,7 @@ showOriginalImage(): void;
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.showOriginalImage();
+enhancer.showOriginalImage();
 ```
 
 ## hideOriginalImage
@@ -760,7 +760,7 @@ async hideOriginalImage(): Promise<void>;
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.hideOriginalImage();
+await enhancer.hideOriginalImage();
 ```
 
 ## getSelectedDrawingItems
@@ -778,7 +778,7 @@ The array of current selected `DrawingItem` objects.
 **Code Snippet**
 
 ```javascript
-let drawingItems = cameraEnhancer.getSelectedDrawingItems();
+let drawingItems = enhancer.getSelectedDrawingItems();
 ```
 
 **See also**

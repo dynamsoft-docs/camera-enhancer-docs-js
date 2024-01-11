@@ -93,9 +93,9 @@ A promise resolving to an array of `VideoDeviceInfo` objects.
 **Code Snippet**
 
 ```javascript
-let cameras = await cameraEnhancer.getAllCameras();
+let cameras = await enhancer.getAllCameras();
 if (cameras.length) {
-    await cameraEnhancer.selectCamera(cameras[0]);
+    await enhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -124,9 +124,9 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-let cameras = await cameraEnhancer.getAllCameras();
+let cameras = await enhancer.getAllCameras();
 if (cameras.length) {
-    await cameraEnhancer.selectCamera(cameras[0]);
+    await enhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -153,7 +153,7 @@ A `VideoDeviceInfo` object with details about the selected camera.
 **Code Snippet**
 
 ```javascript
-let camera = cameraEnhancer.getSelectedCamera();
+let camera = enhancer.getSelectedCamera();
 console.log(camera.label);
 ```
 
@@ -276,7 +276,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setResolution(width, height);
+await enhancer.setResolution(width, height);
 ```
 
 **See also**
@@ -302,7 +302,7 @@ An array of two numbers representing the resolution in the sequence of [width, h
 **Code Snippet**
 
 ```javascript
-let resolution = cameraEnhancer.getResolution();
+let resolution = enhancer.getResolution();
 console.log(resolution[0] + " x " + resolution[1]);
 ```
 
@@ -330,7 +330,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-const resolutions = await cameraEnhancer.getResolutions();
+const resolutions = await enhancer.getResolutions();
 console.log(resolutions);
 ```
 
@@ -355,7 +355,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setFrameRate(10);
+await enhancer.setFrameRate(10);
 ```
 
 **See also**
@@ -381,7 +381,7 @@ The calculated real-time frame rate.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.getFrameRate();
+await enhancer.getFrameRate();
 ```
 
 ## turnOnTorch
@@ -405,7 +405,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.turnOnTorch();
+await enhancer.turnOnTorch();
 ```
 
 **See also**
@@ -434,7 +434,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.turnOffTorch();
+await enhancer.turnOffTorch();
 ```
 
 **See also**
@@ -461,7 +461,7 @@ An object that describes the zoom settings. As of version 3.2, it contains only 
 **Code Snippet**
 
 ```javascript
-console.log(cameraEnhancer.getZoomSettings().factor);
+console.log(enhancer.getZoomSettings().factor);
 ```
 
 ## setZoom
@@ -489,7 +489,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setZoom({
+await enhancer.setZoom({
     factor: 3
 });
 ```
@@ -517,7 +517,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.resetZoom();
+await enhancer.resetZoom();
 ```
 
 ## getFocusSettings
@@ -549,7 +549,7 @@ The current focus settings.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getFocusSettings();
+enhancer.getFocusSettings();
 ```
 
 **See also**
@@ -590,8 +590,8 @@ A promise that resolves when the operation succeeds.
 > The "continuous" mode invokes the camera to focus automatically and continuously. Use [getCapabilities()](#getcapabilities) to inspect whether the camera supports "continuous" mode.
 
 ```javascript
-if (cameraEnhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('continuous') == 0)) {
-    await cameraEnhancer.setFocus({
+if (enhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('continuous') == 0)) {
+    await enhancer.setFocus({
         mode: "continuous"
     });
 }
@@ -601,13 +601,13 @@ if (cameraEnhancer.getCapabilities().focusMode.find(mode => mode.localeCompare('
 > Use [getCapabilities()](#getcapabilities) to inspect the distance range.
 >
 > ```javascript
-> cameraEnhancer.getCapabilities().focusDistance; > //{max: 1024, min: 0, step: 10}
+> enhancer.getCapabilities().focusDistance; > //{max: 1024, min: 0, step: 10}
 > ```
 >
 > NOTE: If the set distance is between two allowed values, it will be rounded to the nearest value.
 
 ```javascript
-await cameraEnhancer.setFocus({
+await enhancer.setFocus({
     mode: "manual",
     distance: 200
 });
@@ -618,7 +618,7 @@ await cameraEnhancer.setFocus({
 > NOTE: the area is a rectangle defined by its center point and its width and height. All coordinates can be in pixels or percentages, such as "500px" or "50%". Percentages are based on stream dimensions.
 
 ```javascript
-await cameraEnhancer.setFocus({
+await enhancer.setFocus({
     mode: "manual",
     area: {
         centerPoint: {
@@ -654,7 +654,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.enableTapToFocus();
+enhancer.enableTapToFocus();
 ```
 
 ## disableTapToFocus
@@ -676,7 +676,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.disableTapToFocus();
+enhancer.disableTapToFocus();
 ```
 
 ## isTapToFocusEnabled
@@ -698,7 +698,7 @@ None.
 **Code Snippet**
 
 ```javascript
-if (cameraEnhancer.isTapToFocusEnabled()) {
+if (enhancer.isTapToFocusEnabled()) {
     console.log("You can tap or click on the video to focus!");
 }
 ```
@@ -724,7 +724,7 @@ A `MediaTrackCapabilities` object which specifies the values or range of values 
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getCapabilities();
+enhancer.getCapabilities();
 /* Result sample
 {
   aspectRatio: {max: 1280, min: 0.001388888888888889},
@@ -772,7 +772,7 @@ The current values for each constrainable property of the current camera in the 
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getCameraSettings();
+enhancer.getCameraSettings();
 /* Result sample
 {
   aspectRatio: 1.3333333333333333,
@@ -831,7 +831,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setColorTemperature(5000);
+await enhancer.setColorTemperature(5000);
 ```
 
 **See also**
@@ -869,7 +869,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setExposureCompensation(-0.7);
+await enhancer.setExposureCompensation(-0.7);
 ```
 
 **See also**

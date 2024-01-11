@@ -84,9 +84,9 @@ A promise resolving to an array of `VideoDeviceInfo` objects.
 **Code Snippet**
 
 ```javascript
-let cameras = await cameraEnhancer.getAllCameras();
+let cameras = await enhancer.getAllCameras();
 if (cameras.length) {
-    await cameraEnhancer.selectCamera(cameras[0]);
+    await enhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -116,9 +116,9 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-let cameras = await cameraEnhancer.getAllCameras();
+let cameras = await enhancer.getAllCameras();
 if (cameras.length) {
-    await cameraEnhancer.selectCamera(cameras[0]);
+    await enhancer.selectCamera(cameras[0]);
 }
 ```
 
@@ -145,7 +145,7 @@ A `VideoDeviceInfo` object with details about the selected camera.
 **Code Snippet**
 
 ```javascript
-let camera = cameraEnhancer.getSelectedCamera();
+let camera = enhancer.getSelectedCamera();
 console.log(camera.label);
 ```
 
@@ -258,7 +258,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setResolution(width, height);
+await enhancer.setResolution(width, height);
 ```
 
 **See also**
@@ -284,7 +284,7 @@ An array of two numbers representing the resolution in the sequence of [width, h
 **Code Snippet**
 
 ```javascript
-let resolution = await cameraEnhancer.getResolution();
+let resolution = await enhancer.getResolution();
 console.log(resolution.width + " x " + resolution.height);
 ```
 
@@ -309,7 +309,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setFrameRate(10);
+await enhancer.setFrameRate(10);
 ```
 
 **See also**
@@ -335,7 +335,7 @@ The calculated real-time frame rate.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.getFrameRate();
+await enhancer.getFrameRate();
 ```
 
 ## turnOnTorch
@@ -359,7 +359,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.turnOnTorch();
+await enhancer.turnOnTorch();
 ```
 
 **See also**
@@ -388,7 +388,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.turnOffTorch();
+await enhancer.turnOffTorch();
 ```
 
 **See also**
@@ -417,7 +417,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setZoom(400);
+await enhancer.setZoom(2);
 ```
 
 **See also**
@@ -447,7 +447,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setFocus("manual", 400);
+await enhancer.setFocus("manual", 400);
 ```
 
 **See also**
@@ -473,7 +473,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.getFocus();
+await enhancer.getFocus();
 ```
 
 **See also**
@@ -501,7 +501,7 @@ A `MediaTrackCapabilities` object which specifies the values or range of values 
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getCapabilities();
+enhancer.getCapabilities();
 /* Result sample
 {
   aspectRatio: {max: 1280, min: 0.001388888888888889},
@@ -549,7 +549,7 @@ The current values for each constrainable property of the current camera in the 
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.getCameraSettings();
+enhancer.getCameraSettings();
 /* Result sample
 {
   aspectRatio: 1.3333333333333333,
@@ -598,7 +598,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setColorTemperature(5000);
+await enhancer.setColorTemperature(5000);
 ```
 
 **See also**
@@ -626,7 +626,7 @@ A promise that resolves when the operation succeeds.
 **Code Snippet**
 
 ```javascript
-await cameraEnhancer.setExposureCompensation(-0.7);
+await enhancer.setExposureCompensation(-0.7);
 ```
 
 **See also**

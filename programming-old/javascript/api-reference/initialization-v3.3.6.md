@@ -40,7 +40,7 @@ A promise resolving to the created `CameraEnhancer` object.
 
 ```javascript
 (async () => {
-    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 })();
 ```
 
@@ -73,8 +73,8 @@ static defaultUIElementURL: string;
 // The following line is redundant and is for demonstration purposes only.
 Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.1.0/dist/dce.ui.html";
 (async () => {
-    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    await cameraEnhancer.open(true);
+    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    await enhancer.open(true);
 })();
 ```
 
@@ -103,9 +103,9 @@ The HTML element used as the UI by the [CameraEnhancer](#CameraEnhancer) instanc
 <div id="enhancerUIContainer"></div>
 <script>
     (async () => {
-        let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-        await cameraEnhancer.open();
-        document.getElementById("enhancerUIContainer").appendChild(cameraEnhancer.getUIElement());
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        await enhancer.open();
+        document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
     })();
 </script>
 ```
@@ -135,9 +135,9 @@ Besides, the CSS property 'position' of the DIV element must be either 'relative
 <div class="dce-video-container" style="position:relative;width:100%;height:500px;"></div>
 <script>
     (async () => {
-        let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-        await cameraEnhancer.setUIElement(document.getElementsByClassName("dce-video-container")[0]);
-        await cameraEnhancer.open();
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        await enhancer.setUIElement(document.getElementsByClassName("dce-video-container")[0]);
+        await enhancer.open();
     })();
 </script>
 ```
@@ -146,12 +146,12 @@ Besides, the CSS property 'position' of the DIV element must be either 'relative
 <!-- Use a UI element defined in a HTML file. -->
 <script>
     (async () => {
-        let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
         // The following line is not needed if you just want to use the official UI element for CameraEnhancer.
         // Only use it when you want to specify a different HTML page that contains a different UI definition.
-        await cameraEnhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.1.0/dist/dce.ui.html");
+        await enhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@3.1.0/dist/dce.ui.html");
         // Note that because the element is not on the current page, you need to pass "true" when calling open() in order to show it.
-        await cameraEnhancer.open(true);
+        await enhancer.open(true);
     })();
 </script>
 ```

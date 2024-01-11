@@ -40,7 +40,7 @@ A promise resolving to the created `CameraEnhancer` object.
 ```javascript
 let pEnhancer = null;
 (async () => {
-    let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+    let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
 })();
 ```
 
@@ -58,8 +58,8 @@ static defaultUIElementURL: string;
 Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@2.3.2/dist/dce.ui.html";
 let pEnhancer = null;
 (async () => {
-    let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-    await cameraEnhancer.open();
+    let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+    await enhancer.open();
 })();
 ```
 
@@ -87,9 +87,9 @@ The HTML element used as the UI by the [CameraEnhancer](#CameraEnhancer) instanc
 <script>
     let pEnhancer = null;
     (async () => {
-        let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-        await cameraEnhancer.open();
-        document.getElementById("enhancerUIContainer").appendChild(cameraEnhancer.getUIElement());
+        let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+        await enhancer.open();
+        document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
     })();
 </script>
 ```
@@ -118,9 +118,9 @@ A promise that resolves when the operation succeeds.
 <script>
     let pEnhancer = null;
     (async () => {
-        let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-        await cameraEnhancer.setUIElement(document.getElementsByClassName("dce-video-container")[0]);
-        await cameraEnhancer.open();
+        let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+        await enhancer.setUIElement(document.getElementsByClassName("dce-video-container")[0]);
+        await enhancer.open();
     })();
 </script>
 ```
@@ -130,12 +130,12 @@ A promise that resolves when the operation succeeds.
 <script>
     let pEnhancer = null;
     (async () => {
-        let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+        let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
         // The following line is not needed if you just want to use the official UI element.
         // Only use it when you want to specify a different HTML page that contains a different UI definition.
-        await cameraEnhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@2.3.2/dist/dce.ui.html");
+        await enhancer.setUIElement("https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@2.3.2/dist/dce.ui.html");
         // Note that because the element is not on the current page, you need to pass "true" when calling open() in order to show it.
-        await cameraEnhancer.open(true);
+        await enhancer.open(true);
     })();
 </script>
 ```

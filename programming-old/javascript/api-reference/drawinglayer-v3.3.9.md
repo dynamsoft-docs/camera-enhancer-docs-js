@@ -6,7 +6,7 @@ keywords: DrawingLayer, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: DrawingLayer
-permalink: /programming/javascript/api-reference/drawinglayer-v3.3.8.html
+permalink: /programming/javascript/api-reference/drawinglayer-v3.3.9.html
 ---
 
 # DrawingLayer
@@ -43,10 +43,10 @@ You can manipulate these DrawingLayers directly, for example, the following code
 > Alternatively, you can directly change the style already in use instead of replacing it with a new one. Learn more at [updateDrawingStyle](ui.html#updatedrawingstyle).
 
 ```javascript
-// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which cameraEnhancer is bound.
-let dlrDrawingLayer = cameraEnhancer.getDrawingLayer(2);
+// Gets the DrawingLayer used by the Dynamsoft Label Recognizer instance to which enhancer is bound.
+let dlrDrawingLayer = enhancer.getDrawingLayer(2);
 // Creates a new style to be used.
-let newStyleId = cameraEnhancer.createDrawingStyle({
+let newStyleId = enhancer.createDrawingStyle({
     fillStyle: "rgba(100, 75, 245, 0.3)",
     lineWidth: 5,
     paintMode: "strokeAndFill",
@@ -67,8 +67,8 @@ getId(): number;
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-let drawingLayer = cameraEnhancer.createDrawingLayer();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let drawingLayer = enhancer.createDrawingLayer();
 let drawingLayerId = drawingLayer.getId();
 ```
 
@@ -94,7 +94,7 @@ let drawingItems = new Array(
         y: 50
     }, 3)
 )
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.addDrawingItems(drawingItems);
 ```
 
@@ -113,7 +113,7 @@ getDrawingItems() :Array<DrawingItem>);
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 let drawingItems = drawingLayer.getDrawingItems();
 ```
 
@@ -143,7 +143,7 @@ let newDrawingItems = new Array(
         y: 50
     }, 3)
 )
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.setDrawingItems(newDrawingItems);
 ```
 
@@ -163,7 +163,7 @@ hasDrawingItem(drawingItem: DrawingItem): Boolean;
 
 ```javascript
 let drawingItem = new DT_Rect(10, 10, 100, 100, 1);
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 ```
 
@@ -186,7 +186,7 @@ let drawingItems = new Array(
     new DT_Rect(10, 10, 100, 100, 1),
     new DT_Text("label 1", 40, 40, 2)
 )
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.removeDrawingItems(drawingItems);
 ```
 
@@ -205,7 +205,7 @@ clearDrawingItems(): void;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.clearDrawingItems();
 ```
 
@@ -262,7 +262,7 @@ setVisible(visibility: boolean): void;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.setVisible(false);
 ```
 
@@ -277,7 +277,7 @@ isVisible(): boolean;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 let isVisible = drawingLayer.isVisible();
 ```
 
@@ -295,7 +295,7 @@ renderAll(): boolean;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.getDrawingItems()[0].styleId = customId;
 drawingLayer.getDrawingItems()[0].set("x", 100);
 let isRenderedAll = drawingLayer.renderAll();
@@ -318,7 +318,7 @@ onSelectionChange: (selectedDrawingItems: Array<DrawingItem>, deselectedDrawingI
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.onSelectionChange = (selected, deselected) => {
     //do ...
 }
@@ -341,7 +341,7 @@ setMode(newMode: string): void;
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 drawingLayer.setMode("editor");
 ```
 
@@ -360,6 +360,6 @@ The mode of current `DrawingLayer` .
 **Code Snippet**
 
 ```javascript
-let drawingLayer = cameraEnhancer.getDrawingLayer(100);
+let drawingLayer = enhancer.getDrawingLayer(100);
 let mode = drawingLayer.getMode();
 ```

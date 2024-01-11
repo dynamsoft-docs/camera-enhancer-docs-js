@@ -41,24 +41,24 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-cameraEnhancer.on("cameraChange", playCallBackInfo => {
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+enhancer.on("cameraChange", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("cameraOpen", playCallBackInfo => {
+enhancer.on("cameraOpen", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("cameraClose", playCallBackInfo => {
+enhancer.on("cameraClose", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("resolutionChange", playCallBackInfo => {
+enhancer.on("resolutionChange", playCallBackInfo => {
     console.log("width:" + playCallBackInfo.width);
     console.log("height:" + playCallBackInfo.height);
 });
-cameraEnhancer.on("played", playCallBackInfo => {
+enhancer.on("played", playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
 });
-cameraEnhancer.on("singleFrameAcquired", dceFrame => {
+enhancer.on("singleFrameAcquired", dceFrame => {
     document.body.appendChild(dceFrame.canvas);
 });
 ```
@@ -84,12 +84,12 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let cameraChanged = playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
-    cameraEnhancer.off("cameraChange", cameraChanged);
+    enhancer.off("cameraChange", cameraChanged);
 }
-cameraEnhancer.on("cameraChange", cameraChanged);
+enhancer.on("cameraChange", cameraChanged);
 ```
 
 ## dispose
@@ -113,9 +113,9 @@ None.
 **Code Snippet**
 
 ```javascript
-let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
-cameraEnhancer.dispose();
+enhancer.dispose();
 ```
 
 ## getVersion

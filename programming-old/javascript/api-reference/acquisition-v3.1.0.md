@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition-v3.1.html
+permalink: /programming/javascript/api-reference/acquisition-v3.1.0.html
 ---
 
 # Frame Acquisition
@@ -60,7 +60,7 @@ let region = {
 	regionBottom: 75, 
 	regionMeasuredByPercentage: true
 };
-cameraEnhancer.setScanRegion(region); 
+enhancer.setScanRegion(region); 
 ```
 
 **See also**
@@ -86,7 +86,7 @@ A `Region` object which specifies the scan region.
 **Code Snippet**
 
 ```javascript
-let region = cameraEnhancer.getScanRegion();
+let region = enhancer.getScanRegion();
 ```
 
 **See also**
@@ -112,7 +112,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = cameraEnhancer.getFrame();
+let frameData = enhancer.getFrame();
 document.body.appendChild(frameData.toCanvas());
 ```
 
@@ -139,7 +139,7 @@ A `DCEFrame` object which contains the image data of the frame and related infor
 **Code Snippet**
 
 ```javascript
-let frameData = cameraEnhancer.getFrameFromBuffer();
+let frameData = enhancer.getFrameFromBuffer();
 document.body.appendChild(frameData.toCanvas());
 ```
 
@@ -288,11 +288,11 @@ singleFrameMode: boolean;
 
 ```javascript
 (async () => {
-    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    cameraEnhancer.on('singleFrameAcquired', frameData => {
+    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    enhancer.on('singleFrameAcquired', frameData => {
         document.body.appendChild(frameData.toCanvas());
     });
-    cameraEnhancer.singleFrameMode = true;
-    await cameraEnhancer.open(true);
+    enhancer.singleFrameMode = true;
+    await enhancer.open(true);
 })();
 ```

@@ -37,6 +37,8 @@ enhancerFeedback.beep();
 
 Trigger a vibrate when the method is called.
 
+> [Sticky user activation](https://developer.mozilla.org/en-US/docs/Web/Security/User_activation){:target="_blank"} is required for triggering a "vibration", read more [here](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#security){:target="_blank"}.
+
 ```typescript
 vibrate(): void;
 ```
