@@ -46,8 +46,9 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
 
 To use the SDK, we first include the following packages:
 
-1. `dynamsoft-camera-enhancer`: required, it provides the camera related functionalities used in this guide.
-2. `dynamsoft-core`: required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
+1. `dynamsoft-camera-enhancer`: Required, it provides the camera related functionalities used in this guide.
+2. `dynamsoft-core`: Required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
+3. `dynamsoft-license`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
 
 #### Use a CDN
 
@@ -265,10 +266,12 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
 
   ```html
   <select class="dce-sel-resolution">
+      <option class="dce-opt-gotResolution" value="got"></option>
       <option data-width="1920" data-height="1080">1920x1080</option>
       <option data-width="1280" data-height="720">1280x720</option>
       <option data-width="640" data-height="480">640x480</option>
   </select>
+  
   ```
 
   > Generally, you need to provide a resolution that the camera supports. However, in case a camera does not support the specified resolution, it usually uses the closest supported resolution. As a result, the selected resolution may not be the actual resolution. In this case, add an option with the class name `dce-opt-gotResolution` (as shown above) and the SDK will then use it to show the **actual resolution**.
