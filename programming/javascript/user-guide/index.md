@@ -271,7 +271,6 @@ Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
       <option data-width="1280" data-height="720">1280x720</option>
       <option data-width="640" data-height="480">640x480</option>
   </select>
-  
   ```
 
   > Generally, you need to provide a resolution that the camera supports. However, in case a camera does not support the specified resolution, it usually uses the closest supported resolution. As a result, the selected resolution may not be the actual resolution. In this case, add an option with the class name `dce-opt-gotResolution` (as shown above) and the SDK will then use it to show the **actual resolution**.
