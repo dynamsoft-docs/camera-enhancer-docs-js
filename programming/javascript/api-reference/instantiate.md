@@ -1,12 +1,12 @@
 ---
 layout: default-layout
-title: Initialization - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Initialization.
-keywords: camera enhancer, initialization, javascript, js
+title: Instantiation - Dynamsoft Camera Enhancer JavaScript API
+description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Instantiation.
+keywords: camera enhancer, Instantiation, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
-breadcrumbText: Initialization
+breadcrumbText: Instantiation
 permalink: /programming/javascript/api-reference/instantiate.html
 ---
 
@@ -42,7 +42,7 @@ A promise resolving to the created `CameraEnhancer` object.
 ```javascript
 (async () => {
     let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
+    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
 })();
 ```
 
@@ -70,10 +70,10 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
 //...
-enhancer.dispose();
+cameraEnhancer.dispose();
 ```
 
 **See also**
@@ -91,9 +91,9 @@ readonly disposed: boolean;
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 //...
-let flag = enhancer.disposed;
+let flag = cameraEnhancer.disposed;
 ```
 
 **See also**
@@ -137,4 +137,4 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See also**
 
-[Warning](interface/warning.md)
+[Warning]([interface/warning.md](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html))

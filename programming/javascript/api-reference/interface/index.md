@@ -25,4 +25,3 @@ Dynamsoft Camera Enhancer JavaScript SDK has the following interfaces.
 * [TipConfig](./tipconfig.md)
 * [VideoDevice](./videodevice.md)
 * [VideoFrameTag](.videoframetag.md)
-* [Warning](./warning.md)

@@ -41,7 +41,7 @@ The `CameraView` instance used by the `CameraEnhancer` instance.
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 cameraView.getVisibleRegionOfVideo();
 ```
 
@@ -69,7 +69,7 @@ None.
 
 ```javascript
 let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-enhancer.setCameraView(cameraView);
+cameraEnhancer.setCameraView(cameraView);
 ```
 
 ## getVideoEl
@@ -91,7 +91,7 @@ The video element.
 **Code Snippet**
 
 ```javascript
-let videoElement = enhancer.getVideoEl();
+let videoElement = cameraEnhancer.getVideoEl();
 ```
 <!--
 ## setVideoEl
@@ -114,7 +114,7 @@ A promise resolving to none.
 
 ```javascript
 let el = document.getElementById("videoElement");
-enhancer.setVideoEl(el);
+cameraEnhancer.setVideoEl(el);
 ```
 -->
 
@@ -137,7 +137,7 @@ The converted point.
 **Code Snippet**
 
 ```javascript
-enhancer.convertToPageCoordinates({x: 0, y: 0});
+cameraEnhancer.convertToPageCoordinates({x: 0, y: 0});
 ```
 
 **See also**
@@ -163,7 +163,7 @@ The converted point.
 **Code Snippet**
 
 ```javascript
-enhancer.convertToClientCoordinates({x: 0, y: 0});
+cameraEnhancer.convertToClientCoordinates({x: 0, y: 0});
 ```
 
 **See also**

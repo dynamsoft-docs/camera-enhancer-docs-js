@@ -80,7 +80,7 @@ Read more on [how to host the library](#hosting-the-library).
 To use the library, we need to create a `CameraEnhancer` object first.
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 ```
 
 #### Configure the `CameraEnhancer` object
@@ -91,9 +91,9 @@ As shown in the code snippet below, before opening the video stream, we need to 
 <!-- Define an element to hold the UI element -->
 <div id="enhancerUIContainer"></div>
 <script>
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-    document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
-    await enhancer.open();
+    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    document.getElementById("enhancerUIContainer").appendChild(cameraEnhancer.getUIElement());
+    await cameraEnhancer.open();
 </script>
 ```
 
@@ -118,7 +118,7 @@ Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "THE-URL-TO-THE-FILE";
 ```html
 <div id="enhancerUIContainer"></div>
 <script>
-    document.getElementById('enhancerUIContainer').appendChild(enhancer.getUIElement());
+    document.getElementById('enhancerUIContainer').appendChild(cameraEnhancer.getUIElement());
 </script>
 ```
 
@@ -133,9 +133,9 @@ Dynamsoft.DCE.CameraEnhancer.defaultUIElementURL = "THE-URL-TO-THE-FILE";
 <script>
     let pEnhancer = null;
     (async () => {
-        let enhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
-        await enhancer.setUIElement(document.getElementById('div-video-container'));
-        await enhancer.open();
+        let cameraEnhancer = await (pEnhancer = pEnhancer || Dynamsoft.DCE.CameraEnhancer.createInstance());
+        await cameraEnhancer.setUIElement(document.getElementById('div-video-container'));
+        await cameraEnhancer.open();
     })();
 </script>
 ```
@@ -173,7 +173,7 @@ Once you have downloaded the library, you can locate the "dist" directory and co
 
 * `dce.js` // The main library file
 * `dce.browser.mjs` // For using the library as a module (`<script type="module">`)
-* `dce.ui.html` // Defines the default enhancer UI
+* `dce.ui.html` // Defines the default UI
 
 ### Step Two: Configure the Server
 

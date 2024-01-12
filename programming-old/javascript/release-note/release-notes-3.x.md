@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: JavaScript 3.x Release Notes  - Dynamsoft Camera Enhancer
-description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK v 2.x.
+description: This is the Release Notes page for Dynamsoft Camera Enhancer JavaScript SDK v 3.x.
 keywords:  camera enhancer, release notes, javascript
 needAutoGenerateSidebar: true
 noTitleIndex: true
@@ -43,7 +43,7 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 ### Changed
 
-* Updated the API singleFrameMode to allow direct camera access on mobile devices.
+* Updated the API `singleFrameMode` to allow direct camera access on mobile devices.
 
 ### Fixed
 
