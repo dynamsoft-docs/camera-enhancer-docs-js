@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Acquisition
-permalink: /programming/javascript/api-reference/acquisition.html
+permalink: /programming/javascript/api-reference/acquisition-v4.0.0.html
 ---
 
 # Class CameraEnhancer

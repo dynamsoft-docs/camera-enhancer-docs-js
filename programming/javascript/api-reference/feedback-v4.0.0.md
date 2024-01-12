@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: Feedback
-permalink: /programming/javascript/api-reference/feedback.html
+permalink: /programming/javascript/api-reference/feedback-v4.0.0.html
 ---
 
 # Class Feedback
