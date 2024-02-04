@@ -11,11 +11,11 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
-## 3.3.10 (//2024)
+## 3.3.10 (02/05/2024)
 
 ### Added
 
-* Added a new export type `DrawingLayer`.
+* Added type [`DrawingLayer`](../api-reference/drawinglayer.html).
 
 ### Fixed
 
