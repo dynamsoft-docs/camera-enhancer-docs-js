@@ -11,6 +11,17 @@ permalink: /programming/javascript/release-note/release-notes-3.x.html
 
 # Release Notes - JavaScript 3.x
 
+## 3.3.10 (//2024)
+
+### Added
+
+* Added a new export type `DrawingLayer`.
+
+### Fixed
+
+* Fixed the problem of not being able to open the camera in the WebView of HarmonyOS.
+* Fixed an issue on iOS 17 where reopening the camera after leaving the browser might fail.
+
 ## 3.3.9 (12/06/2023)
 
 ### Added

@@ -7,7 +7,7 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: CameraView
-permalink: /programming/javascript/api-reference/cameraview-v3.3.9.html
+permalink: /programming/javascript/api-reference/cameraview-v3.3.10.html
 ---
 
 # CameraView

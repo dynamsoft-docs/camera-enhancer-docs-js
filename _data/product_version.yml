@@ -8,6 +8,7 @@ version_info_list_js:
     - 4.0.0
   - value: 3.x
     child:
+    - 3.0.10
     - 3.3.9
     - 3.3.8
     - 3.3.7
