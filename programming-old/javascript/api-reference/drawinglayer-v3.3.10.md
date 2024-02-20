@@ -11,7 +11,7 @@ permalink: /programming/javascript/api-reference/drawinglayer-v3.3.10.html
 
 # DrawingLayer
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getId()](#getid) | Returns the ID of the DrawingLayer. |
 | [addDrawingItems()](#adddrawingitems) | Adds DrawingItem(s) to the DrawingLayer. |
@@ -100,7 +100,7 @@ drawingLayer.addDrawingItems(drawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)
 
 ## getDrawingItems
 
@@ -119,7 +119,7 @@ let drawingItems = drawingLayer.getDrawingItems();
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)
 
 ## setDrawingItems
 
@@ -149,7 +149,7 @@ drawingLayer.setDrawingItems(newDrawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)
 
 ## hasDrawingItem
 
@@ -169,7 +169,7 @@ let hasDrawingItem = drawingLayer.hasDrawingItem(drawingItem);
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)
 
 ## removeDrawingItems
 
@@ -192,7 +192,7 @@ drawingLayer.removeDrawingItems(drawingItems);
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)
 
 ## clearDrawingItems
 
@@ -224,11 +224,11 @@ setDrawingStyle(styleId: number, mediaType?: string, styleSelector?: string): vo
 
 **Parameters**
 
-`styleId` : specifies a style by its ID.
+`styleId`: specifies a style by its ID.
 
-`mediaType` : specifies a mediaType, allowed values are "rect", "arc", "line", "polygon", "text", "image" and "all".
+`mediaType`: specifies a mediaType, allowed values are "rect", "arc", "line", "polygon", "text", "image" and "all".
 
-`styleSelector` : specifies a selector, allowed values are "default", "selected" and "all".
+`styleSelector`: specifies a selector, allowed values are "default", "selected" and "all".
 
 **Code Snippet**
 
@@ -245,7 +245,7 @@ drawingLayer.setDrawingStyle(1, "rect", "selected");
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.html)
+[DrawingStyle](interface/drawingstyle.html)
 
 ## setVisible
 
@@ -257,7 +257,7 @@ setVisible(visibility: boolean): void;
 
 **Parameters**
 
-`visibility` : Specifies true to show and false to hide the `DrawingLayer` .
+`visibility`: Specifies true to show and false to hide the `DrawingLayer` .
 
 **Code Snippet**
 
@@ -311,9 +311,9 @@ onSelectionChange: (selectedDrawingItems: Array<DrawingItem>, deselectedDrawingI
 
 **Parameters**
 
-`selectedDrawingItems` : specifies the selected `DrawingItem` objects.
+`selectedDrawingItems`: specifies the selected `DrawingItem` objects.
 
-`deselectedDrawingItems` : specifies the deselected `DrawingItem` objects.
+`deselectedDrawingItems`: specifies the deselected `DrawingItem` objects.
 
 **Code Snippet**
 
@@ -334,7 +334,7 @@ setMode(newMode: string): void;
 
 **Parameters**
 
-`newMode` : specifies the new mode. At present, the allowed values are "editor" and "viewer" and the default is "viewer".
+`newMode`: specifies the new mode. At present, the allowed values are "editor" and "viewer" and the default is "viewer".
 
 > Compared with the "viewer" mode, the "editor" mode shows the "corners" and a "rotate control point" for a selected DrawingItem, which, when dragged, modify the original shape in different ways.
 

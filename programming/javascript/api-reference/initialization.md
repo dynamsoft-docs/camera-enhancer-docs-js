@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/initialization.html
 
 # Initialization APIs
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [createInstance()](#createinstance) | Creates a `CameraEnhancer` instance. |
 | [defaultUIElementURL](#defaultuielementurl) | Returns or sets the URL of the .html file that defines the default UI Element. |
@@ -121,7 +121,7 @@ setUIElement(elementOrURL: HTMLElement | string): Promise<void>;
 
 **Parameters**
 
-`elementOrURL` : specifies an existing element on the page or the URL of an HTML file which contains an element.
+`elementOrURL`: specifies an existing element on the page or the URL of an HTML file which contains an element.
 
 **Return value**
 
@@ -207,6 +207,7 @@ None.
 A promise resolving to an object with properties `ok` and `message`.
 
 `ok`: Indicates whether the camera access test was successful (true) or not (false).
+
 `message`: A string type message to provide additional information or details about the camera access test.
 
 **Code Snippet**

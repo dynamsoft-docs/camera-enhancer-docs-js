@@ -11,16 +11,19 @@ permalink: /programming/javascript/api-reference/interface/resolution.html
 
 # Resolution
 
-`interface` Resolution
+The `Resolution` interface defines the resolution of a camera by specifying how many pixels there are in each frame of a video stream, both horizontally and vertically.
 
-This interface is used to measure how many pixels there are in each frame of a live video stream, both horizontally and vertically. For instance, a resolution of 1920x1080 signifies that the screen can display 1920 pixels across each row (width) and 1080 pixels down each column (height).
+```ts
+interface Resolution {
+    height: number;
+    width: number;
+}
+```
 
-It is denoted by a pair of numbers:
+## height
 
-* width: `number`
+The height of the video frame.
 
-    Specifies the number of horizontal pixels.
+## width
 
-* height: `number`
-    
-    Specifies the number of vertical pixels.
+The width of the video frame.

@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/acquisition-v4.0.0.html
 
 ## Frame Acquisition
 
-| API Name                                                              | Description                                                                                         |
+| Name                                                             | Description                                                                                         |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [setScanRegion()](#setscanregion)                                     | Specifies which part of the original video is considered when processing frames.                    |
 | [getScanRegion()](#getscanregion)                                     | Returns the scan region.                                                                            |
@@ -69,8 +69,9 @@ cameraEnhancer.setScanRegion(scanRegion);
 
 **See also**
 
-* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
+[Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
+
+[DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
 
 ## getScanRegion
 
@@ -96,7 +97,7 @@ let region = cameraEnhancer.getScanRegion();
 
 **See also**
 
-* [DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
+[DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
 
 ## fetchImage
 
@@ -123,7 +124,7 @@ document.body.appendChild(image.toCanvas());
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
+[DCEFrame](interface/dceframe.md)
 
 ## addImageToBuffer
 
@@ -135,7 +136,7 @@ addImageToBuffer(image: DSImageData): void;
 
 **Parameters**
 
-* `image`: the image to be added to buffer.
+`image`: the image to be added to buffer.
 
 **Return value**
 
@@ -158,7 +159,7 @@ setImageFetchInterval(interval: number): void;
 
 **Parameters**
 
-* `interval`: specifies the interval in milliseconds.
+`interval`: specifies the interval in milliseconds.
 
 **Return value**
 
@@ -246,7 +247,7 @@ setMaxImageCount: (count: number) void;
 
 **Parameters**
 
-* `count`: specifies how many images can be held in buffer.
+`count`: specifies how many images can be held in buffer.
 
 **Return value**
 
@@ -312,7 +313,7 @@ hasImage(imageId: number): boolean;
 
 **Parameters**
 
-* `imageId`: specifies an image by its id.
+`imageId`: specifies an image by its id.
 
 **Return value**
 
@@ -350,7 +351,7 @@ document.body.appendChild(image.toCanvas());
 
 **See also**
 
-* [DCEFrame](interface/dceframe.md)
+[DCEFrame](interface/dceframe.md)
 
 ## setNextImageToReturn
 
@@ -362,7 +363,7 @@ setNextImageToReturn(imageId: number, keepInBuffer?: boolean): void;
 
 **Parameters**
 
-* `imageId`: specifies the image by its id.  
+`imageId`: specifies the image by its id.  
 * `keepInBuffer`(optional): specifies whether to keep the image in buffer after it is returned.
 
 **Return value**
@@ -387,7 +388,7 @@ setBufferOverflowProtectionMode(mode:EnumBufferOverflowProtectionMode): void;
 
 **Parameters**
 
-* `mode`: specifies the protection mode.
+`mode`: specifies the protection mode.
 
 **Return value**
 
@@ -401,7 +402,7 @@ cameraEnhancer.setBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.
 
 **See also**
 
-* [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
+[EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
 ## getBufferOverflowProtectionMode
 
@@ -413,7 +414,7 @@ getBufferOverflowProtectionMode(): EnumBufferOverflowProtectionMode;
 
 **Parameters**
 
-* `mode`: specifies the protection mode.
+`mode`: specifies the protection mode.
 
 **Return value**
 
@@ -427,7 +428,7 @@ cameraEnhancer.getBufferOverflowProtectionMode(EnumBufferOverflowProtectionMode.
 
 **See also**
 
-* [EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
+[EnumBufferOverflowProtectionMode](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
 
 ## isBufferEmpty
 
@@ -489,7 +490,7 @@ setPixelFormat(pixelFormat: EnumImagePixelFormat.IPF_GRAYSCALED
 
 **Parameters**
 
-* `pixelFormat`: specifies the format of the image to return.
+`pixelFormat`: specifies the format of the image to return.
 
 **Return value**
 
@@ -505,7 +506,7 @@ document.body.appendChild(image.toCanvas());
 
 **See also**
 
-* [EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js)
+[EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js)
 
 ## singleFrameMode
 

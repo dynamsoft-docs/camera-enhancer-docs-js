@@ -11,63 +11,33 @@ permalink: /programming/javascript/api-reference/interface/CameraTestResponse.ht
 
 # CameraTestResponse
 
-`interface` CameraTestResponse
+The `CameraTestResponse` interface is designed to encapsulate the response from a camera test operation by the method `Dynamsoft.DCE.CameraEnhancer.testCameraAccess()`, providing a standardized format for assessing the outcome. 
 
-* ok: `boolean`
-
-  Specifies whether there is an available camera.
-
-* message: `string`
-    
-  The response string.
-
-The possible responses are
-
-```json
-{
-    ok: false,
-    message: "Insecure context."
+```ts
+export interface CameraTestResponse {
+    /**
+     * 
+     */
+    ok: boolean;
+    /**
+     * Provides a descriptive message about the outcome of the camera test.
+     * - For a successful test (`ok: true`), this message might confirm the operational status or provide additional success-related information.
+     * - For a failed test (`ok: false`), it typically contains details about the error or issue encountered during the test, which could be useful for troubleshooting or informing the user about the failure reason.
+     */
+    message: string;
 }
 ```
 
-```json
-{
-    ok: false,
-    message: "No camera detected."
-}
-```
+## ok
 
-```json
-{
-    ok: false,
-    message: "No permission to access camera."
-}
-```
+Indicates the success or failure of the camera test.
 
-```json
-{
-    ok: false,
-    message: "Some problem occurred which prevented the device from being used."
-}
-```
+- `true` signifies that the test was successful, meaning the camera is operational and ready to use.
+- `false` implies that the test failed, indicating an issue with accessing or using the camera.
 
-```json
-{
-    ok: false,
-    message: "A hardware error occurred."
-}
-```
+## message
 
-```json
-{
-    ok: false,
-    message: "User media support is disabled."
-}
-```
+Provides a descriptive message about the outcome of the camera test.
 
-```json
-{
-    ok: true,
-    message: " Successfully accessed the camera."
-}
-```
+- For a successful test (`ok: true`), this message might confirm the operational status or provide additional success-related information.
+- For a failed test (`ok: false`), it typically contains details about the error or issue encountered during the test, which could be useful for troubleshooting or informing the user about the failure reason.

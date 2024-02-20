@@ -12,153 +12,119 @@ permalink: /programming/javascript/api-reference/drawingitem.html
 
 # Class DrawingItem
 
-| API Name                                        | Description                                                                                                |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [drawingLayerId](drawingitem.md#drawinglayerid) | Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.                                       |
-| [mediaType](drawingitem.md#mediatype)           | Returns the `mediaType` of the `DrawingItem`.                                                              |
-| [coordinateBase](drawingitem.md#coordinatebase) | Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`. |
-| [drawingStyleId](drawingitem.md#drawingstyleid) | Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.                            |
-| [setState()](drawingitem.md#setstate)           | Sets whether the `DrawingItem` is selected or not.                                                         |
-| [getState()](drawingitem.md#getstate)           | Returns the state of the `DrawingItem`.                                                                    |
-| [on()](drawingitem.md#on)                       | Adds an event listener to the `DrawingItem` for the event specified by `eventName`.                        |
-| [off()](drawingitem.md#off)                     | Removes an event listener to the `DrawingItem` for the event specified by `eventName`.                     |
-| [addNote()](drawingitem.md#addnote)             | Adds a `Note` to this `DrawingItem`.                                                                       |
-| [getNote()](drawingitem.md#getnote)             | Returns a `Note` specified by its name.                                                                    |
-| [hasNote()](drawingitem.md#hasnote)             | Returns whether a `Note` with the specified name exists on this `DrawingItem`.                             |
-| [updateNote()](drawingitem.md#updatenote)       | Updates the content of a `Note` specified by its name.                                                     |
-| [deleteNote()](drawingitem.md#deletenote)       | Deletes a `Note` specified by its name.                                                                    |
-| [getAllNotes()](drawingitem.md#getallnotes)     | Returns all `Notes` on the `DrawingItem`.                                                                  |
-| [clearNotes()](drawingitem.md#clearnotes)       | Deletes all `Notes` on the `DrawingItem`.                                                                  |
+The `DrawingItem` class specifies the foundational attributes and functionalities of a graphical element, including shapes, images, or textual sections, intended for rendering on a canvas. Functioning as an abstract class, it cannot be instantiated on its own. Instead, it serves as a blueprint for more specific subclasses, such as `QuadDrawingItem`, `TextDrawingItem`, and others, which inherit and tailor these properties and methods to suit diverse graphical requirements and contexts.
 
----
+In this version, the subclasses include:
 
-Child classes based on `DrawingItem`:
+- [ImageDrawingItem](./imagedrawingitem.md)
+- [LineDrawingItem](./linedrawingitem.md)
+- [QuadDrawingItem](./quaddrawingitem.md)
+- [RectDrawingItem](./rectdrawingitem.md)
+- [TextDrawingItem](./textdrawingitem.md)
 
-## Class LineDrawingItem
-
-| API Name                                            | Description                                                       |
-| --------------------------------------------------- | ----------------------------------------------------------------- |
-| [LineDrawingItem()](drawingitem.md#linedrawingitem) | Constructor of a `LineDrawingItem`.                               |
-| [getLine()](drawingitem.md#getline)                 | Returns the `LineSegment` object the item is based on.            |
-| [setLine()](drawingitem.md#setline)                 | Specifies a `LineSegment` object to be used for drawing the line. |
-
-## Class RectDrawingItem
-
-| API Name                                            | Description                                                |
-| --------------------------------------------------- | ---------------------------------------------------------- |
-| [RectDrawingItem()](drawingitem.md#rectdrawingitem) | Constructor of a `RectDrawingItem`.                        |
-| [getRect()](drawingitem.md#getrect)                 | Returns the `Rect` object the item is based on.            |
-| [setRect()](drawingitem.md#setrect)                 | Specifies a `Rect` object to be used for drawing the item. |
-
-## Class QuadDrawingItem
-
-| API Name                                            | Description                                                         |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [QuadDrawingItem()](drawingitem.md#quaddrawingitem) | Constructor of a `QuadDrawingItem`.                                 |
-| [getQuad()](drawingitem.md#getquad)                 | Returns the `Quadrilateral` object the item is based on.            |
-| [setQuad()](drawingitem.md#setquad)                 | Specifies a `Quadrilateral` object to be used for drawing the item. |
-
-## Class TextDrawingItem
-
-| API Name                                            | Description                                                         |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [TextDrawingItem()](drawingitem.md#textdrawingitem) | Constructor of a `TextDrawingItem`.                                 |
-| [getText()](drawingitem.md#gettext)                 | Returns the text drawn.                                             |
-| [setText()](drawingitem.md#settext)                 | Specifies the text to draw.                                         |
-| [getTextRect()](drawingitem.md#gettextrect)         | Returns the `Rect` object which determines where the text is drawn. |
-| [setTextRect()](drawingitem.md#settextrect)         | Specifies a `Rect` object in which the text is drawn.               |
-
-## Class ImageDrawingItem
-
-| API Name                                                  | Description                                                                       |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
-| [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
-| [getImage()](drawingitem.md#getimage)                     | Returns the image drawn.                                                          |
-| [setImage()](drawingitem.md#setimage)                     | Specifies the image to draw.                                                      |
-| [getImageRect()](drawingitem.md#gettextrect)              | Returns the `Rect` object which determines where the image is drawn.              |
-| [setImageRect()](drawingitem.md#settextrect)              | Specifies a `Rect` object in which the image is drawn.                            |
-
-<!--
-## Class GroupDrawingItem
-
-| API Name                                                      | Description                                                                       |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [GroupDrawingItem()](drawingitem.md#groupdrawingitem)         | Constructor of a `GroupDrawingItem`.                                              |
-| [getChildDrawingItems](drawingitem.md#getchilddrawingitems)   | Returns the child drawing items in the group.                                     |
-| [setChildDrawingItems()](drawingitem.md#setchilddrawingitems) | Sets the child drawing items in the group.                                        |
--->
-## drawingLayerId
-
-Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.
-
-```typescript
-readonly drawingLayerId: number;
-```
-
-## mediaType
-
-Returns the `mediaType` of the `DrawingItem`.
-
-```typescript
-readonly mediaType: EnumDrawingItemMediaType;
-```
+| Name                              | Description                                                                                            |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [coordinateBase](#coordinatebase) | Returns or sets the coordinate system base.                                                            |
+| [drawingLayerId](#drawinglayerid) | Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to.                           |
+| [drawingStyleId](#drawingstyleid) | Returns or sets the numeric ID for the `DrawingStyle` that applies to this `DrawingItem`.              |
+| [mediaType](#mediatype)           | Returns an enumeration value which indicates the type of this `DrawingItem` (e.g., image, line, text). |
+| [getState()](#getstate)           | Returns the current state of the `DrawingItem`                                                         |
+| [on()](#on)                       | Binds a listener for a specific event. `eventName`.                                                    |
+| [off()](#off)                     | Unbinds a listener for a specific event.                                                               |
+| [addNote()](#addnote)             | Adds a `Note` object to this `DrawingItem`.                                                            |
+| [getNote()](#getnote)             | Returns a `Note` object specified by its name, if it exists.                                           |
+| [getNotes()](#getnotes)           | Returns a collection of all existing `Note` objects on this `DrawingItem`.                             |
+| [hasNote()](#hasnote)             | Checks if a `Note` object with the specified name exists.                                              |
+| [updateNote()](#updatenote)       | Updates the content of a specified `Note` object.                                                      |
+| [deleteNote()](#deletenote)       | Deletes a `Note` object specified by its name.                                                         |
+| [clearNotes()](#clearnotes)       | Deletes all `Note` objects on this `DrawingItem`.                                                      |
 
 ## coordinateBase
 
-Returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`.
+Returns or sets the coordinate system base with a string:
+
+- "view" for viewport-based coordinates or 
+- "image" for image-based coordinates.
 
 ```typescript
 coordinateBase: string;
 ```
 
+## drawingLayerId
+
+Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to. 
+
+```typescript
+readonly drawingLayerId: number;
+```
+
 ## drawingStyleId
 
-Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.
+Returns or sets the numeric ID for the `DrawingStyle` that applies to this `DrawingItem`.
+
+> Invoke [renderAll()](./drawinglayer.md#renderall) for the new `DrawingStyle` to take effect.
 
 ```typescript
 drawingStyleId?: number;
 ```
 
+## mediaType
+
+Returns an enumeration value which indicates the type of this `DrawingItem` (e.g., image, line, text).
+
+```typescript
+readonly mediaType: EnumDrawingItemMediaType;
+```
+
+**See Also**
+
+[EnumDrawingItemMediaType](./enum/enumdrawingitemmediatype.md)
+
 ## getState
 
-Returns the state of the `DrawingItem`.
+Returns the current state of the `DrawingItem`.
 
 ```typescript
 getState(): EnumDrawingItemState;
 ```
 
+**Parameters**
+
+None.
+
 **Return Value**
 
-A value of type `EnumDrawingItemState`.
+The current state of the `DrawingItem`, of type `EnumDrawingItemState`.
 
-**See also**
+**See Also**
 
-* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
+[EnumDrawingItemState](./enum/enumdrawingitemstate.md)
 
 ## on
 
-Adds an event listener to the `DrawingItem` for the event specified by `eventName`.
+Binds a listener for a specific event.
 
 ```typescript
-on(eventName: string, listener(event: DrawingItemEvent): void): void;
+on(eventName: string, listener: (event: DrawingItemEvent) => void): void;
 ```
 
 **Parameters**
 
-`eventName`: The name of the event you want to listen to.  
+`eventName`: specifies the event by its name. Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
 
-`listener()`: A function that will be called when the specified event occurs.
+`listener`: the event listener.
 
-> Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
+**Return Value**
+
+None.
 
 **See also**
 
-* [DrawingItemEvent](interface/drawingitemevent.md)
+[DrawingItemEvent](interface/drawingitemevent.md)
 
 ## off
 
-Removes an event listener to the `DrawingItem` for the event specified by `eventName`.
+Unbinds a listener for a specific event.
 
 ```typescript
 off(eventName: string, listener(event: DrawingItemEvent): void): void;
@@ -166,17 +132,21 @@ off(eventName: string, listener(event: DrawingItemEvent): void): void;
 
 **Parameters**
 
-`eventName`: The name of the event you want to listen to.  
-`listener()`: A function that will be called when the specified event occurs.
+`eventName`: specifies the event by its name. Allowed events are: `mousedown`, `mouseup`, `dblclick`, `mouseover` and `mouseout`.
+
+`listener`: the event listener.
+
+**Return Value**
+
+None.
 
 **See also**
 
-* [DrawingItemEvent](interface/drawingitemevent.md)
-* [on](#on)
+[DrawingItemEvent](interface/drawingitemevent.md)
 
 ## addNote
 
-Adds a `Note` to this `DrawingItem`.
+Adds a `Note` object to this `DrawingItem`.
 
 ```typescript
 addNote(note: Note, replace?: boolean): void;
@@ -184,16 +154,41 @@ addNote(note: Note, replace?: boolean): void;
 
 **Parameters**
 
-`note`: Expects an object that implements the `Note` interface.
-`replace`(optional): Determines whether to replace the `Note` if the name of the `Note` already exists.
+`note`: specifies the `Note` object.
+
+`replace`: [Optional] whether to replace an existing note if the notes share the same name.
+
+**Return Value**
+
+None.
+
+**Code Snippet**
+
+```js
+let item = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    x: 100,
+    y: 200,
+    width: 300,
+    height: 300,
+    isMeasuredInPercentage: false
+});
+item.addNote(
+    {
+        name: "Description", 
+        content: {
+            noteType: "Rectangle"
+        }
+    }, true
+);
+```
 
 **See also**
 
-* [Note](interface/note.md)
+[Note](interface/note.md)
 
 ## getNote
 
-Returns a `Note` specified by its name.
+Returns a `Note` object specified by its name, if it exists.
 
 ```typescript
 getNote(name: string): Note;
@@ -201,15 +196,47 @@ getNote(name: string): Note;
 
 **Parameters**
 
-`name`: The expects string representing the name of the note.
+`name`: specifies the name of the `Note` object.
 
 **Return Value**
 
-The corresponding `Note` object based on the provided name.
+The corresponding `Note` object specified by its name, if it exists.
+
+**Code Snippet**
+
+```js
+item.getNote("Description");
+```
+
+## getNotes
+
+Returns a collection of all existing `Note` objects on this `DrawingItem`.
+
+```typescript
+getNotes(): Array<Note>;
+```
+
+**Code Snippet**
+
+```js
+item.getNotes();
+```
+
+**Parameters**
+
+None.
+
+**Return Value**
+
+All existing `Note` objects on this `DrawingItem`.
+
+**See Also**
+
+[Note](./interface/note.md)
 
 ## hasNote
 
-Returns whether a `Note` with the specified name exists on this `DrawingItem`.
+Checks if a `Note` object with the specified name exists.
 
 ```typescript
 hasNote(name: string): boolean;
@@ -217,15 +244,21 @@ hasNote(name: string): boolean;
 
 **Parameters**
 
-`name`: The expects string representing the name of the note.
+`name`: specifies the name of the `Note` object.
 
 **Return Value**
 
-A value of boolean indicates whether a specific note exists with the given name.
+Boolean indicating whether the `Note` object exists.
+
+**Code Snippet**
+
+```js
+item.hasNote("Description");
+```
 
 ## updateNote
 
-Updates the content of a `Note` specified by its name.
+Updates the content of a specified `Note` object.
 
 ```typescript
 updateNote(name: string, content: any, mergeContent?: boolean): void;
@@ -233,15 +266,30 @@ updateNote(name: string, content: any, mergeContent?: boolean): void;
 
 **Parameters**
 
-`name`: The string representing the name of the note.
+`name`: specifies the name of the `Note` object.
 
-`content`: The content of the note.
+`content`: specifies the new content, can be of any type.
 
-`mergeContent`(optional): If this parameter is set to true, then the new content is added to the Note alongside the original content.
+`mergeContent`: [Optional] whether to merge the new content with the existing one.
+
+**Return Value**
+
+None.
+
+**Code Snippet**
+
+```js
+item.updateNote(
+    "Description", 
+    {
+        timeStamp: (new Date()).getTime()
+    }, true
+);
+```
 
 ## deleteNote
 
-Deletes a `Note` specified by its name.
+Deletes a `Note` object specified by its name.
 
 ```typescript
 deleteNote(name: string): void;
@@ -249,298 +297,36 @@ deleteNote(name: string): void;
 
 **Parameters**
 
-`name`: The string representing the name of the note.
-
-## getAllNotes
-
-Returns all `Notes` on the `DrawingItem`.
-
-```typescript
-getAllNotes(): Array<Note>;
-```
+`name`: specifies the name of the `Note` object.
 
 **Return Value**
 
-Returns an array of all Notes on the DrawingItem.
+None.
+
+**Code Snippet**
+
+```js
+item.deleteNote("Description");
+```
 
 ## clearNotes
 
-Deletes all `Notes` on the `DrawingItem`.
+Deletes all `Note` objects on this `DrawingItem`.
 
 ```typescript
 clearNotes(): void;
 ```
 
----
+**Parameters**
 
-## LineDrawingItem
-
-Constructor of a `LineDrawingItem`.
-
-```typescript
-constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number);
-```
-
-**See also**
-
-* [LineSegment](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/line-segment.html)
-
-## getLine
-
-Returns the `LineSegment` object the item is based on.
-
-```typescript
-getLine(): Core.BasicStructures.LineSegment;
-```
+None.
 
 **Return Value**
 
-Returns the line of type `LineSegment`.
+None.
 
-## setLine
+**Code Snippet**
 
-Specifies a `LineSegment` object to be used for drawing the line.
-
-```typescript
-setLine(line: Core.BasicStructures.LineSegment): void;
+```js
+item.clearNotes();
 ```
-
-**Parameters**
-
-`line`: A line of type `Core.BasicStructures.LineSegment`.
-
----
-
-## RectDrawingItem
-
-Constructor of a `RectDrawingItem`.
-
-```typescript
-constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number);
-```
-
-**See also**
-
-* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
-
-## getRect
-
-Returns the `Rect` object the item is based on.
-
-```typescript
-getRect(): Core.BasicStructures.Rect;
-```
-
-**Return Value**
-
-Returns the rectangle of type `Rect`.
-
-## setRect
-
-Specifies a `Rect` object to be used for drawing the item.
-
-```typescript
-setRect(rect: Core.BasicStructures.Rect): void;
-```
-
-**Parameters**
-
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
-
----
-
-## QuadDrawingItem
-
-Constructor of a `QuadDrawingItem`.
-
-```typescript
-constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number);
-```
-
-**See also**
-
-* [Quadrilateral](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/quadrilateral.html)
-
-## getQuad
-
-Returns the `Quadrilateral` object the item is based on.
-
-```typescript
-getQuad(): Core.BasicStructures.Quadrilateral;
-```
-
-**Return Value**
-
-Returns the rectangle of type `Quadrilateral`.
-
-## setQuad
-
-Specifies a `Quadrilateral` object to be used for drawing the item.
-
-```typescript
-setQuad(quad: Core.BasicStructures.Quadrilateral): void;
-```
-
-**Parameters**
-
-`quad`: A quadrilateral of type `Core.BasicStructures.Quadrilateral`.
-
----
-
-## TextDrawingItem
-
-Constructor of a `TextDrawingItem`.
-
-```typescript
-constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number);
-```
-
-## getText
-
-Returns the text drawn.
-
-```typescript
-getText(): string;
-```
-
-**Return Value**
-
-Returns the text of type `string`.
-
-## setText
-
-Specifies the text to draw.
-
-```typescript
-setText(text: string): void;
-```
-
-**Parameters**
-
-`text`: A text string.
-
-## getTextRect
-
-Returns the `Rect` object which determines where the text is drawn.
-
-```typescript
-getTextRect(): Core.BasicStructures.Rect;
-```
-
-**Return Value**
-
-Returns the rectangle of type `Rect`.
-
-## setTextRect
-
-Specifies a `Rect` object in which the text is drawn.
-
-```typescript
-setTextRect(rect: Core.BasicStructures.Rect): void;
-```
-
-**Parameters**
-
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
-
----
-
-## ImageDrawingItem
-
-Constructor of an `ImageDrawingItem`.
-
-```typescript
-constructor(
-    image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
-    rect: Core.BasicStructures.Rect,
-    maintainAspectRatio: boolean,
-    drawingStyleId?: number);
-```
-
-**Parameters**
-
-`image`: The image data.
-
-`rect`: Outer rectangle border of the image.
-
-`maintainAspectRatio`: Sets whether aspect ratio of the image is maintained when it is drawn.
-
-`drawingStyleId`(optional): Specifies the `DrawingStyle` that applies to this `ImageDrawingItem`.
-
-**See also**
-
-* [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
-
-## getImage
-
-Returns the image drawn.
-
-```typescript
-getImage(): Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement;
-```
-
-## setImage
-
-Specifies the image to draw.
-
-```typescript
-setImage(image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement): void;
-```
-
-## getImageRect
-
-Returns the `Rect` object which determines where the image is drawn.
-
-```typescript
-getImageRect(): Core.BasicStructures.Rect;
-```
-
-**Return Value**
-
-Returns the image located rectangle of type `Rect`.
-
-## setImageRect
-
-Specifies a `Rect` object in which the image is drawn.
-
-```typescript
-setImageRect(rect: Core.BasicStructures.Rect): void;
-```
-
-**Parameters**
-
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
-
-<!--
-## GroupDrawingItem()
-
-Constructor of a `GroupDrawingItem`.
-
-```typescript
-constructor(childDrawingItems: Array<DrawingItem>);
-```
-
-## getChildDrawingItems
-
-Returns the child drawing items in the group.
-
-```typescript
-getChildDrawingItems(): Array<DrawingItem>;
-```
-
-**Return Value**
-
-Returns an array of DrawingItem objects.
-
-## setChildDrawingItems
-
-Sets the child drawing items in the group.
-
-```typescript
-setChildDrawingItems(childDrawingItems: Array<DrawingItem>): void;
-```
-
-**Parameters**
-
-`childDrawingItems`: An array of DrawingItem objects.
--->

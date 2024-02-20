@@ -74,8 +74,9 @@ class DT_Rect {
 
 **See also**
 
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Arc
 
@@ -125,8 +126,9 @@ class DT_Arc {
 
 **See also**
 
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Line
 
@@ -174,9 +176,11 @@ class DT_Line {
 
 **See also**
 
-* [Point](interface/point.html)
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Point](interface/point.html)
+
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Polygon
 
@@ -220,9 +224,11 @@ class DT_Polygon {
 
 **See also**
 
-* [Point](interface/point.html)
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Point](interface/point.html)
+
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Text
 
@@ -278,8 +284,9 @@ class DT_Text {
 
 **See also**
 
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Image
 
@@ -328,8 +335,9 @@ class DT_Image {
 
 **See also**
 
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)
 
 ## DT_Group
 
@@ -374,5 +382,6 @@ class DT_Group {
 
 **See also**
 
-* [Note](interface/note.html)
-* [DrawingItemEvent](interface/drawingitemevent.html)
+[Note](interface/note.html)
+
+[DrawingItemEvent](interface/drawingitemevent.html)

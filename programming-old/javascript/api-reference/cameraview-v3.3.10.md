@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/cameraview-v3.3.10.html
 
 ### Create and Destroy Instances
 
-| API Name                                     | Description                                                                              |
+| Name                                    | Description                                                                              |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `static` [createInstance()](#createinstance) | Creates a `CameraView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
@@ -24,7 +24,7 @@ permalink: /programming/javascript/api-reference/cameraview-v3.3.10.html
 
 ### Drawing and UI
 
-| API Name                                                          | Description                                                                                               |
+| Name                                                         | Description                                                                                               |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [createDrawingLayer()](#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
 | [getDrawingLayer()](#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |

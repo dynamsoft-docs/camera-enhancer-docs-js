@@ -14,26 +14,24 @@ permalink: /programming/javascript/api-reference/auxiliary.html
 
 ## Auxiliary
 
-| API Name                                           | Description                                                                                    |
-| -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [on()](#on)                                        | Attaches an event handler function for a built-in event.                                       |
-| [off()](#off)                                      | Removes an event handler.                                                                      |
-| `static` [detectEnvironment()](#detectenvironment) | Returns a report on the current running environments.                                          |
-| [setErrorListener()](#seterrorlistener)            | Sets the error listener to receive notifications should errors occur during image acquisition. |
+| Name          | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| [on()](#on)   | Registers an event listener for specific camera-related events.       |
+| [off()](#off) | Removes an event listener previously registered with the `on` method. |
 
 **Type definition used on this page**:
 
 ```typescript
-type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
+type EventName ="cameraOpen" | "cameraClose" | "cameraChange" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
 ```
 
 **Built-in Event Reference Table**
 
 | Event Name          | Description                                                      |
 | ------------------- | ---------------------------------------------------------------- |
-| cameraChange        | Triggered when a different camera is used.                       |
 | cameraOpen          | Triggered when the camera opens.                                 |
 | cameraClose         | Triggered when the camera closes.                                |
+| cameraChange        | Triggered when a different camera is used.                       |
 | resolutionChange    | Triggered when the resolution changes.                           |
 | played              | Triggered when the video starts playing/streaming.               |
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
@@ -45,7 +43,7 @@ type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChan
 
 ## on
 
-Attaches an event handler function for a built-in event.
+Registers an event listener for specific camera-related events. 
 
 ```typescript
 on(eventName: EventName, listener: Function): void;
@@ -53,8 +51,9 @@ on(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: the name of the event to listen for. Possible values include "cameraOpen", "cameraClose", "cameraChange", "resolutionChange", "played", "singleFrameAcquired", and "frameAddedToBuffer".
+
+`listener`: the callback function to be invoked when the event occurs.
 
 **Return value**
 
@@ -64,14 +63,14 @@ None.
 
 ```javascript
 let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-cameraEnhancer.on("cameraChange", (deviceId, previousDeviceId) => {
-    console.log("Camera changed.");
-});
 cameraEnhancer.on("cameraOpen", () => {
     console.log("Camera opened.");
 });
 cameraEnhancer.on("cameraClose", () => {
     console.log("Camera closed.");
+});
+cameraEnhancer.on("cameraChange", (deviceId, previousDeviceId) => {
+    console.log("Camera changed.");
 });
 cameraEnhancer.on("resolutionChange", (resolution, previousResolution) => {
     console.log("Resolution changed.");
@@ -89,7 +88,7 @@ cameraEnhancer.on("frameAddedToBuffer", () => {
 
 ## off
 
-Removes an event handler.
+Removes an event listener previously registered with the `on` method.
 
 ```typescript
 off(eventName: EventName, listener: Function): void;
@@ -97,8 +96,9 @@ off(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: the name of the event to listen for. Possible values include "cameraOpen", "cameraClose", "cameraChange", "resolutionChange", "played", "singleFrameAcquired", and "frameAddedToBuffer".
+
+`listener`: the callback function to be invoked when the event occurs.
 
 **Return value**
 
@@ -126,7 +126,7 @@ offAll(eventName?: EventName): void;
 
 **Parameters**
 
-`eventName` : specifies the event.
+`eventName`: specifies the event.
 
 **Return value**
 
@@ -137,7 +137,6 @@ None.
 ```javascript
 cameraEnhancer.offAll("cameraChange");
 ```
--->
 
 ## detectEnvironment
 
@@ -196,3 +195,5 @@ cameraEnhancer.setErrorListener(
     }
 );
 ```
+
+-->

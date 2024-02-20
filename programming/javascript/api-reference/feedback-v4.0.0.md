@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/feedback-v4.0.0.html
 
 # Class Feedback
 
-| API Name              | Description                                  |
+| Name             | Description                                  |
 | --------------------- | -------------------------------------------- |
 | [beep()](#beep)       | Trigger a beep when the method is called.    |
 | [vibrate()](#vibrate) | Trigger a vibrate when the method is called. |

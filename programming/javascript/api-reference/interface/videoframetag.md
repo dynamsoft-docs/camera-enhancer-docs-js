@@ -11,36 +11,54 @@ permalink: /programming/javascript/api-reference/interface/videoframetag.html
 
 # VideoFrameTag
 
-`interface` VideoFrameTag
+The `VideoFrameTag` interface extends the `ImageTag` interface and introduces additional attributes tailored for characterizing images extracted from video streams, known as [DCEFrames](./dceframe.md).
 
-* isCropped: `boolean`
+```typescript
+interface VideoFrameTag extends ImageTag {
+    cropRegion: DSRect;
+    currentHeight: number;
+    currentWidth: number;
+    isCropped: boolean;
+    originalHeight: number;
+    originalWidth: number;
+    timeSpent: number;
+    timeStamp: number;
+}
+```
 
-  Whether the image was cropped from the original frame.
+## cropRegion
 
-* cropRegion: `Region`
+The region based on which the original frame was cropped. If `isCropped` is false, the region covers the entire original image.
 
-  The region based on which the original frame was cropped.
+**See Also**
 
-* originalWidth: `number`
+[DSRect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-rect.html)
+
+## currentWidth
+
+The current width of the video frame after cropping.
+
+## currentHeight
+
+The current height of the video frame after cropping.
+
+## isCropped
+
+Indicates whether the video frame is cropped.
+
+## originalWidth
+
+The original width of the video frame before any cropping.
+
+## originalHeight
+
+The original height of the video frame before any cropping.
+
+## timeSpent
+
+The time spent acquiring the frame, in milliseconds.
+
+## timeStamp
+
+The timestamp marking the completion of the frame acquisition.
   
-  The width of the original frame.
-
-* originalHeight: `number`  
-
-  The height of the original frame.
-
-* currentWidth: `number`
-
-  The width of the DCEFrame.
-
-* currentHeight: `number`
-
-  The height of the DCEFrame.
-
-* timeSpent: `number`
-
-  The time in milliseconds spent in acquiring the frame.
-
-* timeStamp: `number`
-
-  The timeStamp at which point the frame acquisition finished.

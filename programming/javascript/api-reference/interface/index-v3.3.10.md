@@ -19,6 +19,8 @@ Dynamsoft Camera Enhancer JavaScript SDK has the following interfaces.
 * [DrawingStyle](./drawingstyle.md)
 * [Note](./note.md)
 * [PlayCallbackInfo](./playcallbackinfo.md)
+* [Point](./point.md)
+* [Region](./region.md)
 * [Resolution](./resolution.md)
 * [TipConfig](./tipconfig.md)
 * [VideoDevice](./videodevice.md)

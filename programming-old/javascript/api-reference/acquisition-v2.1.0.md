@@ -20,7 +20,7 @@ permalink: /programming/javascript/api-reference/acquisition-v2.1.0.html
 -->
 
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setScanRegion()](#setscanregion) | Specifies which part of the original video is considered when processing frames. |
 | [getScanRegion()](#getscanregion) | Returns the scan region. |
@@ -66,7 +66,7 @@ enhancer.setScanRegion(region);
 
 **See also**
 
-* [Region](interface/region.html)
+[Region](interface/region.html)
 
 ## getScanRegion
 
@@ -92,7 +92,7 @@ let region = enhancer.getScanRegion();
 
 **See also**
 
-* [Region](interface/region.html)
+[Region](interface/region.html)
 
 ## getFrame
 
@@ -119,7 +119,7 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.html)
+[DCEFrame](interface/dceframe.html)
 
 ## getFrameFromBuffer
 
@@ -146,8 +146,9 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.html)
-* [startFetchingLoop](#startfetchingloop)
+[DCEFrame](interface/dceframe.html)
+
+[startFetchingLoop](#startfetchingloop)
 
 ## startFetchingLoop
 
@@ -167,10 +168,11 @@ None.
 
 None.
 
-**See Also**
+**See also**
 
-* [DCEFrame](interface/dceframe.html)
-* [loopInterval](#loopinterval)
+[DCEFrame](interface/dceframe.html)
+
+[loopInterval](#loopinterval)
 
 ## stopFetchingLoop
 
@@ -230,7 +232,7 @@ loopInterval: number;
 
 **See also**
 
-* [startFetchingLoop](#startfetchingloop)
+[startFetchingLoop](#startfetchingloop)
 
 <!--
 ## refreshInterval
@@ -255,7 +257,7 @@ croppingRegions: Array<Region>;
 
 **See also**
 
-* [Region](interface/region.html)
+[Region](interface/region.html)
 
 ## croppingRegionIndex
 

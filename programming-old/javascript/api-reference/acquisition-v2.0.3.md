@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/acquisition-v2.0.3.html
 
 # Frame Acquisition
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getFrame()](#getframe) | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [singleFrameMode](#singleframemode) | Returns or sets whether to enable the single-frame mode. |
@@ -28,7 +28,7 @@ getFrame(region?:Region): DCEFrame
 
 **Parameters**
 
-`region` : optional parameter of the type `Region` . It specifies a rectangular area on the image. If passed, the method only returns the frame cropped by the region.
+`region`: optional parameter of the type `Region` . It specifies a rectangular area on the image. If passed, the method only returns the frame cropped by the region.
 
 **Return value**
 
@@ -50,8 +50,9 @@ document.body.appendChild(frameData.canvas);
 
 **See also**
 
-* [DCEFrame](interface/dceframe.html)
-* [Region](interface/region.html)
+[DCEFrame](interface/dceframe.html)
+
+[Region](interface/region.html)
 
 ## singleFrameMode
 
@@ -82,7 +83,7 @@ onSingleFrameAcquired: (file: File) => {}
 
 **Arguments**
 
-`file` : a `File` object representing the image the user chose or a frame from the video input.
+`file`: a `File` object representing the image the user chose or a frame from the video input.
 
 **Code Snippet**
 
@@ -99,4 +100,4 @@ let pEnhancer = null;
 
 **See also**
 
-* [DCEFrame](interface/dceframe.html)
+[DCEFrame](interface/dceframe.html)

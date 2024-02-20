@@ -11,16 +11,24 @@ permalink: /programming/javascript/api-reference/interface/playcallbackinfo.html
 
 # PlayCallbackInfo
 
-`interface` PlayCallbackInfo
+The `PlayCallbackInfo` interface specifies the unique identifier of a camera along with its resolution following any modifications or operations applied to it.
 
-* deviceId: `string`
+```ts
+interface PlayCallbackInfo {
+  deviceId: string;
+  height: number;
+  width: number;
+}
+```
 
-  The ID of the currently used camera.
+## deviceId
 
-* width: `number`
+The unique identifier of the camera.
 
-  The width (in pixels) of the video input.
-  
-* height: `number`
+## height
 
-  The height (in pixels) of the video input.
+The height of the video frame.
+
+## width
+
+The width of the video frame.
