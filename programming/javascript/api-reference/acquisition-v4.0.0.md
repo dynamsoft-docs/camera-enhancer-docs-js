@@ -61,10 +61,12 @@ let scanRegion = {
     x: 25,
     y: 75,
     width: 25,
-    height: 75
+    height: 75,
     isMeasuredInPercentage: true
 };
 cameraEnhancer.setScanRegion(scanRegion); 
+//...
+cameraEnhancer.setScanRegion(null); //Cancel the scan region.
 ```
 
 **See also**

@@ -11,6 +11,23 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 
 # Release Notes - JavaScript 4.x
 
+## 4.0.2 (03/28/2024)
+
+### New
+
+* Implemented a visual magnifier to facilitate adjustment of corner points.
+
+### Improved
+
+* Enhanced "beep" quality by allowing multiple soundtracks now.
+* Renamed the method `getDrawingStyles()` to `getAllDrawingStyles()` under class `DrawingStyleManager` for clarity.
+
+### Fixed
+
+* Fixed a bug where changing `singleFrameMode` would get drawing layers removed.
+* Fixed a bug where an unnecessary button to appear on iOS devices when invoking the `takePhoto()` method.
+* Fixed a bug specific to iOS 17, where reopening the camera after leaving the browser could result in failure.
+
 ## 4.0.1 (01/11/2024)
 
 ### Added
@@ -18,7 +35,7 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 * Added `beepSoundSource` & `vibrateDuration` to the class [`Feedback`](../api-reference/feedback.md).
 * Added `maintainAspectRatio` to [`ImageDrawingItem`](../api-reference/drawingitem.md#imagedrawingitem).
 * Added [`clearAllInnerDrawingItems()`](../api-reference/cameraview.md#clearallinnerdrawingitems) to clear internally added DrawingItems.
-* Added [`setErrorListener()`](../api-reference/auxiliary.md#seterrorlistener) to receive errors occured during image acquisition.
+* Added [`setErrorListener()`](../api-reference/auxiliary.md#seterrorlistener) to receive errors occurred during image acquisition.
 * Added [`cameraOpenTimeout`](../api-reference/camera-control.md#cameraopentimeout) to control the maximum time allowed for opening a selected camera.
 
 ### Improved
@@ -31,7 +48,7 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 ### Fixed
 
 * Fixed issues with the methods `setZoom()` & `getZoomSettings()` so that they can now work with static videos.
-* Fixed issues with the autozoom or enhancedfocus features to prevent them from throwing unnecessary error messages.
+* Fixed issues with the autozoom or enhanced-focus features to prevent them from throwing unnecessary error messages.
 * Fixed an issue with unstable video streaming upon opening the camera on iOS 17.x.
 
 ## 4.0.0 (08/24/2023)

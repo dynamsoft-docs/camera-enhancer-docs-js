@@ -6,7 +6,7 @@ keywords: CameraTestResponse, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
 breadcrumbText: CameraTestResponse
-permalink: /programming/javascript/api-reference/interface/CameraTestResponse.html
+permalink: /programming/javascript/api-reference/interface/cameratestresponse.html
 ---
 
 # CameraTestResponse
