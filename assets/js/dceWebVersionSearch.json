@@ -2,7 +2,7 @@
   {
     "version": "4.0.2",
     "matchList": {
-      "js": {
+      "javascript": {
         "dcvRepoWeb": [
           {
             "path": "/programming/javascript/api-reference/license",
@@ -22,7 +22,7 @@
   {
     "version": "4.0.1",
     "matchList": {
-      "js": {
+      "javascript": {
         "dcvRepoWeb": [
           {
             "path": "/programming/javascript/api-reference/license",
@@ -40,7 +40,7 @@
   {
     "version": "4.0.0",
     "matchList": {
-      "js": {
+      "javascript": {
         "dcvRepoWeb": [
           {
             "path": "/programming/javascript/api-reference/license",
@@ -58,7 +58,7 @@
   {
     "version": "3.3.10",
     "matchList": {
-      "js": {
+      "javascript": {
         "dbr": "9.6.33",
         "ddn": "1.0.12",
         "dlr": "2.2.31"
@@ -68,7 +68,7 @@
   {
     "version": "3.3.9",
     "matchList": {
-      "js": {
+      "javascript": {
         "dbr": "9.6.32",
         "ddn": "1.0.12",
         "dlr": "2.2.31"
