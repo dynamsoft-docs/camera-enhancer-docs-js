@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/camera-control-v4.0.0.html
 
 ## Basic Camera Control
 
-| API Name                                              | Description                                                                           |
+| Name                                             | Description                                                                           |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `static` [testCameraAccess()](#testcameraaccess)      | Tests whether there is an available camera.                                           |
 | [getAllCameras()](#getallcameras)                     | Returns information of all available cameras on the device.                           |
@@ -38,7 +38,7 @@ permalink: /programming/javascript/api-reference/camera-control-v4.0.0.html
 
 ## Advanced Camera Control
 
-| API Name                                              | Description                                                                        |
+| Name                                             | Description                                                                        |
 | ----------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [setFrameRate()](#setframerate)                       | Adjusts the frame rate.                                                            |
 | [getFrameRate()](#getframerate)                       | Returns the real-time frame rate.                                                  |
@@ -87,7 +87,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+[VideoDeviceInfo](interface/videodeviceinfo.md)
 
 ## selectCamera
 
@@ -101,7 +101,7 @@ selectCamera(cameraObjectOrDeviceID: VideoDeviceInfo | string): Promise<PlayCall
 
 **Parameters**
 
-`cameraObjectOrDeviceID` : specifies the camera.
+`cameraObjectOrDeviceID`: specifies the camera.
 
 **Return value**
 
@@ -118,7 +118,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+[PlayCallbackInfo](interface/playcallbackinfo.md)
 
 ## getSelectedCamera
 
@@ -145,7 +145,7 @@ console.log(camera.label);
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.md)
+[VideoDeviceInfo](interface/videodeviceinfo.md)
 
 ## getCameraState
 
@@ -201,7 +201,7 @@ await cameraEnhancer.open();
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.md)
+[PlayCallbackInfo](interface/playcallbackinfo.md)
 
 ## close
 
@@ -297,7 +297,7 @@ A `MediaStreamConstraints` object.
 
 **See also**
 
-* [MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
+[MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
 
 ## updateVideoSettings
 
@@ -309,7 +309,7 @@ updateVideoSettings(constraints: MediaStreamConstraints): Promise<ScannerPlayCal
 
 **Parameters**
 
-`constraints` : specifies the new video settings.
+`constraints`: specifies the new video settings.
 
 **Return value**
 
@@ -335,8 +335,9 @@ await scanner.updateVideoSettings({
 
 **See also**
 
-* [MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
-* [ScannerPlayCallbackInfo](./interface/playcallbackinfo.md)
+[MediaStreamConstraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
+
+[ScannerPlayCallbackInfo](./interface/playcallbackinfo.md)
 
 ## setResolution
 
@@ -350,7 +351,7 @@ setResolution(resolution: Resolution): Promise<PlayCallbackInfo>;
 
 **Parameters**
 
-`resolution` : specifies the resolution. 
+`resolution`: specifies the resolution. 
 
 **Return value**
 
@@ -364,7 +365,7 @@ await cameraEnhancer.setResolution({width:1280, height:720});
 
 **See also**
 
-* [Resolution](interface/resolution.md)
+[Resolution](interface/resolution.md)
 
 ## getResolution
 
@@ -391,7 +392,7 @@ console.log(resolution.width + " x " + resolution.height);
 
 **See also**
 
-* [Resolution](interface/resolution.md)
+[Resolution](interface/resolution.md)
 
 ## getAvailableResolutions
 
@@ -483,7 +484,7 @@ setFrameRate(rate: number): Promise<void>;
 
 **Parameters**
 
-`rate` : specifies the new frame rate.
+`rate`: specifies the new frame rate.
 
 **Return value**
 
@@ -497,7 +498,7 @@ await cameraEnhancer.setFrameRate(10);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getFrameRate
 
@@ -547,8 +548,9 @@ await cameraEnhancer.turnOnTorch();
 
 **See also**
 
-* [turnOffTorch](#turnofftorch)
-* [getCapabilities](#getcapabilities)
+[turnOffTorch](#turnofftorch)
+
+[getCapabilities](#getcapabilities)
 
 ## turnOffTorch
 
@@ -576,8 +578,9 @@ await cameraEnhancer.turnOffTorch();
 
 **See also**
 
-* [turnOnTorch](#turnontorch)
-* [getCapabilities](#getcapabilities)
+[turnOnTorch](#turnontorch)
+
+[getCapabilities](#getcapabilities)
 
 ## getZoomSettings
 
@@ -617,7 +620,7 @@ setZoom(settings:{factor: number}): Promise<void>;
 
 **Parameters**
 
-`settings` : specifies how to zoom the video. As of version 3.2, the setting only contains a zoom factor.
+`settings`: specifies how to zoom the video. As of version 3.2, the setting only contains a zoom factor.
 
 **Return value**
 
@@ -633,7 +636,7 @@ await cameraEnhancer.setZoom({
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## resetZoom
 
@@ -686,7 +689,7 @@ cameraEnhancer.getFocusSettings();
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## setFocus
 
@@ -711,7 +714,7 @@ setFocus(settings: { mode: string } | { mode: 'manual', distance: number } | {
 
 **Parameters**
 
-`settings` : specifies the focus settings. The value of `mode` depends on the capabilities of the current camera. Typically, "continuous" and "manual" are supported. `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
+`settings`: specifies the focus settings. The value of `mode` depends on the capabilities of the current camera. Typically, "continuous" and "manual" are supported. `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
 
 **Return value**
 
@@ -765,7 +768,7 @@ await cameraEnhancer.setFocus({
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getCapabilities
 
@@ -815,7 +818,7 @@ cameraEnhancer.getCapabilities();
 
 **See also**
 
-* [MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
+[MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
 
 ## getCameraSettings
 
@@ -862,7 +865,7 @@ cameraEnhancer.getCameraSettings();
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getColorTemperature
 
@@ -886,7 +889,7 @@ setColorTemperature(colorTemperatur: number): Promise<void>;
 
 **Parameters**
 
-`colorTemperatur` : specifies the new color temperature.
+`colorTemperatur`: specifies the new color temperature.
 
 **Return value**
 
@@ -900,7 +903,7 @@ await cameraEnhancer.setColorTemperature(5000);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getExposureCompensation
 
@@ -924,7 +927,7 @@ setExposureCompensation(exposureCompensation: number): Promise<void>;
 
 **Parameters**
 
-`exposureCompensation` : specifies the new exposure compensation index.
+`exposureCompensation`: specifies the new exposure compensation index.
 
 **Return value**
 
@@ -938,7 +941,7 @@ await cameraEnhancer.setExposureCompensation(-0.7);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## setAutoZoomRange
 
@@ -952,7 +955,7 @@ setAutoZoomRange(range: { min: number, max: number }): void;
 
 **Parameters**
 
-* `range`: specifies the zoom range (from minimum value to maximum value).
+`range`: specifies the zoom range (from minimum value to maximum value).
 
 **Return value**
 
@@ -999,7 +1002,7 @@ enableEnhancedFeatures(features: EnumEnhancedFeatures): Promise<void>;
 
 **Parameters**
 
-* `features`: specifies the features to enable.
+`features`: specifies the features to enable.
 
 **Return value**
 
@@ -1016,7 +1019,7 @@ await cameraEnhancer.enableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
+[EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## disableEnhancedFeatures
 
@@ -1028,7 +1031,7 @@ disableEnhancedFeatures(features: EnumEnhancedFeatures): void;
 
 **Parameters**
 
-* `features`: specifies the features to disable.
+`features`: specifies the features to disable.
 
 **Return value**
 
@@ -1042,7 +1045,7 @@ await cameraEnhancer.disableEnhancedFeatures(EnumEnhancedFeatures.EF_AUTO_ZOOM);
 
 **See also**
 
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
+[EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
 
 ## ifSkipCameraInspection
 

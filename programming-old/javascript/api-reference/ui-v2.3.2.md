@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/ui-v2.3.2.html
 
 # UI APIs
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getVisibleRegion()](#getvisibleregion) | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [addScanRegionOverlayCanvas()](#addscanregionoverlaycanvas) | Add a canvas of the same size as the scan area directly above the scan area. |
@@ -52,7 +52,7 @@ enhancer.getVisibleRegion();
 
 **See also**
 
-* [Region](interface/region.html)
+[Region](interface/region.html)
 
 ## addScanRegionOverlayCanvas
 
@@ -108,7 +108,7 @@ setScanRegionMaskStyle(maskStyle: any): void;
 
 **Parameters**
 
-`maskStyle` : specify the new style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) and [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`maskStyle`: specify the new style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) and [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 > The default value is
 >
@@ -142,7 +142,7 @@ setVideoFit(objectFit: string): void;
 
 **Parameters**
 
-`objectFit` : specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+`objectFit`: specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 **Return value**
 
@@ -186,9 +186,9 @@ setViewDecorator(type: string | string[], area: Area): void;
 
 **Parameters**
 
-`type` : specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" , "crosshair" , ["rectangle", "crossline"], ["rectangle", "crosshair"], ["focus", "crossline"] and ["focus", "crosshair"]. If passed an empty string, the decorator is cleared.
+`type`: specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" , "crosshair" , ["rectangle", "crossline"], ["rectangle", "crosshair"], ["focus", "crossline"] and ["focus", "crosshair"]. If passed an empty string, the decorator is cleared.
 
-`area` : specify where to place the decorator. It accepts 4 values:
+`area`: specify where to place the decorator. It accepts 4 values:
 
 * `x`,     `y`: top-left point of the decorator in percentage (0~100) of the width/height of the viewer.
 * `width`,     `height`: size of the decorator in percentage (0~100) of the width/height of the viewer.
@@ -211,7 +211,7 @@ enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 
 **See also**
 
-* [Area](interface/area.html)
+[Area](interface/area.html)
 
 ## getViewDecorator
 
@@ -223,7 +223,7 @@ getViewDecorator(): {type: string[], area: Area, canvas: Canvas};
 
 **See also**
 
-* [Area](interface/area.html)
+[Area](interface/area.html)
 
 ## setViewDecoratorLineWidth
 
@@ -235,9 +235,9 @@ setViewDecoratorLineWidth(type: string, width: number): void;
 
 **Parameters**
 
-`type` : specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
+`type`: specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
 
-`width` : specify the line width.
+`width`: specify the line width.
 
 **Return value**
 
@@ -266,9 +266,9 @@ setViewDecoratorStrokeStyle(type: string, strokeStyle: string): void;
 
 **Parameters**
 
-`type` : specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
+`type`: specify the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
 
-`strokeStyle` : specify the stroke style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle).
+`strokeStyle`: specify the stroke style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle).
 
 **Return value**
 
@@ -297,9 +297,9 @@ setViewDecoratorFillStyle(type: string, fillStyle: string): void;
 
 **Parameters**
 
-`type` : specify the decorator type. Allowed values are "rectangle" and "focus".
+`type`: specify the decorator type. Allowed values are "rectangle" and "focus".
 
-`fillStyle` : specify the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`fillStyle`: specify the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 **Return value**
 
@@ -328,9 +328,9 @@ setViewDecoratorMaskFillStyle(type: string, fillStyle: string): void;
 
 **Parameters**
 
-`type` : specify the decorator type. Allowed values are "rectangle" and "focus".
+`type`: specify the decorator type. Allowed values are "rectangle" and "focus".
 
-`fillStyle` : specify the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`fillStyle`: specify the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 **Return value**
 

@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/cameraview-v4.0.0.html
 
 ### Create and Destroy Instances
 
-| API Name                                     | Description                                                                              |
+| Name                                    | Description                                                                              |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `static` [createInstance()](#createinstance) | Creates a `CameraView` instance.                                                         |
 | [dispose()](#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
@@ -24,7 +24,7 @@ permalink: /programming/javascript/api-reference/cameraview-v4.0.0.html
 
 ### Drawing and UI
 
-| API Name                                                          | Description                                                                                               |
+| Name                                                         | Description                                                                                               |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [createDrawingLayer()](#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
 | [getDrawingLayer()](#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
@@ -314,7 +314,7 @@ cameraView.setTipConfig(TipConfig);
 
 **See also**
 
-* [TipConfig](interface/tipconfig.md)
+[TipConfig](interface/tipconfig.md)
 
 ## getTipConfig
 
@@ -416,7 +416,7 @@ setVideoFit(objectFit: string): void;
 
 **Parameters**
 
-`objectFit` : specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+`objectFit`: specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 **Return value**
 
@@ -455,7 +455,7 @@ cameraView.getVideoFit();
 Returns a `Region` object which specifies which part of the original video is shown in the video element.
 
 ```typescript
-getVisibleRegionOfVideo(options: { inPixels?: boolean }): Core.BasicStructures.Rect;
+getVisibleRegionOfVideo(options: { inPixels?: boolean }): Rect;
 ```
 
 **Parameters**
@@ -509,7 +509,9 @@ setScanRegionMaskStyle(newStyle: {
 **Parameters**
 
 `lineWidth`: The width of the lines used to draw the mask border.  
+
 `strokeStyle`: The color or style of the mask border lines.  
+
 `fillStyle`: The color of the mask's interior fill.  
 
 > The default value is

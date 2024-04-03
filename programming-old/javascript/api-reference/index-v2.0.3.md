@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/index-v2.0.3.html
 
 ### Initialization
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [createInstance()](initialization.html#createinstance) | Creates a `CameraEnhancer` instance. |
 | [defaultUIElementURL](initialization.html#defaultuielementurl) | Returns or sets the URL of the .html file that defines the default UI Element. |
@@ -25,7 +25,7 @@ permalink: /programming/javascript/api-reference/index-v2.0.3.html
 
 ### Camera Control
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getAllCameras()](camera-control.html#getallcameras) | Returns infomation of all available cameras on the device. |
 | [selectCamera()](camera-control.html#selectcamera) | Chooses a camera as the video source. |
@@ -41,7 +41,7 @@ permalink: /programming/javascript/api-reference/index-v2.0.3.html
 
 ### Advanced Camera Control
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setFrameRate()](camera-control.html#setframerate) | Adjusts the frame rate. |
 | [getFrameRate()](camera-control.html#getframerate) | Returns the real-time frame rate. |
@@ -55,7 +55,7 @@ permalink: /programming/javascript/api-reference/index-v2.0.3.html
 
 ### Frame Acquisition
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getFrame()](acquisition.html#getframe) | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
 | [singleFrameMode](acquisition.html#singleframemode) | Returns or sets whether to enable the singe-frame mode. |
@@ -63,7 +63,7 @@ permalink: /programming/javascript/api-reference/index-v2.0.3.html
 
 ### Auxiliary APIs
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getVersion()](auxiliary.html#getversion) | Returns the version of the library. |
 | [detectEnvironment()](auxiliary.html#detectenvironment) | Returns a report on the current running environments. |

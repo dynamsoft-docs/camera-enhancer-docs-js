@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/camera-control-v2.0.3.html
 
 **Basic Control**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getAllCameras()](#getallcameras) | Returns information of all available cameras on the device. |
 | [selectCamera()](#selectcamera) | Chooses a camera as the video source. |
@@ -30,7 +30,7 @@ permalink: /programming/javascript/api-reference/camera-control-v2.0.3.html
 
 **Advanced Control**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setFrameRate()](#setframerate) | Adjusts the frame rate. |
 | [getFrameRate()](#getframerate) | Returns the real-time frame rate. |
@@ -70,7 +70,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.html)
+[VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## selectCamera
 
@@ -84,7 +84,7 @@ selectCamera(cameraObjectOrDeviceID: VideoDeviceInfo | string): Promise<PlayCall
 
 **Parameters**
 
-`cameraObjectOrDeviceID` : specifies the camera.
+`cameraObjectOrDeviceID`: specifies the camera.
 
 **Return value**
 
@@ -101,7 +101,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getSelectedCamera
 
@@ -127,7 +127,7 @@ let camera = await enhancer.getSelectedCamera();
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.html)
+[VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## open
 
@@ -204,7 +204,7 @@ let pEnhancer = null;
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## pause
 
@@ -248,9 +248,9 @@ setResolution(width: number, height: number): Promise<PlayCallbackInfo>
 
 **Parameters**
 
-`width` : specifies the horizontal resolution.
+`width`: specifies the horizontal resolution.
 
-`height` : specifies the vertical resolution.
+`height`: specifies the vertical resolution.
 
 **Return value**
 
@@ -264,7 +264,7 @@ await enhancer.setResolution(width, height);
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getResolution
 
@@ -301,7 +301,7 @@ setFrameRate(rate: number): Promise<void>
 
 **Parameters**
 
-`rate` : specifies the new frame rate.
+`rate`: specifies the new frame rate.
 
 **Return value**
 
@@ -315,7 +315,7 @@ await enhancer.setFrameRate(10);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getFrameRate
 
@@ -365,8 +365,9 @@ await enhancer.turnOnTorch();
 
 **See also**
 
-* [turnOffTorch](#turnofftorch)
-* [getCapabilities](#getcapabilities)
+[turnOffTorch](#turnofftorch)
+
+[getCapabilities](#getcapabilities)
 
 ## turnOffTorch
 
@@ -394,8 +395,9 @@ await enhancer.turnOffTorch();
 
 **See also**
 
-* [turnOnTorch](#turnontorch)
-* [getCapabilities](#getcapabilities)
+[turnOnTorch](#turnontorch)
+
+[getCapabilities](#getcapabilities)
 
 ## setZoom
 
@@ -409,7 +411,7 @@ setZoom(zoomValue: number): Promise<void>
 
 **Parameters**
 
-`zoomValue` : specifies the zoom level.
+`zoomValue`: specifies the zoom level.
 
 **Return value**
 
@@ -423,7 +425,7 @@ await enhancer.setZoom(2);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getCapabilities
 
@@ -471,7 +473,7 @@ enhancer.getCapabilities();
 
 **See also**
 
-* [MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
+[MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
 
 <!--
 ## getCameraSettings
@@ -519,7 +521,7 @@ enhancer.getCameraSettings();
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 -->
 ## setColorTemperature
 
@@ -533,7 +535,7 @@ setColorTemperature(colorTemperatur: number): Promise<void>
 
 **Parameters**
 
-`colorTemperatur` : specifies the new color temperature.
+`colorTemperatur`: specifies the new color temperature.
 
 **Return value**
 
@@ -547,7 +549,7 @@ await enhancer.setColorTemperature(5000);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## setExposureCompensation
 
@@ -561,7 +563,7 @@ setExposureCompensation(exposureCompensation: number): Promise<void>
 
 **Parameters**
 
-`exposureCompensation` : specifies the new exposure compensation index.
+`exposureCompensation`: specifies the new exposure compensation index.
 
 **Return value**
 
@@ -575,4 +577,4 @@ await enhancer.setExposureCompensation(-0.7);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)

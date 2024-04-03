@@ -13,6 +13,6 @@ permalink: /programming/javascript/api-reference/enum/index.html
 
 Dynamsoft Camera Enhancer JavaScript SDK has the following Enumerations.
 
-* [EnumEnhancedFeatures](enumenhancedfeatures.md)
-* [EnumDrawingItemState](enumdrawingitemstate)
 * [EnumDrawingItemMediaType](enumdrawingitemmediatype)
+* [EnumDrawingItemState](enumdrawingitemstate)
+* [EnumEnhancedFeatures](enumenhancedfeatures.md)

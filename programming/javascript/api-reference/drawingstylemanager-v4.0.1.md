@@ -7,7 +7,6 @@ needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
 breadcrumbText: DrawingStyleManager
-permalink: /programming/javascript/api-reference/drawingstylemanager.html
 ---
 
 # class DrawingStyleManager
@@ -18,7 +17,7 @@ The `DrawingStyleManager` class serves as a centralized repository and managemen
 | ---------------------------------------------------- | --------------------------------------------------------------- |
 | `static` [createDrawingStyle()](#createdrawingstyle) | Generates a new `DrawingStyle` object, providing its unique ID. |
 | `static` [getDrawingStyle()](#getdrawingstyle)       | Retrieves a specific `DrawingStyle` object using its ID.        |
-| `static` [getAllDrawingStyles()](#getalldrawingstyles)  | Fetches a collection of all available `DrawingStyle` objects.   |
+| `static` [getDrawingStyles()](#getdrawingstyles)     | Fetches a collection of all available `DrawingStyle` objects.   |
 | `static` [updateDrawingStyle()](#updatedrawingstyle) | Modifies an identified `DrawingStyle` object by its ID.         |
 
 ## createDrawingStyle
@@ -83,12 +82,12 @@ let drawingStyle = Dynamsoft.DCE.DrawingStyleManager.getDrawingStyle(Dynamsoft.D
 
 [DrawingStyle](interface/drawingstyle.md)
 
-## getAllDrawingStyles
+## getDrawingStyles
 
 Fetches a collection of all available `DrawingStyle` objects.
 
 ```typescript
-static getAllDrawingStyles(): Array<DrawingStyle>; 
+static getDrawingStyles(): Array<DrawingStyle>; 
 ```
 
 **Return value**
@@ -98,7 +97,7 @@ An array of `DrawingStyle` objects.
 **Code Snippet**
 
 ```javascript
-let drawingStyles = Dynamsoft.DCE.DrawingStyleManager.getAllDrawingStyles();
+let drawingStyles = Dynamsoft.DCE.DrawingStyleManager.getDrawingStyles();
 ```
 
 **See also**

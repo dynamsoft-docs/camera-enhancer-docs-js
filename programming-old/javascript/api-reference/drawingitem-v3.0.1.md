@@ -110,7 +110,7 @@ class DT_Line {
 
 **See also**
 
-* [Point](interface/point.html)
+[Point](interface/point.html)
 
 ## DT_Polygon
 
@@ -136,7 +136,7 @@ class DT_Polygon {
 
 **See also**
 
-* [Point](interface/point.html)
+[Point](interface/point.html)
 
 ## DT_Text
 

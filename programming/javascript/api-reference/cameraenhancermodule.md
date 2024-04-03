@@ -12,13 +12,15 @@ permalink: /programming/javascript/api-reference/cameraenhancermodule.html
 
 # Class CameraEnhancerModule
 
-| API Name                    | Description                                         |
-| --------------------------- | --------------------------------------------------- |
-| `static` [getVersion()](#getversion) | Returns the version of the `CameraEnhancer` module. |
+The `CameraEnhancerModule` class defines common functionality in the `CameraEnhancer` module.
+
+| Name                            | Description                                       |
+| ------------------------------------ | ------------------------------------------------- |
+| `static` [getVersion()](#getversion) | Returns the version of the CameraEnhancer module. |
 
 ### getVersion
 
- Returns the version of the `CameraEnhancer` module.
+Returns the version of the CameraEnhancer module.
 
 ```typescript
 static getVersion(): string;
@@ -28,12 +30,9 @@ static getVersion(): string;
 
 None.
 
-**Return value**
-
-The version string of the module.
-
-**Code Snippet**
+**Code snippet**
 
 ```javascript
-Dynamsoft.DCE.CameraEnhancerModule.getVersion();
+const version = Dynamsoft.DCE.CameraEnhancerModule.getVersion();
+console.log(version);
 ```

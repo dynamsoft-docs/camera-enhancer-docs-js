@@ -15,16 +15,17 @@ breadcrumbText: API Reference
 
 ### Create and Destroy Instances
 
-| API Name                                                   | Description                                                                                  |
+| Name                                                  | Description                                                                                  |
 | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `static` [createInstance()](instantiate.md#createinstance) | Creates a `CameraEnhancer` instance.                                                         |
 | [dispose()](instantiate.md#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.                                |
 | [disposed](instantiate.md#disposed)                        | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
-| `static` [onWarning](instantiate.md#onwarning)             | A callback which is triggered when the running environment is not ideal.                     |
+
+<!-- | `static` [onWarning](instantiate.md#onwarning)             | A callback which is triggered when the running environment is not ideal.                     | -->
 
 ### Basic Camera Control
 
-| API Name                                                               | Description                                                                           |
+| Name                                                              | Description                                                                           |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `static` [testCameraAccess()](camera-control.md#testcameraaccess)      | Tests whether there is an available camera.                                           |
 | [getAllCameras()](camera-control.md#getallcameras)                     | Returns information of all available cameras on the device.                           |
@@ -48,7 +49,7 @@ breadcrumbText: API Reference
 
 ### Advanced Camera Control
 
-| API Name                                                               | Description                                                                        |
+| Name                                                              | Description                                                                        |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [setFrameRate()](camera-control.md#setframerate)                       | Adjusts the frame rate.                                                            |
 | [getFrameRate()](camera-control.md#getframerate)                       | Returns the real-time frame rate.                                                  |
@@ -72,7 +73,7 @@ breadcrumbText: API Reference
 
 ### Frame Acquisition
 
-| API Name                                                                            | Description                                                                                         |
+| Name                                                                           | Description                                                                                         |
 | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [setScanRegion()](acquisition.md#setscanregion)                                     | Specifies which part of the original video is considered when processing frames.                    |
 | [getScanRegion()](acquisition.md#getscanregion)                                     | Returns the scan region.                                                                            |
@@ -98,7 +99,7 @@ breadcrumbText: API Reference
 
 ### UI
 
-| API Name                                                         | Description                                                                                                                                                      |
+| Name                                                        | Description                                                                                                                                                      |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
 | [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
@@ -108,7 +109,7 @@ breadcrumbText: API Reference
 
 ### Auxiliary
 
-| API Name                                              | Description                                                                                               |
+| Name                                             | Description                                                                                               |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
 | [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
@@ -119,7 +120,7 @@ breadcrumbText: API Reference
 
 ### Create and Destroy Instances
 
-| API Name                                                  | Description                                                                              |
+| Name                                                 | Description                                                                              |
 | --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `static` [createInstance()](cameraview.md#createinstance) | Creates a `CameraView` instance.                                                         |
 | [dispose()](cameraview.md#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
@@ -129,7 +130,7 @@ breadcrumbText: API Reference
 
 ### Drawing and UI
 
-| API Name                                                                       | Description                                                                                               |
+| Name                                                                      | Description                                                                                               |
 | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | [createDrawingLayer()](cameraview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
 | [getDrawingLayer()](cameraview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
@@ -157,7 +158,7 @@ breadcrumbText: API Reference
 
 ### Create and Destroy Instances
 
-| API Name                                                       | Description                                                                                   |
+| Name                                                      | Description                                                                                   |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                        |
 | [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
@@ -167,7 +168,7 @@ breadcrumbText: API Reference
 
 ### Drawing and UI
 
-| API Name                                                                            | Description                                                            |
+| Name                                                                           | Description                                                            |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers. |
 | [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                             |
@@ -180,7 +181,7 @@ breadcrumbText: API Reference
 
 ## Class CameraEnhancerModule
 
-| API Name     | Description                                         |
+| Name    | Description                                         |
 | ------------ | --------------------------------------------------- |
 | getVersion() | Returns the version of the `CameraEnhancer` Module. |
 
@@ -188,14 +189,14 @@ breadcrumbText: API Reference
 
 ### Feedback
 
-| API Name                         | Description                                  |
+| Name                        | Description                                  |
 | -------------------------------- | -------------------------------------------- |
 | [beep()](feedback.md#beep)       | Trigger a beep when the method is called.    |
 | [vibrate()](feedback.md#vibrate) | Trigger a vibrate when the method is called. |
 
 ### DrawingLayer
 
-| API Name                                                   | Description                                                                                                      |
+| Name                                                  | Description                                                                                                      |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | [getId()](drawinglayer.md#getid)                           | Returns the ID of the `DrawingLayer`.                                                                            |
 | [addDrawingItems()](drawinglayer.md#adddrawingitems)       | Adds `DrawingItems` to the `DrawingLayer`.                                                                       |
@@ -212,22 +213,21 @@ breadcrumbText: API Reference
 
 ### DrawingStyleManager
 
-| API Name                                                                     | Description                                             |
+| Name                                                                    | Description                                             |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------- |
 | `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle)   | Creates a new `DrawingStyle` object and returns its ID. |
 | `static` [getDrawingStyle()](drawingstylemanager.md#getdrawingstyle)         | Returns the `DrawingStyle` object specified by its Id.  |
-| `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
+| `static` [getDrawingStyles()](drawingstylemanager.md#getdrawingstyles) | Returns all `DrawingStyle` objects.                     |
 | `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
 
 ### DrawingItem
 
-| API Name                                        | Description                                                                                                |
+| Name                                       | Description                                                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | [drawingLayerId](drawingitem.md#drawinglayerid) | Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.                                       |
 | [mediaType](drawingitem.md#mediatype)           | Returns the `mediaType` of the `DrawingItem`.                                                              |
 | [coordinateBase](drawingitem.md#coordinatebase) | Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`. |
 | [drawingStyleId](drawingitem.md#drawingstyleid) | Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.                            |
-| [setState()](drawingitem.md#setstate)           | Sets whether the `DrawingItem` is selected or not.                                                         |
 | [getState()](drawingitem.md#getstate)           | Returns the state of the `DrawingItem`.                                                                    |
 | [on](drawingitem.md#on)                         | Adds an event listener to the `DrawingItem` for the event specified by `eventName`.                        |
 | [off](drawingitem.md#off)                       | Removes an event listener to the `DrawingItem` for the event specified by `eventName`.                     |
@@ -244,7 +244,7 @@ Child classes based on `DrawingItem`
 #### LineDrawingItem
 
 
-| API Name                                            | Description                                                       |
+| Name                                           | Description                                                       |
 | --------------------------------------------------- | ----------------------------------------------------------------- |
 | [LineDrawingItem()](drawingitem.md#linedrawingitem) | Constructor of a `LineDrawingItem`.                               |
 | [getLine](drawingitem.md#getline)                   | Returns the `LineSegment` object the item is based on.            |
@@ -252,7 +252,7 @@ Child classes based on `DrawingItem`
 
 #### RectDrawingItem
 
-| API Name                                            | Description                                                |
+| Name                                           | Description                                                |
 | --------------------------------------------------- | ---------------------------------------------------------- |
 | [RectDrawingItem()](drawingitem.md#rectdrawingitem) | Constructor of a `RectDrawingItem`.                        |
 | [getRect](drawingitem.md#getrect)                   | Returns the `Rect` object the item is based on.            |
@@ -261,7 +261,7 @@ Child classes based on `DrawingItem`
 #### QuadDrawingItem
 
 
-| API Name                                            | Description                                                         |
+| Name                                           | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
 | [QuadDrawingItem()](drawingitem.md#quaddrawingitem) | Constructor of a `QuadDrawingItem`.                                 |
 | [getQuad](drawingitem.md#getquad)                   | Returns the `Quadrilateral` object the item is based on.            |
@@ -269,7 +269,7 @@ Child classes based on `DrawingItem`
 
 #### TextDrawingItem
 
-| API Name                                            | Description                                                         |
+| Name                                           | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
 | [TextDrawingItem()](drawingitem.md#textdrawingitem) | Constructor of a `TextDrawingItem`.                                 |
 | [getText](drawingitem.md#gettext)                   | Returns the text drawn.                                             |
@@ -279,7 +279,7 @@ Child classes based on `DrawingItem`
 
 #### ImageDrawingItem
 
-| API Name                                              | Description                                                          |
+| Name                                             | Description                                                          |
 | ----------------------------------------------------- | -------------------------------------------------------------------- |
 | [ImageDrawingItem()](drawingitem.md#imagedrawingitem) | Constructor of an `ImageDrawingItem`.                                |
 | [getImage](drawingitem.md#getimage)                   | Returns the image drawn.                                             |
@@ -300,7 +300,8 @@ Child classes based on `DrawingItem`
 * [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
 * [VideoFrameTag](interface/videoframetag.md)
-* [Warning](interface/warning.md)
+
+<!-- * [Warning](interface/warning.md) -->
 
 ## Enumerations
 

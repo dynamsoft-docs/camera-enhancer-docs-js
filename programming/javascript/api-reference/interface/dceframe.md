@@ -11,40 +11,32 @@ permalink: /programming/javascript/api-reference/interface/dceframe.html
 
 # DCEFrame
 
-`interface` DCEFrame
+The `DCEFrame` interface extends the [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html) interface and represents an image extracted from video streams (video frame).
 
-The DCEFrame interface inherits from the `DSImageData` in the `Core.BasicStructures` namespace.
+```ts
+interface DCEFrame extends DSImageData {
+  isDCEFrame: boolean;
+  toCanvas: () => HTMLCanvasElement;
+  tag?: VideoFrameTag;
+}
+```
 
-* isDCEFrame: `boolean`
+## isDCEFrame
   
-  Returns whether this is a `DCEFrame`.
+Flag indicating whether the frame is a `DCEFrame`.
 
-* toCanvas: `()=>HTMLCanvasElement`
+## toCanvas
 
-  A `Function` which converts the image data to an `HTMLCanvasElement` object.
+Converts the image data into an HTMLCanvasElement for display or further manipulation in web applications.
 
-The following are extended from the basic interface [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
+**See Also** 
 
-* bytes: `Uint8Array`
+[HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement)
 
-  The raw image data.
-
-* format: `EnumImagePixelFormat`
-
-  The pixel format of the image data. Read more about [EnumImagePixelFormat](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/image-pixel-format.html?lang=js)
-
-* stride: `number`
-
-  The stride is the width of a single row of pixels (a scan line), rounded up to a four-byte boundary.
-
-* width: `number`
-
-  The width of the image data in pixels.
-
-* height: `number`
-
-  The height of the image data in pixels.
-
-* tag: `VideoFrameTag`
+## tag: `VideoFrameTag`
   
-  This property holds extra information about the image data. Note that [VideoFrameTag](videoframetag.md) is extended from [ImageTag](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/image-tag.html)
+Holds extra information about the image data which is extracted from video streams.
+  
+**See Also**
+  
+[VideoFrameTag](videoframetag.md)

@@ -16,7 +16,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 
 ### Initialization
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [createInstance()](initialization.html#createinstance) | Creates a `CameraEnhancer` instance. |
 | [defaultUIElementURL](initialization.html#defaultuielementurl) | Returns or sets the URL of the .html file that defines the default UI Element. |
@@ -25,7 +25,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 
 ### Camera Control
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [ifSkipCameraInspection](camera-control.html#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
 | [ifSaveLastUsedCamera](camera-control.html#ifsavelastusedcamera) | Returns or sets whether to save the last used camera and resolution. |
@@ -42,7 +42,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 
 ### Advanced Camera Control
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setFrameRate()](camera-control.html#setframerate) | Adjusts the frame rate. |
 | [getFrameRate()](camera-control.html#getframerate) | Returns the real-time frame rate. |
@@ -64,7 +64,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 | [refreshInterval](acquisition.html#singleframemode) | Returns or sets how often the buffer is refreshed when the buffer is full. |
 -->
     
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setScanRegion()](acquisition.html#setscanregion) | Specifies which part of the original video is considered when processing frames. |
 | [getScanRegion()](acquisition.html#getscanregion) | Returns the scan region. |
@@ -80,7 +80,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 
 ### UI
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getVisibleRegion()](ui.html#getvisibleregion) | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [addScanRegionOverlayCanvas()](ui.html#addscanregionoverlaycanvas) | Add a canvas of the same size as the scan area directly above the scan area. |
@@ -98,7 +98,7 @@ permalink: /programming/javascript/api-reference/index-v2.1.0.html
 
 ### Auxiliary APIs
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [on()](auxiliary.html#on) | Attach an event handler function for a built-in event. |
 | [off()](auxiliary.html#off) | Remove an event handler. |

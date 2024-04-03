@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 
 **Region and Video**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [getVisibleRegion()](#getvisibleregion) | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
 | [addScanRegionOverlayCanvas()](#addscanregionoverlaycanvas) | Adds a canvas of the same size as the scan area directly above the scan area. |
@@ -27,7 +27,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 
 **ViewDecorator**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setViewDecorator()](#setviewdecorator) | Sets and shows the view decorator. |
 | [getViewDecorator()](#getviewdecorator) | Gets what view decorator is shown. |
@@ -38,7 +38,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 
 **DrawingLayer**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [createDrawingLayer()](#createdrawinglayer) | Creates a DrawingLayer object. |
 | [getDrawingLayer()](#getdrawinglayer) | Gets the `DrawingLayer` specified by its ID. |
@@ -47,7 +47,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 
 **DrawingStyle**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [createDrawingStyle()](#createdrawingstyle) | Creates a new DrawingStyle object and returns its ID. |
 | [getDrawingStyle()](#getdrawingstyle) | Returns the DrawingStyle object specified by its ID. |
@@ -56,7 +56,7 @@ permalink: /programming/javascript/api-reference/ui-v3.3.1.html
 
 **View or Edit**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setOriginalImage()](#setoriginalimage) | Sets the original image to be drawn on the editor canvas.  |
 | [getOriginalImage()](#getoriginalimage) | Returns the original image shown on the editor canvas. |
@@ -89,7 +89,7 @@ enhancer.getVisibleRegion();
 
 **See also**
 
-* [Region](interface/region.html)
+[Region](interface/region.html)
 
 ## addScanRegionOverlayCanvas
 
@@ -127,7 +127,7 @@ removeScanRegionOverlayCanvas(cvs: HTMLCanvasELement): void;
 
 **Parameters**
 
-`cvs` : specifies the canvas.
+`cvs`: specifies the canvas.
 
 **Return value**
 
@@ -169,7 +169,7 @@ setScanRegionMaskStyle(maskStyle: any): void;
 
 **Parameters**
 
-`maskStyle` : specifies the new style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) and [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`maskStyle`: specifies the new style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) and [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 > The default value is
 >
@@ -203,7 +203,7 @@ setVideoFit(objectFit: string): void;
 
 **Parameters**
 
-`objectFit` : specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+`objectFit`: specify the new fit type. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 
 **Return value**
@@ -248,9 +248,9 @@ setViewDecorator(type: string | string[], area: Area): void;
 
 **Parameters**
 
-`type` : specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" , "crosshair" , ["rectangle", "crossline"], ["rectangle", "crosshair"], ["focus", "crossline"] and ["focus", "crosshair"]. If passed an empty string, the decorator is cleared.
+`type`: specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" , "crosshair" , ["rectangle", "crossline"], ["rectangle", "crosshair"], ["focus", "crossline"] and ["focus", "crosshair"]. If passed an empty string, the decorator is cleared.
 
-`area` : specifies where to place the decorator. It accepts 4 values:
+`area`: specifies where to place the decorator. It accepts 4 values:
 
 * `x`,     `y`: top-left point of the decorator in percentage (0~100) of the width/height of the viewer.
 * `width`,     `height`: size of the decorator in percentage (0~100) of the width/height of the viewer.
@@ -273,7 +273,7 @@ enhancer.setViewDecorator(["rectangle", "crosshair"], area);
 
 **See also**
 
-* [Area](interface/area.html)
+[Area](interface/area.html)
 
 ## getViewDecorator
 
@@ -285,7 +285,7 @@ getViewDecorator(): {type: string[], area: Area, canvas: HTMLCanvasElement};
 
 **See also**
 
-* [Area](interface/area.html)
+[Area](interface/area.html)
 
 ## setViewDecoratorLineWidth
 
@@ -297,9 +297,9 @@ setViewDecoratorLineWidth(type: string, width: number): void;
 
 **Parameters**
 
-`type` : specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
+`type`: specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
 
-`width` : specifies the line width.
+`width`: specifies the line width.
 
 **Return value**
 
@@ -328,9 +328,9 @@ setViewDecoratorStrokeStyle(type: string, strokeStyle: string): void;
 
 **Parameters**
 
-`type` : specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
+`type`: specifies the decorator type. Allowed values are "rectangle" , "focus" , "crossline" and "crosshair".
 
-`strokeStyle` : specifies the stroke style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle).
+`strokeStyle`: specifies the stroke style. Read more on [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle).
 
 **Return value**
 
@@ -359,9 +359,9 @@ setViewDecoratorFillStyle(type: string, fillStyle: string): void;
 
 **Parameters**
 
-`type` : specifies the decorator type. Allowed values are "rectangle" and "focus".
+`type`: specifies the decorator type. Allowed values are "rectangle" and "focus".
 
-`fillStyle` : specifies the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`fillStyle`: specifies the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 **Return value**
 
@@ -390,9 +390,9 @@ setViewDecoratorMaskFillStyle(type: string, fillStyle: string): void;
 
 **Parameters**
 
-`type` : specifies the decorator type. Allowed values are "rectangle" and "focus".
+`type`: specifies the decorator type. Allowed values are "rectangle" and "focus".
 
-`fillStyle` : specifies the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
+`fillStyle`: specifies the fill style. Read more on [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle).
 
 **Return value**
 
@@ -431,7 +431,7 @@ let newDrawingLayer = enhancer.createDrawingLayer();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.html)
+[DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayer
 
@@ -443,7 +443,7 @@ getDrawingLayer(drawingLayerId: number): DrawingLayer;
 
 **Parameters**
 
-`drawingLayerId` : specifies the `DrawingLayer` id.
+`drawingLayerId`: specifies the `DrawingLayer` id.
 
 **Return value**
 
@@ -485,7 +485,7 @@ dlrDrawingLayer.setDrawingStyle(newStyleId)
 
 **See also**
 
-* [DrawingLayer](drawinglayer.html)
+[DrawingLayer](drawinglayer.html)
 
 ## getDrawingLayers
 
@@ -511,7 +511,7 @@ let drawingLayers = enhancer.getDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.html)
+[DrawingLayer](drawinglayer.html)
 
 ## clearDrawingLayers
 
@@ -529,7 +529,7 @@ enhancer.clearDrawingLayers();
 
 **See also**
 
-* [DrawingLayer](drawinglayer.html)
+[DrawingLayer](drawinglayer.html)
 
 ## createDrawingStyle
 
@@ -541,7 +541,7 @@ createDrawingStyle(styleDefinition: DrawingStyle): number;
 
 **Parameters**
 
-`styleDefinition` : defines a `DrawingStyle` object. The following are all the allowed properties and their default values. All of them are optional, if a property is not included in the definition, it uses the default value.
+`styleDefinition`: defines a `DrawingStyle` object. The following are all the allowed properties and their default values. All of them are optional, if a property is not included in the definition, it uses the default value.
 
 * lineWidth: `1.0`
 * fillStyle: `rgba(245, 236, 73, 0.3)`
@@ -569,7 +569,7 @@ let styleID = enhancer.createDrawingStyle({
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.html)
+[DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyle
 
@@ -583,7 +583,7 @@ getDrawingStyle(styleId: number): DrawingStyle;
 
 **Parameters**
 
-`styleId` : specifies a `DrawingStyle`.
+`styleId`: specifies a `DrawingStyle`.
 
 **Return value**
 
@@ -598,7 +598,7 @@ let drawingStyle = enhancer.getDrawingStyle(100);
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.html)
+[DrawingStyle](interface/drawingstyle.html)
 
 ## getDrawingStyles
 
@@ -620,7 +620,7 @@ let drawingStyles = enhancer.getDrawingStyles();
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.html)
+[DrawingStyle](interface/drawingstyle.html)
 
 ## updateDrawingStyle
 
@@ -634,9 +634,9 @@ updateDrawingStyle(styleId: number, styleDefinition: DrawingStyle): void;
 
 **Parameters**
 
-`styleId` : specifies a `DrawingStyle` which needs to be updated.
+`styleId`: specifies a `DrawingStyle` which needs to be updated.
 
-`styleDefinition` : Defines a new `DrawingStyle` object.
+`styleDefinition`: Defines a new `DrawingStyle` object.
 
 **Code Snippet**
 
@@ -656,7 +656,7 @@ enhancer.updateDrawingStyle(100, { fontSize: 30 });
 
 **See also**
 
-* [DrawingStyle](interface/drawingstyle.html)
+[DrawingStyle](interface/drawingstyle.html)
 
 **Special Notice**
 
@@ -689,7 +689,7 @@ setOriginalImage(imageData: Uint8Array | Uint8ClampedArray | HTMLCanvasElement, 
 
 **Parameters**
 
-`imageData` : specifies the image data in format of `Uint8Array`, `Uint8ClampedArray` or `HTMLCanvasElement`.
+`imageData`: specifies the image data in format of `Uint8Array`, `Uint8ClampedArray` or `HTMLCanvasElement`.
 
 `width`: specifies the width of the image data.
 
@@ -783,4 +783,4 @@ let drawingItems = enhancer.getSelectedDrawingItems();
 
 **See also**
 
-* [DrawingItem](drawingitem.html)
+[DrawingItem](drawingitem.html)

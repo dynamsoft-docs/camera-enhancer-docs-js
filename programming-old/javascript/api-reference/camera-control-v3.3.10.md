@@ -14,7 +14,7 @@ permalink: /programming/javascript/api-reference/camera-control-v3.3.10.html
 
 **Basic Control**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [ifSkipCameraInspection](#ifskipcamerainspection) | Returns or sets whether to skip camera inspection at initialization to save time. |
 | [ifSaveLastUsedCamera](#ifsavelastusedcamera) | Returns or sets whether to save the last used camera and resolution. |
@@ -35,7 +35,7 @@ permalink: /programming/javascript/api-reference/camera-control-v3.3.10.html
 
 **Advanced Control**
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [setFrameRate()](#setframerate) | Adjusts the frame rate. |
 | [getFrameRate()](#getframerate) | Returns the real-time frame rate. |
@@ -111,7 +111,7 @@ if (cameras.length) {
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.html)
+[VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## selectCamera
 
@@ -125,7 +125,7 @@ selectCamera(cameraObjectOrDeviceID: VideoDeviceInfo | string): Promise<PlayCall
 
 **Parameters**
 
-`cameraObjectOrDeviceID` : specifies the camera.
+`cameraObjectOrDeviceID`: specifies the camera.
 
 **Return value**
 
@@ -142,7 +142,7 @@ if (cameras.length) {
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getSelectedCamera
 
@@ -169,7 +169,7 @@ console.log(camera.label);
 
 **See also**
 
-* [VideoDeviceInfo](interface/videodeviceinfo.html)
+[VideoDeviceInfo](interface/videodeviceinfo.html)
 
 ## open
 
@@ -181,7 +181,7 @@ open(appendOrShowUI?: boolean): Promise<PlayCallbackInfo>;
 
 **Parameters**
 
-`appendOrShowUI` : this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree, the CameraEnhancer instance will append it in the DOM and show it; if the UI already exists in the DOM tree but is hidden, it'll be displayed. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing shows up on the page; if it exists in the DOM tree, it may or may not show up depending on its original state.
+`appendOrShowUI`: this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree, the CameraEnhancer instance will append it in the DOM and show it; if the UI already exists in the DOM tree but is hidden, it'll be displayed. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing shows up on the page; if it exists in the DOM tree, it may or may not show up depending on its original state.
 
 > NOTE: if `setUIElement()` is not called before `open()` , the default UI Element will be used, which is equivalent to the following code:
 >
@@ -198,7 +198,7 @@ A promise resolving to a `PlayCallbackInfo` object.
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## close
 
@@ -210,7 +210,7 @@ close(hideUI?: boolean): void;
 
 **Parameters**
 
-`hideUI` : this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree or it exists but is hidden, nothing is done; if the UI already exists in the DOM tree and is shown, it'll be hidden. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing happens; if it exists in the DOM tree, it may or may not be hidden depending on its original state.
+`hideUI`: this parameter specifies how to handle the UI. When set to true, if the UI doesn't exist in the DOM tree or it exists but is hidden, nothing is done; if the UI already exists in the DOM tree and is shown, it'll be hidden. When not set or set to false, it means not to change the original state of that UI: if it doesn't exist in the DOM tree, nothing happens; if it exists in the DOM tree, it may or may not be hidden depending on its original state.
 
 **Return value**
 
@@ -292,8 +292,9 @@ setResolution(widthOrResolution: number | number[], height: number): Promise<Pla
 
 **Parameters**
 
-`width` : specifies the horizontal resolution.  
-`height` : specifies the vertical resolution.
+`width`: specifies the horizontal resolution.  
+
+`height`: specifies the vertical resolution.
 
 **Return value**
 
@@ -307,7 +308,7 @@ await enhancer.setResolution(width, height);
 
 **See also**
 
-* [PlayCallbackInfo](interface/playcallbackinfo.html)
+[PlayCallbackInfo](interface/playcallbackinfo.html)
 
 ## getResolution
 
@@ -384,7 +385,7 @@ setFrameRate(rate: number): Promise<void>;
 
 **Parameters**
 
-`rate` : specifies the new frame rate.
+`rate`: specifies the new frame rate.
 
 **Return value**
 
@@ -398,7 +399,7 @@ await enhancer.setFrameRate(10);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getFrameRate
 
@@ -448,8 +449,9 @@ await enhancer.turnOnTorch();
 
 **See also**
 
-* [turnOffTorch](#turnofftorch)
-* [getCapabilities](#getcapabilities)
+[turnOffTorch](#turnofftorch)
+
+[getCapabilities](#getcapabilities)
 
 ## turnOffTorch
 
@@ -477,8 +479,9 @@ await enhancer.turnOffTorch();
 
 **See also**
 
-* [turnOnTorch](#turnontorch)
-* [getCapabilities](#getcapabilities)
+[turnOnTorch](#turnontorch)
+
+[getCapabilities](#getcapabilities)
 
 ## getZoomSettings
 
@@ -518,7 +521,7 @@ setZoom(settings:{factor: number}): Promise<void>;
 
 **Parameters**
 
-`settings` : specifies how to zoom the video. As of version 3.2, the setting only contains a zoom factor.
+`settings`: specifies how to zoom the video. As of version 3.2, the setting only contains a zoom factor.
 
 **Return value**
 
@@ -534,7 +537,7 @@ await enhancer.setZoom({
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## resetZoom
 
@@ -592,7 +595,7 @@ enhancer.getFocusSettings();
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## setFocus
 
@@ -617,7 +620,7 @@ setFocus(settings: { mode: string } | { mode: 'manual', distance: number } | {
 
 **Parameters**
 
-`settings` : specifies the focus settings. Available `mode` options are `continuous` and `manual` . `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
+`settings`: specifies the focus settings. Available `mode` options are `continuous` and `manual` . `distance` and `area` are only effective when `mode` is set to `manual` and they should not coexist. The combinations are shown in the code snippet.
 
 **Return value**
 
@@ -671,7 +674,7 @@ await enhancer.setFocus({
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## enableTapToFocus
 
@@ -789,7 +792,7 @@ enhancer.getCapabilities();
 
 **See also**
 
-* [MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
+[MediaTrackCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities)
 
 ## getCameraSettings
 
@@ -836,7 +839,7 @@ enhancer.getCameraSettings();
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getColorTemperature
 
@@ -860,7 +863,7 @@ setColorTemperature(colorTemperatur: number): Promise<void>;
 
 **Parameters**
 
-`colorTemperatur` : specifies the new color temperature.
+`colorTemperatur`: specifies the new color temperature.
 
 **Return value**
 
@@ -874,7 +877,7 @@ await enhancer.setColorTemperature(5000);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## getExposureCompensation
 
@@ -898,7 +901,7 @@ setExposureCompensation(exposureCompensation: number): Promise<void>;
 
 **Parameters**
 
-`exposureCompensation` : specifies the new exposure compensation index.
+`exposureCompensation`: specifies the new exposure compensation index.
 
 **Return value**
 
@@ -912,7 +915,7 @@ await enhancer.setExposureCompensation(-0.7);
 
 **See also**
 
-* [getCapabilities](#getcapabilities)
+[getCapabilities](#getcapabilities)
 
 ## videoSrc
 

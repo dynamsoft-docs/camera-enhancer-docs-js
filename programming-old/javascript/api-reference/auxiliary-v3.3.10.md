@@ -12,7 +12,7 @@ permalink: /programming/javascript/api-reference/auxiliary-v3.3.10.html
 
 # Auxiliary
 
-| API Name | Description |
+| Name| Description |
 |---|---|
 | [on()](#on) | Attaches an event handler function for a built-in event. |
 | [off()](#off) | Removes an event handler. |
@@ -50,8 +50,9 @@ on(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: specifies the event.  
+
+`listener`: specifies the handler function.
 
 **Return value**
 
@@ -96,8 +97,9 @@ off(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: specifies the event.  
+
+`listener`: specifies the handler function.
 
 **Return value**
 
@@ -124,7 +126,7 @@ offAll(eventName?: EventName): void;
 
 **Parameters**
 
-`eventName` : specifies the event.
+`eventName`: specifies the event.
 
 **Return value**
 

@@ -12,13 +12,12 @@ permalink: /programming/javascript/api-reference/drawingitem-v4.0.0.html
 
 # Class DrawingItem
 
-| API Name                                        | Description                                                                                                |
+| Name                                       | Description                                                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | [drawingLayerId](drawingitem.md#drawinglayerid) | Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.                                       |
 | [mediaType](drawingitem.md#mediatype)           | Returns the `mediaType` of the `DrawingItem`.                                                              |
 | [coordinateBase](drawingitem.md#coordinatebase) | Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`. |
 | [drawingStyleId](drawingitem.md#drawingstyleid) | Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.                            |
-| [setState()](drawingitem.md#setstate)           | Sets whether the `DrawingItem` is selected or not.                                                         |
 | [getState()](drawingitem.md#getstate)           | Returns the state of the `DrawingItem`.                                                                    |
 | [on()](drawingitem.md#on)                       | Adds an event listener to the `DrawingItem` for the event specified by `eventName`.                        |
 | [off()](drawingitem.md#off)                     | Removes an event listener to the `DrawingItem` for the event specified by `eventName`.                     |
@@ -36,7 +35,7 @@ Child classes based on `DrawingItem`:
 
 ## Class LineDrawingItem
 
-| API Name                                            | Description                                                       |
+| Name                                           | Description                                                       |
 | --------------------------------------------------- | ----------------------------------------------------------------- |
 | [LineDrawingItem()](drawingitem.md#linedrawingitem) | Constructor of a `LineDrawingItem`.                               |
 | [getLine()](drawingitem.md#getline)                 | Returns the `LineSegment` object the item is based on.            |
@@ -44,7 +43,7 @@ Child classes based on `DrawingItem`:
 
 ## Class RectDrawingItem
 
-| API Name                                            | Description                                                |
+| Name                                           | Description                                                |
 | --------------------------------------------------- | ---------------------------------------------------------- |
 | [RectDrawingItem()](drawingitem.md#rectdrawingitem) | Constructor of a `RectDrawingItem`.                        |
 | [getRect()](drawingitem.md#getrect)                 | Returns the `Rect` object the item is based on.            |
@@ -52,7 +51,7 @@ Child classes based on `DrawingItem`:
 
 ## Class QuadDrawingItem
 
-| API Name                                            | Description                                                         |
+| Name                                           | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
 | [QuadDrawingItem()](drawingitem.md#quaddrawingitem) | Constructor of a `QuadDrawingItem`.                                 |
 | [getQuad()](drawingitem.md#getquad)                 | Returns the `Quadrilateral` object the item is based on.            |
@@ -60,7 +59,7 @@ Child classes based on `DrawingItem`:
 
 ## Class TextDrawingItem
 
-| API Name                                            | Description                                                         |
+| Name                                           | Description                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------------- |
 | [TextDrawingItem()](drawingitem.md#textdrawingitem) | Constructor of a `TextDrawingItem`.                                 |
 | [getText()](drawingitem.md#gettext)                 | Returns the text drawn.                                             |
@@ -70,7 +69,7 @@ Child classes based on `DrawingItem`:
 
 ## Class ImageDrawingItem
 
-| API Name                                                  | Description                                                                       |
+| Name                                                 | Description                                                                       |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                              |
 | [getImage()](drawingitem.md#getimage)                     | Returns the image drawn.                                                          |
@@ -81,7 +80,7 @@ Child classes based on `DrawingItem`:
 <!--
 ## Class GroupDrawingItem
 
-| API Name                                                      | Description                                                                       |
+| Name                                                     | Description                                                                       |
 | ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [GroupDrawingItem()](drawingitem.md#groupdrawingitem)         | Constructor of a `GroupDrawingItem`.                                              |
 | [getChildDrawingItems](drawingitem.md#getchilddrawingitems)   | Returns the child drawing items in the group.                                     |
@@ -133,7 +132,7 @@ A value of type `EnumDrawingItemState`.
 
 **See also**
 
-* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
+[EnumDrawingItemState](enum/enumdrawingitemstate.md)
 
 ## on
 
@@ -153,7 +152,7 @@ on(eventName: string, listener(event: DrawingItemEvent): void): void;
 
 **See also**
 
-* [DrawingItemEvent](interface/drawingitemevent.md)
+[DrawingItemEvent](interface/drawingitemevent.md)
 
 ## off
 
@@ -166,12 +165,14 @@ off(eventName: string, listener(event: DrawingItemEvent): void): void;
 **Parameters**
 
 `eventName`: The name of the event you want to listen to.  
+
 `listener()`: A function that will be called when the specified event occurs.
 
 **See also**
 
-* [DrawingItemEvent](interface/drawingitemevent.md)
-* [on](#on)
+[DrawingItemEvent](interface/drawingitemevent.md)
+
+[on](#on)
 
 ## addNote
 
@@ -188,7 +189,7 @@ addNote(note: Note, replace?: boolean): void;
 
 **See also**
 
-* [Note](interface/note.md)
+[Note](interface/note.md)
 
 ## getNote
 
@@ -277,19 +278,19 @@ clearNotes(): void;
 Constructor of a `LineDrawingItem`.
 
 ```typescript
-constructor(line: Core.BasicStructures.LineSegment, drawingStyleId?: number);
+constructor(line: LineSegment, drawingStyleId?: number);
 ```
 
 **See also**
 
-* [LineSegment](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/line-segment.html)
+[LineSegment](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/line-segment.html)
 
 ## getLine
 
 Returns the `LineSegment` object the item is based on.
 
 ```typescript
-getLine(): Core.BasicStructures.LineSegment;
+getLine(): LineSegment;
 ```
 
 **Return Value**
@@ -301,12 +302,12 @@ Returns the line of type `LineSegment`.
 Specifies a `LineSegment` object to be used for drawing the line.
 
 ```typescript
-setLine(line: Core.BasicStructures.LineSegment): void;
+setLine(line: LineSegment): void;
 ```
 
 **Parameters**
 
-`line`: A line of type `Core.BasicStructures.LineSegment`.
+`line`: A line of type `LineSegment`.
 
 ---
 
@@ -315,19 +316,19 @@ setLine(line: Core.BasicStructures.LineSegment): void;
 Constructor of a `RectDrawingItem`.
 
 ```typescript
-constructor(rect: Core.BasicStructures.Rect, drawingStyleId?: number);
+constructor(rect: Rect, drawingStyleId?: number);
 ```
 
 **See also**
 
-* [Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
+[Rect](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/rect.html)
 
 ## getRect
 
 Returns the `Rect` object the item is based on.
 
 ```typescript
-getRect(): Core.BasicStructures.Rect;
+getRect(): Rect;
 ```
 
 **Return Value**
@@ -339,12 +340,12 @@ Returns the rectangle of type `Rect`.
 Specifies a `Rect` object to be used for drawing the item.
 
 ```typescript
-setRect(rect: Core.BasicStructures.Rect): void;
+setRect(rect: Rect): void;
 ```
 
 **Parameters**
 
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
+`rect`: A rectangle of type `Rect`.
 
 ---
 
@@ -353,19 +354,19 @@ setRect(rect: Core.BasicStructures.Rect): void;
 Constructor of a `QuadDrawingItem`.
 
 ```typescript
-constructor(quad: Core.BasicStructures.Quadrilateral, drawingStyleId?: number);
+constructor(quad: Quadrilateral, drawingStyleId?: number);
 ```
 
 **See also**
 
-* [Quadrilateral](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/quadrilateral.html)
+[Quadrilateral](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/quadrilateral.html)
 
 ## getQuad
 
 Returns the `Quadrilateral` object the item is based on.
 
 ```typescript
-getQuad(): Core.BasicStructures.Quadrilateral;
+getQuad(): Quadrilateral;
 ```
 
 **Return Value**
@@ -377,12 +378,12 @@ Returns the rectangle of type `Quadrilateral`.
 Specifies a `Quadrilateral` object to be used for drawing the item.
 
 ```typescript
-setQuad(quad: Core.BasicStructures.Quadrilateral): void;
+setQuad(quad: Quadrilateral): void;
 ```
 
 **Parameters**
 
-`quad`: A quadrilateral of type `Core.BasicStructures.Quadrilateral`.
+`quad`: A quadrilateral of type `Quadrilateral`.
 
 ---
 
@@ -391,7 +392,7 @@ setQuad(quad: Core.BasicStructures.Quadrilateral): void;
 Constructor of a `TextDrawingItem`.
 
 ```typescript
-constructor(text: string, rect: Core.BasicStructures.Rect, drawingStyleId?: number);
+constructor(text: string, rect: Rect, drawingStyleId?: number);
 ```
 
 ## getText
@@ -423,7 +424,7 @@ setText(text: string): void;
 Returns the `Rect` object which determines where the text is drawn.
 
 ```typescript
-getTextRect(): Core.BasicStructures.Rect;
+getTextRect(): Rect;
 ```
 
 **Return Value**
@@ -435,12 +436,12 @@ Returns the rectangle of type `Rect`.
 Specifies a `Rect` object in which the text is drawn.
 
 ```typescript
-setTextRect(rect: Core.BasicStructures.Rect): void;
+setTextRect(rect: Rect): void;
 ```
 
 **Parameters**
 
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
+`rect`: A rectangle of type `Rect`.
 
 ---
 
@@ -450,8 +451,8 @@ Constructor of an `ImageDrawingItem`.
 
 ```typescript
 constructor(
-    image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
-    rect: Core.BasicStructures.Rect,
+    image: DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement,
+    rect: Rect,
     drawingStyleId?: number);
 ```
 
@@ -465,14 +466,14 @@ constructor(
 
 **See also**
 
-* [DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
+[DSImageData](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/ds-image-data.html)
 
 ## getImage
 
 Returns the image drawn.
 
 ```typescript
-getImage(): Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement;
+getImage(): DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement;
 ```
 
 ## setImage
@@ -480,7 +481,7 @@ getImage(): Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElem
 Specifies the image to draw.
 
 ```typescript
-setImage(image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement): void;
+setImage(image: DSImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement): void;
 ```
 
 ## getImageRect
@@ -488,7 +489,7 @@ setImage(image: Core.BasicStructures.DSImageData | HTMLImageElement | HTMLCanvas
 Returns the `Rect` object which determines where the image is drawn.
 
 ```typescript
-getImageRect(): Core.BasicStructures.Rect;
+getImageRect(): Rect;
 ```
 
 **Return Value**
@@ -500,12 +501,12 @@ Returns the image located rectangle of type `Rect`.
 Specifies a `Rect` object in which the image is drawn.
 
 ```typescript
-setImageRect(rect: Core.BasicStructures.Rect): void;
+setImageRect(rect: Rect): void;
 ```
 
 **Parameters**
 
-`rect`: A rectangle of type `Core.BasicStructures.Rect`.
+`rect`: A rectangle of type `Rect`.
 
 <!--
 ## GroupDrawingItem()

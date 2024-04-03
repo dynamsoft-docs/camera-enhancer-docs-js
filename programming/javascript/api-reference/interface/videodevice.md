@@ -11,12 +11,21 @@ permalink: /programming/javascript/api-reference/interface/videodevice.html
 
 # VideoDevice
 
-`interface` VideoDevice
+The `VideoDevice` interface specifies a camera.
 
-* deviceId: `string`
+```ts
+interface VideoDevice {
+  /** The unique identifier for the camera. */
+  deviceId: string;
+  /** The label or name of the camera. */
+  label: string;
+}
+```
 
-  An alphanumeric string that uniquely identifies a camera.
+## deviceId
 
-* label: `string`
+The unique identifier for the camera.
 
-  A human-readable string describing the camera.
+## label
+
+The label or name of the camera.

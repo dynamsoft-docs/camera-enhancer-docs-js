@@ -9,13 +9,24 @@ breadcrumbText: EnumEnhancedFeatures
 permalink: /programming/javascript/api-reference/enum/enumenhancedfeatures.html
 ---
 
-
 # EnumEnhancedFeatures
 
+`EnumEnhancedFeatures` enumerates the advanced features that can be enabled to enhance user interaction.
+
 ```typescript
-enum EnumEnhancedFeatures{
-    EF_ENHANCED_FOCUS = 0x04,
-    EF_AUTO_ZOOM = 0x10,
-    EF_TAP_TO_FOCUS = 0x40
+export enum EnumEnhancedFeatures {
+    /**
+     * Enables auto-focus on areas likely to contain barcodes, assisting in their identification and interpretation.
+     */
+    EF_ENHANCED_FOCUS = 4,
+    /**
+     * Facilitates automatic zooming in on areas likely to contain barcodes, aiding in their detection and decoding.
+     */
+    EF_AUTO_ZOOM = 16,
+    /**
+     * Allows users to tap on a specific item or area in the video feed to focus on,
+     * simplifying the interaction for selecting or highlighting important elements.
+     */
+    EF_TAP_TO_FOCUS = 64,
 }
 ```

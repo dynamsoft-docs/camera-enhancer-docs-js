@@ -12,55 +12,85 @@ permalink: /programming/javascript/api-reference/feedback.html
 
 # Class Feedback
 
-| API Name                            | Description                                                   |
-| ----------------------------------- | ------------------------------------------------------------- |
-| [beep()](#beep)                     | Trigger a beep when the method is called.                     |
-| [vibrate()](#vibrate)               | Trigger a vibrate when the method is called.                  |
-| [beepSoundSource](#beepsoundsource) | Returns or sets the sound source for the beep.                |
-| [vibrateDuration](#vibrateduration) | Returns or sets how long the vibration lasts in milliseconds. |
+The `Feedback` class is designed to facilitate both audio and haptic feedback functionalities, enabling applications to provide users with auditory signals through beeps and tactile sensations through vibrations.
+
+| Name                                         | Description                                          |
+| -------------------------------------------- | ---------------------------------------------------- |
+| `static` [beep()](#beep)                     | Initiates a beep sound upon invocation.              |
+| `static` [beepSoundSource](#beepsoundsource) | Returns or sets the beep's sound source.             |
+| `static` [vibrate()](#vibrate)               | Activates device vibration upon invocation.          |
+| `static` [vibrateDuration](#vibrateduration) | Determines the vibration's duration in milliseconds. |
 
 ## beep
 
-Trigger a beep when the method is called.
+Initiates a beep sound upon invocation.
 
 ```typescript
-beep(): void;
+static beep(): void;
 ```
+
+**Parameter**
+
+None.
+
+**Return value**
+
+None.
 
 **Code Snippet**
 
 ```javascript
-enhancerFeedback.beep();
-```
-
-## vibrate
-
-Trigger a vibrate when the method is called.
-
-> [Sticky user activation](https://developer.mozilla.org/en-US/docs/Web/Security/User_activation){:target="_blank"} is required for triggering a "vibration", read more [here](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#security){:target="_blank"}.
-
-```typescript
-vibrate(): void;
-```
-
-**Code Snippet**
-
-```javascript
-enhancerFeedback.vibrate();
+Dynamsoft.DCE.Feedback.beep();
 ```
 
 ## beepSoundSource
 
-Returns or sets the sound source for the beep. The value is either a base64 encoded string that represents the sound or a URL to the sound file.
+Returns or sets the beep's sound source. The value is either a base64 encoded string that represents the sound or a URL to the sound file.
 
 ```typescript
-beepSoundSource: string;
+static beepSoundSource: string;
+```
+
+**Code Snippet**
+
+```javascript
+Dynamsoft.DCE.Feedback.beepSoundSource = "path/to/beepSound.mp3";
+```
+
+## vibrate
+
+Activates device vibration upon invocation.
+
+> This method requires [Sticky user activation](https://developer.mozilla.org/en-US/docs/Web/Security/User_activation) as a security measure. More details can be found on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#security).
+
+```typescript
+static vibrate(): void;
+```
+
+**Parameter**
+
+None.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+Dynamsoft.DCE.Feedback.vibrate();
 ```
 
 ## vibrateDuration
 
-Returns or sets how long the vibration lasts in milliseconds. The default value is 300 .
+Determines the vibration's duration in milliseconds.
 
 ```typescript
-vibrateDuration: number;
+static vibrateDuration: number;
+```
+
+**Code Snippet**
+
+```javascript
+Dynamsoft.DCE.Feedback.vibrateDuration = 1000;
 ```

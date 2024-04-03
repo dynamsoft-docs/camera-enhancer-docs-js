@@ -11,14 +11,21 @@ permalink: /programming/javascript/api-reference/interface/note.html
 
 # Note
 
-`interface` Note
+The `Note` interface defines a structure to store extra information in a [DrawingItem](../drawingitem.md). A `DrawingItem` can have one or multiple `Notes`.
 
-Note objects contain information about a DrawingItem. Each DrawingItem can have one or multiple Notes.
+```ts
+interface Note {
+  /** The name of the note. */
+  name: string;
+  /** The content of the note, can be of any type. */
+  content: any;
+}
+```
 
-* name: `string`
+## name
 
-  The name that identifies the Note. The names for the Notes of a DrawingItem should all be different.
+The name of the note.
 
-* content: `any`
+## content
 
-  The content of the Note. It is usually a string.
+The content of the note, can be of any type.
