@@ -46,7 +46,7 @@ constructor(
 ```js
 let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.createDrawingLayer();
-let textItem = new Dynamsoft.DCE.TextDrawingItem(
+let textItem = new Dynamsoft.DCE.DrawingItem.TextDrawingItem(
     "Hello World", 
     {
         x: 100, 
