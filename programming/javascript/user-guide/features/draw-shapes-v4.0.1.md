@@ -6,7 +6,6 @@ keywords: user guide, javascript, js, draw shapes.
 noTitleIndex: true
 needGenerateH3Content: true
 needAutoGenerateSidebar: true
-permalink: /programming/javascript/user-guide/features/draw-shapes.html
 ---
 
 # Draw Shapes with DCE JS
@@ -60,13 +59,14 @@ The following code shows how to define these types of **DrawingItems**:
 
 ```javascript
 let drawingLayer = view.createDrawingLayer();
-let rect = new Dynamsoft.DCE.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
-let line = new Dynamsoft.DCE.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
-let text = new Dynamsoft.DCE.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
-let quad = new Dynamsoft.DCE.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-let img = new Dynamsoft.DCE.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
+let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
+let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
+let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
+let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
 ```
-<!-- Alternatively, the code might be like this
+
+Alternatively, the code might be like this
 
 ```javascript
 import { DrawingItem } from "dynamsoft-camera-enhancer";
@@ -76,7 +76,7 @@ let line = new DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoin
 let text = new DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
 let quad = new DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
 let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
-``` -->
+```
 
 > NOTE:
 >
@@ -89,11 +89,11 @@ After **DrawingItems** have been defined, simply call `addDrawingItems()` to dra
 ```javascript
 function drawShapes(){
   let drawingLayer = view.createDrawingLayer();
-  let rect = new Dynamsoft.DCE.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
-  let line = new Dynamsoft.DCE.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
-  let text = new Dynamsoft.DCE.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
-  let quad = new Dynamsoft.DCE.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-  let img = new Dynamsoft.DCE..ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+  let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
+  let line = new Dynamsoft.DCE.DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
+  let text = new Dynamsoft.DCE.DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
+  let quad = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
+  let img = new Dynamsoft.DCE.DrawingItem.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
   drawingLayer.addDrawingItems([rect,line,text,quad,img]);
 }
 ```

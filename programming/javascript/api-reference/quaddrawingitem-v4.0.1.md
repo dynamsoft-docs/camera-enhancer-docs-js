@@ -41,7 +41,7 @@ constructor(
 ```js
 let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.createDrawingLayer();
-let quadItem = new Dynamsoft.DCE.QuadDrawingItem(
+let quadItem = new Dynamsoft.DCE.DrawingItem.QuadDrawingItem(
     {
         points:[{
             x: 50, 

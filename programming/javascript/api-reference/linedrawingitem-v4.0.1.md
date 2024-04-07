@@ -41,7 +41,7 @@ constructor(
 ```js
 let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.createDrawingLayer();
-let lineItem = new Dynamsoft.DCE.LineDrawingItem(
+let lineItem = new Dynamsoft.DCE.DrawingItem.LineDrawingItem(
     {
         startPoint:
         {

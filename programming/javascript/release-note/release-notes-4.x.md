@@ -17,10 +17,11 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 
 * Implemented a visual magnifier to facilitate adjustment of corner points.
 
-### Improved
+### Changed
 
 * Enhanced "beep" quality by allowing multiple soundtracks now.
 * Renamed the method `getDrawingStyles()` to `getAllDrawingStyles()` under class `DrawingStyleManager` for clarity.
+* Move `DrawingItem` subtypes, such as `LineDrawingItem`, up to directly under the namespace DCE.
 
 ### Fixed
 

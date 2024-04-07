@@ -41,7 +41,7 @@ constructor(
 ```js
 let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.createDrawingLayer();
-let rectItem = new Dynamsoft.DCE.RectDrawingItem(
+let rectItem = new Dynamsoft.DCE.DrawingItem.RectDrawingItem(
     {
         x: 50,
         y: 50,
