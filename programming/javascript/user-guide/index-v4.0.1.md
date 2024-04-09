@@ -57,7 +57,7 @@ The simplest way to include the SDK is to use a CDN such as [jsDelivr](https://j
 - jsDelivr
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.30/dist/js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.30/dist/core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.0.20/dist/license.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
   ```
@@ -65,7 +65,7 @@ The simplest way to include the SDK is to use a CDN such as [jsDelivr](https://j
 - UNPKG  
 
   ```html
-  <script src="https://unpkg.com/dynamsoft-core@3.0.30/dist/js"></script>
+  <script src="https://unpkg.com/dynamsoft-core@3.0.30/dist/core.js"></script>
   <script src="https://unpkg.com/dynamsoft-license@3.0.20/dist/license.js"></script>
   <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
   ```
@@ -102,14 +102,14 @@ The following shows a few ways to download the SDK.
 Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
 
 ```html
-<script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-core@3.0.30/dist/js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-core@3.0.30/dist/core.js"></script>
 <script src="./dynamsoft-camera-enhancer-js-4.0.1/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.1/dist/dce.js"></script>
 ```
 
 or
 
 ```html
-<script src="./node_modules/dynamsoft-core/dist/js"></script>
+<script src="./node_modules/dynamsoft-core/dist/core.js"></script>
 <script src="./node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
 ```
 
