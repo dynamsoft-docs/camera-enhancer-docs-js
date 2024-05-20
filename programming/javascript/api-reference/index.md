@@ -20,8 +20,7 @@ breadcrumbText: API Reference
 | `static` [createInstance()](./instantiate.md#createinstance) | Initializes a new instance of the `CameraEnhancer` class.           |
 | [dispose()](./instantiate.md#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.       |
 | [disposed](./instantiate.md#disposed)                        | Returns whether the `CameraEnhancer` instance has been disposed of. |
-
-<!-- | `static` [onWarning](instantiate.md#onwarning)             | A callback which is triggered when the running environment is not ideal.                     | -->
+| `static` [onWarning](./instantiate.md#onwarning)             | Event triggered when the running environment is not ideal.          |
 
 ### Basic Camera Control
 

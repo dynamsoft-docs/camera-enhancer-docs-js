@@ -56,29 +56,33 @@ The simplest way to include the SDK is to use a CDN such as [jsDelivr](https://j
 - jsDelivr
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.2.30/dist/core.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.2.21/dist/license.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.3/dist/dce.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.2.10/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.2.10/dist/license.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.2/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
-  <script src="https://unpkg.com/dynamsoft-core@3.2.30/dist/core.js"></script>
-  <script src="https://unpkg.com/dynamsoft-license@3.2.21/dist/license.js"></script>
-  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.3/dist/dce.js"></script>
+  <script src="https://unpkg.com/dynamsoft-core@3.2.10/dist/core.js"></script>
+  <script src="https://unpkg.com/dynamsoft-license@3.2.10/dist/license.js"></script>
+  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.2/dist/dce.js"></script>
   ```
 
 > In some rare cases, you might not be able to access the CDN. If this happens, you can use
->- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.30/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js)
->- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.21/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
->- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.3/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js)
 
 #### Host the SDK yourself
 
 Besides using the CDN, you can also download the SDK and host it locally.
 
 The following shows a few ways to download the SDK.
+
+- From the website
+
+  [Download the JavaScript ZIP Package](https://www.dynamsoft.com/camera-enhancer/downloads/1000021-confirmation/?utm_source=guide)
 
 - yarn
 
@@ -97,8 +101,21 @@ The following shows a few ways to download the SDK.
 Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
 
 ```html
+<script src="./dynamsoft-camera-enhancer-js-4.0.2/dynamsoft/distributables/dynamsoft-core@3.2.10/dist/core.js"></script>
+<script src="./dynamsoft-camera-enhancer-js-4.0.2/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.2/dist/dce.js"></script>
+```
+
+or
+
+```html
 <script src="./node_modules/dynamsoft-core/dist/core.js"></script>
 <script src="./node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
+```
+
+or
+
+```typescript
+import { CameraEnhancer, CameraView } from 'dynamsoft-camera-enhancer';
 ```
 
 Read more on [how to host the SDK](#hosting-the-sdk).

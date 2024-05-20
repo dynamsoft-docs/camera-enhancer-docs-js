@@ -11,6 +11,12 @@ permalink: /programming/javascript/release-note/release-notes-4.x.html
 
 # Release Notes - JavaScript 4.x
 
+## 4.0.3 (05/20/2024)
+
+### Fixed
+
+* Fixed an issue on iOS 17 where reopening the camera after leaving the browser might fail.
+
 ## 4.0.2 (04/01/2024)
 
 ### New

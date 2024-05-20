@@ -26,7 +26,7 @@ permalink: /programming/javascript/api-reference/imageeditorview.html
 | [getAllDrawingLayers](#getAllDrawingLayers)                     | Returns an array of all `DrawingLayer` objects managed by this `DrawingLayerManager`.            |
 | [clearUserDefinedDrawingLayers](#clearUserDefinedDrawingLayers) | Clears all user-defined `DrawingLayer` objects.                                                  |
 | [deleteUserDefinedDrawingLayer](#deleteUserDefinedDrawingLayer) | Deletes a user-defined `DrawingLayer` object specified by its unique identifier (ID).            |
-| [getSelectedDrawingItems](#getSelectedDrawingItems)             | Asynchronously returns an array of all selected DrawingItem instances across different layers.   |
+| [getSelectedDrawingItems](#getSelectedDrawingItems)             | Returns an array of all selected DrawingItem instances across different layers.                  |
 
 ## createInstance
 
@@ -311,10 +311,10 @@ imageEditorView.deleteUserDefinedDrawingLayer(DrawingLayerId);
 
 ## getSelectedDrawingItems
 
-Asynchronously returns an array of all selected DrawingItem instances across different layers, supporting complex selection scenarios.
+Returns an array of all selected DrawingItem instances across different layers, supporting complex selection scenarios.
 
 ```typescript
-getSelectedDrawingItems(): Array<DrawingItem> | null;
+getSelectedDrawingItems(): Array<DrawingItem>;
 ```
 
 **Parameters**
@@ -323,7 +323,7 @@ None.
 
 **Return value**
 
-An array of `DrawingItem` objects or `null`.
+An array of `DrawingItem` objects.
 
 **Code Snippet**
 
