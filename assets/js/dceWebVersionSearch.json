@@ -1,5 +1,25 @@
 [
   {
+    "version": "4.0.3",
+    "matchList": {
+      "javascript": {
+        "dcvRepoWeb": [
+          {
+            "path": "/programming/javascript/api-reference/license",
+            "version": "3.2.21"
+          },
+          {
+            "path": "/programming/javascript/api-reference/core",
+            "version": "3.2.30"
+          }
+        ],
+        "dbr": "10.2.10",
+        "ddn": "2.2.10",
+        "dlr": "3.2.30"
+      }
+    }
+  },
+  {
     "version": "4.0.2",
     "matchList": {
       "javascript": {
@@ -15,7 +35,7 @@
         ],
         "dbr": "10.2.10",
         "ddn": "2.2.10",
-        "dlr": "3.2.20"
+        "dlr": "3.2.30"
       }
     }
   },

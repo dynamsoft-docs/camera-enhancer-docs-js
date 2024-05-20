@@ -102,9 +102,9 @@ let flag = cameraEnhancer.disposed;
 
 [dispose](#dispose)
 
-<!-- ## onWarning
+## onWarning
 
-A callback which is triggered when the running environment is not ideal.
+Event triggered when the running environment is not ideal. 
 
 ```typescript
 static onWarning: (warning: Warning) => {};
@@ -139,4 +139,4 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See also**
 
-[Warning]([interface/warning.md](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html)) -->
+[Warning](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html)
