@@ -18,19 +18,18 @@ With the SDK integrated, your users can open your website in a browser, access t
 In this guide, you will learn step by step on how to integrate the Dynamsoft Camera Enhancer SDK into your website.
 
 - [Dynamsoft Camera Enhancer for Your Website](#dynamsoft-camera-enhancer-for-your-website)
-  - [Getting Started](#getting-started)
-    - [Include the SDK](#include-the-sdk)
-      - [Use a CDN](#use-a-cdn)
-      - [Host the SDK yourself](#host-the-sdk-yourself)
-    - [Use the SDK](#use-the-sdk)
-      - [Show live video stream on the page](#show-live-video-stream-on-the-page)
-      - [Capture image frames from the video stream](#capture-image-frames-from-the-video-stream)
-      - [Use ImageEditorView and the Drawing Logic](#use-imageeditorview-and-the-drawing-logic)
-      - [Customize the UI](#customize-the-ui)
+  - [Adding the SDK](#adding-the-sdk)
+    - [Use a CDN](#use-a-cdn)
+    - [Host the SDK yourself](#host-the-sdk-yourself)
+  - [Using the SDK](#using-the-sdk)
+    - [Stream live video](#stream-live-video)
+    - [Capture image frames](#capture-image-frames)
+    - [Use ImageEditorView](#use-imageeditorview)
+    - [Customize the UI](#customize-the-ui)
   - [Hosting the SDK](#hosting-the-sdk)
     - [Step One: Deploy the dist folder](#step-one-deploy-the-dist-folder)
     - [Step Two: Configure the Server](#step-two-configure-the-server)
-    - [Step Three: Include the SDK from the server](#step-three-include-the-sdk-from-the-server)
+    - [Step Three: Add the SDK from the server](#step-three-add-the-sdk-from-the-server)
   - [FAQ](#faq)
     - [Can I open the web page directly from the hard drive?](#can-i-open-the-web-page-directly-from-the-hard-drive)
     - [Why can't I use my camera?](#why-cant-i-use-my-camera)
@@ -39,19 +38,17 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
   - [Release Notes](#release-notes)
   - [Next Steps](#next-steps)
 
-## Getting Started
+## Adding the SDK
 
-### Include the SDK
-
-To use the SDK, we first include the following packages:
+To use the SDK, we first add the following packages:
 
 1. `dynamsoft-camera-enhancer`: Required, it provides the camera related functionalities used in this guide.
 2. `dynamsoft-core`: Required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
-3. `dynamsoft-license`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
+3. `dynamsoft-license`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need it.
 
-#### Use a CDN
+### Use a CDN
 
-The simplest way to include the SDK is to use a CDN such as [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/).
+The simplest way to add the SDK is to use a CDN such as [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/).
 
 - jsDelivr
 
@@ -74,7 +71,7 @@ The simplest way to include the SDK is to use a CDN such as [jsDelivr](https://j
 >- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.21/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
 >- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.3/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js)
 
-#### Host the SDK yourself
+### Host the SDK yourself
 
 Besides using the CDN, you can also download the SDK and host it locally.
 
@@ -94,7 +91,7 @@ The following shows a few ways to download the SDK.
 
 > Note: Upon installation of `dynamsoft-camera-enhancer`, a compatible versions of `dynamsoft-core` will be automatically installed if not installed already.
 
-Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
+Depending on how you downloaded the SDK and where you put it. You can typically add it like this:
 
 ```html
 <script src="./node_modules/dynamsoft-core/dist/core.js"></script>
@@ -103,9 +100,9 @@ Depending on how you downloaded the SDK and where you put it. You can typically 
 
 Read more on [how to host the SDK](#hosting-the-sdk).
 
-### Use the SDK
+## Using the SDK
 
-#### Show live video stream on the page
+### Stream live video
 
 We can create a `CameraEnhancer` instance to open and show the video stream on the page. The following code snippet demonstrates the complete process:
 
@@ -133,7 +130,7 @@ We can create a `CameraEnhancer` instance to open and show the video stream on t
 </script>
 ```
 
-#### Capture image frames from the video stream
+### Capture image frames
 
 There are two ways to capture image frames with Dynamsoft Camera Enhancer.
 
@@ -160,7 +157,7 @@ There are two ways to capture image frames with Dynamsoft Camera Enhancer.
   cameraEnhancer.startFetching();
   ```
   
-#### Use ImageEditorView and the Drawing Logic
+### Use ImageEditorView
 
 The other view class ImageEditorView is designed to show a single image. The following code snippet shows a single frame in an `ImageEditorView` instance and draws a rectangle on the image:
 
@@ -192,7 +189,7 @@ Once the rectangle appears on the image, you can click to select it and adjust i
 
 Read more about [How to draw shapes](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/user-guide/features/draw-shapes.html).
 
-#### Customize the UI
+### Customize the UI
 
 The built-in UI of the `CameraView` instance is defined in the file `dist/dce.ui.html`. You can copy the file `dist/dce.ui.html` to your project, modify it and pass its path in the API `createInstance` to set it as the default UI.
 
@@ -275,9 +272,9 @@ Once you have downloaded the SDK, you can locate the "dist" directory and copy i
 
   > For convenience, self-signed certificates can be used during development and testing. You can also use "http://localhost" which allows camera access without an SSL certificate.
 
-### Step Three: Include the SDK from the server
+### Step Three: Add the SDK from the server
 
-Now that the SDK is hosted on your server, you can include it accordingly.
+Now that the SDK is hosted on your server, you can add it accordingly.
 
 ```html
 <script src="https://www.yourwebsite.com/PATH-TO-THE-SDK/dynamsoft-camera-enhancer/dist/dce.js"></script>
