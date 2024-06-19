@@ -28,12 +28,12 @@ We will start with the following code which defines a page that has a CameraEnha
     <div id="enhancerUIContainer" style="width:100%; height:100%;"></div>
     <script>
       let cameraEnhancer = null;
-      let view = null;
+      let cameraView = null;
       document.getElementById('drawShapes').onclick = drawShapes;
       (async () => {
-          view = await Dynamsoft.DCE.CameraView.createInstance();
-          cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
-          document.getElementById("enhancerUIContainer").appendChild(view.getUIElement());
+          cameraView = await Dynamsoft.DCE.CameraView.createInstance();
+          cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
+          document.getElementById("enhancerUIContainer").appendChild(cameraView.getUIElement());
           await cameraEnhancer.open();
       })();
         function drawShapes(){}
@@ -44,11 +44,11 @@ We will start with the following code which defines a page that has a CameraEnha
 
 ## Add a DrawingLayer
 
-All shapes are drawn on specific [`DrawingLayer`](../../api-reference/drawinglayer.md)s. The first step in drawing a shape is to create a **DrawingLayer**.
+All shapes are drawn on specific [`DrawingLayer`](../../api-reference/drawinglayer.md)s. The first step in drawing a shape is to create a **DrawingLayer** on the viewer.
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = cameraEnhancer.createDrawingLayer();
+  let drawingLayer = cameraView.createDrawingLayer();
 }
 ```
 
@@ -59,7 +59,7 @@ An `DrawingItem` is the basic shape that can be drawn. The SDK classify **Drawin
 The following code shows how to define these types of **DrawingItems**:
 
 ```javascript
-let drawingLayer = view.createDrawingLayer();
+let drawingLayer = cameraView.createDrawingLayer();
 let rect = new Dynamsoft.DCE.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
 let line = new Dynamsoft.DCE.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
 let text = new Dynamsoft.DCE.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
@@ -70,7 +70,7 @@ let img = new Dynamsoft.DCE.ImageDrawingItem(document.getElementById('testIMG'),
 
 ```javascript
 import { DrawingItem } from "dynamsoft-camera-enhancer";
-let drawingLayer = view.createDrawingLayer();
+let drawingLayer = cameraView.createDrawingLayer();
 let rect = new DrawingItem.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
 let line = new DrawingItem.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
 let text = new DrawingItem.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
@@ -88,12 +88,12 @@ After **DrawingItems** have been defined, simply call `addDrawingItems()` to dra
 
 ```javascript
 function drawShapes(){
-  let drawingLayer = view.createDrawingLayer();
+  let drawingLayer = cameraView.createDrawingLayer();
   let rect = new Dynamsoft.DCE.RectDrawingItem({x: 100,y: 100,width: 300,height: 300});
   let line = new Dynamsoft.DCE.LineDrawingItem({startPoint:{x: 600, y: 600}, endPoint:{x: 1050, y: 400}});
   let text = new Dynamsoft.DCE.TextDrawingItem("TESTING...",{x: 20,y: 20,width: 100,height: 100});
   let quad = new Dynamsoft.DCE.QuadDrawingItem({points:[{x:600,y:100},{x:500,y:300},{x:700,y:300},{x:700,y:100}]});
-  let img = new Dynamsoft.DCE..ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
+  let img = new Dynamsoft.DCE.ImageDrawingItem(document.getElementById('testIMG'),{x: 200,y: 200,width: 300,height: 300},true);
   drawingLayer.addDrawingItems([rect,line,text,quad,img]);
 }
 ```
