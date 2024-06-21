@@ -10,7 +10,7 @@ breadcrumbText: Acquisition
 permalink: /programming/javascript/api-reference/acquisition.html
 ---
 
-# Frame Acquisition
+# CameraEnhancer - Frame Acquisition
 
 | Name                                                                | Description                                                                                                            |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
