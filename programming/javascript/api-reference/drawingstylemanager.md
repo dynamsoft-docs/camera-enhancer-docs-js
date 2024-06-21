@@ -10,7 +10,7 @@ breadcrumbText: DrawingStyleManager
 permalink: /programming/javascript/api-reference/drawingstylemanager.html
 ---
 
-# class DrawingStyleManager
+# Class DrawingStyleManager
 
 The `DrawingStyleManager` class serves as a centralized repository and management system for `DrawingStyle` objects within an application. It is designed to streamline the process of creating, retrieving, updating, and maintaining a consistent set of drawing styles that can be applied to [DrawingItem](./drawingitem.md) objects. 
 

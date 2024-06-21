@@ -10,9 +10,7 @@ breadcrumbText: Auxiliary
 permalink: /programming/javascript/api-reference/auxiliary.html
 ---
 
-# Class CameraEnhancer
-
-## Auxiliary
+# CameraEnhancer - Auxiliary
 
 | Name          | Description                                                           |
 | ------------- | --------------------------------------------------------------------- |
