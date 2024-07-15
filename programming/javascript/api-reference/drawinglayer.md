@@ -190,21 +190,21 @@ None.
 
 ```javascript
 let drawingItems = new Array(
-    new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    new Dynamsoft.DCE.RectDrawingItem({
         x: 200,
         y: 200,
         width: 100,
         height: 100,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.TextDrawingItem("label 1", {
+    new Dynamsoft.DCE.TextDrawingItem("label 1", {
         x: 300,
         y: 300,
         width: 300,
         height: 20,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.LineDrawingItem({
+    new Dynamsoft.DCE.LineDrawingItem({
         startPoint:{
             x: 400,
             y: 50
@@ -243,14 +243,14 @@ None.
 
 ```javascript
 let drawingItems = new Array(
-    new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    new Dynamsoft.DCE.RectDrawingItem({
         x: 200,
         y: 200,
         width: 100,
         height: 100,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.TextDrawingItem("label 1", {
+    new Dynamsoft.DCE.TextDrawingItem("label 1", {
         x: 300,
         y: 300,
         width: 300,
@@ -289,21 +289,21 @@ None.
 
 ```javascript
 let drawingItems = new Array(
-    new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    new Dynamsoft.DCE.RectDrawingItem({
         x: 200,
         y: 200,
         width: 100,
         height: 100,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.TextDrawingItem("label 1", {
+    new Dynamsoft.DCE.TextDrawingItem("label 1", {
         x: 300,
         y: 300,
         width: 300,
         height: 20,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.LineDrawingItem({
+    new Dynamsoft.DCE.LineDrawingItem({
         startPoint:{
             x: 400,
             y: 50
@@ -342,21 +342,21 @@ An array of `DrawingItem` objects.
 
 ```javascript
 let drawingItems = new Array(
-    new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    new Dynamsoft.DCE.RectDrawingItem({
         x: 200,
         y: 200,
         width: 100,
         height: 100,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.TextDrawingItem("label 1", {
+    new Dynamsoft.DCE.TextDrawingItem("label 1", {
         x: 300,
         y: 300,
         width: 300,
         height: 20,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.LineDrawingItem({
+    new Dynamsoft.DCE.LineDrawingItem({
         startPoint:{
             x: 400,
             y: 50
@@ -396,7 +396,7 @@ Boolean indicating whether the specific `DrawingItem` exists.
 **Code Snippet**
 
 ```javascript
-let drawingItem = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+let drawingItem = new Dynamsoft.DCE.RectDrawingItem({
     x: 200,
     y: 200,
     width: 100,
@@ -434,14 +434,14 @@ None.
 
 ```javascript
 let drawingItems = new Array(
-    new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+    new Dynamsoft.DCE.RectDrawingItem({
         x: 200,
         y: 200,
         width: 100,
         height: 100,
         isMeasuredInPercentage: true
     }),
-    new Dynamsoft.DCE.DrawingItem.TextDrawingItem("label 1", {
+    new Dynamsoft.DCE.TextDrawingItem("label 1", {
         x: 300,
         y: 300,
         width: 300,
@@ -477,7 +477,7 @@ None.
 **Code Snippet**
 
 ```javascript
-let drawingItem = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
+let drawingItem = new Dynamsoft.DCE.RectDrawingItem({
     x: 200,
     y: 200,
     width: 100,

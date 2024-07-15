@@ -57,7 +57,7 @@ constructor(
 let cameraView = cameraEnhancer.getCameraView();
 let drawingLayer = cameraView.createDrawingLayer();
 const image = document.getElementById("source");
-let imgItem = new Dynamsoft.DrawingItem.ImageDrawingItem(
+let imgItem = new Dynamsoft.ImageDrawingItem(
     image, 
     {
         x: 50, 
