@@ -195,7 +195,7 @@ let img = cameraEnhancer.fetchImage();
 editorView.setOriginalImage(img);
 // Draw a rectangle on the image.
 let drawingLayer = editorView.createDrawingLayer();
-let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem(
+let rect = new Dynamsoft.DCE.RectDrawingItem(
   {
     x: 100,
     y: 100,

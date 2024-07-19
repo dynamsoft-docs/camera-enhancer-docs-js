@@ -165,7 +165,7 @@ None.
 **Code Snippet**
 
 ```js
-let item = new Dynamsoft.DCE.RectDrawingItem({
+let item = new Dynamsoft.DCE.DrawingItem.RectDrawingItem({
     x: 100,
     y: 200,
     width: 300,
