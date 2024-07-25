@@ -156,4 +156,4 @@ drawingLayer.setDefaultStyle(102, "selected", "rect");
 
 You can try the shape drawing feature on the following link:
 
-[Draw Shapes with DCEJS](https://jsfiddle.net/DynamsoftTeam/mjnq07Lp/)
+[Draw Shapes with DCEJS](https://jsfiddle.net/DynamsoftTeam/gsdary2c/)
