@@ -1,53 +1,53 @@
 repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
 repositoryUrlJS: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
 repository: dynamsoft-docs/camera-enhancer-docs-js
-docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
-firstLevelUrl: /camera-enhancer/docs/web
-docHomePage: /camera-enhancer/docs/introduction/
+docFullPath: https://www.dynamsoft.com/camera-enhancer/docs-archive/web/
+firstLevelUrl: /camera-enhancer/docs-archive/web
+docHomePage: /camera-enhancer/docs-archive/introduction/
 
 productUrl: https://www.dynamsoft.com/camera-enhancer/overview/
 productName: Dynamsoft Camera Enhancer
 
-introduction: /camera-enhancer/docs/core/introduction/
-parameters: /camera-enhancer/docs/core/parameters/
-license_activation: /camera-enhancer/docs/core/license-activation/
-release_notes: /camera-enhancer/docs/core/release-notes/
-parameter-reference: /camera-enhancer/docs/core/parameters/reference/
-faq: /camera-enhancer/docs/core/faq/
+introduction: /camera-enhancer/docs-archive/core/introduction/
+parameters: /camera-enhancer/docs-archive/core/parameters/
+license_activation: /camera-enhancer/docs-archive/core/license-activation/
+release_notes: /camera-enhancer/docs-archive/core/release-notes/
+parameter-reference: /camera-enhancer/docs-archive/core/parameters/reference/
+faq: /camera-enhancer/docs-archive/core/faq/
 
-js: /camera-enhancer/docs/web/programming/javascript/
-js-guide: /camera-enhancer/docs/web/programming/javascript/user-guide/
-js-api: /camera-enhancer/docs/web/programming/javascript/api-reference/
-js-rn: /camera-enhancer/docs/web/programming/javascript/release-note/
+js: /camera-enhancer/docs-archive/web/programming/javascript/
+js-guide: /camera-enhancer/docs-archive/web/programming/javascript/user-guide/
+js-api: /camera-enhancer/docs-archive/web/programming/javascript/api-reference/
+js-rn: /camera-enhancer/docs-archive/web/programming/javascript/release-note/
 
-reference: /camera-enhancer/docs/parameters/reference/
-enumerations: /camera-enhancer/docs/parameters/enumerations/
-mobile-enum: /camera-enhancer/docs/programming/enumerations/
+reference: /camera-enhancer/docs-archive/parameters/reference/
+enumerations: /camera-enhancer/docs-archive/parameters/enumerations/
+mobile-enum: /camera-enhancer/docs-archive/programming/enumerations/
 
-license-error: /camera-enhancer/docs/core/faq/license-error/
-contact-us: /camera-enhancer/docs/core/faq/contact-us/
-gallery: /camera-enhancer/docs/core/resources/code-gallery/
-all-release-note: /camera-enhancer/docs/core/release-notes/
-resource: /camera-enhancer/docs/core/resources/
+license-error: /camera-enhancer/docs-archive/core/faq/license-error/
+contact-us: /camera-enhancer/docs-archive/core/faq/contact-us/
+gallery: /camera-enhancer/docs-archive/core/resources/code-gallery/
+all-release-note: /camera-enhancer/docs-archive/core/release-notes/
+resource: /camera-enhancer/docs-archive/core/resources/
 
 barcode-deploy-ios: /barcode-reader/programming/ios/api-reference/camera-enhancer/
 barcode-deploy-android: /barcode-reader/programming/android/api-reference/camera-enhancer/
 barcode-enum: /barcode-reader/parameters/enum/
 
-assets: /camera-enhancer/docs/web/assets/
-edit_icon: /camera-enhancer/docs/web/assets/img-icon/edit-icon.png
-smile_icon: /camera-enhancer/docs/web/assets/img-icon/icon-smile.png
-sad_icon: /camera-enhancer/docs/web/assets/img-icon/icon-sad.png
-dbr_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dbr.svg
-dwt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dwt.svg
-dnt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dnt.svg
+assets: /camera-enhancer/docs-archive/web/assets/
+edit_icon: /camera-enhancer/docs-archive/web/assets/img-icon/edit-icon.png
+smile_icon: /camera-enhancer/docs-archive/web/assets/img-icon/icon-smile.png
+sad_icon: /camera-enhancer/docs-archive/web/assets/img-icon/icon-sad.png
+dbr_icon: /camera-enhancer/docs-archive/web/assets/img-icon/icon-dbr.svg
+dwt_icon: /camera-enhancer/docs-archive/web/assets/img-icon/icon-dwt.svg
+dnt_icon: /camera-enhancer/docs-archive/web/assets/img-icon/icon-dnt.svg
 
 overview: /camera-enhancer/overview/
 download: /camera-enhancer/downloads/
 
 useVersionTree: true
 
-baseurl: "/camera-enhancer/docs/web/"
+baseurl: "/camera-enhancer/docs-archive/web/"
 plugins:
   - jemoji
   - jekyll-sitemap
