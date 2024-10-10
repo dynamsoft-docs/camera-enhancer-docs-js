@@ -53,23 +53,23 @@ The simplest way to add the SDK is to use a CDN such as [jsDelivr](https://jsdel
 - jsDelivr
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.4.20/dist/core.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.4.20/dist/license.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.1.0/dist/dce.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.2.30/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.2.21/dist/license.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.3/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
-  <script src="https://unpkg.com/dynamsoft-core@3.4.20/dist/core.js"></script>
-  <script src="https://unpkg.com/dynamsoft-license@3.4.20/dist/license.js"></script>
-  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.1.0/dist/dce.js"></script>
+  <script src="https://unpkg.com/dynamsoft-core@3.2.30/dist/core.js"></script>
+  <script src="https://unpkg.com/dynamsoft-license@3.2.21/dist/license.js"></script>
+  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.3/dist/dce.js"></script>
   ```
 
 > In some rare cases, you might not be able to access the CDN. If this happens, you can use
->- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.4.20/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js)
->- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.4.20/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
->- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.1.0/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.30/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.21/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.3/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js)
 
 ### Host the SDK yourself
 
@@ -195,7 +195,7 @@ Dynamsoft Camera Enhancer (DCE) offers extensive customization options. If you o
 
 **Use the built-in UI**
 
-DCE includes several pre-defined UIs in the `DCE-LIB-PACKAGE/dist/xxxx.ui.html` (or `node_modules/dynamsoft-camera-enhancer/dist/xxxx.ui.html`).
+DCE includes several pre-defined UIs in the `DCE-LIB-PACKAGE/dist/xxxx.ui.html`.
 
 * `dce.ui.html`: The default UI used by CameraView.createInstance() for simple use cases.
 * `dce.mobile-native.ui.html`: A mobile-inspired UI with auto flash, suitable for most websites. Activate it with `CameraView.createInstance('@engineResourcePath/dce.mobile-native.ui.html')`.
@@ -356,7 +356,7 @@ The following table is a list of supported browsers based on the above requireme
   | Browser Name | Version |
   | :----------: | :-----: |
   |    Chrome    |  v59+   |
-  |   Firefox    |  v68+   |
+  |   Firefox    |  v63+   |
   |     Edge     |  v79+   |
   |    Safari    |  v11+   |
 

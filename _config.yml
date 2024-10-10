@@ -45,7 +45,8 @@ dnt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dnt.svg
 overview: /camera-enhancer/overview/
 download: /camera-enhancer/downloads/
 
-useVersionTree: true
+useVersionTree: false
+isDCV: true
 
 baseurl: "/camera-enhancer/docs/web/"
 plugins:
