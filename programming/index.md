@@ -12,14 +12,14 @@ permalink: /programming/index.html
 
 ## Getting Started
 
-* [User Guide](./javascrit/user-guide/index.html)
+* [User Guide](./javascript/user-guide/index.html)
 
 ## API Reference
 
-* [API Reference](./javascrit/api-reference/index.html)
+* [API Reference](./javascript/api-reference/index.html)
 
 ## Release Notes
 
-* [Version 4.x](./javascrit/release-note/release-notes-4.x.html)
-* [Version 3.x](./javascrit/release-note/release-notes-3.x.html)
-* [Version 2.x](./javascrit/release-note/release-notes-2.x.html)
+* [Version 4.x](./javascript/release-note/release-notes-4.x.html)
+* [Version 3.x](./javascript/release-note/release-notes-3.x.html)
+* [Version 2.x](./javascript/release-note/release-notes-2.x.html)
