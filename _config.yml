@@ -1,5 +1,4 @@
 repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
-repositoryUrlJS: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
 repository: dynamsoft-docs/camera-enhancer-docs-js
 docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
 firstLevelUrl: /camera-enhancer/docs/web
@@ -69,7 +68,7 @@ defaults:
   - scope:
       path: "programming/javascript"
     values:
-      category: "js-repo"
-      edition: "js"
+      docRootName: "Camera Enhancer JavaScript Edition" 
+      docHomePage: "/camera-enhancer/docs/web/programming/javascript/"
 
 url: "https://www.dynamsoft.com" # sitemap root

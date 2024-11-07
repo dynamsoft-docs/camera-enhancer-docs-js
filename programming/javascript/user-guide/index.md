@@ -35,7 +35,6 @@ In this guide, you will learn step by step on how to integrate the Dynamsoft Cam
     - [Why can't I use my camera?](#why-cant-i-use-my-camera)
   - [API Documentation](#api-documentation)
   - [System Requirements](#system-requirements)
-  - [Release Notes](#release-notes)
   - [Next Steps](#next-steps)
 
 ## Adding the SDK
@@ -362,9 +361,9 @@ The following table is a list of supported browsers based on the above requireme
 
 Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDK. Browser compatibility ultimately depends on whether the browser on that particular operating system supports the features listed above.
 
-## Release Notes
+<!-- ## Release Notes
 
-Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/release-note/index.html).
+Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/release-note/index.html). -->
 
 ## Next Steps
 

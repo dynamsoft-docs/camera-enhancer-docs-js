@@ -15,7 +15,7 @@ permalink: /programming/javascript/release-note/index.html
 * [4.0.2 (04/01/2024)](release-notes-4.x.html#402-04012024)
 * [4.0.1 (01/11/2024)](release-notes-4.x.html#401-01112024)
 * [4.0.0 (08/24/2023)](release-notes-4.x.html#400-08242023)
-* [3.3.10 (02/05/2024)](release-notes-3.x.html#3310-02052024)
+<!-- * [3.3.10 (02/05/2024)](release-notes-3.x.html#3310-02052024)
 * [3.3.9 (12/06/2023)](release-notes-3.x.html#339-12062023)
 * [3.3.8 (10/12/2023)](release-notes-3.x.html#338-10122023)
 * [3.3.7 (10/11/2023)](release-notes-3.x.html#337-10112023)
@@ -34,4 +34,4 @@ permalink: /programming/javascript/release-note/index.html
 * [2.1.0 (01/20/2022)](release-notes-2.x.html#210-01202022)
 * [2.0.3 (10/29/2021)](release-notes-2.x.html#203-10292021)
 * [2.0.1 (10/26/2021)](release-notes-2.x.html#201-10262021)
-* [2.0.0 (10/20/2021)](release-notes-2.x.html#200-10202021)
+* [2.0.0 (10/20/2021)](release-notes-2.x.html#200-10202021) -->
