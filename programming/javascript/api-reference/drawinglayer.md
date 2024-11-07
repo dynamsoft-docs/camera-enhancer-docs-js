@@ -21,10 +21,12 @@ permalink: /programming/javascript/api-reference/drawinglayer.html
 | [removeDrawingItems()](#removedrawingitems) | Removes specified `DrawingItem` objects from the layer.                                               |
 | [setDrawingItems()](#setdrawingitems)       | Sets the layer's `DrawingItem` objects, replacing any existing items.                                 |
 | [getDrawingItems()](#getdrawingitems)       | Retrieves `DrawingItem` objects from the layer, optionally filtered by a custom function.             |
-| [hasDrawingItem()](#hasDrawingItem)         | Checks if a specific `DrawingItem` exists within the layer.                                           |
+| [hasDrawingItem()](#hasdrawingitem)         | Checks if a specific `DrawingItem` exists within the layer.                                           |
 | [clearDrawingItems()](#cleardrawingitems)   | Clears all `DrawingItem` objects from the layer.                                                      |
 | [onSelectionChanged()](#onselectionchanged) | Event triggered whenever there is a change in which `DrawingItem` objects are selected or deselected. |
 | [renderAll()](#renderall)                   | Forces a re-render of all `DrawingItem` objects on the layer.                                         |
+| [setMode()](#setmode) | Changes the mode of the layer. |
+| [getMode()](#getmode) | Returns the current mode. |
 
 **Special Notice**
 
@@ -524,4 +526,48 @@ let drawingLayer = imageEditorView.createDrawingLayer();
 drawingLayer.onSelectionChanged = (selected, deselected) => {
     //Do something based on the selection change.
 }
+```
+
+## setMode
+
+Changes the mode of the layer.
+
+```typescript
+setMode(newMode: string): void;
+```
+
+**Parameters**
+
+`newMode`: specifies the new mode. At present, the allowed values are "editor" and "viewer" and the default is "viewer".
+
+> Compared with the "viewer" mode, the "editor" mode shows the "corners" and a "rotate control point" for a selected DrawingItem, which, when dragged, modify the original shape in different ways.
+
+**Code Snippet**
+
+```javascript
+let cameraView = cameraEnhancer.getCameraView();
+//Gets the `DrawingLayer` used by Dynamsoft Label Recognizer.
+let drawingLayer = cameraView.getDrawingLayer(3);
+drawingLayer.setMode("editor");
+```
+
+## getMode
+
+Returns the current mode.  
+
+```typescript
+getMode(): "editor" | "viewer"; 
+```
+
+**Return value**
+
+The mode of current `DrawingLayer` .
+
+**Code Snippet**
+
+```javascript
+let cameraView = cameraEnhancer.getCameraView();
+//Gets the `DrawingLayer` used by Dynamsoft Label Recognizer.
+let drawingLayer = cameraView.getDrawingLayer(3);
+let mode = drawingLayer.getMode();
 ```

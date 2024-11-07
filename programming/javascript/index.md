@@ -22,5 +22,5 @@ permalink: /programming/javascript/index.html
 ## Release Notes
 
 * [Version 4.x](release-note/release-notes-4.x.html)
-* [Version 3.x](release-note/release-notes-3.x.html)
-* [Version 2.x](release-note/release-notes-2.x.html)
+<!-- * [Version 3.x](release-note/release-notes-3.x.html)
+* [Version 2.x](release-note/release-notes-2.x.html) -->
