@@ -12,13 +12,38 @@ permalink: /programming/javascript/api-reference/ui.html
 
 # CameraEnhancer - UI
 
-| Name                                                      | Description                                                                                        |
-| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [convertToPageCoordinates](#convertToPageCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the whole page. |
-| [convertToClientCoordinates](#convertToClientCoordinates) | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.   |
-| [setCameraView](#setCameraView)                           | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                               |
-| [getCameraView](#getCameraView)                           | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                  |
-| [getVideoEl](#getVideoEl)                                 | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.        |
+| Name                                                                  | Description                                                                                         |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [convertToScanRegionCoordinates](#convertToScanRegionCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the scan region. |
+| [convertToPageCoordinates](#convertToPageCoordinates)                 | Converts coordinates from the video's coordinate system to coordinates relative to the whole page.  |
+| [convertToClientCoordinates](#convertToClientCoordinates)             | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.    |
+| [setCameraView](#setCameraView)                                       | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                                |
+| [getCameraView](#getCameraView)                                       | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                   |
+| [getVideoEl](#getVideoEl)                                             | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.         |
+
+## convertToScanRegionCoordinates
+
+Converts coordinates from the video's coordinate system to coordinates relative to the scan region.
+
+This is useful for overlaying HTML elements on top of specific points in the video, aligning with the page's layout.
+
+```typescript
+convertToScanRegionCoordinates(point: Point): Point;
+```
+
+**Parameters**
+
+`point`: a `Point` object representing the x and y coordinates within the video's coordinate system.
+
+**Return value**
+
+A `Point` object representing the converted x and y coordinates relative to the scan region.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.convertToScanRegionCoordinates({x: 0, y: 0});
+```
 
 ## convertToPageCoordinates
 
