@@ -1121,7 +1121,7 @@ cameraEnhancer.setZoom({
 
 Turns off the camera's torch (flashlight) mode.
 
-> This method should be called when the camera is turned on. Note that it only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported. Note that all browsers on iOS (including Chrome) use WebKit as the rendering engine and are not supported.
+> This method should be called when the camera is turned on. Note that it only works with Chromium-based browsers such as Edge and Chrome on Windows or Android. Other browsers such as Firefox or Safari are not supported.
 
 ```typescript
 turnOffTorch(): Promise<void>;
