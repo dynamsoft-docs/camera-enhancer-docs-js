@@ -48,6 +48,7 @@ download: /camera-enhancer/downloads/
 
 useVersionTree: false
 isDCV: true
+useJSVersionV3: true
 
 baseurl: "/camera-enhancer/docs/web/"
 plugins:
