@@ -577,7 +577,7 @@ None.
 **Code Snippet**
 
 ```javascript
-cameraEnhancer.setPixelFormat(Dynamsoft.Core.EnumImagePixelFormat.IPF_ARGB_8888);
+cameraEnhancer.setPixelFormat(EnumImagePixelFormat.IPF_ARGB_8888);
 let image = cameraEnhancer.getImage();
 document.body.appendChild(image.toCanvas());
 ```
