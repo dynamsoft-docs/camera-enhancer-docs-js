@@ -15,293 +15,285 @@ breadcrumbText: API Reference
 
 ### Create and Destroy Instances
 
-| API Name                                                   | Description                                                                                  |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](instantiate.md#createinstance) | Creates a `CameraEnhancer` instance.                                                         |
-| [dispose()](instantiate.md#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.                                |
-| [disposed](instantiate.md#disposed)                        | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
-| `static` [onWarning](instantiate.md#onwarning)             | A callback which is triggered when the running environment is not ideal.                     |
+| Name                                                         | Description                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `static` [createInstance()](./instantiate.md#createinstance) | Initializes a new instance of the `CameraEnhancer` class.           |
+| [dispose()](./instantiate.md#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.       |
+| [disposed](./instantiate.md#disposed)                        | Returns whether the `CameraEnhancer` instance has been disposed of. |
+| `static` [onWarning](./instantiate.md#onwarning)             | Event triggered when the running environment is not ideal.          |
 
 ### Basic Camera Control
 
-| API Name                                                               | Description                                                                           |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `static` [testCameraAccess()](camera-control.md#testcameraaccess)      | Tests whether there is an available camera.                                           |
-| [getAllCameras()](camera-control.md#getallcameras)                     | Returns information of all available cameras on the device.                           |
-| [selectCamera()](camera-control.md#selectcamera)                       | Chooses a camera as the video source.                                                 |
-| [getSelectedCamera()](camera-control.md#getselectedcamera)             | Returns information about the selected / current camera.                              |
-| [getCameraState()](camera-control.md#getcamerastate)                   | Returns the state of the selected camera which could be "opening", "open" or "closed" |
-| [open()](camera-control.md#open)                                       | Turn on the camera to start streaming live video.                                     |
-| [close()](camera-control.md#close)                                     | Stops video streaming and releases the camera.                                        |
-| [isOpen()](camera-control.md#isopen)                                   | Returns whether the selected camera is turned on / occupied.                          |
-| [pause()](camera-control.md#pause)                                     | Pauses video streaming without releasing the camera.                                  |
-| [isPaused()](camera-control.md#ispaused)                               | Returns whether the video streaming is paused.                                        |
-| [resume()](camera-control.md#resume)                                   | Resumes video streaming.                                                              |
-| [setResolution()](camera-control.md#setresolution)                     | Sets the resolution of the selected camera.                                           |
-| [getResolution()](camera-control.md#getresolution)                     | Returns the resolution of the selected camera.                                        |
-| [getAvailableResolutions()](camera-control.md#getavailableresolutions) | Returns the resolutions supported by the selected camera.                             |
-| [ifSaveLastUsedCamera](camera-control.md#ifsavelastusedcamera)         | Returns or sets whether to save the last used camera and resolution.                  |
-| [videoSrc](camera-control.md#videosrc)                                 | Sets or returns the source of the video.                                              |
-| [ifSkipCameraInspection](camera-control.md#ifskipcamerainspection)     | Whether to opt for an optimal rear camera at the first `open()`.                      |
+| Name                                                                   | Description                                                                                                                    |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| [cameraOpenTimeout](./camera-control.md#cameraOpenTimeout)             | Specifies the timeout in milliseconds for opening the camera.                                                                  |
+| [close](./camera-control.md#close)                                     | Closes the currently active camera and stops the video stream.                                                                 |
+| [getAllCameras](./camera-control.md#getAllCameras)                     | Retrieves a list of all available video input devices (cameras) on the current device.                                         |
+| [getAvailableResolutions](./camera-control.md#getAvailableResolutions) | Retrieves a list of available resolutions supported by the currently selected camera.                                          |
+| [getCameraState](./camera-control.md#getCameraState)                   | Retrieves the current state of the camera.                                                                                     |
+| [getResolution](./camera-control.md#getResolution)                     | Gets the current resolution of the video stream.                                                                               |
+| [getSelectedCamera](./camera-control.md#getSelectedCamera)             | Returns the currently selected camera device.                                                                                  |
+| [getVideoSettings](./camera-control.md#getVideoSettings)               | Retrieves the current video settings applied to the camera stream.                                                             |
+| [ifSaveLastUsedCamera](./camera-control.md#ifSaveLastUsedCamera)       | Determines whether the last used camera settings should be saved and reused the next time the `CameraEnhancer` is initialized. |
+| [ifSkipCameraInspection](./camera-control.md#ifSkipCameraInspection)   | Determines whether to skip the initial camera inspection process.                                                              |
+| [isOpen](./camera-control.md#isOpen)                                   | Checks if the camera is currently open and streaming video.                                                                    |
+| [isPaused](./camera-control.md#isPaused)                               | Checks if the video stream is currently paused.                                                                                |
+| [open](./camera-control.md#open)                                       | Opens the currently selected camera and starts the video stream.                                                               |
+| [pause](./camera-control.md#pause)                                     | Pauses the video stream without closing the camera.                                                                            |
+| [resume](./camera-control.md#resume)                                   | Resumes the video stream from a paused state.                                                                                  |
+| [selectCamera](./camera-control.md#selectCamera)                       | Selects a specific camera for use by the `CameraEnhancer`.                                                                     |
+| [setResolution](./camera-control.md#setResolution)                     | Sets the resolution of the video stream to a specified value.                                                                  |
+| [testCameraAccess](./camera-control.md#testCameraAccess)               | Tests whether the application has access to the camera.                                                                        |
+| [updateVideoSettings](./camera-control.md#updateVideoSettings)         | Updates the video settings for the camera stream with new constraints.                                                         |
+| [videoSrc](./camera-control.md#videoSrc)                               | Sets or returns the source URL for the video stream to be used by the `CameraEnhancer`.                                        |
 
 ### Advanced Camera Control
 
-| API Name                                                               | Description                                                                        |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [setFrameRate()](camera-control.md#setframerate)                       | Adjusts the frame rate.                                                            |
-| [getFrameRate()](camera-control.md#getframerate)                       | Returns the real-time frame rate.                                                  |
-| [turnOnTorch()](camera-control.md#turnontorch)                         | Turns on the torch/flashlight if the current camera supports it.                   |
-| [turnOffTorch()](camera-control.md#turnofftorch)                       | Turns off the torch/flashlight.                                                    |
-| [getZoomSettings()](camera-control.md#getzoomsettings)                 | Returns the zoom settings.                                                         |
-| [setZoom()](camera-control.md#setzoom)                                 | Zooms the video stream.                                                            |
-| [resetZoom()](camera-control.md#resetzoom)                             | Resets the zoom level of the video.                                                |
-| [getFocusSettings()](camera-control.md#getfocussettings)               | Returns the focus settings.                                                        |
-| [setFocus()](camera-control.md#setfocus)                               | Sets how the camera focuses.                                                       |
-| [getCapabilities()](camera-control.md#getcapabilities)                 | Inspects and returns the capabilities of the selected camera.                      |
-| [getCameraSettings()](camera-control.md#getcamerasettings)             | Returns the current values for each constrainable property of the selected camera. |
-| [getColorTemperature()](camera-control.md#getcolortemperature)         | Returns the color temperature of the selected camera.                              |
-| [setColorTemperature()](camera-control.md#setcolortemperature)         | Adjusts the color temperature of the selected camera.                              |
-| [getExposureCompensation()](camera-control.md#getexposurecompensation) | Returns the exposure compensation index of the selected camera.                    |
-| [setExposureCompensation()](camera-control.md#setexposurecompensation) | Sets the exposure compensation index of the selected camera.                       |
-| [setAutoZoomRange()](camera-control.md#setautozoomrange)               | Sets the range (minimum to maximum) for zoom when it is done automatically.        |
-| [getAutoZoomRange()](camera-control.md#getautozoomrange)               | Returns the auto zoom range.                                                       |
-| [enableEnhancedFeatures()](camera-control.md#enableenhancedfeatures)   | Enables the specified enhanced features.                                           |
-| [disableEnhancedFeatures()](camera-control.md#disableenhancedfeatures) | Disables the specified enhanced features.                                          |
+| Name                                                                   | Description                                                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [disableEnhancedFeatures](./camera-control.md#disableEnhancedFeatures) | Disables one or more previously enabled enhanced features.                      |
+| [enableEnhancedFeatures](./camera-control.md#enableEnhancedFeatures)   | Enables one or more enhanced features that require a license.                   |
+| [getAutoZoomRange](./camera-control.md#getAutoZoomRange)               | Retrieves the current auto zoom range settings for the camera.                  |
+| [getCameraSettings](./camera-control.md#getCameraSettings)             | Retrieves the current settings of the camera.                                   |
+| [getCapabilities](./camera-control.md#getCapabilities)                 | Gets the capabilities of the current camera.                                    |
+| [getColorTemperature](./camera-control.md#getColorTemperature)         | Retrieves the current color temperature setting of the camera's video feed.     |
+| [getExposureCompensation](./camera-control.md#getExposureCompensation) | Retrieves the current exposure compensation setting of the camera's video feed. |
+| [getFocusSettings](./camera-control.md#getFocusSettings)               | Retrieves the current focus settings of the camera.                             |
+| [getFrameRate](./camera-control.md#getFrameRate)                       | Retrieves the current frame rate of the camera's video stream.                  |
+| [getZoomSettings](./camera-control.md#getZoomSettings)                 | Retrieves the current zoom settings of the camera.                              |
+| [resetZoom](./camera-control.md#resetZoom)                             | Resets the zoom level of the camera to its default value.                       |
+| [setAutoZoomRange](./camera-control.md#setAutoZoomRange)               | Sets the auto zoom range for the camera.                                        |
+| [setColorTemperature](./camera-control.md#setColorTemperature)         | Sets the color temperature of the camera's video feed.                          |
+| [setExposureCompensation](./camera-control.md#setExposureCompensation) | Sets the exposure compensation of the camera's video feed.                      |
+| [setFocus](./camera-control.md#setFocus)                               | Sets the focus mode of the camera.                                              |
+| [setFrameRate](./camera-control.md#setFrameRate)                       | Sets the frame rate of the camera's video stream.                               |
+| [setZoom](./camera-control.md#setZoom)                                 | Sets the zoom level of the camera.                                              |
+| [turnOffTorch](./camera-control.md#turnOffTorch)                       | Turns off the camera's torch (flashlight) mode.                                 |
+| [turnOnTorch](./camera-control.md#turnOnTorch)                         | Turns on the camera's torch (flashlight) mode, if supported.                    |
 
 ### Frame Acquisition
 
-| API Name                                                                            | Description                                                                                         |
-| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [setScanRegion()](acquisition.md#setscanregion)                                     | Specifies which part of the original video is considered when processing frames.                    |
-| [getScanRegion()](acquisition.md#getscanregion)                                     | Returns the scan region.                                                                            |
-| [fetchImage()](acquisition.md#fetchimage)                                           | Returns a `DCEFrame` object which contains the image data of the latest frame from the video input. |
-| [addImageToBuffer()](acquisition.md#addimagetobuffer)                               | Adds an `DSImageData` object to the buffer.                                                         |
-| [setImageFetchInterval()](acquisition.md#setimagefetchinterval)                     | Sets the interval at which `fetchImage()` is called when continued fetching has started.            |
-| [getImageFetchInterval()](acquisition.md#getimagefetchinterval)                     | Returns the fetch interval.                                                                         |
-| [startFetching()](acquisition.md#startfetching)                                     | Starts to continuously fetch images and put them into the buffer.                                   |
-| [stopFetching()](acquisition.md#stopfetching)                                       | Stops fetching any more images.                                                                     |
-| [setMaxImageCount()](acquisition.md#setmaximagecount)                               | Sets the size of the buffer as in how many images can be buffered.                                  |
-| [getMaxImageCount()](acquisition.md#getmaximagecount)                               | Returns the size of the buffer.                                                                     |
-| [getImageCount()](acquisition.md#getimagecount)                                     | Returns how many images are in buffer.                                                              |
-| [hasImage()](acquisition.md#hasimage)                                               | Checks whether an image exists. The image is specified by its id.                                   |
-| [getImage()](acquisition.md#getimage)                                               | Returns a `DCEFrame` object from the buffer.                                                        |
-| [setNextImageToReturn()](acquisition.md#setnextimagetoreturn)                       | Specifies an image by its id to be returned when `getImage()` is called the next time.              |
-| [setBufferOverflowProtectionMode()](acquisition.md#setbufferoverflowprotectionmode) | Sets a protection mode that determines what happens when the buffer overflows.                      |
-| [getBufferOverflowProtectionMode()](acquisition.md#getbufferoverflowprotectionmode) | Returns the buffer protection mode.                                                                 |
-| [isBufferEmpty()](acquisition.md#isbufferempty)                                     | Returns whether the buffer is empty.                                                                |
-| [hasNextImageToFetch()](acquisition.md#hasnextimagetofetch)                         | Checks whether another image can be fetched. In other words, whether the video is still streaming.  |
-| [setPixelFormat()](acquisition.md#setpixelformat)                                   | Sets the pixel format of the images returned by `getImage()`.                                       |
-| [singleFrameMode](acquisition.md#singleframemode)                                   | Returns or sets whether to enable the singe-frame mode.                                             |
-| [takePhoto()](acquisition.md#takephoto)                                             | Invokes the system camera to take a frame with better image quality.                                |
+| Name                                                                                | Description                                                                                                            |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [addImageToBuffer](./acquisition.md#addImageToBuffer)                               | Adds an image to the internal buffer.                                                                                  |
+| [clearBuffer](./acquisition.md#clearBuffer)                                         | Clears all images from the buffer, resetting the state for new image fetching.                                         |
+| [fetchImage](./acquisition.md#fetchImage)                                           | Fetches the current frame from the camera's video feed.                                                                |
+| [getBufferOverflowProtectionMode](./acquisition.md#getBufferOverflowProtectionMode) | Retrieves the current mode for handling buffer overflow.                                                               |
+| [getColourChannelUsageType](./acquisition.md#getColourChannelUsageType)             | Retrieves the current usage type for color channels in images.                                                         |
+| [getImage](./acquisition.md#getImage)                                               | Retrieves a buffered image, of type `DSImageData`.                                                                     |
+| [getImageCount](./acquisition.md#getImageCount)                                     | Retrieves the current number of images in the buffer.                                                                  |
+| [getImageFetchInterval](./acquisition.md#getImageFetchInterval)                     | Retrieves the current interval at which images are continuously fetched from the camera's video feed.                  |
+| [getMaxImageCount](./acquisition.md#getMaxImageCount)                               | Retrieves the maximum number of images that can be buffered.                                                           |
+| [getPixelFormat](./acquisition.md#getPixelFormat)                                   | Retrieves the current pixel format used for images fetched from the camera.                                            |
+| [getScanRegion](./acquisition.md#getScanRegion)                                     | Retrieves the current scan region set within the camera's view.                                                        |
+| [hasImage](./acquisition.md#hasImage)                                               | Checks if an image with the specified ID is present in the buffer.                                                     |
+| [hasNextImageToFetch](./acquisition.md#hasNextImageToFetch)                         | Determines whether there are more images available to fetch.                                                           |
+| [isBufferEmpty](./acquisition.md#isBufferEmpty)                                     | Determines whether the buffer is currently empty.                                                                      |
+| [setBufferOverflowProtectionMode](./acquisition.md#setBufferOverflowProtectionMode) | Sets the behavior for handling new incoming images when the buffer is full.                                            |
+| [setColourChannelUsageType](./acquisition.md#setColourChannelUsageType)             | Sets the usage type for color channels in images.                                                                      |
+| [setErrorListener](./acquisition.md#setErrorListener)                               | Sets an error listener to receive notifications about errors that occur during image source operations.                |
+| [setImageFetchInterval](./acquisition.md#setImageFetchInterval)                     | Sets the interval at which images are continuously fetched from the camera's video feed.                               |
+| [setMaxImageCount](./acquisition.md#setMaxImageCount)                               | Sets the maximum number of images that can be buffered at any time.                                                    |
+| [setNextImageToReturn](./acquisition.md#setNextImageToReturn)                       | Sets the processing priority of a specific image so that it is returned the next time `getImage()` is called.          |
+| [setPixelFormat](./acquisition.md#setPixelFormat)                                   | Sets the pixel format for the images fetched from the camera.                                                          |
+| [setScanRegion](./acquisition.md#setScanRegion)                                     | Sets the scan region within the camera's view which limits the frame acquisition to a specific area of the video feed. |
+| [singleFrameMode](./acquisition.md#singleFrameMode)                                 | Controls the single-frame mode of the `CameraEnhancer`.                                                                |
+| [startFetching](./acquisition.md#startFetching)                                     | Starts the process of fetching images.                                                                                 |
+| [stopFetching](./acquisition.md#stopFetching)                                       | Stops the process of fetching images.                                                                                  |
+| [takePhoto](./acquisition.md#takePhoto)                                             | Initiates a sequence to capture a single frame/image, halting the video stream temporarily.                            |
 
 ### UI
 
-| API Name                                                         | Description                                                                                                                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [getCameraView](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
-| [setCameraView](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
-| [getVideoEl](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
-| [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
+| Name                                                             | Description                                                                                        |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [convertToPageCoordinates](./ui.md#convertToPageCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the whole page. |
+| [convertToClientCoordinates](./ui.md#convertToClientCoordinates) | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.   |
+| [setCameraView](./ui.md#setCameraView)                           | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                               |
+| [getCameraView](./ui.md#getCameraView)                           | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                  |
+| [getVideoEl](./ui.md#getVideoEl)                                 | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.        |
 
 ### Auxiliary
 
-| API Name                                              | Description                                                                                               |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
-| [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
-| [offAll()](auxiliary.md#offall)                       | Removes all event handlers from the specified event. If no event is specified, remove all event handlers. |
-| [detectEnvironment()](auxiliary.md#detectenvironment) | Returns a report on the current running environments.                                                     |
+| Name                        | Description                                                           |
+| --------------------------- | --------------------------------------------------------------------- |
+| [on()](./auxiliary.md#on)   | Registers an event listener for specific camera-related events.       |
+| [off()](./auxiliary.md#off) | Removes an event listener previously registered with the `on` method. |
 
-## Class CameraView
+## View Classes
 
-### Create and Destroy Instances
+### Class CameraView
 
-| API Name                                                  | Description                                                                              |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `static` [createInstance()](cameraview.md#createinstance) | Creates a `CameraView` instance.                                                         |
-| [dispose()](cameraview.md#dispose)                        | Releases all resources used by the `CameraView` instance.                                |
-| [disposed](cameraview.md#disposed)                        | A readonly boolean value indicating whether the `CameraView` instance has been disposed. |
-| [getUIElement()](cameraview.md#getuielement)              | Returns the HTML element that is used by the `CameraView` instance.                      |
-| [setUIElement()](cameraview.md#setuielement)              | Specifies an HTML element for the `CameraView` instance to use as its UI element.        |
+| Name                                                                           | Description                                                                                 |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| `static`  [createInstance](./cameraview.md#createInstance)                     | Initializes a new instance of the `CameraView` class with optional UI customization.        |
+| [dispose](./cameraview.md#dispose)                                             | Releases all resources used by the `CameraView` instance.                                   |
+| [disposed](./cameraview.md#disposed)                                           | Returns whether the `CameraView` instance has been disposed of.                             |
+| `static` [defaultUIElementURL](./cameraview.md#defaultUIElementURL)            | Specifies the URL to a default UI definition file.                                          |
+| [getUIElement](./cameraview.md#getUIElement)                                   | Retrieves the current UI element associated with the `CameraView` instance.                 |
+| [setUIElement](./cameraview.md#setUIElement)                                   | Sets a specific `HTMLDivElement` as the UI element for the `CameraView` instance.           |
+| [createDrawingLayer](./cameraview.md#createDrawingLayer)                       | Creates a new `DrawingLayer` object.                                                        |
+| [getDrawingLayer](./cameraview.md#getDrawingLayer)                             | Retrieves a `DrawingLayer` object by its unique identifier (ID).                            |
+| [getAllDrawingLayers](./cameraview.md#getAllDrawingLayers)                     | Returns an array of all `DrawingLayer` objects managed by this instance.                    |
+| [clearUserDefinedDrawingLayers](./cameraview.md#clearUserDefinedDrawingLayers) | Clears all user-defined `DrawingLayer` objects.                                             |
+| [deleteUserDefinedDrawingLayer](./cameraview.md#deleteUserDefinedDrawingLayer) | Deletes a user-defined `DrawingLayer` object by ID.                                         |
+| [clearAllInnerDrawingItems](./cameraview.md#clearAllInnerDrawingItems)         | Clears all system-defined `DrawingItem` objects while keeping user-defined ones.            |
+| [getVideoElement](./cameraview.md#getVideoElement)                             | Retrieves the `HTMLVideoElement` used for displaying video.                                 |
+| [setVideoFit](./cameraview.md#setVideoFit)                                     | Sets the `object-fit` CSS property of the `HTMLVideoElement`.                               |
+| [getVideoFit](./cameraview.md#getVideoFit)                                     | Retrieves the current value of the `object-fit` CSS property.                               |
+| [getVisibleRegionOfVideo](./cameraview.md#getVisibleRegionOfVideo)             | Returns the region of the video that is currently visible to the user.                      |
+| [setScanRegionMaskStyle](./cameraview.md#setScanRegionMaskStyle)               | Sets the style of the scan region mask, including line width, stroke color, and fill color. |
+| [getScanRegionMaskStyle](./cameraview.md#getScanRegionMaskStyle)               | Retrieves the current style of the scan region mask.                                        |
+| [setScanRegionMaskVisible](./cameraview.md#setScanRegionMaskVisible)           | Sets the visibility of the scan region mask.                                                |
+| [isScanRegionMaskVisible](./cameraview.md#isScanRegionMaskVisible)             | Checks if the scan region mask is currently visible.                                        |
+| [setScanLaserVisible](./cameraview.md#setScanLaserVisible)                     | Sets the visibility of the scan laser effect.                                               |
+| [isScanLaserVisible](./cameraview.md#isScanLaserVisible)                       | Checks if the scan laser effect is currently visible.                                       |
+| [getTipConfig](./cameraview.md#getTipConfig)                                   | Retrieves the current configuration of the tip message box.                                 |
+| [setTipConfig](./cameraview.md#setTipConfig)                                   | Applies configuration settings to the tip message box.                                      |
+| [setTipVisible](./cameraview.md#setTipVisible)                                 | Controls the visibility of the tip message box on the screen.                               |
+| [isTipVisible](./cameraview.md#isTipVisible)                                   | Checks whether the tip message box is currently visible.                                    |
+| [updateTipMessage](./cameraview.md#updateTipMessage)                           | Updates the message displayed in the tip message box.                                       |
+             
+### Class ImageEditorView
 
-### Drawing and UI
+| Name                                                                                | Description                                                                                      |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `static` [createInstance](./imageeditorview.md#createInstance)                      | Initializes a new instance of the `ImageEditorView` class.                                       |
+| [dispose](./imageeditorview.md#dispose)                                             | Releases all resources used by the `ImageEditorView` instance.                                   |
+| [disposed](./imageeditorview.md#disposed)                                           | Returns whether the `ImageEditorView` instance has been disposed of.                             |
+| [getUIElement](./imageeditorview.md#getUIElement)                                   | Returns the `HTMLDivElement`, where the `ImageEditorView` UI is loaded.                          |
+| [setUIElement](./imageeditorview.md#setUIElement)                                   | Sets a specific `HTMLDivElement`, where the UI element for the `ImageEditorView` will be loaded. |
+| [setOriginalImage](./imageeditorview.md#setOriginalImage)                           | Sets the image to be drawn on the `ImageEditorView`.                                             |
+| [getOriginalImage](./imageeditorview.md#getOriginalImage)                           | Returns the current image drawn on the `ImageEditorView`.                                        |
+| [createDrawingLayer](./imageeditorview.md#createDrawingLayer)                       | Creates a new `DrawingLayer` object and returns it.                                              |
+| [getDrawingLayer](./imageeditorview.md#getDrawingLayer)                             | Retrieves a `DrawingLayer` object by its unique identifier (ID).                                 |
+| [getAllDrawingLayers](./imageeditorview.md#getAllDrawingLayers)                     | Returns an array of all `DrawingLayer` objects managed by this `DrawingLayerManager`.            |
+| [clearUserDefinedDrawingLayers](./imageeditorview.md#clearUserDefinedDrawingLayers) | Clears all user-defined `DrawingLayer` objects.                                                  |
+| [deleteUserDefinedDrawingLayer](./imageeditorview.md#deleteUserDefinedDrawingLayer) | Deletes a user-defined `DrawingLayer` object specified by its unique identifier (ID).            |
+| [getSelectedDrawingItems](./imageeditorview.md#getSelectedDrawingItems)             | Asynchronously returns an array of all selected DrawingItem instances across different layers.   |
 
-| API Name                                                                       | Description                                                                                               |
-| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| [createDrawingLayer()](cameraview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers.                                    |
-| [getDrawingLayer()](cameraview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                                                                |
-| [getAllDrawingLayers()](cameraview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                                                             |
-| [deleteUserDefinedDrawingLayer()](cameraview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                                                        |
-| [clearUserDefinedDrawingLayers()](cameraview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                                                   |
-| [setTipConfig()](cameraview.md#settipconfig)                                   | Configures the tip feature.                                                                               |
-| [getTipConfig()](cameraview.md#gettipconig)                                    | Returns the configuration of the tip.                                                                     |
-| [setTipVisible()](cameraview.md#settipvisible)                                 | Sets whether to show the tip.                                                                             |
-| [isTipVisible()](cameraview.md#istipvisible)                                   | Returns whether the tip is visible.                                                                       |
-| [setVideoFit()](cameraview.md#setvideofit)                                     | Sets the `object-fit` CSS property of the video element.                                                  |
-| [getVideoFit()](cameraview.md#getvideofit)                                     | Returns the value of the `object-fit` CSS property of the video element.                                  |
-| [updateTipMessage()](cameraview.md#updatetipmessage)                           | Updates the message shown in the tip.                                                                     |
-| [getVisibleRegionOfVideo()](cameraview.md#getvisibleregionofvideo)             | Returns a `Region` object which specifies which part of the original video is shown in the video element. |
-| [getVideoElement()](cameraview.md#getvideoelement)                             | Returns the video element used by the `CameraView` instance.                                              |
-| [setScanRegionMaskStyle()](cameraview.md#setscanregionmaskstyle)               | Sets the drawing style for the scan-region mask.                                                          |
-| [getScanRegionMaskStyle()](cameraview.md#getscanregionmaskstyle)               | Returns the drawing style for the scan-region mask.                                                       |
-| [setScanRegionMaskVisible()](cameraview.md#setscanregionmaskvisible)           | Sets whether to show the scan-region mask.                                                                |
-| [isScanRegionMaskVisible()](cameraview.md#isscanregionmaskvisible)             | Returns whether the scan-region mask is visible.                                                          |
-| [setScanLaserVisible()](cameraview.md#setscanlaservisible)                     | Sets whether to show the laser that indicates the scanning is going on.                                   |
-| [isScanLaserVisible()](cameraview.md#isscanlaservisible)                       | Returns whether the laser is visible.                                                                     |
-                  
-## Class ImageEditorView
+## Auxiliary Classes
 
-### Create and Destroy Instances
+### CameraEnhancerModule
 
-| API Name                                                       | Description                                                                                   |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](imageeditorview.md#createinstance) | Creates an `ImageEditorView` instance.                                                        |
-| [dispose()](imageeditorview.md#dispose)                        | Releases all resources used by the `ImageEditorView` instance.                                |
-| [disposed](imageeditorview.md#disposed)                        | A readonly boolean value indicating whether the `ImageEditorView` instance has been disposed. |
-| [getUIElement()](imageeditorview.md#getuielement)              | Returns the HTML element that is used by the `ImageEditorView` instance.                      |
-| [setUIElement()](imageeditorview.md#setuielement)              | Specifies an HTML element for the `ImageEditorView` instance to use as its UI element.        |
-
-### Drawing and UI
-
-| API Name                                                                            | Description                                                            |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [createDrawingLayer()](imageeditorview.md#createdrawinglayer)                       | Creates a DrawingLayer object and put it in an array of DrawingLayers. |
-| [getDrawingLayer()](imageeditorview.md#getdrawinglayer)                             | Gets the DrawingLayer specified by its ID.                             |
-| [getAllDrawingLayers()](imageeditorview.md#getalldrawinglayers)                     | Returns an array of all DrawingLayer objects.                          |
-| [deleteUserDefinedDrawingLayer()](imageeditorview.md#deleteuserdefineddrawinglayer) | Deletes a DrawingLayer object specified by its ID.                     |
-| [clearUserDefinedDrawingLayers()](imageeditorview.md#clearuserdefineddrawinglayers) | Removes all user-defined DrawingLayers.                                |
-| [getSelectedDrawingItems()](imageeditorview.md#getselecteddrawingitems)             | Returns the selected DrawingItem object(s).                            |
-| [setOriginalImage()](imageeditorview.md#setoriginalimage)                           | Sets the image to be drawn on the image editor view.                   |
-| [getOriginalImage()](imageeditorview.md#setoriginalimage)                           | Returns the image drawn on the image editor.                           |
-
-## Class CameraEnhancerModule
-
-| API Name     | Description                                         |
-| ------------ | --------------------------------------------------- |
-| getVersion() | Returns the version of the `CameraEnhancer` Module. |
-
-## Subordinate Classes
-
-### Feedback
-
-| API Name                         | Description                                  |
-| -------------------------------- | -------------------------------------------- |
-| [beep()](feedback.md#beep)       | Trigger a beep when the method is called.    |
-| [vibrate()](feedback.md#vibrate) | Trigger a vibrate when the method is called. |
-
-### DrawingLayer
-
-| API Name                                                   | Description                                                                                                      |
-| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| [getId()](drawinglayer.md#getid)                           | Returns the ID of the `DrawingLayer`.                                                                            |
-| [addDrawingItems()](drawinglayer.md#adddrawingitems)       | Adds `DrawingItems` to the `DrawingLayer`.                                                                       |
-| [getDrawingItems()](drawinglayer.md#getdrawingitems)       | Returns all `DrawingItems` or just some of them based on a filter function.                                      |
-| [setDrawingItems()](drawinglayer.md#setdrawingitems)       | Replaces all `DrawingItems` of the DrawingLayer with new ones.                                                   |
-| [hasDrawingItem()](drawinglayer.md#hasDrawingItem)         | Checks out if a `DrawingItem` belongs to the layer.                                                              |
-| [removeDrawingItems()](drawinglayer.md#removedrawingitems) | Removes `DrawingItems` from the DrawingLayer.                                                                    |
-| [clearDrawingItems()](drawinglayer.md#cleardrawingitems)   | Removes all `DrawingItems` from the DrawingLayer.                                                                |
-| [renderAll()](drawinglayer.md#renderall)                   | Renders all `DrawingItems`, usually required when the style for one or more items is changed.                    |
-| [setDefaultStyle()](drawinglayer.md#setdefaultstyle)       | Sets the style for `DrawingItems` on the layer.                                                                  |
-| [setVisible()](drawinglayer.md#setvisible)                 | Shows or hides the `DrawingLayer`.                                                                               |
-| [isVisible()](drawinglayer.md#isvisible)                   | Returns whether the `DrawingLayer` is visible.                                                                   |
-| [onSelectionChanged()](drawinglayer.md#onselectionchanged) | An event handler that is triggered when different `DrawingItems` gets selected/deselected on the `DrawingLayer`. |
-
-### DrawingStyleManager
-
-| API Name                                                                     | Description                                             |
-| ---------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle)   | Creates a new `DrawingStyle` object and returns its ID. |
-| `static` [getDrawingStyle()](drawingstylemanager.md#getdrawingstyle)         | Returns the `DrawingStyle` object specified by its Id.  |
-| `static` [getAllDrawingStyles()](drawingstylemanager.md#getalldrawingstyles) | Returns all `DrawingStyle` objects.                     |
-| `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle)   | Updates an existing `DrawingStyle` specified by its ID. |
+| Name                                               | Description                                         |
+| -------------------------------------------------- | --------------------------------------------------- |
+| `static` [getVersion()](./cameraenhancermodule.md) | Returns the version of the `CameraEnhancer` Module. |
 
 ### DrawingItem
 
-| API Name                                        | Description                                                                                                |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [drawingLayerId](drawingitem.md#drawinglayerid) | Returns the id of a `DrawingLayer` where the `DrawingItem` is drawn.                                       |
-| [mediaType](drawingitem.md#mediatype)           | Returns the `mediaType` of the `DrawingItem`.                                                              |
-| [coordinateBase](drawingitem.md#coordinatebase) | Sets or returns the `coordinateBase` which determines the meaning of the coordinates of the `DrawingItem`. |
-| [drawingStyleId](drawingitem.md#drawingstyleid) | Sets or returns the id of the `DrawingStyle` that applies to the `DrawingItem`.                            |
-| [setState()](drawingitem.md#setstate)           | Sets whether the `DrawingItem` is selected or not.                                                         |
-| [getState()](drawingitem.md#getstate)           | Returns the state of the `DrawingItem`.                                                                    |
-| [on](drawingitem.md#on)                         | Adds an event listener to the `DrawingItem` for the event specified by `eventName`.                        |
-| [off](drawingitem.md#off)                       | Removes an event listener to the `DrawingItem` for the event specified by `eventName`.                     |
-| [addNote()](drawingitem.md#addnote)             | Adds a `Note` to this `DrawingItem`.                                                                       |
-| [getNote()](drawingitem.md#getnote)             | Returns a `Note` specified by its name.                                                                    |
-| [hasNote()](drawingitem.md#hasnote)             | Returns whether a `Note` with the specified name exists on this `DrawingItem`.                             |
-| [updateNote()](drawingitem.md#updatenote)       | Updates the content of a `Note` specified by its name.                                                     |
-| [deleteNote()](drawingitem.md#deletenote)       | Deletes a `Note` specified by its name.                                                                    |
-| [getAllNotes()](drawingitem.md#getallnotes)     | Returns all `Notes` on the `DrawingItem`.                                                                  |
-| [clearNotes()](drawingitem.md#clearnotes)       | Deletes all `Notes` on the `DrawingItem`.                                                                  |
+| Name                                              | Description                                                                                            |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [coordinateBase](./drawingitem.md#coordinatebase) | Returns or sets the coordinate system base.                                                            |
+| [drawingLayerId](./drawingitem.md#drawinglayerid) | Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to.                           |
+| [drawingStyleId](./drawingitem.md#drawingstyleid) | Returns or sets the numeric ID for the `DrawingStyle` that applies to this `DrawingItem`.              |
+| [mediaType](./drawingitem.md#mediatype)           | Returns an enumeration value which indicates the type of this `DrawingItem` (e.g., image, line, text). |
+| [getState()](./drawingitem.md#getstate)           | Returns the current state of the `DrawingItem`                                                         |
+| [on()](./drawingitem.md#on)                       | Binds a listener for a specific event. `eventName`.                                                    |
+| [off()](./drawingitem.md#off)                     | Unbinds a listener for a specific event.                                                               |
+| [addNote()](./drawingitem.md#addnote)             | Adds a `Note` object to this `DrawingItem`.                                                            |
+| [getNote()](./drawingitem.md#getnote)             | Returns a `Note` object specified by its name, if it exists.                                           |
+| [getNotes()](./drawingitem.md#getnotes)           | Returns a collection of all existing `Note` objects on this `DrawingItem`.                             |
+| [hasNote()](./drawingitem.md#hasnote)             | Checks if a `Note` object with the specified name exists.                                              |
+| [updateNote()](./drawingitem.md#updatenote)       | Updates the content of a specified `Note` object.                                                      |
+| [deleteNote()](./drawingitem.md#deletenote)       | Deletes a `Note` object specified by its name.                                                         |
+| [clearNotes()](./drawingitem.md#clearnotes)       | Deletes all `Note` objects on this `DrawingItem`.                                                      |
 
 Child classes based on `DrawingItem`
 
+#### ImageDrawingItem
+
+| Name                                                                  | Description                                                                        |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `constructor` [ImageDrawingItem()](./drawingitem.md#imagedrawingitem) | Constructor for the class.                                                         |
+| [maintainAspectRatio](./drawingitem.md#maintainaspectratio)           | Determines whether the image's aspect ratio should be maintained when it is drawn. |
+| [getImage()](./drawingitem.md#getimage)                               | Retrieves the current image being used for drawing.                                |
+| [setImage()](./drawingitem.md#setimage)                               | Sets the image to be used for drawing.                                             |
+| [getImageRect()](./drawingitem.md#getimagerect)                       | Returns the rectangle area within which the image is drawn.                        |
+| [setImageRect()](./drawingitem.md#setimagerect)                       | Sets the rectangle area within which the image should be drawn.                    |
+
 #### LineDrawingItem
 
-
-| API Name                                            | Description                                                       |
-| --------------------------------------------------- | ----------------------------------------------------------------- |
-| [LineDrawingItem()](drawingitem.md#linedrawingitem) | Constructor of a `LineDrawingItem`.                               |
-| [getLine](drawingitem.md#getline)                   | Returns the `LineSegment` object the item is based on.            |
-| [setLine](drawingitem.md#setline)                   | Specifies a `LineSegment` object to be used for drawing the line. |
-
-#### RectDrawingItem
-
-| API Name                                            | Description                                                |
-| --------------------------------------------------- | ---------------------------------------------------------- |
-| [RectDrawingItem()](drawingitem.md#rectdrawingitem) | Constructor of a `RectDrawingItem`.                        |
-| [getRect](drawingitem.md#getrect)                   | Returns the `Rect` object the item is based on.            |
-| [setRect](drawingitem.md#setrect)                   | Specifies a `Rect` object to be used for drawing the item. |
+| Name                                                                | Description                                        |
+| ------------------------------------------------------------------- | -------------------------------------------------- |
+| `constructor` [LineDrawingItem()](./drawingitem.md#linedrawingitem) | Constructor for the class.                         |
+| [getLine()](./drawingitem.md#getline)                               | Retrieves the current line being used for drawing. |
+| [setLine()](./drawingitem.md#setline)                               | Sets the line to be used for drawing.              |
 
 #### QuadDrawingItem
 
+| Name                                                                | Description                                                 |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `constructor` [QuadDrawingItem()](./drawingitem.md#quaddrawingitem) | Constructor for the class.                                  |
+| [getQuad()](./drawingitem.md#getquad)                               | Retrieves the current quadrilateral being used for drawing. |
+| [setQuad()](./drawingitem.md#setquad)                               | Sets the quadrilateral to be used for drawing.              |
 
-| API Name                                            | Description                                                         |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [QuadDrawingItem()](drawingitem.md#quaddrawingitem) | Constructor of a `QuadDrawingItem`.                                 |
-| [getQuad](drawingitem.md#getquad)                   | Returns the `Quadrilateral` object the item is based on.            |
-| [setQuad](drawingitem.md#setquad)                   | Specifies a `Quadrilateral` object to be used for drawing the item. |
+#### RectDrawingItem
+
+| Name                                                                | Description                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------- |
+| `constructor` [RectDrawingItem()](./drawingitem.md#rectdrawingitem) | Constructor for the class.                              |
+| [getRect()](./drawingitem.md#getrect)                               | Retrieves the current rectangle being used for drawing. |
+| [setRect()](./drawingitem.md#setrect)                               | Sets the rectangle to be used for drawing.              |
 
 #### TextDrawingItem
 
-| API Name                                            | Description                                                         |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [TextDrawingItem()](drawingitem.md#textdrawingitem) | Constructor of a `TextDrawingItem`.                                 |
-| [getText](drawingitem.md#gettext)                   | Returns the text drawn.                                             |
-| [setText](drawingitem.md#settext)                   | Specifies the text to draw.                                         |
-| [getTextRect](drawingitem.md#gettextrect)           | Returns the `Rect` object which determines where the text is drawn. |
-| [setTextRect](drawingitem.md#settextrect)           | Specifies a `Rect` object in which the text is drawn.               |
+| Name                                                                | Description                                                    |
+| ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `constructor` [TextDrawingItem()](./drawingitem.md#textdrawingitem) | Constructor for the class.                                     |
+| [getText()](./drawingitem.md#gettext)                               | Retrieves the current text being used for drawing.             |
+| [setText()](./drawingitem.md#settext)                               | Sets the text to be used for drawing.                          |
+| [getTextRect()](./drawingitem.md#gettextrect)                       | Returns the rectangle area within which the text is drawn.     |
+| [setTextRect()](./drawingitem.md#settextrect)                       | Sets the rectangle area within which the text should be drawn. |
 
-#### ImageDrawingItem
+### DrawingLayer
 
-| API Name                                                  | Description                                                                       |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [ImageDrawingItem()](drawingitem.md#imagedrawingitem)     | Constructor of an `ImageDrawingItem`.                                             |
-| [maintainAspectRatio](drawingitem.md#maintainaspectratio) | Sets or returns whether aspect ratio of the image is maintained when it is drawn. |
-| [getImage](drawingitem.md#getimage)                       | Returns the image drawn.                                                          |
-| [setImage](drawingitem.md#setimage)                       | Specifies the image to draw.                                                      |
-| [getImageRect](drawingitem.md#gettextrect)                | Returns the `Rect` object which determines where the image is drawn.              |
-| [setImageRect](drawingitem.md#settextrect)                | Specifies a `Rect` object in which the image is drawn.                            |
+| Name                                                         | Description                                                                               |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [getId()](./drawinglayer.md#getid)                           | Retrieves the unique identifier of the layer.                                             |
+| [isVisible()](./drawinglayer.md#isvisible)                   | Retrieves the visibility status of the layer.                                             |
+| [setVisible()](./drawinglayer.md#setvisible)                 | Sets the visibility of the layer.                                                         |
+| [setDefaultStyle()](./drawinglayer.md#setdefaultstyle)       | Establishes the baseline styling preferences for `DrawingItem` objects on the layer.      |
+| [addDrawingItems()](./drawinglayer.md#adddrawingitems)       | Adds an array of `DrawingItem` objects to the layer.                                      |
+| [removeDrawingItems()](./drawinglayer.md#removedrawingitems) | Removes specified `DrawingItem` objects from the layer.                                   |
+| [setDrawingItems()](./drawinglayer.md#setdrawingitems)       | Sets the layer's `DrawingItem` objects, replacing any existing items.                     |
+| [getDrawingItems()](./drawinglayer.md#getdrawingitems)       | Retrieves `DrawingItem` objects from the layer, optionally filtered by a custom function. |
+| [hasDrawingItem()](./drawinglayer.md#hasDrawingItem)         | Checks if a specific `DrawingItem` exists within the layer.                               |
+| [clearDrawingItems()](./drawinglayer.md#cleardrawingitems)   | Clears all `DrawingItem` objects from the layer.                                          |
+| [renderAll()](./drawinglayer.md#renderall)                   | Forces a re-render of all `DrawingItem` objects on the layer.                             |
+
+### DrawingStyleManager
+
+| Name                                                                       | Description                                                     |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `static` [createDrawingStyle()](drawingstylemanager.md#createdrawingstyle) | Generates a new `DrawingStyle` object, providing its unique ID. |
+| `static` [getDrawingStyle()](drawingstylemanager.md#getdrawingstyle)       | Retrieves a specific `DrawingStyle` object using its ID.        |
+| `static` [getDrawingStyles()](drawingstylemanager.md#getdrawingstyles)     | Fetches a collection of all available `DrawingStyle` objects.   |
+| `static` [updateDrawingStyle()](drawingstylemanager.md#updatedrawingstyle) | Modifies an identified `DrawingStyle` object by its ID.         |
+
+### Feedback
+
+| Name                                                    | Description                                          |
+| ------------------------------------------------------- | ---------------------------------------------------- |
+| `static` [beep()](feedback.md#beep)                     | Initiates a beep sound upon invocation.              |
+| `static` [beepSoundSource](feedback.md#beepsoundsource) | Returns or sets the beep's sound source.             |
+| `static` [vibrate()](feedback.md#vibrate)               | Activates device vibration upon invocation.          |
+| `static` [vibrateDuration](feedback.md#vibrateduration) | Determines the vibration's duration in milliseconds. |
 
 ## Interfaces
 
+* [CameraTestResponse](interface/cameratestresponse.md)
 * [DCEFrame](interface/dceframe.md)
 * [DrawingItemEvent](interface/drawingitemevent.md)
 * [DrawingStyle](interface/drawingstyle.md)
 * [Note](interface/note.md)
 * [PlayCallbackInfo](interface/playcallbackinfo.md)
 * [Resolution](interface/resolution.md)
-* [Point](interface/point.md)
-* [Region](interface/region.md)
 * [TipConfig](interface/tipconfig.md)
 * [VideoDevice](interface/videodevice.md)
 * [VideoFrameTag](interface/videoframetag.md)
-* [Warning](interface/warning.md)
 
 ## Enumerations
 
-* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)
-* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
 * [EnumDrawingItemMediaType](enum/enumdrawingitemmediatype.md)
+* [EnumDrawingItemState](enum/enumdrawingitemstate.md)
+* [EnumEnhancedFeatures](enum/enumenhancedfeatures.md)

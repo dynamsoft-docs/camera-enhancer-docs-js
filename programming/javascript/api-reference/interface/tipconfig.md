@@ -11,21 +11,33 @@ permalink: /programming/javascript/api-reference/interface/tipconfig.html
 
 # TipConfig
 
-`interface` TipConfig
+The `TipConfig` interface configures how the tip message box is displayed.
 
-* topLeftPoint: [`Point`](point.md);
+```ts
+interface TipConfig {
+  topLeftPoint: Point;
+  width: number;
+  duration: number;
+  coordinateBase: "view" | "image";
+}
+```
 
-  Defines where to put the tip by specifying its top left point.
+## topLeftPoint
 
-* width: `number`
-  
-  Specifies how wide in pixels the tip message box is.
+The top left point of the tip message box.
 
-* duration: `number`
-  
-  Specifies in milliseconds how long the tip is shown before it disappears.
+**See Also**
 
-* coordinateBase: `"view" | "image"`
-  
-  Specifies the coordinate base which determines the actual behaviour of the properties `topLeftPoint` and `width`.
-  
+[Point](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/point.html)
+
+## width
+
+The width of the tip message box.
+
+## duration
+
+The display duration of the tip in milliseconds.
+
+## coordinateBase
+
+The base coordinate system used (e.g., "view" or "image").

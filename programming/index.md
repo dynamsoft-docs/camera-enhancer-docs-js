@@ -8,17 +8,18 @@ breadcrumbText: Start Programming
 permalink: /programming/index.html
 ---
 
-# JavaScript Documentation
+# Dynamsoft Camera Enhancer for Web
 
 ## Getting Started
 
-* [User Guide](javascript/user-guide/index.md)
+* [User Guide](./javascript/user-guide/index.html)
 
 ## API Reference
 
-* [API Reference](javascript/api-reference/index.md)
+* [API Reference](./javascript/api-reference/index.html)
 
 ## Release Notes
 
-* [Version 3.x](javascript/release-note/release-notes-3.x.md)
-* [Version 2.x](javascript/release-note/release-notes-2.x.md)
+* [Version 4.x](./javascript/release-note/release-notes-4.x.html)
+* [Version 3.x](./javascript/release-note/release-notes-3.x.html)
+* [Version 2.x](./javascript/release-note/release-notes-2.x.html)

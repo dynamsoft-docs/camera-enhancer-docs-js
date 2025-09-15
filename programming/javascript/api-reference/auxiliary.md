@@ -10,36 +10,38 @@ breadcrumbText: Auxiliary
 permalink: /programming/javascript/api-reference/auxiliary.html
 ---
 
-# Class CameraEnhancer
+# CameraEnhancer - Auxiliary
 
-## Auxiliary
-
-| API Name                                              | Description                                                                                               |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [on()](auxiliary.md#on)                               | Attaches an event handler function for a built-in event.                                                  |
-| [off()](auxiliary.md#off)                             | Removes an event handler.                                                                                 |
+| Name          | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| [on()](#on)   | Registers an event listener for specific camera-related events.       |
+| [off()](#off) | Removes an event listener previously registered with the `on` method. |
 
 **Type definition used on this page**:
 
 ```typescript
-type EventName = "cameraChange" | "cameraOpen" | "cameraClose" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
+type EventName ="cameraOpen" | "cameraClose" | "cameraChange" | "resolutionChange" | "played" | "singleFrameAcquired" | "frameAddedToBuffer";
 ```
 
 **Built-in Event Reference Table**
 
 | Event Name          | Description                                                      |
 | ------------------- | ---------------------------------------------------------------- |
-| cameraChange        | Triggered when a different camera is used.                        |
 | cameraOpen          | Triggered when the camera opens.                                 |
 | cameraClose         | Triggered when the camera closes.                                |
+| cameraChange        | Triggered when a different camera is used.                       |
 | resolutionChange    | Triggered when the resolution changes.                           |
 | played              | Triggered when the video starts playing/streaming.               |
 | singleFrameAcquired | Triggered when an image is acquired under the single-frame mode. |
 | frameAddedToBuffer  | Triggered each time a new frame is added to the buffer.          |
 
+> NOTE:
+>
+> When the event "singleFrameAcquired" is triggered, the acquired image data will be returned as a reference, not a copy. Therefore, any changes to it will change the data source, and if another callback returns the same image data, the modifications will be synchronized.
+
 ## on
 
-Attaches an event handler function for a built-in event.
+Registers an event listener for specific camera-related events. 
 
 ```typescript
 on(eventName: EventName, listener: Function): void;
@@ -47,8 +49,9 @@ on(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: the name of the event to listen for. Possible values include "cameraOpen", "cameraClose", "cameraChange", "resolutionChange", "played", "singleFrameAcquired", and "frameAddedToBuffer".
+
+`listener`: the callback function to be invoked when the event occurs.
 
 **Return value**
 
@@ -57,33 +60,33 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
-enhancer.on("cameraChange", (deviceId, previousDeviceId) => {
-    console.log("Camera changed.");
-});
-enhancer.on("cameraOpen", () => {
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+cameraEnhancer.on("cameraOpen", () => {
     console.log("Camera opened.");
 });
-enhancer.on("cameraClose", () => {
+cameraEnhancer.on("cameraClose", () => {
     console.log("Camera closed.");
 });
-enhancer.on("resolutionChange", (resolution, previousResolution) => {
+cameraEnhancer.on("cameraChange", (deviceId, previousDeviceId) => {
+    console.log("Camera changed.");
+});
+cameraEnhancer.on("resolutionChange", (resolution, previousResolution) => {
     console.log("Resolution changed.");
 });
-enhancer.on("played", () => {
+cameraEnhancer.on("played", () => {
     console.log("Video stream started.");
 });
-enhancer.on("singleFrameAcquired", dceFrame => {
+cameraEnhancer.on("singleFrameAcquired", dceFrame => {
     console.log("An image is acquired under the single-frame mode.");
 });
-enhancer.on("frameAddedToBuffer", () => {
+cameraEnhancer.on("frameAddedToBuffer", () => {
     console.log("A new frame is added to the buffer.");
 });
 ```
 
 ## off
 
-Removes an event handler.
+Removes an event listener previously registered with the `on` method.
 
 ```typescript
 off(eventName: EventName, listener: Function): void;
@@ -91,8 +94,9 @@ off(eventName: EventName, listener: Function): void;
 
 **Parameters**
 
-`eventName` : specifies the event.  
-`listener` : specifies the handler function.
+`eventName`: the name of the event to listen for. Possible values include "cameraOpen", "cameraClose", "cameraChange", "resolutionChange", "played", "singleFrameAcquired", and "frameAddedToBuffer".
+
+`listener`: the callback function to be invoked when the event occurs.
 
 **Return value**
 
@@ -101,13 +105,14 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 let cameraChanged = playCallBackInfo => {
     console.log(playCallBackInfo.deviceId);
-    enhancer.off("cameraChange", cameraChanged);
+    cameraEnhancer.off("cameraChange", cameraChanged);
 }
-enhancer.on("cameraChange", cameraChanged);
+cameraEnhancer.on("cameraChange", cameraChanged);
 ```
+
 <!--
 ## offAll
 
@@ -119,7 +124,7 @@ offAll(eventName?: EventName): void;
 
 **Parameters**
 
-`eventName` : specifies the event.
+`eventName`: specifies the event.
 
 **Return value**
 
@@ -128,7 +133,7 @@ None.
 **Code Snippet**
 
 ```javascript
-enhancer.offAll("cameraChange");
+cameraEnhancer.offAll("cameraChange");
 ```
 
 ## detectEnvironment
@@ -164,4 +169,29 @@ A JSON object about the running environment. For example
 ```javascript
 await Dynamsoft.DCE.CameraEnhancer.detectEnvironment();
 ```
+
+## setErrorListener
+
+Sets the error listener to receive notifications should errors occur during image acquisition.
+
+```typescript
+setErrorListener(listener: ImageSourceErrorListener): void;
+```
+
+**Parameters**
+
+`listener`: the callback function that is triggered when an error occurs during image acquisition.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.setErrorListener(
+    {
+        onErrorReceived: (errorCode, errorMessage) => {
+            console.log(errorMessage);
+        },
+    }
+);
+```
+
 -->

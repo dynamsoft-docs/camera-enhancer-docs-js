@@ -10,21 +10,131 @@ breadcrumbText: UI
 permalink: /programming/javascript/api-reference/ui.html
 ---
 
-# Class CameraEnhancer
+# CameraEnhancer - UI
 
-## UI
+| Name                                                                  | Description                                                                                         |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [convertToScanRegionCoordinates](#convertToScanRegionCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the scan region. |
+| [convertToPageCoordinates](#convertToPageCoordinates)                 | Converts coordinates from the video's coordinate system to coordinates relative to the whole page.  |
+| [convertToClientCoordinates](#convertToClientCoordinates)             | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.    |
+| [setCameraView](#setCameraView)                                       | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                                |
+| [getCameraView](#getCameraView)                                       | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                   |
+| [getVideoEl](#getVideoEl)                                             | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.         |
 
-| API Name                                                         | Description                                                                                                                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [getCameraView()](ui.md#getcameraview)                             | Returns the `CameraView` instance used by the `CameraEnhancer` instance.                                                                                         |
-| [setCameraView()](ui.md#setcameraview)                             | Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.                                                                                        |
-| [getVideoEl()](ui.md#getvideoel)                                   | Returns the video element used by the `CameraView` instance.                                                                                                     |
-| [convertToPageCoordinates()](ui.md#converttopagecoordinates)     | Converts coordinates of a point to the coordinates relative to the top left point of the entire document.                                                        |
-| [convertToClientCoordinates()](ui.md#converttoclientcoordinates) | Converts coordinates of a point to the coordinates within the application's viewport at which the event occurred (as opposed to the coordinate within the page). |
+## convertToScanRegionCoordinates
+
+Converts coordinates from the video's coordinate system to coordinates relative to the scan region.
+
+This is useful for overlaying HTML elements on top of specific points in the video, aligning with the page's layout.
+
+```typescript
+convertToScanRegionCoordinates(point: Point): Point;
+```
+
+**Parameters**
+
+`point`: a `Point` object representing the x and y coordinates within the video's coordinate system.
+
+**Return value**
+
+A `Point` object representing the converted x and y coordinates relative to the scan region.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.convertToScanRegionCoordinates({x: 0, y: 0});
+```
+
+## convertToPageCoordinates
+
+Converts coordinates from the video's coordinate system to coordinates relative to the whole page.
+
+This is useful for overlaying HTML elements on top of specific points in the video, aligning with the page's layout.
+
+```typescript
+convertToPageCoordinates(point: Point): Point;
+```
+
+**Parameters**
+
+`point`: a `Point` object representing the x and y coordinates within the video's coordinate system.
+
+**Return value**
+
+A `Point` object representing the converted x and y coordinates relative to the page.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.convertToPageCoordinates({x: 0, y: 0});
+```
+
+**See also**
+
+[Point](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/point.html)
+
+## convertToClientCoordinates
+
+Converts coordinates from the video's coordinate system to coordinates relative to the viewport. 
+
+This is useful for positioning HTML elements in relation to the video element on the screen, regardless of page scrolling.
+
+```typescript
+convertToClientCoordinates(point: Point): Point;
+```
+
+**Parameters**
+
+`point`: a `Point` object representing the x and y coordinates within the video's coordinate system.
+
+**Return value**
+
+A `Point` object representing the converted x and y coordinates relative to the viewport.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.convertToClientCoordinates({x: 0, y: 0});
+```
+
+**See also**
+
+[Point](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/point.html)
+
+## setCameraView
+
+Sets the `CameraView` instance to be used with the `CameraEnhancer`.
+
+This method allows for specifying a custom camera view, which can be used to display the camera feed and interface elements.
+
+```typescript
+setCameraView(cameraView: CameraView): void;
+```
+
+**Parameters**
+
+`cameraView`: a `CameraView` instance that will be used to display the camera's video feed and any associated UI components.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
+cameraEnhancer.setCameraView(cameraView);
+```
+
+**See also**
+
+[CameraView](cameraview.md)
 
 ## getCameraView
 
-Returns the `CameraView` instance used by the `CameraEnhancer` instance. The `CameraView` is responsible for streaming video with real-time interaction such as highlighting certain objects found in the video.
+Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.
+
+This method allows for accessing the camera view, which can be useful for manipulating the view or accessing its properties and methods.
 
 ```typescript
 getCameraView(): CameraView;
@@ -36,45 +146,24 @@ None.
 
 **Return value**
 
-The `CameraView` instance used by the `CameraEnhancer` instance.
+The current `CameraView` instance used by the `CameraEnhancer`.
 
 **Code Snippet**
 
 ```javascript
-let cameraView = enhancer.getCameraView();
+let cameraView = cameraEnhancer.getCameraView();
 cameraView.getVisibleRegionOfVideo();
 ```
 
 **See also**
 
-* [CameraView](cameraview.md)
-
-## setCameraView
-
-Sets a `CameraView` instance to be used by the `CameraEnhancer` instance.
-
-```typescript
-setCameraView(cameraView: CameraView): void;
-```
-
-**Parameters**
-
-* `cameraView` : specifies the `CameraView` instance.
-
-**Return value**
-
-None.
-
-**Code Snippet**
-
-```javascript
-let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-enhancer.setCameraView(cameraView);
-```
+[CameraView](cameraview.md)
 
 ## getVideoEl
 
-Returns the video element used by the `CameraEnhancer` instance.
+Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.
+
+This method provides direct access to the video element, enabling further customization or interaction with the video stream.
 
 ```typescript
 getVideoEl(): HTMLVideoElement;
@@ -86,86 +175,10 @@ None.
 
 **Return value**
 
-The video element.
+The `HTMLVideoElement` that is being used to display the camera's video feed.
 
 **Code Snippet**
 
 ```javascript
-let videoElement = enhancer.getVideoEl();
+let videoElement = cameraEnhancer.getVideoEl();
 ```
-<!--
-## setVideoEl
-
-Sets a video element to be used by the `CameraView` instance.
-
-```typescript
-setVideoEl(videoElement: HTMLVideoElement): Promise<void>;
-```
-
-**Parameters**
-
-* `videoElement` : specifies an `HTMLVideoElement` element.
-
-**Return value**
-
-A promise resolving to none.
-
-**Code Snippet**
-
-```javascript
-let el = document.getElementById("videoElement");
-enhancer.setVideoEl(el);
-```
--->
-
-## convertToPageCoordinates
-
-Converts coordinates of a point to the coordinates relative to the top left point of the entire document.
-
-```typescript
-convertToPageCoordinates(point: Point): Point;
-```
-
-**Parameters**
-
-* `point`: specifies the original points (refer to the image selected in the video or in `singleFrameMode`) to be converted.
-
-**Return value**
-
-The converted point.
-
-**Code Snippet**
-
-```javascript
-enhancer.convertToPageCoordinates({x: 0, y: 0});
-```
-
-**See also**
-
-* [Point](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)
-
-## convertToClientCoordinates
-
-Converts coordinates of a point to the coordinates within the application's viewport (as opposed to the coordinate within the page).
-
-```typescript
-convertToClientCoordinates(point: Point): Point;
-```
-
-**Parameters**
-
-* `point`: specifies the original point to be converted.
-
-**Return value**
-
-The converted point.
-
-**Code Snippet**
-
-```javascript
-enhancer.convertToClientCoordinates({x: 0, y: 0});
-```
-
-**See also**
-
-* [Point](https://www.dynamsoft.com/capture-vision/docs/core/enums/core/buffer-overflow-protection-mode.html?lang=js)

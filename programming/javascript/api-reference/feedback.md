@@ -12,35 +12,85 @@ permalink: /programming/javascript/api-reference/feedback.html
 
 # Class Feedback
 
-| API Name              | Description                                  |
-| --------------------- | -------------------------------------------- |
-| [beep()](#beep)       | Trigger a beep when the method is called.    |
-| [vibrate()](#vibrate) | Trigger a vibrate when the method is called. |
+The `Feedback` class is designed to facilitate both audio and haptic feedback functionalities, enabling applications to provide users with auditory signals through beeps and tactile sensations through vibrations.
+
+| Name                                         | Description                                          |
+| -------------------------------------------- | ---------------------------------------------------- |
+| `static` [beep()](#beep)                     | Initiates a beep sound upon invocation.              |
+| `static` [beepSoundSource](#beepsoundsource) | Returns or sets the beep's sound source.             |
+| `static` [vibrate()](#vibrate)               | Activates device vibration upon invocation.          |
+| `static` [vibrateDuration](#vibrateduration) | Determines the vibration's duration in milliseconds. |
 
 ## beep
 
-Trigger a beep when the method is called.
+Initiates a beep sound upon invocation.
 
 ```typescript
-beep(): void;
+static beep(): void;
+```
+
+**Parameter**
+
+None.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+Dynamsoft.DCE.Feedback.beep();
+```
+
+## beepSoundSource
+
+Returns or sets the beep's sound source. The value is either a base64 encoded string that represents the sound or a URL to the sound file.
+
+```typescript
+static beepSoundSource: string;
 ```
 
 **Code Snippet**
 
 ```javascript
-enhancerFeedback.beep();
+Dynamsoft.DCE.Feedback.beepSoundSource = "path/to/beepSound.mp3";
 ```
 
 ## vibrate
 
-Trigger a vibrate when the method is called.
+Activates device vibration upon invocation.
+
+> This method requires [Sticky user activation](https://developer.mozilla.org/en-US/docs/Web/Security/User_activation) as a security measure. More details can be found on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#security).
 
 ```typescript
-vibrate(): void;
+static vibrate(): void;
+```
+
+**Parameter**
+
+None.
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+Dynamsoft.DCE.Feedback.vibrate();
+```
+
+## vibrateDuration
+
+Determines the vibration's duration in milliseconds.
+
+```typescript
+static vibrateDuration: number;
 ```
 
 **Code Snippet**
 
 ```javascript
-enhancerFeedback.vibrate();
+Dynamsoft.DCE.Feedback.vibrateDuration = 1000;
 ```

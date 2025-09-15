@@ -1,29 +1,26 @@
 ---
 layout: default-layout
-title: Initialization - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Initialization.
-keywords: camera enhancer, initialization, javascript, js
+title: Instantiation - Dynamsoft Camera Enhancer JavaScript API
+description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Instantiation.
+keywords: camera enhancer, Instantiation, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
-breadcrumbText: Initialization
+breadcrumbText: Instantiation
 permalink: /programming/javascript/api-reference/instantiate.html
 ---
 
-# Class CameraEnhancer
+# CameraEnhancer - Create and Destroy Instances
 
-## Create and Destroy Instances
-
-| API Name                                                         | Description                                                                                  |
-| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `static` [createInstance()](#createinstance)                     | Creates a `CameraEnhancer` instance.                                                         |
-| [dispose()](#dispose)                                            | Releases all resources used by the `CameraEnhancer` instance.                                |
-| [disposed](#disposed)                                            | A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed. |
-| `static` [onWarning](#onwarning)                                 | A callback which is triggered when the running environment is not ideal.                     |
+| Name                                         | Description                                                         |
+| -------------------------------------------- | ------------------------------------------------------------------- |
+| `static` [createInstance()](#createinstance) | Initializes a new instance of the `CameraEnhancer` class.           |
+| [dispose()](#dispose)                        | Releases all resources used by the `CameraEnhancer` instance.       |
+| [disposed](#disposed)                        | Returns whether the `CameraEnhancer` instance has been disposed of. |
 
 ## createInstance
 
-Creates a `CameraEnhancer` instance.
+Initializes a new instance of the `CameraEnhancer` class. 
 
 ```typescript
 static createInstance(cameraView?: CameraView): Promise<CameraEnhancer>;
@@ -31,29 +28,30 @@ static createInstance(cameraView?: CameraView): Promise<CameraEnhancer>;
 
 **Parameters**
 
-* `cameraView`(optional): Specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
+`cameraView`: [Optional] specifies a `CameraView` instance to be used by the `CameraEnhancer` instance.
 
 **Return value**
 
-A promise resolving to the created `CameraEnhancer` object.
+A promise that resolves with the initialized `CameraEnhancer` instance.
 
 **Code Snippet**
 
 ```javascript
 (async () => {
     let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
-    let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
+    let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
 })();
 ```
 
 **See also**
 
-[Dispose](#dispose)  
+[dispose](#dispose)
+
 [CameraView](cameraview.md)
 
 ## dispose
 
-Releases all resources used by the `CameraEnhancer` instance. After that, the instance will be left with only the property `disposed` (the value is `true`).
+Releases all resources used by the `CameraEnhancer` instance. Subsequently, the instance retains only the `disposed` property, set to true.
 
 ```typescript
 dispose(): void;
@@ -70,39 +68,43 @@ None.
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 // Use the object to perform some tasks
 //...
-enhancer.dispose();
+cameraEnhancer.dispose();
 ```
 
 **See also**
 
-[Disposed](#disposed)
+[disposed](#disposed)
 
 ## disposed
 
-A readonly boolean value indicating whether the `CameraEnhancer` instance has been disposed.
+Returns whether the `CameraEnhancer` instance has been disposed of.
 
 ```typescript
 readonly disposed: boolean; 
 ```
 
+**Return value**
+
+Boolean indicating whether the `CameraEnhancer` instance has been disposed of.
+
 **Code Snippet**
 
 ```javascript
-let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
 //...
-let flag = enhancer.disposed;
+let flag = cameraEnhancer.disposed;
 ```
 
 **See also**
 
-[Dispose](#dispose)
+[dispose](#dispose)
 
 ## onWarning
 
-A callback which is triggered when the running environment is not ideal.
+Event triggered when the running environment is not ideal. 
 
 ```typescript
 static onWarning: (warning: Warning) => {};
@@ -137,4 +139,4 @@ Dynamsoft.DCE.CameraEnhancer.onWarning = warning => console.log(warning);
 
 **See also**
 
-[Warning](interface/warning.md)
+[Warning](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/warning.html)

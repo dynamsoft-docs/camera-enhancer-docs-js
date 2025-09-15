@@ -11,18 +11,38 @@ permalink: /programming/javascript/api-reference/interface/drawingitemevent.html
 
 # DrawingItemEvent
 
-`interface` DrawingItemEvent
+The `DrawingItemEvent` interface extends the [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event) interface and represents an event bound to a [DrawingItem](../drawingitem.md).
 
-The DrawingItemEvent interface extends the default `Event` interface of DOM with the following extra fields.
+```ts
+interface DrawingItemEvent extends Event {
+  targetItem: DrawingItem,
+  itemClientX: number;
+  itemClientY: number;
+  itemPageX: number;
+  itemPageY: number;
+}
+```
 
-* targetItem: `DrawingItem`
+## targetItem
 
-  The DrawingItem onto which the event was dispatched.
+The drawing item that is the target of the event.
 
-* itemClientX, itemClientY: `number`
+**See Also**
 
-  The coordinates of the top-left vertex of the minimum bounding box of the DrawingItem, relative to the viewpoint of the browser window.
+[DrawingItem](../drawingitem.md)
 
-* itemPageX, itemPageY: `number`
+## itemClientX
 
-  The coordinates of the top-left vertex of the minimum bounding box of the DrawingItem, relative to the entire document (the webpage content).
+The X coordinate of the item relative to the viewpoint of the browser window..
+
+## itemClientY
+
+The Y coordinate of the item relative to the viewpoint of the browser window..
+
+## itemPageX
+
+The X coordinate of the item relative to the entire document (the webpage content).
+
+## itemPageY
+
+The Y coordinate of the item relative to the entire document (the webpage content).

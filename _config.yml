@@ -1,9 +1,10 @@
 repositoryUrl: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
-repositoryUrlJS: https://github.com/dynamsoft-docs/camera-enhancer-docs-js/blob/main
 repository: dynamsoft-docs/camera-enhancer-docs-js
 docFullPath: https://www.dynamsoft.com/camera-enhancer/docs/web/
 firstLevelUrl: /camera-enhancer/docs/web
 docHomePage: /camera-enhancer/docs/introduction/
+needSearchIndex: true
+searchNeedFilter: true
 
 productUrl: https://www.dynamsoft.com/camera-enhancer/overview/
 productName: Dynamsoft Camera Enhancer
@@ -45,7 +46,9 @@ dnt_icon: /camera-enhancer/docs/web/assets/img-icon/icon-dnt.svg
 overview: /camera-enhancer/overview/
 download: /camera-enhancer/downloads/
 
-useVersionTree: true
+useVersionTree: false
+isDCV: true
+useJSVersionV3: true
 
 baseurl: "/camera-enhancer/docs/web/"
 plugins:
@@ -68,7 +71,7 @@ defaults:
   - scope:
       path: "programming/javascript"
     values:
-      category: "js-repo"
-      edition: "js"
+      docRootName: "Camera Enhancer JavaScript Edition" 
+      docHomePage: "/camera-enhancer/docs/web/programming/javascript/"
 
 url: "https://www.dynamsoft.com" # sitemap root

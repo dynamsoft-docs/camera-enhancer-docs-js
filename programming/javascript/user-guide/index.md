@@ -7,8 +7,8 @@ breadcrumbText: User Guide
 noTitleIndex: true
 needGenerateH3Content: true
 needAutoGenerateSidebar: true
-permalink: /programming/javascript/user-guide/index.html
 ---
+
 # Dynamsoft Camera Enhancer for Your Website
 
 Dynamsoft Camera Enhancer allows your website to easily control the camera in the browser on desktop or mobile devices.
@@ -18,68 +18,63 @@ With the SDK integrated, your users can open your website in a browser, access t
 In this guide, you will learn step by step on how to integrate the Dynamsoft Camera Enhancer SDK into your website.
 
 - [Dynamsoft Camera Enhancer for Your Website](#dynamsoft-camera-enhancer-for-your-website)
-  - [Getting Started](#getting-started)
-    - [Include the SDK](#include-the-sdk)
-      - [Use a CDN](#use-a-cdn)
-      - [Host the SDK yourself](#host-the-sdk-yourself)
-    - [Use the SDK](#use-the-sdk)
-      - [Show live video stream on the page](#show-live-video-stream-on-the-page)
-      - [Capture image frames from the video stream](#capture-image-frames-from-the-video-stream)
-      - [Use ImageEditorView and the Drawing Logic](#use-imageeditorview-and-the-drawing-logic)
-      - [Customize the UI](#customize-the-ui)
+  - [Adding the SDK](#adding-the-sdk)
+    - [Use a CDN](#use-a-cdn)
+    - [Host the SDK yourself](#host-the-sdk-yourself)
+  - [Using the SDK](#using-the-sdk)
+    - [Stream live video](#stream-live-video)
+    - [Capture image frames](#capture-image-frames)
+    - [Use ImageEditorView](#use-imageeditorview)
+    - [Customize the UI](#customize-the-ui)
   - [Hosting the SDK](#hosting-the-sdk)
     - [Step One: Deploy the dist folder](#step-one-deploy-the-dist-folder)
     - [Step Two: Configure the Server](#step-two-configure-the-server)
-    - [Step Three: Include the SDK from the server](#step-three-include-the-sdk-from-the-server)
+    - [Step Three: Add the SDK from the server](#step-three-add-the-sdk-from-the-server)
   - [FAQ](#faq)
     - [Can I open the web page directly from the hard drive?](#can-i-open-the-web-page-directly-from-the-hard-drive)
     - [Why can't I use my camera?](#why-cant-i-use-my-camera)
   - [API Documentation](#api-documentation)
   - [System Requirements](#system-requirements)
-  - [Release Notes](#release-notes)
   - [Next Steps](#next-steps)
 
-## Getting Started
+## Adding the SDK
 
-### Include the SDK
-
-To build the web solution, we may need to include three packages
+To use the SDK, we first add the following packages:
 
 1. `dynamsoft-camera-enhancer`: Required, it provides the camera related functionalities used in this guide.
 2. `dynamsoft-core`: Required, it includes basic classes, interfaces, and enumerations that are shared between all Dynamsoft SDKs.
-3. `dynamsoft-capture-vision-router`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need to include it.
+3. `dynamsoft-license`: Optional, if you wish to utilize advanced features such as auto-zoom, enhanced focus, and tap-to-focus, you will need it.
 
-#### Use a CDN
+### Use a CDN
 
-The simplest way to include the SDK is to use either the [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/) CDN.
+The simplest way to add the SDK is to use a CDN such as [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/).
 
 - jsDelivr
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.10/dist/core.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.4.31/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.4.31/dist/license.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.1.1/dist/dce.js"></script>
   ```
 
 - UNPKG  
 
   ```html
-  <script src="https://unpkg.com/dynamsoft-core@3.0.10/dist/core.js"></script>
-  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
+  <script src="https://unpkg.com/dynamsoft-core@3.4.31/dist/core.js"></script>
+  <script src="https://unpkg.com/dynamsoft-license@3.4.31/dist/license.js"></script>
+  <script src="https://unpkg.com/dynamsoft-camera-enhancer@4.1.1/dist/dce.js"></script>
   ```
 
-> In some rare cases, you might not be able to access the CDN. If this happens, you can use
->- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js)
->- [https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js](https://download2.dynamsoft.com/dce/dynamsoft-camera-enhancer-js/dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js)
+<!-- > In some rare cases, you might not be able to access the CDN. If this happens, you can use
+>- [https://download2.dynamsoft.com/packages/dynamsoft-core@3.4.20/dist/core.js](https://download2.dynamsoft.com/packages/dynamsoft-core@3.2.10/dist/core.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-license@3.4.21/dist/license.js](https://download2.dynamsoft.com/packages/dynamsoft-license@3.2.10/dist/license.js)
+>- [https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.1.1/dist/dce.js](https://download2.dynamsoft.com/packages/dynamsoft-camera-enhancer@4.0.2/dist/dce.js) -->
 
-#### Host the SDK yourself
+### Host the SDK yourself
 
 Besides using the CDN, you can also download the SDK and host it locally.
 
 The following shows a few ways to download the SDK.
-
-- From the website
-
-  [Download the JavaScript ZIP Package](https://www.dynamsoft.com/camera-enhancer/downloads/1000021-confirmation/?utm_source=guide)
 
 - yarn
 
@@ -93,93 +88,75 @@ The following shows a few ways to download the SDK.
   npm install dynamsoft-camera-enhancer --save
   ```
 
-> Note: Upon installation of `dynamsoft-camera-enhancer`, the compatible versions of `dynamsoft-capture-vision-router` and `dynamsoft-core` will be automatically downloaded.
+> Note: Upon installation of `dynamsoft-camera-enhancer`, a compatible versions of `dynamsoft-core` will be automatically installed if not installed already.
 
-Depending on how you downloaded the SDK and where you put it. You can typically include it like this:
-
-```html
-<!-- Upon extracting the zip package into your project, you can generally include it in the following manner -->
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-core@3.0.10/dist/core.js"></script>
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-capture-vision-router@2.0.11/dist/cvr.js"></script>
-<script src="./dynamsoft-camera-enhancer-js-4.0.0/dynamsoft/distributables/dynamsoft-camera-enhancer@4.0.0/dist/dce.js"></script>
-```
-
-or
+Depending on how you downloaded the SDK and where you put it. You can typically add it like this:
 
 ```html
 <script src="./node_modules/dynamsoft-core/dist/core.js"></script>
-<script src="./node_modules/dynamsoft-capture-vision-router/dist/cvr.js"></script>
 <script src="./node_modules/dynamsoft-camera-enhancer/dist/dce.js"></script>
-```
-
-or
-
-```typescript
-import { CameraEnhancer, CameraView } from 'dynamsoft-camera-enhancer';
 ```
 
 Read more on [how to host the SDK](#hosting-the-sdk).
 
-### Use the SDK
+## Using the SDK
 
-#### Show live video stream on the page
+### Stream live video
 
 We can create a `CameraEnhancer` instance to open and show the video stream on the page. The following code snippet demonstrates the complete process:
 
-1. Create a `CameraView` instance, `view` in our case;
-2. Pass `view` to the method `createInstance()` for creating a `CameraEnhancer` instance. This way, `view` is bound to the created object `enhancer`;
-3. Show the UI element of `view` by appending it to an existing element in the DOM;
+1. Create a `CameraView` instance. In our case, it's named `cameraView`;
+2. Pass `cameraView` to the method `createInstance()` to create a `CameraEnhancer` instance. This way, `cameraView` is bound to the created object `cameraEnhancer`;
+3. Show the UI element of `cameraView` by appending it to an existing element in the DOM;
 4. Open the video stream which will show up in the UI Element.
-
-Step 3 can be done anywhere after step 1.
 
 ```html
 <!-- Define an element to hold the UI element -->
 <div id="enhancerUIContainer" style="width:1280px;height:720px;"></div>
 <script>
   (async () => {
-      // Default UI will be used if no parameters are provided to 'CameraView.createInstance()'.
-      let view = await Dynamsoft.DCE.CameraView.createInstance();
-       // Create 'CameraEnhancer' instance and pass 'cameraView' to it for UI control.
-      let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
+      // Initializes the license for using the SDK in the application.
+      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9");
+      // A default UI will be used if no parameter is passed to 'CameraView.createInstance()'.
+      let cameraView = await Dynamsoft.DCE.CameraView.createInstance();
+       // Create 'CameraEnhancer' instance and pass 'cameraView' to it.
+      let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
       // Get 'CameraView' instance's UI and append it to DOM.
-      document.querySelector("#enhancerUIContainer").append(view.getUIElement());
-      
-      await enhancer.open();
+      document.querySelector("#enhancerUIContainer").append(cameraView.getUIElement());
+      // Open the camera and start streaming the video on the page.
+      await cameraEnhancer.open();
   })();
 </script>
 ```
 
-#### Capture image frames from the video stream
+### Capture image frames
 
 There are two ways to capture image frames with Dynamsoft Camera Enhancer.
 
 - Capture a single latest frame
 
-  This is done with the method [fetchImage()](../api-reference/acquisition.md#fetchimage). The following is a code snippet that shows this
+  This is done with the method [fetchImage()](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/api-reference/acquisition.html#fetchimage) as shown in the following code snippet:
 
   ```javascript
-  let img = enhancer.fetchImage();
+  let img = cameraEnhancer.fetchImage();
   document.body.appendChild(img.toCanvas());
   ```
 
-- Start a capture loop that captures multiple frames at a steady interval into a buffer and then read frames from the buffer
-
-  The following code snippet shows how it works
+- Start a capture loop that captures multiple frames at a steady interval into a buffer and then read frames from the buffer. The following code snippet shows how it works:
 
   ```javascript
   // Capture an image frame every 2 seconds and subsequently append it to the buffer.
-  enhancer.setImageFetchInterval(2000);
+  cameraEnhancer.setImageFetchInterval(2000);
   // The event "frameAddedToBuffer" is triggered whenever a new frame is added to the buffer.
-  enhancer.on("frameAddedToBuffer", () => {
-    let img = enhancer.getImage();
+  cameraEnhancer.on("frameAddedToBuffer", () => {
+    let img = cameraEnhancer.getImage();
     console.log(img);
   });
   // Start the built-in fetching loop.
-  enhancer.startFetching();
+  cameraEnhancer.startFetching();
   ```
   
-#### Use ImageEditorView and the Drawing Logic
+### Use ImageEditorView
 
 The other view class ImageEditorView is designed to show a single image. The following code snippet shows a single frame in an `ImageEditorView` instance and draws a rectangle on the image:
 
@@ -188,16 +165,16 @@ The other view class ImageEditorView is designed to show a single image. The fol
 ```
 
 ```javascript
-// The default UI will be used if no parameters are provided to 'ImageEditorView.createInstance()'.
+// The default UI will be used if no parameter is provided to 'ImageEditorView.createInstance()'.
 let editorView = await Dynamsoft.DCE.ImageEditorView.createInstance();
 // Retrieve the UI of the 'editorView' instance and append it to the DOM.
 document.querySelector("#imageEditorContainer").append(editorView.getUIElement());
 // When the video is already playing, capture an image and draw it on the ImageEditorView.
-let img = enhancer.fetchImage();
+let img = cameraEnhancer.fetchImage();
 editorView.setOriginalImage(img);
 // Draw a rectangle on the image.
 let drawingLayer = editorView.createDrawingLayer();
-let rect = new Dynamsoft.DCE.DrawingItem.RectDrawingItem(
+let rect = new Dynamsoft.DCE.RectDrawingItem(
   {
     x: 100,
     y: 100,
@@ -209,68 +186,98 @@ drawingLayer.addDrawingItems([rect]);
 
 Once the rectangle appears on the image, you can click to select it and adjust its position, size, etc.
 
-#### Customize the UI
+Read more about [How to draw shapes](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/user-guide/features/draw-shapes.html).
 
-The built-in UI of the `CameraView` instance is defined in the file `dist/dce.ui.html`. You can copy the file `dist/dce.ui.html` to your project, modify it and pass its path in the API `createInstance` to set it as the default UI.
+### Customize the UI
 
-```javascript
-// To make sure the following line takes effect, put it before the API `open()` is called.
-Dynamsoft.DCE.CameraView.createInstance("THE-URL-TO-THE-FILE");
+Dynamsoft Camera Enhancer (DCE) offers extensive customization options. If you only need to adjust the UI without delving into other features, this section is for you.
+
+**Use the built-in UI**
+
+DCE includes several pre-defined UIs in the `DCE-LIB-PACKAGE/dist/xxxx.ui.html` (or `node_modules/dynamsoft-camera-enhancer/dist/xxxx.ui.html`).
+
+* `dce.ui.html`: The default UI used by CameraView.createInstance() for simple use cases.
+* `dce.mobile-native.ui.html`: A mobile-inspired UI with auto flash, suitable for most websites. Activate it with `CameraView.createInstance('@engineResourcePath/dce.mobile-native.ui.html')`.
+
+When `cameraEnhancer.open()` is called, the UI elements are dynamically bound to functions based on their class names, such as `dce-xxxx`.
+
+**Modify the UI dynamically**
+
+To customize the UI, call `view.getUIElement()` to access the HTMLElement containing all UI elements. Before `cameraEnhancer.open()`, you can modify the UI by editing CSS, adding/removing elements, or restructuring the HTML. This usually works without issues, though testing is recommended.
+
+After `cameraEnhancer.open()`, UI adjustments are possible via JavaScript, but handle elements with `dce-` prefixed class names carefully, as they may be linked to specific logic.
+
+**Define the UI in a separate HTML**
+
+For less dynamic but more structured customization, create a copy of the desired `xxxx.ui.html`, modify it as needed, and store it in your project's `public` folder. Use this customized UI with `CameraView.createInstance('PATH-TO/xxxx.ui.html')`.
+
+**Integrate HTML into Your Project**
+
+Alternatively, `CameraView.createInstance()` accepts an `HTMLElement` directly. This allows you to build and manage the UI within your webpage. For example, set the UI using `CameraView.createInstance(document.getElementById('my-custom-ui'))`.
+
+Let's see the following example.
+
+**Practise: customize base on `dce.ui.html`**
+
+Start by opening dce.ui.html in your editor to review its content. You can copy several elements from this file.
+
+Next, create a new HTML page, beginning by embedding only the video:
+
+```html
+<div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-video-container" style="width:100%;height:100%;"></div>
+</div>
+<script>
+    (async () => {
+      // Initializes the license for using the SDK in the application.
+      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9");
+      // Create 'CameraView' instance and pass the element "enhancerUIContainer" as its UI.
+      let cameraView = await Dynamsoft.DCE.CameraView.createInstance(document.getElementById("enhancerUIContainer"));
+      let cameraEnhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(cameraView);
+      await cameraEnhancer.open();
+    })();
+</script>
 ```
 
-- Build the UI element into your own web page and specify it when create instance.
+> The video element will automatically be created and appended to the `dce-video-container` div.
 
-  - Embed only the video
+Next, add the camera and resolution list. If the classes match the default ones (`dce-sel-camera` and `dce-sel-resolution`), the SDK will populate them and manage switching.
 
-  ```html
-  <div id="enhancerUIContainer" style="width:1280px;height:720px;background:#ddd;" >
-    <div class="dce-video-container" style="width:100%;height:100%;"></div>
+```html
+<div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-video-container" style="width:100%;height:100%;"></div>
+  <div style="position: absolute;left: 0;top: 0;">
+    <select class="dce-sel-camera" style="display: block;"></select>
   </div>
-  <script>
-      (async () => {
-        // Create 'CameraView' instance and pass an element as its UI.
-        let view = await Dynamsoft.DCE.CameraView.createInstance(document.getElementById("enhancerUIContainer"));
-        let enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance(view);
-        await enhancer.open();
-      })();
-  </script>
-  ```
+</div>
+```
 
-  > The video element will be created and appended to the DIV element with the class `dce-video-container`, make sure the class name is the same.
-
-  - Add the camera list and resolution list. If the class names for these lists match the default ones,  `dce-sel-camera` and `dce-sel-resolution` , the SDK will automatically populate the lists and handle the camera/resolution switching.
-
-  ```html
-  <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
-    <div style="position:absolute;left:0;top:0;">
-      <select class="dce-sel-camera" style="display:block;"></select>
-    </div>
-    <div class="dce-video-container" style="width:100%;height:100%;"></div>
+```html
+<div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
+  <div class="dce-video-container" style="width:100%;height:100%;"></div>
+  <div style="position:absolute;left:0;top:0;">
+    <select class="dce-sel-camera" style="display:block;"></select>
+    <select class="dce-sel-resolution" style="display:block;margin-top:5px;"></select>
   </div>
-  ```
+</div>
+```
 
-  ```html
-  <div id="enhancerUIContainer" style="position:relative;width:1280px;height:720px;background:#ddd;" >
-    <div style="position:absolute;left:0;top:0;">
-      <select class="dce-sel-camera" style="display:block;"></select>
-      <select class="dce-sel-resolution" style="display:block;margin-top:5px;"></select>
-    </div>
-    <div class="dce-video-container" style="width:100%;height:100%;"></div>
-  </div>
-  ```
+> By default, only 3 hard-coded resolutions (1920 x 1080, 1280 x 720, 640 x 480) are available. You can show a customized set of options by hardcoding them.
 
-  > By default, only 3 hard-coded resolutions (1920 x 1080, 1280 x 720, 640 x 480), are populated as options. You can show a customized set of options by hardcoding them.
+```html
+<select class="dce-sel-resolution">
+    <option class="dce-opt-gotResolution" value="got"></option>
+    <option data-width="1920" data-height="1080">1920x1080</option>
+    <option data-width="1280" data-height="720">1280x720</option>
+    <option data-width="640" data-height="480">640x480</option>
+</select>
+```
 
-  ```html
-  <select class="dce-sel-resolution">
-      <option class="dce-opt-gotResolution" value="got"></option>
-      <option data-width="1920" data-height="1080">1920x1080</option>
-      <option data-width="1280" data-height="720">1280x720</option>
-      <option data-width="640" data-height="480">640x480</option>
-  </select>
-  ```
+> Ensure the selected resolution is supported by the camera. If not, the closest supported resolution will be used. The `dce-opt-gotResolution` class shows the **actual resolution**.
 
-  > Generally, you need to provide a resolution that the camera supports. However, in case a camera does not support the specified resolution, it usually uses the closest supported resolution. As a result, the selected resolution may not be the actual resolution. In this case, add an option with the class name `dce-opt-gotResolution` (as shown above) and the SDK will then use it to show the **actual resolution**.
+**End of the section: customize the UI**
+
+This concludes the UI customization section. Whether using built-in UIs or custom HTML, the process is straightforward.
 
 ## Hosting the SDK
 
@@ -280,7 +287,7 @@ Once you have downloaded the SDK, you can locate the "dist" directory and copy i
 
 - `dce.js` // The main SDK file
 - `dce.mjs` // For using the SDK as a module (`<script type="module">`)
-- `dce.ui.html` // Defines the default enhancer UI
+- `dce.ui.html` // Defines the default cameraEnhancer UI
 
 ### Step Two: Configure the Server
 
@@ -288,11 +295,11 @@ Once you have downloaded the SDK, you can locate the "dist" directory and copy i
 
   To use the SDK, you must access your website / web application via a secure HTTPS connection. This is due to browser security restrictions which only grant camera video streaming access to a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
 
-  > For convenience, self-signed certificates are allowed during development and testing. Or use "http://localhost".
+  > For convenience, self-signed certificates can be used during development and testing. You can also use "http://localhost" which allows camera access without an SSL certificate.
 
-### Step Three: Include the SDK from the server
+### Step Three: Add the SDK from the server
 
-Now that the SDK is hosted on your server, you can include it accordingly.
+Now that the SDK is hosted on your server, you can add it accordingly.
 
 ```html
 <script src="https://www.yourwebsite.com/PATH-TO-THE-SDK/dynamsoft-camera-enhancer/dist/dce.js"></script>
@@ -302,21 +309,13 @@ Now that the SDK is hosted on your server, you can include it accordingly.
 
 ### Can I open the web page directly from the hard drive?
 
-Yes, for simple testing purposes, it's ok to open the file directly from the hard drive (`file://`). However, you might encounter some issues in doing so (like unable to access the camera, etc.). The recommendation is to deploy this page to your web server and run it over **HTTPS** or use "http://localhost" during development.
+Yes, for simple testing purposes, it's ok to open the file directly from the hard drive (`file://`). However, you might encounter some issues in doing so (cannot access camera, etc.). The recommendation is to deploy this page to your web server and run it over **HTTPS** or use "http://localhost" during development.
 
-If you don't have a ready-to-use web server but have a package manager like *npm* or *yarn*, you can set up a simple HTTP server in minutes. Check out [`http-server` on npm](https://www.npmjs.com/package/http-server) or [yarn](https://yarnpkg.com/package/http-server).
+If you don't have a ready-to-use web server but have a package manager like *npm* or *yarn*, you can set up a simple HTTP server in minutes. Check out [`http-server` on npm](https://www.npmjs.com/package/http-server) or [`http-server` on yarn](https://yarnpkg.com/package/http-server).
 
 ### Why can't I use my camera?
 
-If you open the web page as `http://` , the camera may not work and you see the following error in the browser console:
-
-> [Deprecation] getUserMedia() no longer works on insecure origins. To use this feature, you should consider switching your application to a secure origin, such as HTTPS. See [https://goo.gl/rStTGz](https://goo.gl/rStTGz) for more details.
-
-- In Safari 12 the equivalent error is:
-
-> Trying to call getUserMedia from an insecure document.
-
-You get this error because the API [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) requires HTTPS to access the camera.
+If you open the web page as `http://` , the camera may not work and you see a warnings or an error in the browser console. This is usually because the API [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) requires HTTPS to access the camera.
 
 To make sure your web application can access the camera, please configure your web server to support HTTPS. The following links may help.
 
@@ -353,23 +352,23 @@ DCE requires the following features to work:
 
 The following table is a list of supported browsers based on the above requirements:
 
-  Browser Name | Version
-  :-: | :-:
-  Chrome | v59+
-  Firefox | v63+
-  Edge | v79+
-  Safari | v11+
+  | Browser Name | Version |
+  | :----------: | :-----: |
+  |    Chrome    |  v59+   |
+  |   Firefox    |  v68+   |
+  |     Edge     |  v79+   |
+  |    Safari    |  v11+   |
 
 Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDK. Browser compatibility ultimately depends on whether the browser on that particular operating system supports the features listed above.
 
-## Release Notes
+<!-- ## Release Notes
 
-Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/release-note/index.html).
+Learn about what are included in each release at [https://www.dynamsoft.com/camera-enhancer/docs/programming/javascript/release-note/index.html](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/release-note/index.html). -->
 
 ## Next Steps
 
 Now that you have got the SDK integrated, you can choose to move forward in the following directions
 
-1. Learn more about the [Shape Drawing Feature](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/user-guide/features/draw-shapes.html).
-2. Check out the [official samples on Github](https://github.com/Dynamsoft/camera-enhancer-javascript-samples).
-3. Learn about the available [APIs](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/api-reference/index.html).
+1. Check out the [official samples on Github](https://github.com/Dynamsoft/camera-enhancer-javascript-samples).
+2. Learn about the available [APIs](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/api-reference/index.html).
+3. Learn more about the [Shape Drawing Feature](https://www.dynamsoft.com/camera-enhancer/docs/web/programming/javascript/user-guide/features/draw-shapes.html).
