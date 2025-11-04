@@ -104,13 +104,15 @@ breadcrumbText: API Reference
 
 ### UI
 
-| Name                                                             | Description                                                                                        |
-| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [convertToPageCoordinates](./ui.md#convertToPageCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the whole page. |
-| [convertToClientCoordinates](./ui.md#convertToClientCoordinates) | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.   |
-| [setCameraView](./ui.md#setCameraView)                           | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                               |
-| [getCameraView](./ui.md#getCameraView)                           | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                  |
-| [getVideoEl](./ui.md#getVideoEl)                                 | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.        |
+| Name                                                                         | Description                                                                                         |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [convertToPageCoordinates](./ui.md#convertToPageCoordinates)                 | Converts coordinates from the video's coordinate system to coordinates relative to the whole page.  |
+| [convertToClientCoordinates](./ui.md#convertToClientCoordinates)             | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.    |
+| [convertToScanRegionCoordinates](./ui.md#convertToScanRegionCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the scan region. |
+| [convertToContainCoordinates](./ui.md#convertToClientCoordinates)            | Converts coordinates from the `fit: cover` to `fit: contain` mode.                                  |
+| [setCameraView](./ui.md#setCameraView)                                       | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                                |
+| [getCameraView](./ui.md#getCameraView)                                       | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                   |
+| [getVideoEl](./ui.md#getVideoEl)                                             | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.         |
 
 ### Auxiliary
 
