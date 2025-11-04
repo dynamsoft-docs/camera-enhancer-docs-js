@@ -17,6 +17,7 @@ permalink: /programming/javascript/api-reference/ui.html
 | [convertToScanRegionCoordinates](#convertToScanRegionCoordinates)     | Converts coordinates from the video's coordinate system to coordinates relative to the scan region. |
 | [convertToPageCoordinates](#convertToPageCoordinates)                 | Converts coordinates from the video's coordinate system to coordinates relative to the whole page.  |
 | [convertToClientCoordinates](#convertToClientCoordinates)             | Converts coordinates from the video's coordinate system to coordinates relative to the viewport.    |
+| [convertToContainCoordinates](#convertToClientCoordinates)            | Converts coordinates from the `fit: cover` to `fit: contain` mode.                                  |
 | [setCameraView](#setCameraView)                                       | Sets the `CameraView` instance to be used with the `CameraEnhancer`.                                |
 | [getCameraView](#getCameraView)                                       | Retrieves the current `CameraView` instance associated with the `CameraEnhancer`.                   |
 | [getVideoEl](#getVideoEl)                                             | Retrieves the HTMLVideoElement used by the `CameraEnhancer` for displaying the camera feed.         |
@@ -95,6 +96,33 @@ A `Point` object representing the converted x and y coordinates relative to the 
 
 ```javascript
 cameraEnhancer.convertToClientCoordinates({x: 0, y: 0});
+```
+
+**See also**
+
+[Point](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/core/basic-structures/point.html)
+
+## convertToContainCoordinates
+
+Converts coordinates from the `fit: cover` to `fit: contain` mode.
+This is useful for positioning HTML elements in relation to the video element on the screen, regardless of page scrolling.
+
+```typescript
+convertToContainCoordinates(point: Point): Point;
+```
+
+**Parameters**
+
+`point`: a `Point` object representing the x and y coordinates within the video's coordinate system.
+
+**Return value**
+
+A `Point` object representing the converted x and y coordinates relative to the viewport.
+
+**Code Snippet**
+
+```javascript
+cameraEnhancer.convertToContainCoordinates({x: 0, y: 0});
 ```
 
 **See also**
