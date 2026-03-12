@@ -59,7 +59,7 @@ let quadItem = new Dynamsoft.DCE.QuadDrawingItem(
         }]
     }
 );
-drawingLayer.addDrawingItem(quadItem);
+drawingLayer.addDrawingItems([quadItem]);
 ```
 
 **See also**

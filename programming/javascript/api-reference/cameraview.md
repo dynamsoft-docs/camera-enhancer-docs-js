@@ -41,6 +41,8 @@ permalink: /programming/javascript/api-reference/cameraview.html
 | [setTipVisible](#setTipVisible)                                 | Controls the visibility of the tip message box on the screen.                               |
 | [isTipVisible](#isTipVisible)                                   | Checks whether the tip message box is currently visible.                                    |
 | [updateTipMessage](#updateTipMessage)                           | Updates the message displayed in the tip message box.                                       |
+| [setPowerByMessageVisible](#setPowerByMessageVisible)           | Sets the visibility of the `Powered by Dynamsoft` message.                                  |
+| [isPowerByMessageVisible](#isPowerByMessageVisible)             | Checks if the `Powered by Dynamsoft` message is currently visible.                          |
 
 ## createInstance
 
@@ -698,4 +700,50 @@ None.
 
 ```javascript
 cameraView.updateTipMessage('Hold the phone closer.');
+```
+
+## setPowerByMessageVisible
+
+Sets the visibility of the `Powered by Dynamsoft` message. This can be used to show or hide the message.
+
+```typescript
+setPowerByMessageVisible(visible: boolean): void;
+```
+
+**Parameters**
+
+`visible`: boolean indicating whether the message should be visible (`true`) or not (`false`).
+
+**Return value**
+
+None.
+
+**Code Snippet**
+
+```javascript
+// Hide the "Powered by Dynamsoft" message.
+cameraView.setPowerByMessageVisible(false);
+```
+
+## isPowerByMessageVisible
+
+Checks if the `Powered by Dynamsoft` message is currently visible.
+
+```typescript
+isPowerByMessageVisible(): boolean;
+```
+
+**Parameters**
+
+None.
+
+**Return value**
+
+Boolean indicating whether the message is visible (`true`) or not (`false`).
+
+**Code Snippet**
+
+```javascript
+const isVisible = cameraView.isPowerByMessageVisible();
+console.log(isVisible);
 ```

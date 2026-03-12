@@ -69,7 +69,7 @@ let imgItem = new Dynamsoft.ImageDrawingItem(
     true,
     3
 );
-drawingLayer.addDrawingItem(imgItem);
+drawingLayer.addDrawingItems([imgItem]);
 ```
 
 **See also**

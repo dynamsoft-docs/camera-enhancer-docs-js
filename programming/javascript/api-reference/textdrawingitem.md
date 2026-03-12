@@ -57,7 +57,7 @@ let textItem = new Dynamsoft.DCE.TextDrawingItem(
     },
     3
 );
-drawingLayer.addDrawingItem(textItem);
+drawingLayer.addDrawingItems([textItem]);
 ```
 
 **See also**
