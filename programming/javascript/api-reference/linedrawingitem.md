@@ -55,7 +55,7 @@ let lineItem = new Dynamsoft.DCE.LineDrawingItem(
         }
     }
 );
-drawingLayer.addDrawingItem(lineItem);
+drawingLayer.addDrawingItems([lineItem]);
 ```
 
 **See also**

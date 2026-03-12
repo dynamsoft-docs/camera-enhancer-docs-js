@@ -49,7 +49,7 @@ let rectItem = new Dynamsoft.DCE.RectDrawingItem(
         height: 500
     }
 );
-drawingLayer.addDrawingItem(rectItem);
+drawingLayer.addDrawingItems([rectItem]);
 ```
 
 **See also**
