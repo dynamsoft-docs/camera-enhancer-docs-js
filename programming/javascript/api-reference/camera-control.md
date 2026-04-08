@@ -356,7 +356,7 @@ cameraEnhancer.isPaused();
 Opens the currently selected camera and starts the video stream.
 
 ```typescript
-open(): Promise<PlayCallbackInfo>;
+open(): Promise<void | PlayCallbackInfo>;
 ```
 
 **Parameters**
@@ -376,6 +376,10 @@ await cameraEnhancer.open();
 **See also**
 
 [PlayCallbackInfo](./interface/playcallbackinfo.md)
+
+**Remarks**
+
+This method returns `Promise<void>` when operating in `singleFrameMode` in CaptureVisionBundle version 3.4.2000 & BarcodeReaderBundle version 11.4.2000.
 
 ## pause
 
