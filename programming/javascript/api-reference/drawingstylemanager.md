@@ -179,16 +179,17 @@ For more details, check out [Built-in DrawingStyles](./interface/drawingstyle.md
 | Style Name                      | Style ID | Description                                                                    |
 | ------------------------------- | -------- | ------------------------------------------------------------------------------ |
 | STYLE_BLUE_STROKE               | 1        | Used by DDN for drawing found document boundaries.                             |
-| STYLE_GREEN_STROKE              | 2        | Used by DLR for highlighting found text lines.                                 |
-| STYLE_ORANGE_STROKE             | 3        | Used by DBR for highlighting found barcode symbols.                            |
-| STYLE_YELLOW_STROKE             | 4        | Used as the default style for user-defined drawing layers.                     |
-| STYLE_BLUE_STROKE_FILL          | 5        | Used by DDN for drawing selected document boundaries.                          |
-| STYLE_GREEN_STROKE_FILL         | 6        | Used by DLR for highlighting selected text lines.                              |
-| STYLE_ORANGE_STROKE_FILL        | 7        | Used by DBR for highlighting selected barcode symbols.                         |
-| STYLE_YELLOW_STROKE_FILL        | 8        | Used as the style for selected drawing items on user-defined drawing layers.   |
+| STYLE_GREEN_STROKE              | 2        | Defined but not used by default.                                               |
+| STYLE_ORANGE_STROKE             | 3        | Defined but not used by default.                                               |
+| STYLE_YELLOW_STROKE             | 4        | Defined but not used by default.                                               |
+| STYLE_BLUE_STROKE_FILL          | 5        | Defined but not used by default.                                               |
+| STYLE_GREEN_STROKE_FILL         | 6        | Used by DLR for highlighting found text lines.                                 |
+| STYLE_ORANGE_STROKE_FILL        | 7        | Used by DBR for highlighting found barcode symbols.                            |
+| STYLE_YELLOW_STROKE_FILL        | 8        | Used as the default style for user-defined drawing layers.                     |
 | STYLE_BLUE_STROKE_TRANSPARENT   | 9        | Used by DDN for drawing found document boundaries that haven't been verified.  |
 | STYLE_GREEN_STROKE_TRANSPARENT  | 10       | Used by DLR for highlighting found text lines that haven't been verified.      |
 | STYLE_ORANGE_STROKE_TRANSPARENT | 11       | Used by DBR for highlighting found barcode symbols that haven't been verified. |
+| STYLE_YELLOW_STROKE_TRANSPARENT | 12       | Defined but not used by default.                                               |
 
 **Code Snippet**
 
