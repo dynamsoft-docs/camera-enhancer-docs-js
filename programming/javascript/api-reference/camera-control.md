@@ -69,7 +69,7 @@ This property sets a limit on how long the `CameraEnhancer` will attempt to open
 
 > NOTE
 > 
-> - The default value is 4000 ms.
+> - The default value is 10000 ms.
 > - Setting 0 means canceling the timeout or waiting indefinitely.
 
 ```typescript
@@ -79,8 +79,8 @@ cameraOpenTimeout: number;
 **Code Snippet**
 
 ```javascript
-// Set the timeout to 10 seconds.
-cameraEnhancer.cameraOpenTimeout = 10000;
+// Set the timeout to 5 seconds.
+cameraEnhancer.cameraOpenTimeout = 5000;
 ```
 
 ## close
