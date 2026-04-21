@@ -69,7 +69,7 @@ This property sets a limit on how long the `CameraEnhancer` will attempt to open
 
 > NOTE
 > 
-> - The default value is 4000 ms.
+> - The default value is 10000 ms.
 > - Setting 0 means canceling the timeout or waiting indefinitely.
 
 ```typescript
@@ -79,8 +79,8 @@ cameraOpenTimeout: number;
 **Code Snippet**
 
 ```javascript
-// Set the timeout to 10 seconds.
-cameraEnhancer.cameraOpenTimeout = 10000;
+// Set the timeout to 5 seconds.
+cameraEnhancer.cameraOpenTimeout = 5000;
 ```
 
 ## close
@@ -356,7 +356,7 @@ cameraEnhancer.isPaused();
 Opens the currently selected camera and starts the video stream.
 
 ```typescript
-open(): Promise<PlayCallbackInfo>;
+open(): Promise<void | PlayCallbackInfo>;
 ```
 
 **Parameters**
@@ -376,6 +376,10 @@ await cameraEnhancer.open();
 **See also**
 
 [PlayCallbackInfo](./interface/playcallbackinfo.md)
+
+**Remarks**
+
+This method returns `Promise<void>` when operating in `singleFrameMode` in CaptureVisionBundle version 3.4.2000 & BarcodeReaderBundle version 11.4.2000.
 
 ## pause
 
