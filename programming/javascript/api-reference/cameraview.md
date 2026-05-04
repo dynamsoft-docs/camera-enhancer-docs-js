@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: CameraView APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page for Dynamsoft Camera Enhancer JavaScript SDK CameraView APIs.
+description: "Learn what Cameraview does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: CameraView, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

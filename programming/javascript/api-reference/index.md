@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: JavaScript API Reference - Dynamsoft Camera Enhancer
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK API Reference.
+description: "Learn what API Reference does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

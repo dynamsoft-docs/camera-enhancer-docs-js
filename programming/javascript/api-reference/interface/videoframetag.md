@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface VideoFrameTag - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the VideoFrameTag Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the VideoFrameTag interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows today."
 keywords: VideoFrameTag, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: User Guide - Dynamsoft Camera Enhancer for JavaScript
-description: This is the user guide of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn how to use Dynamsoft Camera Enhancer JavaScript features with practical setup guidance, workflow tips, and examples for building reliable capture apps."
 keywords: user guide, javascript, js
 breadcrumbText: User Guide
 noTitleIndex: true

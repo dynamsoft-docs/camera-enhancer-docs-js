@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface PlayCallbackInfo - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the PlayCallbackInfo Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the PlayCallbackInfo interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows today."
 keywords: PlayCallbackInfo, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true
