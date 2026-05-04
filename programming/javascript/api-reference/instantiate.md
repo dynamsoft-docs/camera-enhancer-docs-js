@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Instantiation - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Instantiation.
+description: "Learn what Instantiate does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: camera enhancer, Instantiation, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

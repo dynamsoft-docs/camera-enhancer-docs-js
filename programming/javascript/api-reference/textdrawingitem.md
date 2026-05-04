@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: TextDrawingItem - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the TextDrawingItem definitions of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Textdrawingitem does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, textdrawingitem, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface Resolution - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the Resolution Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the Resolution interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows for modern web."
 keywords: Resolution, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

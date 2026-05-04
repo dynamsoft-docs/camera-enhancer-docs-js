@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: LineDrawingItem - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the LineDrawingItem definitions of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Linedrawingitem does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, linedrawingitem, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

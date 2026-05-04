@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Acquisition - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Acquisition.
+description: "Learn what Acquisition does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: camera enhancer, acquisition, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

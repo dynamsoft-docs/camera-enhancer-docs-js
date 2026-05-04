@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Feedback APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page of the Feedback APIs of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Feedback does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: camera enhancer, Feedback, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

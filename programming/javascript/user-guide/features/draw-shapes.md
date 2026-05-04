@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Features - Draw Shapes - Dynamsoft Camera Enhancer JavaSCript User Guide
-description: This page talks about how to use DCE JS to draw shapes.
+description: "Learn how to use Dynamsoft Camera Enhancer JavaScript features with practical setup guidance, workflow tips, and examples for building reliable capture apps."
 keywords: user guide, javascript, js, draw shapes.
 noTitleIndex: true
 needGenerateH3Content: true

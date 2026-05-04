@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: QuadDrawingItem - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the QuadDrawingItem definitions of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Quaddrawingitem does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, quaddrawingitem, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
