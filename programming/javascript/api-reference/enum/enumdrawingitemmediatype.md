@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: EnumDrawingItemMediaType  - Dynamsoft Camera Enhancer JavaScript Edition API
-description: Use this enum data type to set media type for drawing items when using Dynamsoft Camera Enhancer JavaScript Edition in your project.
+description: "Explore this values in Dynamsoft Camera Enhancer JavaScript API and learn how they define status, configuration, and processing behavior for modern web."
 keywords: EnumDrawingItemMediaType, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

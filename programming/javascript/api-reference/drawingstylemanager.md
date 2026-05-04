@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: DrawingStyleManager APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page for Dynamsoft Camera Enhancer JavaScript SDK DrawingStyleManager APIs.
+description: "Learn what Drawingstylemanager does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows."
 keywords: cameraView, imageEditorView, DrawingStyleManager, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

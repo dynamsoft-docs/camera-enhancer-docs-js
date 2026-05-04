@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: ImageEditorView APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page for Dynamsoft Camera Enhancer JavaScript SDK ImageEditorView APIs.
+description: "Learn what Imageeditorview does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: ImageEditorView, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
