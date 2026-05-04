@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface TipConfig - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the TipConfig Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the TipConfig interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows for modern web."
 keywords: TipConfig, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

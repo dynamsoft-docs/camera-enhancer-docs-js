@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Camera Control - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK Camera Control.
+description: "Learn what Camera Control does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, camera control, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

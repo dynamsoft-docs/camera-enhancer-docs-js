@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface VideoDeviceInfo - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the VideoDeviceInfo Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the VideoDeviceInfo interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows today."
 keywords: VideoDeviceInfo, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

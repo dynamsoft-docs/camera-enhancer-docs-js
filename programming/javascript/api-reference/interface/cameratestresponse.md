@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Interface CameraTestResponse - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the CameraTestResponse Interface of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Understand the CameraTestResponse interface in Dynamsoft Camera Enhancer JavaScript API and learn how it supports capture, camera, or result workflows."
 keywords: CameraTestResponse, CameraEnhancer, api reference, javascript, js
 needAutoGenerateSidebar: false
 noTitleIndex: true

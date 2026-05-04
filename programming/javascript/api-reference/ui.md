@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: UI APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the main page of Dynamsoft Camera Enhancer JavaScript SDK UI.
+description: "Learn what UI does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: camera enhancer, UI, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: RectDrawingItem - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the RectDrawingItem definitions of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Rectdrawingitem does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, rectdrawingitem, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

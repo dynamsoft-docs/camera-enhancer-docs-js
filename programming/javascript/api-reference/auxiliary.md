@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Auxiliary APIs - Dynamsoft Camera Enhancer JavaScript API
-description: This is the page of the Auxiliary APIs of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Auxiliary does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows for modern web."
 keywords: camera enhancer, auxiliary, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

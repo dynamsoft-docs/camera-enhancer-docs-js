@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: ImageDrawingItem - Dynamsoft Camera Enhancer JavaScript API
-description: This page shows the ImageDrawingItem definitions of Dynamsoft Camera Enhancer JavaScript SDK.
+description: "Learn what Imagedrawingitem does in Dynamsoft Camera Enhancer JavaScript API, including its purpose, key data, and how it supports capture workflows today."
 keywords: camera enhancer, imagedrawingitem, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
