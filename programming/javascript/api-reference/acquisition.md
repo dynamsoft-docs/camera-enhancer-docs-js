@@ -14,31 +14,17 @@ permalink: /programming/javascript/api-reference/acquisition.html
 
 | Name                                                                | Description                                                                                                            |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-<!-- | [addImageToBuffer](#addImageToBuffer)                               | Adds an image to the internal buffer.                                                                                  | -->
-<!-- | [clearBuffer](#clearBuffer)                                         | Clears all images from the buffer, resetting the state for new image fetching.                                         | -->
 | [fetchImage](#fetchImage)                                           | Fetches the current frame from the camera's video feed.                                                                |
-<!-- | [getBufferOverflowProtectionMode](#getBufferOverflowProtectionMode) | Retrieves the current mode for handling buffer overflow.                                                               | -->
 | [getColourChannelUsageType](#getColourChannelUsageType)             | Retrieves the current usage type for color channels in images.                                                         |
 | [getImage](#getImage)                                               | Retrieves a buffered image, of type `DSImageData`.                                                                     |
-<!-- | [getImageCount](#getImageCount)                                     | Retrieves the current number of images in the buffer.                                                                  | -->
-<!-- | [getImageFetchInterval](#getImageFetchInterval)                     | Retrieves the current interval at which images are continuously fetched from the camera's video feed.                  | -->
-<!-- | [getMaxImageCount](#getMaxImageCount)                               | Retrieves the maximum number of images that can be buffered.                                                           | -->
 | [getPixelFormat](#getPixelFormat)                                   | Retrieves the current pixel format used for images fetched from the camera.                                            |
 | [getScanRegion](#getScanRegion)                                     | Retrieves the current scan region set within the camera's view.                                                        |
-<!-- | [hasImage](#hasImage)                                               | Checks if an image with the specified ID is present in the buffer.                                                     | -->
 | [hasNextImageToFetch](#hasNextImageToFetch)                         | Determines whether there are more images available to fetch.                                                           |
 | [isBufferEmpty](#isBufferEmpty)                                     | Determines whether the buffer is currently empty.                                                                      |
-<!-- | [setBufferOverflowProtectionMode](#setBufferOverflowProtectionMode) | Sets the behavior for handling new incoming images when the buffer is full.                                            | -->
 | [setColourChannelUsageType](#setColourChannelUsageType)             | Sets the usage type for color channels in images.                                                                      |
-<!-- | [setErrorListener](#setErrorListener)                               | Sets an error listener to receive notifications about errors that occur during image source operations.                | -->
-<!-- | [setImageFetchInterval](#setImageFetchInterval)                     | Sets the interval at which images are continuously fetched from the camera's video feed.                               | -->
-<!-- | [setMaxImageCount](#setMaxImageCount)                               | Sets the maximum number of images that can be buffered at any time.                                                    | -->
-<!-- | [setNextImageToReturn](#setNextImageToReturn)                       | Sets the processing priority of a specific image so that it is returned the next time `getImage()` is called.          | -->
 | [setPixelFormat](#setPixelFormat)                                   | Sets the pixel format for the images fetched from the camera.                                                          |
 | [setScanRegion](#setScanRegion)                                     | Sets the scan region within the camera's view which limits the frame acquisition to a specific area of the video feed. |
 | [singleFrameMode](#singleFrameMode)                                 | Controls the single-frame mode of the `CameraEnhancer`.                                                                |
-<!-- | [startFetching](#startFetching)                                     | Starts the process of fetching images.                                                                                 | -->
-<!-- | [stopFetching](#stopFetching)                                       | Stops the process of fetching images.                                                                                  | -->
 | [takePhoto](#takePhoto)                                             | Initiates a sequence to capture a single frame/image, halting the video stream temporarily.                            |
 
 <!--
