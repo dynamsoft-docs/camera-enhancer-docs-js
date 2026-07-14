@@ -24,7 +24,6 @@ In this version, the subclasses include:
 
 | Name                              | Description                                                                                            |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [coordinateBase](#coordinatebase) | Returns or sets the coordinate system base.                                                            |
 | [drawingLayerId](#drawinglayerid) | Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to.                           |
 | [drawingStyleId](#drawingstyleid) | Returns or sets the numeric ID for the `DrawingStyle` that applies to this `DrawingItem`.              |
 | [mediaType](#mediatype)           | Returns an enumeration value which indicates the type of this `DrawingItem` (e.g., image, line, text). |
@@ -39,7 +38,7 @@ In this version, the subclasses include:
 | [deleteNote()](#deletenote)       | Deletes a `Note` object specified by its name.                                                         |
 | [clearNotes()](#clearnotes)       | Deletes all `Note` objects on this `DrawingItem`.                                                      |
 
-## coordinateBase
+<!-- ## coordinateBase
 
 Returns or sets the coordinate system base with a string:
 
@@ -48,8 +47,7 @@ Returns or sets the coordinate system base with a string:
 
 ```typescript
 coordinateBase: string;
-```
-
+``` -->
 ## drawingLayerId
 
 Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to. 

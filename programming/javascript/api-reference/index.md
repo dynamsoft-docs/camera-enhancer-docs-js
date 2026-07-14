@@ -75,31 +75,17 @@ breadcrumbText: API Reference
 
 | Name                                                                                | Description                                                                                                            |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [addImageToBuffer](./acquisition.md#addImageToBuffer)                               | Adds an image to the internal buffer.                                                                                  |
-| [clearBuffer](./acquisition.md#clearBuffer)                                         | Clears all images from the buffer, resetting the state for new image fetching.                                         |
 | [fetchImage](./acquisition.md#fetchImage)                                           | Fetches the current frame from the camera's video feed.                                                                |
-| [getBufferOverflowProtectionMode](./acquisition.md#getBufferOverflowProtectionMode) | Retrieves the current mode for handling buffer overflow.                                                               |
 | [getColourChannelUsageType](./acquisition.md#getColourChannelUsageType)             | Retrieves the current usage type for color channels in images.                                                         |
 | [getImage](./acquisition.md#getImage)                                               | Retrieves a buffered image, of type `DSImageData`.                                                                     |
-| [getImageCount](./acquisition.md#getImageCount)                                     | Retrieves the current number of images in the buffer.                                                                  |
-| [getImageFetchInterval](./acquisition.md#getImageFetchInterval)                     | Retrieves the current interval at which images are continuously fetched from the camera's video feed.                  |
-| [getMaxImageCount](./acquisition.md#getMaxImageCount)                               | Retrieves the maximum number of images that can be buffered.                                                           |
 | [getPixelFormat](./acquisition.md#getPixelFormat)                                   | Retrieves the current pixel format used for images fetched from the camera.                                            |
 | [getScanRegion](./acquisition.md#getScanRegion)                                     | Retrieves the current scan region set within the camera's view.                                                        |
-| [hasImage](./acquisition.md#hasImage)                                               | Checks if an image with the specified ID is present in the buffer.                                                     |
 | [hasNextImageToFetch](./acquisition.md#hasNextImageToFetch)                         | Determines whether there are more images available to fetch.                                                           |
 | [isBufferEmpty](./acquisition.md#isBufferEmpty)                                     | Determines whether the buffer is currently empty.                                                                      |
-| [setBufferOverflowProtectionMode](./acquisition.md#setBufferOverflowProtectionMode) | Sets the behavior for handling new incoming images when the buffer is full.                                            |
 | [setColourChannelUsageType](./acquisition.md#setColourChannelUsageType)             | Sets the usage type for color channels in images.                                                                      |
-| [setErrorListener](./acquisition.md#setErrorListener)                               | Sets an error listener to receive notifications about errors that occur during image source operations.                |
-| [setImageFetchInterval](./acquisition.md#setImageFetchInterval)                     | Sets the interval at which images are continuously fetched from the camera's video feed.                               |
-| [setMaxImageCount](./acquisition.md#setMaxImageCount)                               | Sets the maximum number of images that can be buffered at any time.                                                    |
-| [setNextImageToReturn](./acquisition.md#setNextImageToReturn)                       | Sets the processing priority of a specific image so that it is returned the next time `getImage()` is called.          |
 | [setPixelFormat](./acquisition.md#setPixelFormat)                                   | Sets the pixel format for the images fetched from the camera.                                                          |
 | [setScanRegion](./acquisition.md#setScanRegion)                                     | Sets the scan region within the camera's view which limits the frame acquisition to a specific area of the video feed. |
 | [singleFrameMode](./acquisition.md#singleFrameMode)                                 | Controls the single-frame mode of the `CameraEnhancer`.                                                                |
-| [startFetching](./acquisition.md#startFetching)                                     | Starts the process of fetching images.                                                                                 |
-| [stopFetching](./acquisition.md#stopFetching)                                       | Stops the process of fetching images.                                                                                  |
 | [takePhoto](./acquisition.md#takePhoto)                                             | Initiates a sequence to capture a single frame/image, halting the video stream temporarily.                            |
 
 ### UI
@@ -185,7 +171,6 @@ breadcrumbText: API Reference
 
 | Name                                              | Description                                                                                            |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [coordinateBase](./drawingitem.md#coordinatebase) | Returns or sets the coordinate system base.                                                            |
 | [drawingLayerId](./drawingitem.md#drawinglayerid) | Returns the numeric ID for the `DrawingLayer` this `DrawingItem` belongs to.                           |
 | [drawingStyleId](./drawingitem.md#drawingstyleid) | Returns or sets the numeric ID for the `DrawingStyle` that applies to this `DrawingItem`.              |
 | [mediaType](./drawingitem.md#mediatype)           | Returns an enumeration value which indicates the type of this `DrawingItem` (e.g., image, line, text). |
