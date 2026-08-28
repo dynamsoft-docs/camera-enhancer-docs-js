@@ -378,7 +378,7 @@ cameraView.setVideoFit("cover");
 Retrieves the current value of the `object-fit` CSS property from the `HTMLVideoElement` used by this `CameraView` instance.
 
 ```typescript
-getVideoFit(): string;
+getVideoFit(): 'contain' | 'cover' | 'fill';
 ```
 
 **Parameters**
@@ -387,7 +387,7 @@ None.
 
 **Return value**
 
-The current value of the `object-fit` property applied to the video element. At present, the value is limited to "cover" and "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+The current value of the `object-fit` property applied to the video element. Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 **Code Snippet**
 
