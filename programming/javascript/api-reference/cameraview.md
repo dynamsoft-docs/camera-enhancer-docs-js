@@ -353,15 +353,15 @@ let videoElement = cameraView.getVideoElement();
 
 ## setVideoFit
 
-Sets the `object-fit` CSS property of the `HTMLVideoElement` used by this `CameraView` instance. The `object-fit` property specifies how the video content should be resized to fit the container in a way that maintains its aspect ratio.
+Sets the `object-fit` CSS property of the `HTMLVideoElement` used by this `CameraView` instance. The `fit` property specifies how the video content should be resized to fit the container in a way that maintains its aspect ratio.
 
 ```typescript
-setVideoFit(objectFit: string): void;
+setVideoFit(fit: 'contain' | 'cover' | 'fill'): void;
 ```
 
 **Parameters**
 
-The value for the `object-fit` property. At present, only "cover" and "contain" are allowed and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+The value for the `fit` property. Currently, 'contain' , 'cover' and 'fill' are supported, and the default is "contain". Check out more on [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 **Return value**
 
